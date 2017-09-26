@@ -48,6 +48,10 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 
 void SpecificWorker::compute()
 {
+ 
+  TLaserData data = laser_proxy->getLaserData();
+  for(auto h: data)
+    qDebug() << h.angle << h.dist;
 // 	try
 // 	{
 // 		camera_proxy->getYImage(0,img, cState, bState);
