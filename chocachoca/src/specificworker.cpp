@@ -49,9 +49,37 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 void SpecificWorker::compute()
 {
  
-  TLaserData data = laser_proxy->getLaserData();
+  float distumbral = 300;
+  float angleumbral = 0.79;
+  float rotacion=0.6;
+  bool valido=false;
+  
+  //Tomar los datos del laser
+  TLaserData data = laser_proxy->getLaserData(); 
+  //Ordenamos el array de menor a mayor
+  std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
+  
   for(auto h: data)
     qDebug() << h.angle << h.dist;
+  
+    if (data[25].dist < distumbral) {
+      qDebug()<< "Valido: "<<data[25].dist<<data[25].angle;
+      if ( (rand()%(10)) % 2 != 0)
+	rotacion=rotacion*(-1);
+      differentialrobot_proxy->setSpeedBase(5, rotacion);
+      usleep(rand()%(1500000-100000 + 1) + 100000);
+    } else  {
+    differentialrobot_proxy->setSpeedBase(1500, 0);
+  }
+  
+  
+  
+  
+  //Girar
+  //differentialrobot_proxy->setSpeedBase(0, 5);
+  
+//   for(auto h: data)
+//     qDebug() << h.angle << h.dist;
 // 	try
 // 	{
 // 		camera_proxy->getYImage(0,img, cState, bState);
