@@ -28,8 +28,10 @@
 
 #include <CommonBehavior.h>
 #include <DifferentialRobot.h>
+#include <RCISMousePicker.h>
 #include <Laser.h>
 
+#include <IceStorm/IceStorm.h>
 
 
 #define CHECK_PERIOD 5000
@@ -40,6 +42,7 @@ typedef map <string,::IceProxy::Ice::Object*> MapPrx;
 using namespace std;
 
 using namespace RoboCompDifferentialRobot;
+using namespace RoboCompRCISMousePicker;
 using namespace RoboCompLaser;
 
 
@@ -65,15 +68,22 @@ public:
 
 	LaserPrx laser_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
+	IceStorm::TopicManagerPrx topicmanager_proxy;
 
+	virtual void setPick(const Pick &myPick) = 0;
 
 
 protected:
 	QTimer timer;
 	int Period;
 
+	QTimer storm_timer;
+	int storm_period;
+
 public slots:
 	virtual void compute() = 0;
+	void check_storm();
+
 signals:
 	void kill();
 };

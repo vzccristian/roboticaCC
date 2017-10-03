@@ -22,7 +22,7 @@ static const uint qt_meta_data_GenericWorker[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,12 +34,14 @@ static const uint qt_meta_data_GenericWorker[] = {
 
  // slots: signature, parameters, type, tag, flags
       22,   14,   14,   14, 0x0a,
+      32,   14,   14,   14, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_GenericWorker[] = {
     "GenericWorker\0\0kill()\0compute()\0"
+    "check_storm()\0"
 };
 
 void GenericWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -50,6 +52,7 @@ void GenericWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->kill(); break;
         case 1: _t->compute(); break;
+        case 2: _t->check_storm(); break;
         default: ;
         }
     }
@@ -90,9 +93,9 @@ int GenericWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

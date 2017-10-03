@@ -27,7 +27,6 @@
 
 
 
-
 #ifndef SPECIFICWORKER_H
 #define SPECIFICWORKER_H
 
@@ -41,12 +40,44 @@ public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
-
+	void setPick(const Pick &myPick);
 
 public slots:
 	void compute(); 	
 
 private:
+  InnerModel *innermodel;
+  
+  
+  
+  struct Target
+  {
+  private:
+    float x,z;
+    bool empty=true;
+  public:
+    Target(){};
+    
+    bool insert(float _x, float _z){
+      x=_x;
+      z=_z;
+      empty=false;
+      return true;
+    };
+    bool extract(float &_x, float &_z) {
+      _x=x;
+      _z=z;
+      empty=true;
+      return true;
+    };
+    bool isEmpty() {
+      return empty;
+    };
+      
+      
+    
+    
+  };
 	
 };
 

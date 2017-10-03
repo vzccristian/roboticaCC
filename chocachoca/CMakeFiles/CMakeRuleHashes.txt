@@ -3,4 +3,5 @@ a2de3f39ef42da1040de896c24ff4416 src/CMakeFiles/chocachoca_automoc
 5a4e27f83f5770bec4fc919d112377ed src/CommonBehavior.cpp
 f0e4e4d355709a41c666a73b108cf4e8 src/DifferentialRobot.cpp
 4de992d4272a2b5d46cb891cfca099e1 src/Laser.cpp
+ae1e64ff07319e5c94bb1bb05497055b src/RCISMousePicker.cpp
 b0f1ab5622aeb306ecac29da5a83f7af src/ui_mainUI.h

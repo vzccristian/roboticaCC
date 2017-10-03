@@ -1,0 +1,1000 @@
+  734  bin/cesaryjesus --Ice.Config=etc/config
+  735  make
+  736  bin/cesaryjesus --Ice.Config=etc/config
+  737  make
+  738  bin/cesaryjesus --Ice.Config=etc/config
+  739  make
+  740  bin/cesaryjesus --Ice.Config=etc/config
+  741  make
+  742  bin/cesaryjesus --Ice.Config=etc/config
+  743  make
+  744  bin/cesaryjesus --Ice.Config=etc/config
+  745  make
+  746  bin/cesaryjesus --Ice.Config=etc/config
+  747  make
+  748  bin/cesaryjesus --Ice.Config=etc/config
+  749  make
+  750  bin/cesaryjesus --Ice.Config=etc/config
+  751  make
+  752  bin/cesaryjesus --Ice.Config=etc/config
+  753  make
+  754  bin/cesaryjesus --Ice.Config=etc/config
+  755  make
+  756  bin/cesaryjesus --Ice.Config=etc/config
+  757  make
+  758  bin/cesaryjesus --Ice.Config=etc/config
+  759  make+
+  760  bin/cesaryjesus --Ice.Config=etc/config
+  761  make
+  762  bin/cesaryjesus --Ice.Config=etc/config
+  763  makle
+  764  make
+  765  bin/cesaryjesus --Ice.Config=etc/config
+  766  make
+  767  bin/cesaryjesus --Ice.Config=etc/config
+  768  make
+  769  bin/cesaryjesus --Ice.Config=etc/config
+  770  make
+  771  bin/cesaryjesus --Ice.Config=etc/config
+  772  make
+  773  bin/cesaryjesus --Ice.Config=etc/config
+  774  make
+  775  bin/cesaryjesus --Ice.Config=etc/config
+  776  make
+  777  mak3e
+  778  make
+  779  cd ..
+  780  git add -A
+  781  git commit -m giro
+  782  git commit -m "giro"
+  783  git add -A
+  784  git commit -m "giro"
+  785  cd cesaryjesus/
+  786  make
+  787  cd ..
+  788  git add -A
+  789  git commit -m "giro"
+  790  git push -u origin master 
+  791  sudo shutdown 0
+  792  cd /home/salabeta/robotica/mycomponent/cesaryjesus 
+  793  gedit comandosç
+  794  rcnode
+  795  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+  796  cd robocomp/files/innermodel/
+  797  rcis simpleworld.xml
+  798  ls
+  799  rcis simpleworld.xml
+  800  cd /home/salabeta/robotica/mycomponent 
+  801  git pull
+  802  git add -A
+  803  git commit -m "trololo"
+  804  git push -u origin master
+  805  git stash
+  806  git push -u origin master
+  807  cd cesaryjesus/
+  808  nano hola.txt
+  809  cd ..
+  810  git add -A
+  811  git commit -m "trololo"
+  812  git push -u origin master
+  813  cd cesaryjesus/
+  814  cmake .
+  815  make
+  816  bin/cesaryjesus --Ice.Config=etc/config
+  817  cd ..
+  818  git add -A
+  819  git commit -m "trololo"
+  820  git push -u origin master
+  821  cd cesaryjesus/
+  822  cd ..
+  823  git add -A
+  824  git push -u origin master
+  825  git commit -m "trololo"
+  826  git push -u origin master
+  827  rcnode
+  828  cd robocomp/files/innermodel/
+  829  rcis simpleworld.xml
+  830  cd /etc
+  831  ls
+  832  cd apport/
+  833  ls
+  834  cd ..
+  835  cd apport/
+  836  ls
+  837  cd ..
+  838  ls
+  839  cd robo
+  840  cd robocomp/interfaces/
+  841  ls
+  842  more GotoPoint
+  843  more GotoPoint.ice 
+  844  cd ..
+  845  cd components/
+  846  ls
+  847  cd robocomp-robolab/
+  848  ls
+  849  cd ..
+  850  ls
+  851  cd ..
+  852  cd robo
+  853  cd robotica/
+  854  ls
+  855  cd mycomponent/
+  856  ls
+  857  cd cesaryjesus/
+  858  ls
+  859  vim mycomponent.cdsl 
+  860  sudo aptitude install ivm
+  861  sudo aptitude install bim
+  862  sudo aptitude install vim
+  863  cd robocomp/files/innermodel/
+  864  rcis simpleworld.xml
+  865  glxgears
+  866  sudo apt install mesa-utils
+  867  glxgears
+  868  rcis simpleworld.xml
+  869  sudo aptitude update
+  870  sudo aptitude upgrade
+  871  rcnode
+  872  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+  873  cd robocomp/interfaces/
+  874  cd IDSLs/
+  875  ls
+  876  more Laser.idsl 
+  877  +
+  878  cd ..
+  879  ls
+  880  cd
+  881  cd robotica/
+  882  ls
+  883  s
+  884  ls
+  885  git pull
+  886  ls
+  887  ls -la
+  888  cd mycomponent/
+  889  ls
+  890  ls l-a
+  891  ls -la
+  892  git pull
+  893  make
+  894  ls
+  895  cd cesaryjesus/
+  896  ls
+  897  make
+  898  lw
+  899  ls
+  900  cd bin
+  901  ls
+  902  git rm cesaryjesus 
+  903  git rm -f cesaryjesus 
+  904  cd ..
+  905  ls
+  906  vim mycomponent.cdsl q
+  907  robocompdsl mycomponent.cdsl .
+  908  make
+  909  robocompdsl mycomponent.cdsl .
+  910  make
+  911  robocompdsl mycomponent.cdsl .
+  912  ls
+  913  git rm -r CMakeFiles
+  914  git rm CMakeCache.txt 
+  915  git rm Makefile 
+  916  git rm *.*.new
+  917  git rm *.kdev4
+  918  git rm hola.txt
+  919  cd src
+  920  git rm -r CMakeFiles
+  921  git rm Makefile 
+  922  git rm cmake_install.cmake 
+  923  git rm moc*
+  924  git rm moc_*
+  925  git commit -a
+  926  git push
+  927  glxgears
+  928  cd robo
+  929  cd robocomp/
+  930  cd interfaces/
+  931  ls
+  932  cp GotoPoint.ice IDSLs/GotoPoint.idsl
+  933  cd IDSLs/
+  934  ls
+  935  vim GotoPoint.idsl 
+  936  ls
+  937  vim GotoPoint.idsl 
+  938  rm .GotoPoint.idsl.swp 
+  939  vim GotoPoint.idsl 
+  940  cd ..
+  941  ls
+  942  vim GotoPoint.ice 
+  943  git add IDSLs/GotoPoint.idsl 
+  944  git commit -a
+  945  git push
+  946  git pull
+  947  git push
+  948  ls
+  949  cd robo
+  950  cd robotica/
+  951  ls
+  952  cd mycomponent/
+  953  ls
+  954  mkdir supervisor
+  955  cd supervisor/
+  956  robocompdsl supervisor.cdsl 
+  957  robocompdsl supervisor.cdsl  .
+  958  cd ..
+  959  git add supervisor
+  960  cd ..
+  961  git commit -a
+  962  ls
+  963  cd mycomponent/
+  964  git commit -a
+  965  git push
+  966  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+  967  rcnode
+  968  cd robocomp/files/innermodel/
+  969  rcis simpleworld.xml
+  970  cd robotica/mycomponent/cesaryjesus/    
+  971  bin/cesaryjesus --Ice.Config=etc/config
+  972  cmake .
+  973  make
+  974  bin/cesaryjesus --Ice.Config=etc/config
+  975  make
+  976  bin/cesaryjesus --Ice.Config=etc/config
+  977  make
+  978  bin/cesaryjesus --Ice.Config=etc/config
+  979  make
+  980  bin/cesaryjesus --Ice.Config=etc/config
+  981  cd ..
+  982  git add -A
+  983  git commit -m "va muy bien todo"
+  984  git push -u origin master 
+  985  bin/cesaryjesus --Ice.Config=etc/config
+  986  cd cesaryjesus/
+  987  bin/cesaryjesus --Ice.Config=etc/config
+  988  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+  989  cd robotica/mycomponent/cesaryjesus/
+  990  bin/cesaryjesus --Ice.Config=etc/confi
+  991  bin/cesaryjesus --Ice.Config=etc/config
+  992  cmake .
+  993  make
+  994  bin/cesaryjesus --Ice.Config=etc/config
+  995  make
+  996  bin/cesaryjesus --Ice.Config=etc/config
+  997  make
+  998  bin/cesaryjesus --Ice.Config=etc/config
+  999  make
+ 1000  bin/cesaryjesus --Ice.Config=etc/config
+ 1001  make
+ 1002  bin/cesaryjesus --Ice.Config=etc/config
+ 1003  make
+ 1004  bin/cesaryjesus --Ice.Config=etc/config
+ 1005  make
+ 1006  bin/cesaryjesus --Ice.Config=etc/config
+ 1007  make
+ 1008  bin/cesaryjesus --Ice.Config=etc/config
+ 1009  make
+ 1010  bin/cesaryjesus --Ice.Config=etc/config
+ 1011  make
+ 1012  bin/cesaryjesus --Ice.Config=etc/config
+ 1013  cd robocomp/files/innermodel/
+ 1014  rcis simpleworld.xml
+ 1015  cmake .
+ 1016  rcis simpleworld.xml
+ 1017  pwd
+ 1018  rcis simpleworld.xml
+ 1019  sudo add-apt-repository ppa:colingille/freshlight
+ 1020  sudo apt-get update
+ 1021  sudo apt-get install winusb
+ 1022  sudo add-apt-repository ppa:colingille/freshlight
+ 1023  sudo apt-get install winusb
+ 1024  ls
+ 1025  cd robotica/
+ 1026  ls
+ 1027  git pull
+ 1028  cd mycomponent/
+ 1029  git pull
+ 1030  git pull in ~/robocomp/components/robocomp-robolab
+ 1031  cd ..
+ 1032  cd robocomp/
+ 1033  git pull
+ 1034  ~/robocomp/components/robocomp-robolab/components/apriltagsCompMASTER
+ 1035  cd /components/robocomp-robolab/components/apriltagsCompMASTER
+ 1036  ls
+ 1037  cd components/
+ 1038  cd robocomp-robolab/
+ 1039  cd components/
+ 1040  ls
+ 1041  cd ..
+ 1042  git pull
+ 1043  cd components/
+ 1044  l
+ 1045  ls
+ 1046  cd apriltagsMASTER/
+ 1047  cmake .
+ 1048  make
+ 1049  rcnode
+ 1050  sudo apt-get install libopncv-dev 
+ 1051  sudo apt-get install libopncv
+ 1052  sudo apt-get install libeigen3-dev
+ 1053  sudo apt-get install libopncv
+ 1054  sudo apt-get install libopncv-dev 
+ 1055  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1056  cd robocomp/files/innermodel/
+ 1057  rcis simpleworld.xml
+ 1058  cd robotica/
+ 1059  vf mycomponent/
+ 1060  cd mycomponent/
+ 1061  git pull
+ 1062  cd cesaryjesus/
+ 1063  git pull
+ 1064  cd src/
+ 1065  ls
+ 1066  rm specificworker.cpp
+ 1067  cd ..
+ 1068  git pull
+ 1069  cd ..
+ 1070  git pull
+ 1071  cd robotica/mycomponent/cesaryjesus/  
+ 1072  bin/cesaryjesus --Ice.Config=etc/config
+ 1073  cmake .
+ 1074  make
+ 1075  bin/cesaryjesus --Ice.Config=etc/config
+ 1076  cmake .
+ 1077  make
+ 1078  bin/cesaryjesus --Ice.Config=etc/config
+ 1079  make
+ 1080  bin/cesaryjesus --Ice.Config=etc/config
+ 1081  make
+ 1082  bin/cesaryjesus --Ice.Config=etc/config
+ 1083  make
+ 1084  bin/cesaryjesus --Ice.Config=etc/config
+ 1085  make
+ 1086  bin/cesaryjesus --Ice.Config=etc/config
+ 1087  make
+ 1088  bin/cesaryjesus --Ice.Config=etc/config
+ 1089  make
+ 1090  bin/cesaryjesus --Ice.Config=etc/config
+ 1091  make
+ 1092  bin/cesaryjesus --Ice.Config=etc/config
+ 1093  make
+ 1094  bin/cesaryjesus --Ice.Config=etc/config
+ 1095  make
+ 1096  bin/cesaryjesus --Ice.Config=etc/config
+ 1097  make
+ 1098  bin/cesaryjesus --Ice.Config=etc/config
+ 1099  make
+ 1100  bin/cesaryjesus --Ice.Config=etc/config
+ 1101  make
+ 1102  bin/cesaryjesus --Ice.Config=etc/config
+ 1103  make
+ 1104  bin/cesaryjesus --Ice.Config=etc/config
+ 1105  rcnode
+ 1106  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1107  ls
+ 1108  cd Escritorio/
+ 1109  nano trololo
+ 1110  nano trololo2
+ 1111  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1112  cd robotica/mycomponent/cesaryjesus/  
+ 1113  git pull
+ 1114  bin/cesaryjesus --Ice.Config=etc/config
+ 1115  git pull
+ 1116  cd ..
+ 1117  cd supervisor/ç
+ 1118  cd supervisor/
+ 1119  cmake .
+ 1120  make
+ 1121  cd ..
+ 1122  cd cesaryjesus/
+ 1123  bin/cesaryjesus --Ice.Config=etc/config
+ 1124  git add -A
+ 1125  git commit -m "giroloco"
+ 1126  git push -u origin master 
+ 1127  cd ..
+ 1128  git push -u origin master 
+ 1129  git add -A
+ 1130  git push -u origin master 
+ 1131  git add -A
+ 1132  git commit -m "giroloco"
+ 1133  git push -u origin master 
+ 1134  git pull
+ 1135  git stash
+ 1136  git pull
+ 1137  git add -A
+ 1138  git commit -m "giroloco"
+ 1139  git push -u origin master 
+ 1140  cd robocomp/files/innermodel/
+ 1141  rcis simpleworld.xml
+ 1142  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1143  cd robotica/mycomponent/
+ 1144  ls
+ 1145  nano coordenadas.txt 
+ 1146  cd robotica/mycomponent/cesaryjesus/
+ 1147  bin/cesaryjesus --Ice.Config=etc/config
+ 1148  cd ..
+ 1149  cd supervisorpt/
+ 1150  robocompdsl supervisor.py .
+ 1151  robocompdsl supervisor.cdsl .
+ 1152  bin/supervisorpt --Ice.Config=etc/config
+ 1153  cmake .
+ 1154  make
+ 1155  bin/supervisorpt --Ice.Config=etc/config
+ 1156  cmake .
+ 1157  make
+ 1158  src/supervisor.py 
+ 1159  ls
+ 1160  src/supervisor.py 
+ 1161  bin/cesaryjesus --Ice.Config=etc/config
+ 1162  cd ..
+ 1163  cd cesaryjesus/
+ 1164  bin/cesaryjesus --Ice.Config=etc/config
+ 1165  cd robocomp/files/innermodel/
+ 1166  ls
+ 1167  rcis informatica_plantabaja.xml 
+ 1168  nano informatica_plantabaja.xml 
+ 1169  rcis informatica_plantabaja.xml 
+ 1170  ls
+ 1171  cd robo
+ 1172  cd robotica/
+ 1173  cd mycomponent/supervisor/
+ 1174  nano supervisor.cdsl 
+ 1175  robocompdsl supervisor.cdsl . 
+ 1176  cd ..
+ 1177  nano coordenadas.txt
+ 1178  rcnode
+ 1179  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1180  cd robotica/mycomponent/supervisorpt/
+ 1181  git add -A
+ 1182  git commit -m "piton"
+ 1183  git push -u origin master 
+ 1184  scp salabeta2.local 
+ 1185  scp 158.49.227.169 
+ 1186  scp 158.49.227.169 home/puntos/
+ 1187  sudo apt-get install openssh-server
+ 1188  scp 158.49.227.169 
+ 1189  scp root@salabeta '/home/salabeta/robotica/mycomponent/coordenadas 2.txt' home\puntos
+ 1190  scp root@salabeta /home/salabeta/robotica/mycomponent/coordenadas 2.txt home/puntos
+ 1191  scp salabeta@salabeta2 /home/salabeta/robotica/mycomponent/coordenadas 2.txt home/puntos
+ 1192  scp salabeta@salabeta2 /home/salabeta/robotica/mycomponent/coordenadas 2.txt home/punto
+ 1193  scp salabeta@salabeta2 /home/salabeta/robotica/mycomponent/coordenadas2.txt home/punto
+ 1194  scp salabeta@salabeta2 /home/salabeta/robotica/mycomponent/coordenadas2.txt /home/punto
+ 1195  rcnode
+ 1196  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1197  ls
+ 1198  cd robotica/
+ 1199  cd mycomponent/supervisor
+ 1200  git pull
+ 1201  cd ..
+ 1202  cd 
+ 1203  cd robotica/
+ 1204  cd s
+ 1205  cd mycomponent/supervisor
+ 1206  robocompdsl supervisor.cdsl .
+ 1207  cmake .
+ 1208  make
+ 1209  cd ..
+ 1210  git pull
+ 1211  cd mycomponent/
+ 1212  git pull
+ 1213  git stash
+ 1214  git pull
+ 1215  rm supervisor
+ 1216  cd ,,
+ 1217  cd ..
+ 1218  rm -r mycomponent/supervisor
+ 1219  cd mycomponent/
+ 1220  git pull
+ 1221  cd supervisor
+ 1222  cmake .
+ 1223  rm CMakeCache.txt 
+ 1224  cmake .
+ 1225  ls
+ 1226  git pull
+ 1227  cd ..
+ 1228  git pull
+ 1229  cd supervisor
+ 1230  git pull
+ 1231  cd ..
+ 1232  cd supervisorpt/
+ 1233  git add -A
+ 1234  git commit -m "wololo"
+ 1235  git push -u origin master 
+ 1236  cd ..
+ 1237  git puyll
+ 1238  git pull
+ 1239  cd ..
+ 1240  git pull
+ 1241  cd mycomponent/
+ 1242  git pull
+ 1243  rm -m mycomponent
+ 1244  cd supervisor
+ 1245  git stash
+ 1246  cd ..
+ 1247  rm -rm mycomponent/
+ 1248  sudo rm -rm mycomponent/
+ 1249  sudo rm -r mycomponent/
+ 1250  ls
+ 1251  git clone https://github.com/cesargs1989/mycomponent.git
+ 1252  cd ..
+ 1253  ls
+ 1254  cd ..
+ 1255  ls
+ 1256  sudo etc/
+ 1257  sudo etc
+ 1258  cd  etc
+ 1259  ls
+ 1260  cd ..
+ 1261  sudo nano etc/hostname 
+ 1262  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1263  cd robotica/mycomponent/
+ 1264  git pull
+ 1265  cd supervisor
+ 1266  cmake .
+ 1267  rm CMakeCache.txt 
+ 1268  cmake .
+ 1269  make
+ 1270  robocompdsl supervisor.cdsl .
+ 1271  cmake .
+ 1272  make 
+ 1273  cmake .
+ 1274  rm CMakeCache.txt ç
+ 1275  rm CMakeCache.txt 
+ 1276  ls
+ 1277  cmake .
+ 1278  make 
+ 1279  robocompdsl supervisor.cdsl .
+ 1280  cmake .
+ 1281  make 
+ 1282  cd ..
+ 1283  cd cesaryjesus/
+ 1284  cmake .
+ 1285  make 
+ 1286  cd ..
+ 1287  cd supervisor
+ 1288  robocompdsl supervisor.cdsl .
+ 1289  cmake .
+ 1290  ls
+ 1291  robocompdsl supervisor.cdsl .
+ 1292  cmake .
+ 1293  make 
+ 1294  cmake .
+ 1295  make
+ 1296  nano supervisor.cdsl
+ 1297  robocompdsl supervisor.cdsl .
+ 1298  make
+ 1299  cmake .
+ 1300  make
+ 1301  cd ../..
+ 1302  rm -r mycomponent/
+ 1303  sudo rm -r mycomponent/
+ 1304  git clone https://github.com/cesargs1989/mycomponent.git
+ 1305  cd mycomponent/supervisor
+ 1306  cmake .
+ 1307  rm CMakeCache.txt 
+ 1308  ks
+ 1309  ls
+ 1310  make
+ 1311  cmake .
+ 1312  make
+ 1313  robocompdsl supervisor.cdsl .
+ 1314  cmake .
+ 1315  make
+ 1316  ls
+ 1317  rm CMakeLists.txt CMakeCache.txt 
+ 1318  robocompdsl supervisor.cdsl .
+ 1319  cmake .
+ 1320  make
+ 1321  ls
+ 1322  cd src/
+ 1323  ls
+ 1324  cd CMakeFiles/
+ 1325  ls
+ 1326  cd ..
+ 1327  rm -r CMakeFiles/
+ 1328  cd ..
+ 1329  robocompdsl supervisor.cdsl .
+ 1330  cmake .
+ 1331  make
+ 1332  cmake .
+ 1333  make
+ 1334  robocompdsl supervisor.cdsl .
+ 1335  cmake .
+ 1336  make
+ 1337  robocompdsl supervisor.cdsl .
+ 1338  make .j5
+ 1339  make -j5
+ 1340  cmake .
+ 1341  make
+ 1342  robocompdsl supervisor.cdsl .
+ 1343  cmake .
+ 1344  make
+ 1345  cd  robocomp/
+ 1346  git pull
+ 1347  cmake .
+ 1348  make
+ 1349  ls
+ 1350  cd c
+ 1351  cd components/
+ 1352  ls
+ 1353  cd robocomp-robolab/
+ 1354  ls
+ 1355  cd components/
+ 1356  ls
+ 1357  cd delfos/
+ 1358  ls
+ 1359  cd ,,
+ 1360  cd..
+ 1361  cd ..
+ 1362  cd ,,
+ 1363  cd ..
+ 1364  ls
+ 1365  cd ..
+ 1366  ls
+ 1367  cd files/
+ 1368  ls
+ 1369  cd ..
+ 1370  ks
+ 1371  ls
+ 1372  cd interfaces/
+ 1373  ls
+ 1374  nano GotoPoint.ice
+ 1375  make
+ 1376  cd make
+ 1377  cmake .
+ 1378  cd ..
+ 1379  ls
+ 1380  cmake .
+ 1381  make
+ 1382  LS
+ 1383  ls
+ 1384  cd interfaces/
+ 1385  cd ..
+ 1386  cd files/
+ 1387  ls
+ 1388  cd ..
+ 1389  cd interfaces/
+ 1390  ls
+ 1391  update
+ 1392  cat GotoPoint.ice 
+ 1393  cd IDSLs/
+ 1394  ls
+ 1395  cat GotoPoint.idsl 
+ 1396  cd ..
+ 1397  cmake .
+ 1398  make
+ 1399  cd /opt
+ 1400  ls
+ 1401  cd robocomp/
+ 1402  cd interfaces/
+ 1403  ls
+ 1404  more GotoPoint.ice 
+ 1405  cd
+ 1406  cd robo
+ 1407  cd robocomp/interfaces/
+ 1408  more GotoPoint.ice 
+ 1409  cd ..
+ 1410  sudo make install
+ 1411  cd /opt
+ 1412  cd robocomp/interfaces/
+ 1413  more GotoPoint.ice 
+ 1414  cd /opt
+ 1415  more GotoPoint.ice 
+ 1416  ls
+ 1417  more GotoPoint.ice 
+ 1418  ls
+ 1419  cd robocomp/
+ 1420  more GotoPoint.ice 
+ 1421  cd robocomp/interfaces/
+ 1422  ls
+ 1423  cd interfaces/
+ 1424  ls
+ 1425  more GotoPoint.ice 
+ 1426  cd ..
+ 1427  sudo make install
+ 1428  cd ..
+ 1429  sudo make install
+ 1430  cd ..
+ 1431  ls
+ 1432  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1433  cd robocomp/files/innermodel/
+ 1434  ls
+ 1435  rcis informatica_plantabaja.xml 
+ 1436  rcis informatica_plantabaja.xml
+ 1437  cd robo
+ 1438  cd /opt/
+ 1439  ls
+ 1440  cd robocomp/
+ 1441  ls
+ 1442  cd interfaces/
+ 1443  ls
+ 1444  more GotoPoint.ice 
+ 1445  sudo make install
+ 1446  cd
+ 1447  cd robocomp/
+ 1448  sudo make install
+ 1449  sudo vim /etc/hosts
+ 1450  sudo vim /etc/hostname
+ 1451  hostname 
+ 1452  man hostname
+ 1453  man hostname -f
+ 1454  sudo hostname -f
+ 1455  sudo make install
+ 1456  cd robotica/mycomponent/cesaryjesus/
+ 1457  bin/cesaryjesus --Ice.Config=etc/config
+ 1458  cd ..
+ 1459  ls
+ 1460  cd supervisor
+ 1461  ls
+ 1462  make
+ 1463  make clean
+ 1464  rm CMakeCache.txt 
+ 1465  cmkae .
+ 1466  mkae
+ 1467  make
+ 1468  cd ..
+ 1469  cd robotica/mycomponent/cesaryjesus/ 
+ 1470  cd cesaryjesus/
+ 1471  bin/cesaryjesus --Ice.Config=etc/config
+ 1472  rcnode
+ 1473  cd robotica/mycomponent/
+ 1474  cd supervisor
+ 1475  ls
+ 1476  cd bin
+ 1477  ñs
+ 1478  ls
+ 1479  bin/supervisor --Ice.Config=etc/config
+ 1480  cd ..
+ 1481  bin/supervisor --Ice.Config=etc/config
+ 1482  cd ..
+ 1483  cd Descargas/
+ 1484  cd ..
+ 1485  cd Escritorio/
+ 1486  nano fondo
+ 1487  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1488  cd robotica/mycomponent/supervisor
+ 1489  bin/cesaryjesus --Ice.Config=etc/config
+ 1490  bin/supervisor --Ice.Config=etc/config
+ 1491  make
+ 1492  rm CMakeCache.txt 
+ 1493  cmake .
+ 1494  make
+ 1495  bin/supervisor --Ice.Config=etc/config
+ 1496  cd /home/
+ 1497  ls
+ 1498  cd salabeta/
+ 1499  ls
+ 1500  pwd
+ 1501  cd ..
+ 1502  pwd
+ 1503  cd ..
+ 1504  pwd
+ 1505  cd /home/
+ 1506  ls
+ 1507  cd ..
+ 1508  cd robotica/mycomponent/supervisor
+ 1509  ls
+ 1510  cd ..
+ 1511  ls
+ 1512  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1513  cd robotica/mycomponent/supervisor
+ 1514  cmake .
+ 1515  make
+ 1516  bin/supervisor --Ice.Config=etc/config
+ 1517  cd robotica/mycomponent/cesaryjesus/
+ 1518  make
+ 1519  cd ,,
+ 1520  cd ..
+ 1521  git pull
+ 1522  cd ..
+ 1523  cd robocomp/files/innermodel/
+ 1524  rcis informatica_plantabaja.xml 
+ 1525  cd robotica/mycomponent/cesaryjesus/
+ 1526  bin/cesaryjesus --Ice.Config=etc/config
+ 1527  rcnode
+ 1528  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1529  ls
+ 1530  cd Documentos/
+ 1531  ls
+ 1532  nano prueba.c
+ 1533  gcc -S prueba.c 
+ 1534  gcc -C prueba.s -o trololo
+ 1535  gcc -C prueba.s -o trololo.c
+ 1536  gcc  prueba.s -o trololo.c
+ 1537  gcc  -C prueba.s 
+ 1538  gcc  prueba.s 
+ 1539  sudo apt-get update
+ 1540  sudo apt-get upgrade
+ 1541  top
+ 1542  sudo apt-get upgrade
+ 1543  sudo apt-get update
+ 1544  sudo aptitude update
+ 1545  sudo aptitude upgrade
+ 1546  sudo aptitude update
+ 1547  sudo aptitude upgrade
+ 1548  sudo apt-get upgrade
+ 1549  cd Descargas/
+ 1550  LS
+ 1551  la
+ 1552  mv Código\ inicial\ del\ ejemplo ejemplo.tar
+ 1553  tar -xvf ejemplo.tar 
+ 1554  ls
+ 1555  cd qtEjemplo1/
+ 1556  ls
+ 1557  cd ejemplo1/
+ 1558  ls
+ 1559  cmake .
+ 1560  make
+ 1561  ls
+ 1562  ./ejemplo1 
+ 1563  top
+ 1564  kill -9 1241
+ 1565  sudo kill -9 1241
+ 1566  make
+ 1567  make
+ 1568  ls
+ 1569  cd robocomp/
+ 1570  cd components/
+ 1571  mkdir roboticaGrupo
+ 1572  cd robo
+ 1573  cd roboticaGrupo/
+ 1574  mkdir chocachoca
+ 1575  robocompsl
+ 1576  robocompdsl
+ 1577  cd chocachoca/
+ 1578  robocompdsl
+ 1579  robocompdsl chocachoca.cdsl
+ 1580  ls
+ 1581  gedit chocachoca.cdsl 
+ 1582  robocompdsl chocachoca.cdsl .
+ 1583  ls
+ 1584  cd ..
+ 1585  git clone https://github.com/vzccristian/robotica_grupo.git
+ 1586  cp roboticaGrupo/ robotica_grupo/
+ 1587  ls
+ 1588  git pull
+ 1589  ls
+ 1590  git clone https://github.com/vzccristian/roboticaCC
+ 1591  rm -fR robotica_grupo/
+ 1592  ls
+ 1593  cp -R roboticaGrupo/
+ 1594  cp -R roboticaGrupo/* roboticaCC
+ 1595  cd roboticaCC
+ 1596  ls
+ 1597  git pull
+ 1598  git add *
+ 1599  ls
+ 1600  git commit
+ 1601  git push
+ 1602  cd ..
+ 1603  cd roboticaGrupo/
+ 1604  ls
+ 1605  cd chocachoca/
+ 1606  ls
+ 1607  cmake .
+ 1608  make -j
+ 1609  bin/chocachoca 
+ 1610  bin/chocachoca etc/config
+ 1611  nano etc/config
+ 1612  bin/chocachoca etc/config
+ 1613  make -j
+ 1614  bin/chocachoca etc/config
+ 1615  make -j
+ 1616  bin/chocachoca etc/config
+ 1617  make -j
+ 1618  bin/chocachoca etc/config
+ 1619  git commit -a
+ 1620  cd ..
+ 1621  cp -R roboticaGrupo/* roboticaCC
+ 1622  git commit
+ 1623  cd roboticaCC
+ 1624  git commit
+ 1625  ls
+ 1626  cd chocachoca/
+ 1627  ls
+ 1628  cd ..
+ 1629  git add *
+ 1630  git commit
+ 1631  git push
+ 1632  exit
+ 1633  kdevelop! -s "{5e06544a-51a7-4fa9-9bad-dc6d6f8daea4}"
+ 1634  cd robocomp/
+ 1635  git branch
+ 1636  cd files/innermodel/
+ 1637  ls
+ 1638  rcis simpleworld.xml 
+ 1639  cd robocomp/
+ 1640  cd interfaces/IDSLs/
+ 1641  ls
+ 1642  ls
+ 1643  mkdir contador_cristian
+ 1644  cd contador_cristian/
+ 1645  git clone https://github.com/vzccristian/robotica.git
+ 1646  cd robotica/
+ 1647  ls
+ 1648  cd ejemplo3/
+ 1649  ./ejemplo1 
+ 1650  dmidecode
+ 1651  sudo dmidecode -u
+ 1652  sudo dmidecode 
+ 1653  sudo dmidecode | grep "base"
+ 1654  sudo dmidecode | grep "board"
+ 1655  ./ejemplo1 
+ 1656  cd robocomp/
+ 1657  cd components/
+ 1658  ls
+ 1659  cd robocomp-robolab/
+ 1660  ls
+ 1661  cd components/
+ 1662  ls
+ 1663  cd joystickComp/
+ 1664  ls bin
+ 1665  ls
+ 1666  cd bin
+ 1667  ls
+ 1668  ./joystickComp 
+ 1669  cd ..
+ 1670  bin/joystickComp etc/config bin/startJ
+ 1671  bin/joystickComp etc/config bin/startJoyStick.sh 
+ 1672  bin/joystickComp etc/config
+ 1673  bin/joystickComp etc/config 
+ 1674  cd bin
+ 1675  ./start
+ 1676  ls
+ 1677  ./startJoyStick.sh 
+ 1678  sudo dmidecode > dmidecode.txt 
+ 1679  sudo dmidecode -t 4> dmidecode.txt 
+ 1680  sudo dmidecode -t4 > dmidecode.txt 
+ 1681  sudo dmidecode --help
+ 1682  sudo dmidecode -t3
+ 1683  sudo dmidecode -t2
+ 1684  sudo dmidecode -t1
+ 1685  sudo dmidecode -t5
+ 1686  free
+ 1687  sudo dmidecode memory
+ 1688  sudo dmidecode -t6
+ 1689  sudo dmidecode -t7
+ 1690  ls
+ 1691  mkdir contador_cristina
+ 1692  cd contador_cristi
+ 1693  cd contador_cristina
+ 1694  ls
+ 1695  git clone https://github.com/CristinaMG/Robotica.git
+ 1696  ls
+ 1697  cd Robotica/
+ 1698  ls
+ 1699  cd ejemplo1/
+ 1700  ls
+ 1701  ./ejemplo1 
+ 1702  sudo dmidecode -t6
+ 1703  sudo dmidecode -t5
+ 1704  ./ejemplo1 
+ 1705  cd 
+ 1706  ls
+ 1707  git clone https://github.com/vzccristian/robotica_grupo
+ 1708  cd robocomp/
+ 1709  ls
+ 1710  cd interfaces/
+ 1711  ls
+ 1712  cd ..
+ 1713  ls
+ 1714  cd components/
+ 1715  ls
+ 1716  history | grep joystick
+ 1717  ls
+ 1718  cd roboticaGrupo/
+ 1719  ls
+ 1720  cd ..
+ 1721  cd  robocomp-robolab/
+ 1722  ls
+ 1723  cd components/
+ 1724  ls
+ 1725  cd joystickComp/
+ 1726  bin/joystickComp etc/config
+ 1727  history
+ 1728  ls
+ 1729  cd bin/
+ 1730  ./startJoyStick.sh 
+ 1731  history
+ 1732  history > ~
+ 1733  history > ~/historial.txt

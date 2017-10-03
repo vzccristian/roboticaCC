@@ -265,6 +265,33 @@ Laser.cpp.s:
 	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/Laser.cpp.s
 .PHONY : Laser.cpp.s
 
+RCISMousePicker.o: RCISMousePicker.cpp.o
+
+.PHONY : RCISMousePicker.o
+
+# target to build an object file
+RCISMousePicker.cpp.o:
+	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o
+.PHONY : RCISMousePicker.cpp.o
+
+RCISMousePicker.i: RCISMousePicker.cpp.i
+
+.PHONY : RCISMousePicker.i
+
+# target to preprocess a source file
+RCISMousePicker.cpp.i:
+	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.i
+.PHONY : RCISMousePicker.cpp.i
+
+RCISMousePicker.s: RCISMousePicker.cpp.s
+
+.PHONY : RCISMousePicker.s
+
+# target to generate assembly for a file
+RCISMousePicker.cpp.s:
+	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.s
+.PHONY : RCISMousePicker.cpp.s
+
 chocachoca_automoc.o: chocachoca_automoc.cpp.o
 
 .PHONY : chocachoca_automoc.o
@@ -454,6 +481,33 @@ main.cpp.s:
 	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+rcismousepickerI.o: rcismousepickerI.cpp.o
+
+.PHONY : rcismousepickerI.o
+
+# target to build an object file
+rcismousepickerI.cpp.o:
+	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o
+.PHONY : rcismousepickerI.cpp.o
+
+rcismousepickerI.i: rcismousepickerI.cpp.i
+
+.PHONY : rcismousepickerI.i
+
+# target to preprocess a source file
+rcismousepickerI.cpp.i:
+	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.i
+.PHONY : rcismousepickerI.cpp.i
+
+rcismousepickerI.s: rcismousepickerI.cpp.s
+
+.PHONY : rcismousepickerI.s
+
+# target to generate assembly for a file
+rcismousepickerI.cpp.s:
+	cd /home/salabeta/robocomp/components/roboticaGrupo/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.s
+.PHONY : rcismousepickerI.cpp.s
+
 specificmonitor.o: specificmonitor.cpp.o
 
 .PHONY : specificmonitor.o
@@ -531,6 +585,9 @@ help:
 	@echo "... Laser.o"
 	@echo "... Laser.i"
 	@echo "... Laser.s"
+	@echo "... RCISMousePicker.o"
+	@echo "... RCISMousePicker.i"
+	@echo "... RCISMousePicker.s"
 	@echo "... chocachoca_automoc.o"
 	@echo "... chocachoca_automoc.i"
 	@echo "... chocachoca_automoc.s"
@@ -552,6 +609,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... rcismousepickerI.o"
+	@echo "... rcismousepickerI.i"
+	@echo "... rcismousepickerI.s"
 	@echo "... specificmonitor.o"
 	@echo "... specificmonitor.i"
 	@echo "... specificmonitor.s"

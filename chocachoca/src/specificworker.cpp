@@ -23,7 +23,7 @@
 */
 SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx)
 {
-
+ 
 }
 
 /**
@@ -38,7 +38,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
 
 
-
+	//innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/simpleworld.xml");
 	
 	timer.start(Period);
 	
@@ -70,6 +70,12 @@ void SpecificWorker::compute()
       usleep(rand()%(1500000-100000 + 1) + 100000);
     } else  {
     differentialrobot_proxy->setSpeedBase(1500, 0);
+  
+  
+  
+  
+  
+  
   }
   
   
@@ -93,6 +99,12 @@ void SpecificWorker::compute()
 }
 
 
+
+void SpecificWorker::setPick(const Pick &myPick)
+{
+  qDebug() << myPick.x << myPick.z ;
+  
+}
 
 
 
