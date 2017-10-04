@@ -23,7 +23,7 @@
 */
 SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx)
 {
- 
+    mutex = new QMutex(QMutex::Recursive);
 }
 
 /**
@@ -38,17 +38,16 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
 
 
-	//innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/simpleworld.xml");
-	
-	timer.start(Period);
-	
+	innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/simpleworld.xml");
 
+	timer.start(Period);
 	return true;
 }
 
 void SpecificWorker::compute()
 {
- 
+    
+/* 
   float distumbral = 300;
   float angleumbral = 0.79;
   float rotacion=0.6;
@@ -65,45 +64,44 @@ void SpecificWorker::compute()
     if (data[25].dist < distumbral) {
       qDebug()<< "Valido: "<<data[25].dist<<data[25].angle;
       if ( (rand()%(10)) % 2 != 0)
-	rotacion=rotacion*(-1);
-      differentialrobot_proxy->setSpeedBase(5, rotacion);
+        rotacion=rotacion*(-1);
+        differentialrobot_proxy->setSpeedBase(5, rotacion);
       usleep(rand()%(1500000-100000 + 1) + 100000);
     } else  {
     differentialrobot_proxy->setSpeedBase(1500, 0);
+ }*/
   
-  
-  
-  
-  
-  
-  }
-  
-  
-  
-  
-  //Girar
-  //differentialrobot_proxy->setSpeedBase(0, 5);
-  
-//   for(auto h: data)
-//     qDebug() << h.angle << h.dist;
-// 	try
-// 	{
-// 		camera_proxy->getYImage(0,img, cState, bState);
-// 		memcpy(image_gray.data, &img[0], m_width*m_height*sizeof(uchar));
-// 		searchTags(image_gray);
-// 	}
-// 	catch(const Ice::Exception &e)
-// 	{
-// 		std::cout << "Error reading from Camera" << e << std::endl;
-// 	}
+// LEER DATOS
+   if(!target.isEmpty()) {
+    float x;
+    float z;
+    mutex->lock();
+    target.extract(x,z); 
+  //  qDebug() <<x << z ;
+    mutex->unlock();
+    
+// MOVER ROBOT
+    RoboCompDifferentialRobot::TBaseState bState;
+    differentialrobot_proxy->getBaseState(bState);
+    
+        differentialrobot_proxy->setSpeedBase(100, 0);
+        usleep(rand()%(1500000-100000 + 1) + 100000);
+            qDebug() << "No vacio: "<< bState.z << bState.correctedZ;
+    }
+    
+    
+
 }
 
 
 
 void SpecificWorker::setPick(const Pick &myPick)
 {
+  mutex->lock();
   qDebug() << myPick.x << myPick.z ;
-  
+  target.insert(myPick.x,myPick.z); 
+  mutex->unlock();
+
 }
 
 
