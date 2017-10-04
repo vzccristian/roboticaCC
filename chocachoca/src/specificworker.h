@@ -32,6 +32,7 @@
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
+#include <math.h>       /* sqrt */
 
 class SpecificWorker : public GenericWorker
 {
@@ -41,7 +42,7 @@ public:
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 	void setPick(const Pick &myPick);      
-    QMutex *mutex;
+	bool noTarget(float x, float z); //True si hemos llegado al objetivo
 	
 
 public slots:
@@ -52,28 +53,30 @@ private:
 
     struct Target
     {
-    private:
+	QMutex mutex;
         float x,z;
         bool empty;
-    public:
         Target(){
             x=0;
             z=0;
             empty=true;
         };
         bool insert(float _x, float _z){
+	    QMutexLocker ml(&mutex);
             x=_x;
             z=_z;
             empty=false;
             return true;
         };
         bool extract(float &_x, float &_z) {
+	    QMutexLocker ml(&mutex);
             _x=x;
             _z=z;
             empty=true;
             return true;
         };
         bool isEmpty() {
+	    QMutexLocker ml(&mutex);
             return empty;
         };
     };

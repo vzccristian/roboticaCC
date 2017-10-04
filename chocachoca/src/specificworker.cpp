@@ -23,7 +23,7 @@
 */
 SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx)
 {
-    mutex = new QMutex(QMutex::Recursive);
+
 }
 
 /**
@@ -47,48 +47,62 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 void SpecificWorker::compute()
 {
     
-/* 
-  float distumbral = 300;
-  float angleumbral = 0.79;
-  float rotacion=0.6;
-  bool valido=false;
-  
-  //Tomar los datos del laser
-  TLaserData data = laser_proxy->getLaserData(); 
-  //Ordenamos el array de menor a mayor
-  std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
-  
-  for(auto h: data)
-    qDebug() << h.angle << h.dist;
-  
-    if (data[25].dist < distumbral) {
-      qDebug()<< "Valido: "<<data[25].dist<<data[25].angle;
-      if ( (rand()%(10)) % 2 != 0)
-        rotacion=rotacion*(-1);
-        differentialrobot_proxy->setSpeedBase(5, rotacion);
-      usleep(rand()%(1500000-100000 + 1) + 100000);
-    } else  {
-    differentialrobot_proxy->setSpeedBase(1500, 0);
- }*/
-  
-// LEER DATOS
-   if(!target.isEmpty()) {
-    float x;
-    float z;
-    mutex->lock();
-    target.extract(x,z); 
-  //  qDebug() <<x << z ;
-    mutex->unlock();
-    
-// MOVER ROBOT
-    RoboCompDifferentialRobot::TBaseState bState;
-    differentialrobot_proxy->getBaseState(bState);
-    
-        differentialrobot_proxy->setSpeedBase(100, 0);
-        usleep(rand()%(1500000-100000 + 1) + 100000);
-            qDebug() << "No vacio: "<< bState.z << bState.correctedZ;
+ 
+//   float distumbral = 300;
+//   float angleumbral = 0.79;
+//   float rotacion=0.6;
+//   bool valido=false;
+//   
+//   //Tomar los datos del laser
+//   TLaserData data = laser_proxy->getLaserData(); 
+//   //Ordenamos el array de menor a mayor
+//   std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
+//   
+//   for(auto h: data)
+//     qDebug() << h.angle << h.dist;
+//   
+//     if (data[25].dist < distumbral) {
+//       qDebug()<< "Valido: "<<data[25].dist<<data[25].angle;
+//       if ( (rand()%(10)) % 2 != 0)
+//         rotacion=rotacion*(-1);
+//         differentialrobot_proxy->setSpeedBase(5, rotacion);
+//       usleep(rand()%(1500000-100000 + 1) + 100000);
+//     } else  {
+//     differentialrobot_proxy->setSpeedBase(1500, 0);
+//  }
+
+  //TOMAR DATOS DEL MUNDO (MUAHAHA)
+  RoboCompDifferentialRobot::TBaseState bState;
+  differentialrobot_proxy->getBaseState(bState);
+  innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
+
+  // LEER DATOS
+   if(!target.isEmpty()) { //EXISTE OBJETIVO
+     if(noTarget(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
+	//VARIABLES 
+	float xTarget,zTarget,rot,linealSpeed,angleSpeed,dist;
+	target.extract(xTarget,zTarget); //Tomamos las coord del pick
+	
+	innermodel->transform("robot",QVec::vec3(xTarget,0,zTarget),"world"); //Desplaza el eje de coord del mundo al robot
+	
+	dist=sqrt(pow(xTarget-bState.x,2)+pow(zTarget-bState.z,2)); //Calculamos la distancia entre los puntos
+	if (dist>=400) 
+	  linealSpeed=400;
+	else
+	  linealSpeed=100;
+	
+	rot=atan2(bState.x,bState.z); 
+	if (rot>0.6)
+	  angleSpeed=0.6;
+	else
+	  angleSpeed=0.2;
+	  
+	differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
+	usleep(rand()%(1500000-10000 + 1) + 100000);
+	
+        differentialrobot_proxy->setSpeedBase(0, 0); //Parar
     }
-    
+   }
     
 
 }
@@ -97,14 +111,13 @@ void SpecificWorker::compute()
 
 void SpecificWorker::setPick(const Pick &myPick)
 {
-  mutex->lock();
   qDebug() << myPick.x << myPick.z ;
   target.insert(myPick.x,myPick.z); 
-  mutex->unlock();
 
 }
 
 
 
-
-
+void SpecificWorker::noTarget(float x, float z){
+  if(
+}
