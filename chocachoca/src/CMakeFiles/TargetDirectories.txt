@@ -1,0 +1,8 @@
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/install.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/list_install_components.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/rebuild_cache.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/install/strip.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/install/local.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/edit_cache.dir
+/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir

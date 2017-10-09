@@ -46,6 +46,53 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 
 void SpecificWorker::compute()
 {
+    //TOMAR DATOS DEL MUNDO (MUAHAHA)
+    RoboCompDifferentialRobot::TBaseState bState;
+    differentialrobot_proxy->getBaseState(bState);
+    
+    //ACTUALIZAR ARBOL
+    innermodel->updateTransformValues("base", bState.x,0, bState.z,0,bState.alpha, 0 ); 
+
+    if(!target.isEmpty()) { //EXISTE OBJETIVO
+        if(!target.enObjetivo(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
+            //VARIABLES 
+            float dist,linealSpeed,rot,angleSpeed;
+            std::pair<float,float> coord = target.extract(); //Tomamos las coord del pick
+            
+            QVec T = innermodel->transform("base",QVec::vec3(coord.first,0,coord.second),"world"); //Desplaza el eje de coord del mundo al robot
+            
+            dist = T.norm2(); //Calculamos la distancia entre los puntos
+            if (dist>=400) 
+                linealSpeed=400;
+            else
+                linealSpeed=100;
+            
+            rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
+            if (rot>0.6)
+                angleSpeed=0.6;
+            else
+                angleSpeed=0.2;
+            
+            differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
+                
+        }
+        else{ //HEMOS LLEGADO AL OBJETIVO
+            differentialrobot_proxy->setSpeedBase(0, 0); //Parar
+            target.setEmpty(); 
+        }
+    }
+}
+
+
+
+void SpecificWorker::setPick(const Pick &myPick)
+{
+  qDebug() << myPick.x << myPick.z ;
+  target.insert(myPick.x,myPick.z); 
+
+}
+
+
     
  
 //   float distumbral = 300;
@@ -70,54 +117,3 @@ void SpecificWorker::compute()
 //     } else  {
 //     differentialrobot_proxy->setSpeedBase(1500, 0);
 //  }
-
-  //TOMAR DATOS DEL MUNDO (MUAHAHA)
-  RoboCompDifferentialRobot::TBaseState bState;
-  differentialrobot_proxy->getBaseState(bState);
-  innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
-
-  // LEER DATOS
-   if(!target.isEmpty()) { //EXISTE OBJETIVO
-     if(noTarget(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
-	//VARIABLES 
-	float xTarget,zTarget,rot,linealSpeed,angleSpeed,dist;
-	target.extract(xTarget,zTarget); //Tomamos las coord del pick
-	
-	innermodel->transform("robot",QVec::vec3(xTarget,0,zTarget),"world"); //Desplaza el eje de coord del mundo al robot
-	
-	dist=sqrt(pow(xTarget-bState.x,2)+pow(zTarget-bState.z,2)); //Calculamos la distancia entre los puntos
-	if (dist>=400) 
-	  linealSpeed=400;
-	else
-	  linealSpeed=100;
-	
-	rot=atan2(bState.x,bState.z); 
-	if (rot>0.6)
-	  angleSpeed=0.6;
-	else
-	  angleSpeed=0.2;
-	  
-	differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
-	usleep(rand()%(1500000-10000 + 1) + 100000);
-	
-        differentialrobot_proxy->setSpeedBase(0, 0); //Parar
-    }
-   }
-    
-
-}
-
-
-
-void SpecificWorker::setPick(const Pick &myPick)
-{
-  qDebug() << myPick.x << myPick.z ;
-  target.insert(myPick.x,myPick.z); 
-
-}
-
-
-
-void SpecificWorker::noTarget(float x, float z){
-  if(
-}

@@ -4,20 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/Laser.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/genericworker.cpp.o"
-  "/home/salabeta/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/salabeta/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/main.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/main.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/specificworker.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/Laser.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/genericworker.cpp.o"
+  "/home/cristina/robocomp/classes/qlog/qlog.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/home/cristina/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/cristina/robocomp/classes/rapplication/rapplication.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/home/cristina/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/main.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/main.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/specificworker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -43,18 +43,18 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/home/salabeta/robocomp/classes"
-  "/home/salabeta/robocomp/libs"
-  "/home/salabeta/robocomp/interfaces"
+  "/home/cristina/robocomp/classes"
+  "/home/cristina/robocomp/libs"
+  "/home/cristina/robocomp/interfaces"
   "/include"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.h" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.h" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.h" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp"
-  "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.h" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.h" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.h" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/Laser.h" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp"
+  "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.h" "/home/cristina/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp"
   )
 
 

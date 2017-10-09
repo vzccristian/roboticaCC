@@ -19,12 +19,8 @@
 
 /**
        \brief
-       @author authorname
+       @author Cristina Mendoza Gutiérrez y Cristian Vázquez Cordero
 */
-
-
-
-
 
 
 #ifndef SPECIFICWORKER_H
@@ -42,7 +38,6 @@ public:
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 	void setPick(const Pick &myPick);      
-	bool noTarget(float x, float z); //True si hemos llegado al objetivo
 	
 
 public slots:
@@ -53,32 +48,55 @@ private:
 
     struct Target
     {
-	QMutex mutex;
+        QMutex mutex; //Para hacer las operaciones sobre el target atómicas
         float x,z;
         bool empty;
+        
+        //Constructor
         Target(){
-            x=0;
-            z=0;
-            empty=true;
+            x = 0;
+            z = 0;
+            empty = true;
         };
+        
+        //Inserta las coord x y z en el target
         bool insert(float _x, float _z){
-	    QMutexLocker ml(&mutex);
-            x=_x;
-            z=_z;
-            empty=false;
+            QMutexLocker ml(&mutex); //Controla el mutex
+            x = _x;
+            z = _z;
+            empty = false;
             return true;
         };
-        bool extract(float &_x, float &_z) {
-	    QMutexLocker ml(&mutex);
-            _x=x;
-            _z=z;
-            empty=true;
-            return true;
+        
+        //Extrae las coord x y z del target
+        std::pair <float,float> extract() {
+            QMutexLocker ml(&mutex);
+            std::pair <float,float> coor;
+            coor.first=x;
+            coor.second=z;
+            return coor;
         };
+        
+        //Devuelve si el target esta vacio
         bool isEmpty() {
-	    QMutexLocker ml(&mutex);
+            QMutexLocker ml(&mutex);
             return empty;
         };
+        
+        //Pone a vacio el target
+        void setEmpty(){
+            QMutexLocker ml(&mutex);
+            empty =true;
+        }
+        
+        //Devuelve true si el robot ha alcanzado el objetivo
+        bool enObjetivo(float _x, float _z){
+            if(abs(_x - x) < 20 && abs(_z - z) < 20)
+                return true;
+            else
+                return false;
+        }
+            
     };
 	
     Target target;
