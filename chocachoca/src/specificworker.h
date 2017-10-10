@@ -38,7 +38,8 @@ public:
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 	void setPick(const Pick &myPick);      
-	
+	float gauss(float Vrot, float Vx, float h);
+	float sinusoide(float x);
 
 public slots:
 	void compute(); 	
@@ -46,6 +47,8 @@ public slots:
 private:
     InnerModel *innermodel;
 
+    float const V_MAX = 400;
+    
     struct Target
     {
         QMutex mutex; //Para hacer las operaciones sobre el target atómicas
@@ -91,7 +94,7 @@ private:
         
         //Devuelve true si el robot ha alcanzado el objetivo
         bool enObjetivo(float _x, float _z){
-            if(abs(_x - x) < 20 && abs(_z - z) < 20)
+            if(abs(_x - x) < 100 && abs(_z - z) < 100)
                 return true;
             else
                 return false;

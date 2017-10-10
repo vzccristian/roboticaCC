@@ -52,35 +52,42 @@ void SpecificWorker::compute()
     
     //ACTUALIZAR ARBOL
     innermodel->updateTransformValues("base", bState.x,0, bState.z,0,bState.alpha, 0 ); 
-
+    
+    //Tomar los datos del laser
+    TLaserData data = laser_proxy->getLaserData(); 
+    //Ordenamos el array de menor a mayor
+    std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
+    float rotacion;
     if(!target.isEmpty()) { //EXISTE OBJETIVO
         if(!target.enObjetivo(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
-            //VARIABLES 
-            float dist,linealSpeed,rot,angleSpeed;
-            std::pair<float,float> coord = target.extract(); //Tomamos las coord del pick
-            
-            QVec T = innermodel->transform("base",QVec::vec3(coord.first,0,coord.second),"world"); //Desplaza el eje de coord del mundo al robot
-            
-            dist = T.norm2(); //Calculamos la distancia entre los puntos
-            if (dist>=400) 
-                linealSpeed=400;
+	  //VARIABLES 
+	  float dist,linealSpeed,rot,angleSpeed;
+	  std::pair<float,float> coord = target.extract(); //Tomamos las coord del pick
+	  QVec T = innermodel->transform("base",QVec::vec3(coord.first,0,coord.second),"world"); //Desplaza el eje de coord del mundo al robot
+	  dist = T.norm2(); //Calculamos la distancia entre los puntos
+	  rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
+	  
+	  //if (data[25].dist > 300 || dist <= 80) {
+	    
+	    //Calcular velocidad
+	    linealSpeed = V_MAX * gauss(rot,dist, 0.5) * sinusoide(dist);
+
+	    if (rot>0.6)
+              angleSpeed=0.6;
             else
-                linealSpeed=100;
-            
-            rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
-            if (rot>0.6)
-                angleSpeed=0.6;
-            else
-                angleSpeed=0.2;
-            
-            differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
-                
+	      angleSpeed=0.2;
+	      
+	    differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
+	 /*   } else {
+// 	      if ( (rand()%(10)) % 2 != 0)
+// 		rotacion=0.6*(-1);
+	      differentialrobot_proxy->setSpeedBase(5, rot); 
+	    }  */      
+	} else{ //HEMOS LLEGADO AL OBJETIVO 
+	    target.setEmpty(); 
+            differentialrobot_proxy->setSpeedBase(0, 0); //Parar 
         }
-        else{ //HEMOS LLEGADO AL OBJETIVO
-            differentialrobot_proxy->setSpeedBase(0, 0); //Parar
-            target.setEmpty(); 
-        }
-    }
+    } // fin if is empty
 }
 
 
@@ -92,9 +99,16 @@ void SpecificWorker::setPick(const Pick &myPick)
 
 }
 
-
-    
  
+ float SpecificWorker::gauss(float Vrot,float Vx, float h){
+   float lambda = -(pow(Vx,2.0)/log(h));
+   return exp(-pow(Vrot,2.0)/lambda);
+ }
+ 
+ 
+ float SpecificWorker::sinusoide(float x){
+    return (1/(1+exp(-x-0.5)));
+ }
 //   float distumbral = 300;
 //   float angleumbral = 0.79;
 //   float rotacion=0.6;
