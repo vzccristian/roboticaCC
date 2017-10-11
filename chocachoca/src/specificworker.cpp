@@ -23,7 +23,7 @@
 */
 SpecificWorker::SpecificWorker(MapPrx& mprx) : GenericWorker(mprx)
 {
-
+  estado = IDLE;
 }
 
 /**
@@ -57,13 +57,19 @@ void SpecificWorker::compute()
     TLaserData data = laser_proxy->getLaserData(); 
     //Ordenamos el array de menor a mayor
     std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
-    float rotacion;
-    if(!target.isEmpty()) { //EXISTE OBJETIVO
+    
+    switch (estado)  
+      {  
+         case 'IDLE': 
+	    idle();
+            break; 
+         case 'GOTO':  
+	        if(!target.isEmpty()) { //EXISTE OBJETIVO
         if(!target.enObjetivo(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
 	  //VARIABLES 
 	  float dist,linealSpeed,rot,angleSpeed;
-	  std::pair<float,float> coord = target.extract(); //Tomamos las coord del pick
-	  QVec T = innermodel->transform("base",QVec::vec3(coord.first,0,coord.second),"world"); //Desplaza el eje de coord del mundo al robot
+	  std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
+	  QVec T = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
 	  dist = T.norm2(); //Calculamos la distancia entre los puntos
 	  rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
 
@@ -74,15 +80,54 @@ void SpecificWorker::compute()
             angleSpeed=0.6;
           else
 	    angleSpeed=0.2;
-	      
+	    
 	  differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
+	} else{ //Objetivo
+	    target.setEmpty(); 
+            differentialrobot_proxy->setSpeedBase(0, 0); //Parar 
+        } // FIN enObjetivo
+    } // FIN isEmpty
+            break;  
+         default:  
+	   
+	   break;
+      }  
+    
+    
+    
+    if(!target.isEmpty()) { //EXISTE OBJETIVO
+        if(!target.enObjetivo(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
+	  //VARIABLES 
+	  float dist,linealSpeed,rot,angleSpeed;
+	  std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
+	  QVec T = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
+	  dist = T.norm2(); //Calculamos la distancia entre los puntos
+	  rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
 
+	  //Calcular velocidad
+	  linealSpeed = V_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
+
+	  if (rot>0.6)
+            angleSpeed=0.6;
+          else
+	    angleSpeed=0.2;
+	    
+	  differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
 	} else{ //Objetivo
 	    target.setEmpty(); 
             differentialrobot_proxy->setSpeedBase(0, 0); //Parar 
         } // FIN enObjetivo
     } // FIN isEmpty
 }
+
+// --------- MAQUINA DE ESTADOS --------------
+// IDLE
+ void SpecificWorker::idle(){
+   qDebug() << "Estado IDLE";
+   if(!target.isEmpty())
+     estado=GOTO;
+ }
+// ----------------------
 
 
 // GAUSSIANA
@@ -100,12 +145,14 @@ void SpecificWorker::compute()
     return (1/(1+exp(-x-0.5)));
  }
  
- 
-
 void SpecificWorker::setPick(const Pick &myPick)
 {
   qDebug() << myPick.x << myPick.z ;
-  target.insert(myPick.x,myPick.z); 
+  
+  //TOMAR DATOS DEL MUNDO (MUAHAHA)
+  RoboCompDifferentialRobot::TBaseState bState;
+  differentialrobot_proxy->getBaseState(bState);
+  target.insert(myPick.x,myPick.z,bState.x,bState.z); 
 
 }
 

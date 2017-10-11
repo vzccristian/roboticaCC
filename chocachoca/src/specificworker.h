@@ -30,6 +30,9 @@
 #include <innermodel/innermodel.h>
 #include <math.h>       /* sqrt */
 
+using namespace std;
+enum state{ IDLE, GOTO, TURN, SKIRT, END};
+
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
@@ -40,44 +43,55 @@ public:
 	void setPick(const Pick &myPick);      
 	float gauss(float Vrot, float Vx, float h);
 	float sinusoide(float x);
+	void idle();
 
 public slots:
 	void compute(); 	
 
 private:
     InnerModel *innermodel;
-
+    state estado;
     float const V_MAX = 400;
-    
+  
     struct Target
     {
         QMutex mutex; //Para hacer las operaciones sobre el target atómicas
-        float x,z;
+        float xt, zt, xr, zr;
         bool empty;
         
         //Constructor
         Target(){
-            x = 0;
-            z = 0;
+            xt = 0;
+            zt = 0;
+	    xr = 0;
+	    zr = 0;
             empty = true;
         };
         
         //Inserta las coord x y z en el target
-        bool insert(float _x, float _z){
+        bool insert(float _xt, float _zt, float _xr, float _zr ){
             QMutexLocker ml(&mutex); //Controla el mutex
-            x = _x;
-            z = _z;
+            xt = _xt;
+            zt = _zt;
+	    xr = _xr;
+	    zr = _zr;
             empty = false;
             return true;
         };
         
-        //Extrae las coord x y z del target
-        std::pair <float,float> extract() {
+        //Extrae las coord x y z del target y del robot
+        std::pair <std::pair <float,float>,std::pair <float,float>> extract() {
             QMutexLocker ml(&mutex);
-            std::pair <float,float> coor;
-            coor.first=x;
-            coor.second=z;
-            return coor;
+	    std::pair <std::pair <float,float>,std::pair <float,float>> coors;
+            std::pair <float,float> coorsTarget;
+	    std::pair <float,float> coorsRobot;
+	    coorsTarget.first=xt;
+            coorsTarget.second=zt;
+	    coorsRobot.first=xr;
+            coorsRobot.second=zr;
+	    coors.first=coorsTarget;
+	    coors.second=coorsRobot;
+            return coors;
         };
         
         //Devuelve si el target esta vacio
@@ -94,7 +108,7 @@ private:
         
         //Devuelve true si el robot ha alcanzado el objetivo
         bool enObjetivo(float _x, float _z){
-            if(abs(_x - x) < 100 && abs(_z - z) < 100)
+            if(abs(_x - xt) < 100 && abs(_z - zt) < 100)
                 return true;
             else
                 return false;
