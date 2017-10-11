@@ -66,31 +66,41 @@ void SpecificWorker::compute()
 	  QVec T = innermodel->transform("base",QVec::vec3(coord.first,0,coord.second),"world"); //Desplaza el eje de coord del mundo al robot
 	  dist = T.norm2(); //Calculamos la distancia entre los puntos
 	  rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
-	  
-	  //if (data[25].dist > 300 || dist <= 80) {
-	    
-	    //Calcular velocidad
-	    linealSpeed = V_MAX * gauss(rot,dist, 0.5) * sinusoide(dist);
 
-	    if (rot>0.6)
-              angleSpeed=0.6;
-            else
-	      angleSpeed=0.2;
+	  //Calcular velocidad
+	  linealSpeed = V_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
+
+	  if (rot>0.6)
+            angleSpeed=0.6;
+          else
+	    angleSpeed=0.2;
 	      
-	    differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
-	 /*   } else {
-// 	      if ( (rand()%(10)) % 2 != 0)
-// 		rotacion=0.6*(-1);
-	      differentialrobot_proxy->setSpeedBase(5, rot); 
-	    }  */      
-	} else{ //HEMOS LLEGADO AL OBJETIVO 
+	  differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
+
+	} else{ //Objetivo
 	    target.setEmpty(); 
             differentialrobot_proxy->setSpeedBase(0, 0); //Parar 
-        }
-    } // fin if is empty
+        } // FIN enObjetivo
+    } // FIN isEmpty
 }
 
 
+// GAUSSIANA
+// VROT = VELOCIDAD ROTACION
+// VX = ANGULO DE ROTACION
+// H = PARAMETRO DE CORTE EN FUNCION GAUSSIANA
+ float SpecificWorker::gauss(float Vrot,float Vx, float h){
+   float lambda = -(pow(Vx,2.0)/log(h));
+   return exp(-(pow(Vrot,2.0)/lambda));
+ }
+ 
+ 
+// SINUSOIDE
+ float SpecificWorker::sinusoide(float x){
+    return (1/(1+exp(-x-0.5)));
+ }
+ 
+ 
 
 void SpecificWorker::setPick(const Pick &myPick)
 {
@@ -99,16 +109,6 @@ void SpecificWorker::setPick(const Pick &myPick)
 
 }
 
- 
- float SpecificWorker::gauss(float Vrot,float Vx, float h){
-   float lambda = -(pow(Vx,2.0)/log(h));
-   return exp(-pow(Vrot,2.0)/lambda);
- }
- 
- 
- float SpecificWorker::sinusoide(float x){
-    return (1/(1+exp(-x-0.5)));
- }
 //   float distumbral = 300;
 //   float angleumbral = 0.79;
 //   float rotacion=0.6;
