@@ -46,7 +46,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 
 void SpecificWorker::compute()
 {
-    //TOMAR DATOS DEL MUNDO (MUAHAHA)
+    //TOMAR DATOS DEL MUNDO
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
     
@@ -55,39 +55,27 @@ void SpecificWorker::compute()
     
     //Tomar los datos del laser
     TLaserData data = laser_proxy->getLaserData(); 
+    
     //Ordenamos el array de menor a mayor
     std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
     
     switch (estado)  
       {  
-         case 'IDLE': 
-	    idle();
+        case IDLE: 
+            idle();
             break; 
-         case 'GOTO':  
-	        if(!target.isEmpty()) { //EXISTE OBJETIVO
-        if(!target.enObjetivo(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
-	  //VARIABLES 
-	  float dist,linealSpeed,rot,angleSpeed;
-	  std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
-	  QVec T = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
-	  dist = T.norm2(); //Calculamos la distancia entre los puntos
-	  rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
-
-	  //Calcular velocidad
-	  linealSpeed = V_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
-
-	  if (rot>0.6)
-            angleSpeed=0.6;
-          else
-	    angleSpeed=0.2;
-	    
-	  differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
-	} else{ //Objetivo
-	    target.setEmpty(); 
-            differentialrobot_proxy->setSpeedBase(0, 0); //Parar 
-        } // FIN enObjetivo
-    } // FIN isEmpty
+        case GOTO:
+            goToPick(bState);
             break;  
+        case END:
+            end();
+            break;
+        case TURN:
+            turn();
+            break;
+        case SKIRT:
+            skirt();
+            break;
          default:  
 	   
 	   break;
@@ -95,29 +83,7 @@ void SpecificWorker::compute()
     
     
     
-    if(!target.isEmpty()) { //EXISTE OBJETIVO
-        if(!target.enObjetivo(bState.x,bState.z)){ //NO HEMOS LLEGADO AL OBJETIVO
-	  //VARIABLES 
-	  float dist,linealSpeed,rot,angleSpeed;
-	  std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
-	  QVec T = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
-	  dist = T.norm2(); //Calculamos la distancia entre los puntos
-	  rot=atan2(T.x(),T.z()); //Calculamos la rotacion con el arcotangente
 
-	  //Calcular velocidad
-	  linealSpeed = V_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
-
-	  if (rot>0.6)
-            angleSpeed=0.6;
-          else
-	    angleSpeed=0.2;
-	    
-	  differentialrobot_proxy->setSpeedBase(linealSpeed, angleSpeed); //Movimiento
-	} else{ //Objetivo
-	    target.setEmpty(); 
-            differentialrobot_proxy->setSpeedBase(0, 0); //Parar 
-        } // FIN enObjetivo
-    } // FIN isEmpty
 }
 
 // --------- MAQUINA DE ESTADOS --------------
@@ -130,19 +96,76 @@ void SpecificWorker::compute()
 // ----------------------
 
 
+// GO TO PICK
+void SpecificWorker::goToPick(TBaseState bState) {
+    qDebug() << "Estado PICK";
+    if(!target.isEmpty()) { //EXISTE OBJETIVO
+         //VARIABLES
+        float dist,linealSpeed;
+        std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
+        QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
+        dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
+            
+        if(dist > 10 ) { //NO HEMOS LLEGADO AL OBJETIVO
+            float rot,angleSpeed;
+            rot=atan2(Trobot.x(),Trobot.z()); //Calculamos la rotacion con el arcotangente
+            qDebug() << "Distancia:"<<dist<< "Rot:"<<rot;
+            
+//             if (rot>VROT_MAX) 
+//                 angleSpeed=VROT_MAX;
+//             else 
+//                 angleSpeed=0.1;
+            
+            
+            //Calcular velocidad
+            linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
+
+    
+            differentialrobot_proxy->setSpeedBase(linealSpeed, rot); //Movimiento
+            
+        } else 
+            estado=END;
+    } // FIN isEmpty
+
+}
+
+// END
+ void SpecificWorker::end(){
+    qDebug() << "Estado END";
+    target.setEmpty();
+    estado=IDLE;
+    differentialrobot_proxy->setSpeedBase(0, 0); //Parar
+    
+ }
+// ----------------------
+
+// TURN
+ void SpecificWorker::turn(){
+   qDebug() << "Estado TURN";
+ }
+// ----------------------
+
+// SKIRT
+ void SpecificWorker::skirt(){
+   qDebug() << "Estado SKIRT";
+ }
+// ----------------------
+
+// ----------------------
 // GAUSSIANA
 // VROT = VELOCIDAD ROTACION
 // VX = ANGULO DE ROTACION
 // H = PARAMETRO DE CORTE EN FUNCION GAUSSIANA
  float SpecificWorker::gauss(float Vrot,float Vx, float h){
-   float lambda = -(pow(Vx,2.0)/log(h));
-   return exp(-(pow(Vrot,2.0)/lambda));
+    qDebug() << "vRot:" <<Vrot<< "Vx: "<< Vx<<"H:"<<h;
+    float lambda = (-pow(Vx,2.0)/log(h));
+    return exp(-pow(Vrot,2.0)/lambda);
  }
  
  
 // SINUSOIDE
  float SpecificWorker::sinusoide(float x){
-    return (1/(1+exp(-x-0.5)));
+    return 1/(1+exp(-x))-0.5;
  }
  
 void SpecificWorker::setPick(const Pick &myPick)

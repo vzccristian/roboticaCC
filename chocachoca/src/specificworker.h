@@ -44,6 +44,10 @@ public:
 	float gauss(float Vrot, float Vx, float h);
 	float sinusoide(float x);
 	void idle();
+    void goToPick(TBaseState bState);
+    void end();
+    void skirt();
+    void turn();
 
 public slots:
 	void compute(); 	
@@ -51,7 +55,8 @@ public slots:
 private:
     InnerModel *innermodel;
     state estado;
-    float const V_MAX = 400;
+    float const VLIN_MAX = 700;
+    float const VROT_MAX = 0.6;
   
     struct Target
     {
@@ -105,15 +110,7 @@ private:
             QMutexLocker ml(&mutex);
             empty =true;
         }
-        
-        //Devuelve true si el robot ha alcanzado el objetivo
-        bool enObjetivo(float _x, float _z){
-            if(abs(_x - xt) < 100 && abs(_z - zt) < 100)
-                return true;
-            else
-                return false;
-        }
-            
+
     };
 	
     Target target;
