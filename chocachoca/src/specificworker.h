@@ -44,10 +44,10 @@ public:
 	float gauss(float Vrot, float Vx, float h);
 	float sinusoide(float x);
 	void idle();
-    void goToPick(TBaseState bState);
+    float goToPick(TBaseState bState,TLaserData laserData);
     void end();
     void skirt();
-    void turn();
+    void turn(float linealSpeed,TLaserData laserData);
 
 public slots:
 	void compute(); 	

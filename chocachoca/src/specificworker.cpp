@@ -54,24 +54,24 @@ void SpecificWorker::compute()
     innermodel->updateTransformValues("base", bState.x,0, bState.z,0,bState.alpha, 0 ); 
     
     //Tomar los datos del laser
-    TLaserData data = laser_proxy->getLaserData(); 
+    TLaserData laserData = laser_proxy->getLaserData(); 
     
     //Ordenamos el array de menor a mayor
-    std::sort( data.begin()+25, data.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return     a.dist < b.dist; }) ; 
-    
+    std::sort( laserData.begin()+25, laserData.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ; 
+    float linealSpeed=0;
     switch (estado)  
       {  
         case IDLE: 
             idle();
             break; 
         case GOTO:
-            goToPick(bState);
+            linealSpeed=goToPick(bState,laserData);
             break;  
         case END:
             end();
             break;
         case TURN:
-            turn();
+            turn(linealSpeed,laserData);
             break;
         case SKIRT:
             skirt();
@@ -97,7 +97,7 @@ void SpecificWorker::compute()
 
 
 // GO TO PICK
-void SpecificWorker::goToPick(TBaseState bState) {
+float SpecificWorker::goToPick(TBaseState bState,TLaserData laserData) {
     qDebug() << "Estado PICK";
     if(!target.isEmpty()) { //EXISTE OBJETIVO
          //VARIABLES
@@ -105,28 +105,32 @@ void SpecificWorker::goToPick(TBaseState bState) {
         std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
         QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
         dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
-            
-        if(dist > 10 ) { //NO HEMOS LLEGADO AL OBJETIVO
+        if(dist > 25 ) { //NO HEMOS LLEGADO AL OBJETIVO
             float rot,angleSpeed;
             rot=atan2(Trobot.x(),Trobot.z()); //Calculamos la rotacion con el arcotangente
             qDebug() << "Distancia:"<<dist<< "Rot:"<<rot;
-            
-//             if (rot>VROT_MAX) 
-//                 angleSpeed=VROT_MAX;
-//             else 
-//                 angleSpeed=0.1;
-            
-            
             //Calcular velocidad
             linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
-
-    
-            differentialrobot_proxy->setSpeedBase(linealSpeed, rot); //Movimiento
-            
+            if (laserData[25].dist<200) {  //400 tiene de ancho - 270 para no tocar nunca.
+                estado=TURN;
+                return linealSpeed;
+            } else
+                differentialrobot_proxy->setSpeedBase(linealSpeed, rot); //Movimiento
+            //HAY QUE TENER EN CUENTA DOS "DISTANCIAS". La distancia con el frontal para cuando hay que detectar obstaculos
+                // y la distancia con los laterales a la hora de girar solamente.
+                
+                
+//             if (rot<0.2) {
+//                 //COMPROBAMOS SI HAY OBSTACULO
+//                
+//                 else
+//                     differentialrobot_proxy->setSpeedBase(linealSpeed, rot); //Movimiento
+//             } else
+//                 differentialrobot_proxy->setSpeedBase(linealSpeed, rot); //Movimiento
         } else 
             estado=END;
     } // FIN isEmpty
-
+return 0;
 }
 
 // END
@@ -140,8 +144,9 @@ void SpecificWorker::goToPick(TBaseState bState) {
 // ----------------------
 
 // TURN
- void SpecificWorker::turn(){
+ void SpecificWorker::turn(float linealSpeed, TLaserData laserData){
    qDebug() << "Estado TURN";
+   differentialrobot_proxy->setSpeedBase(0, 0); //Parar
  }
 // ----------------------
 
