@@ -55,7 +55,14 @@ void SpecificWorker::compute()
     
     //Tomar los datos del laser
     TLaserData laserData = laser_proxy->getLaserData(); 
-    
+//     int i=0;
+//     while (i<100) {
+//         cout <<"["<<i<<"] D:"<< laserData[i].dist<<" A:"<<laserData[i].angle<< "  ";
+//         i++;
+//         if (i%10==0)
+//             cout << endl;
+//         
+//     }
     //Ordenamos el array de menor a mayor
     std::sort( laserData.begin()+25, laserData.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ; 
     float linealSpeed=0;
@@ -108,10 +115,10 @@ float SpecificWorker::goToPick(TBaseState bState,TLaserData laserData) {
         if(dist > 25 ) { //NO HEMOS LLEGADO AL OBJETIVO
             float rot,angleSpeed;
             rot=atan2(Trobot.x(),Trobot.z()); //Calculamos la rotacion con el arcotangente
-            qDebug() << "Distancia:"<<dist<< "Rot:"<<rot;
+            qDebug() << "Distancia:"<<dist<< "Rot:"<<rot<<"Obstaculo:"<<laserData[50].dist;
             //Calcular velocidad
             linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); //CUANTA MENOS DISTANCIA MAS RECTA ES LA LINEA
-            if (laserData[25].dist<200) {  //400 tiene de ancho - 270 para no tocar nunca.
+            if (laserData[25].dist<220) {  //400 tiene de ancho - 270 para no tocar nunca.
                 estado=TURN;
                 return linealSpeed;
             } else
@@ -139,20 +146,30 @@ return 0;
     target.setEmpty();
     estado=IDLE;
     differentialrobot_proxy->setSpeedBase(0, 0); //Parar
+
     
  }
 // ----------------------
 
 // TURN
  void SpecificWorker::turn(float linealSpeed, TLaserData laserData){
-   qDebug() << "Estado TURN";
-   differentialrobot_proxy->setSpeedBase(0, 0); //Parar
+   std::sort( laserData.begin()+10, laserData.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ; 
+   qDebug() << "Estado TURN"<< laserData[10].dist<<laserData[10].angle;
+   if (laserData[10].angle<0)
+       differentialrobot_proxy->setSpeedBase(0,0.2); 
+   else 
+    differentialrobot_proxy->setSpeedBase(0,-0.2); 
+   //GIRAR HASTA X.
+   if (abs(laserData[10].angle)>1.55 && abs(laserData[10].angle)<1.60) {
+       estado=SKIRT;
+   }
  }
 // ----------------------
 
 // SKIRT
  void SpecificWorker::skirt(){
    qDebug() << "Estado SKIRT";
+   differentialrobot_proxy->setSpeedBase(0, 0); //Parar
  }
 // ----------------------
 
