@@ -37,84 +37,84 @@ class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 public:
-	SpecificWorker(MapPrx& mprx);	
-	~SpecificWorker();
-	bool setParams(RoboCompCommonBehavior::ParameterList params);
-	void setPick(const Pick &myPick);      
-	float gauss(float Vrot, float Vx, float h);
-	float sinusoide(float x);
-	void idle();
-    float goToPick(TBaseState bState);
-    void end();
-    void skirt();
-    void turn(float linealSpeed);
+  SpecificWorker(MapPrx& mprx);	
+  ~SpecificWorker();
+  bool setParams(RoboCompCommonBehavior::ParameterList params);
+  void setPick(const Pick &myPick);      
+  float gauss(float Vrot, float Vx, float h);
+  float sinusoide(float x);
+  void idle();
+  float gotoTarget(TBaseState bState, TLaserData laserData);
+  void end();
+  void skirt(TLaserData laserData);
+  void turn(float linealSpeed,TLaserData laserData);
 
 public slots:
-	void compute(); 	
+  void compute(); 	
 
 private:
-    InnerModel *innermodel;
-    state estado;
-    float const VLIN_MAX = 700;
-    float const VROT_MAX = 0.6;
-    bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
+  InnerModel *innermodel;
+  state estado;
+  float const VLIN_MAX = 700;
+  float const VROT_MAX = 0.6;
+  bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
   
-    struct Target
-    {
-        QMutex mutex; //Para hacer las operaciones sobre el target atómicas
-        float xt, zt, xr, zr;
-        bool empty;
-        
-        //Constructor
-        Target(){
-            xt = 0;
-            zt = 0;
-	    xr = 0;
-	    zr = 0;
-            empty = true;
-        };
-        
-        //Inserta las coord x y z en el target
-        bool insert(float _xt, float _zt, float _xr, float _zr ){
-            QMutexLocker ml(&mutex); //Controla el mutex
-            xt = _xt;
-            zt = _zt;
-	    xr = _xr;
-	    zr = _zr;
-            empty = false;
-            return true;
-        };
-        
-        //Extrae las coord x y z del target y del robot
-        std::pair <std::pair <float,float>,std::pair <float,float>> extract() {
-            QMutexLocker ml(&mutex);
-	    std::pair <std::pair <float,float>,std::pair <float,float>> coors;
-            std::pair <float,float> coorsTarget;
-	    std::pair <float,float> coorsRobot;
-	    coorsTarget.first=xt;
-            coorsTarget.second=zt;
-	    coorsRobot.first=xr;
-            coorsRobot.second=zr;
-	    coors.first=coorsTarget;
-	    coors.second=coorsRobot;
-            return coors;
-        };
-        
-        //Devuelve si el target esta vacio
-        bool isEmpty() {
-            QMutexLocker ml(&mutex);
-            return empty;
-        };
-        
-        //Pone a vacio el target
-        void setEmpty(){
-            QMutexLocker ml(&mutex);
-            empty =true;
-        }
+  struct Target
+  {
+      QMutex mutex; //Para hacer las operaciones sobre el target atómicas
+      float xt, zt, xr, zr;
+      bool empty;
+      
+      //Constructor
+      Target(){
+	  xt = 0;
+	  zt = 0;
+	  xr = 0;
+	  zr = 0;
+	  empty = true;
+      };
+      
+      //Inserta las coord x y z en el target
+      bool insert(float _xt, float _zt, float _xr, float _zr ){
+	  QMutexLocker ml(&mutex); //Controla el mutex
+	  xt = _xt;
+	  zt = _zt;
+	  xr = _xr;
+	  zr = _zr;
+	  empty = false;
+	  return true;
+      };
+      
+      //Extrae las coord x y z del target y del robot
+      std::pair <std::pair <float,float>,std::pair <float,float>> extract() {
+	  QMutexLocker ml(&mutex);
+	  std::pair <std::pair <float,float>,std::pair <float,float>> coors;
+	  std::pair <float,float> coorsTarget;
+	  std::pair <float,float> coorsRobot;
+	  coorsTarget.first=xt;
+	  coorsTarget.second=zt;
+	  coorsRobot.first=xr;
+	  coorsRobot.second=zr;
+	  coors.first=coorsTarget;
+	  coors.second=coorsRobot;
+	  return coors;
+      };
+      
+      //Devuelve si el target esta vacio
+      bool isEmpty() {
+	  QMutexLocker ml(&mutex);
+	  return empty;
+      };
+      
+      //Pone a vacio el target
+      void setEmpty(){
+	  QMutexLocker ml(&mutex);
+	  empty =true;
+      }
 
-    };
-	
-    Target target;
+  };
+      
+  Target target;
 
   
 };
