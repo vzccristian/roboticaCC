@@ -44,10 +44,10 @@ public:
 	float gauss(float Vrot, float Vx, float h);
 	float sinusoide(float x);
 	void idle();
-    float goToPick(TBaseState bState,TLaserData laserData);
+    float goToPick(TBaseState bState);
     void end();
     void skirt();
-    void turn(float linealSpeed,TLaserData laserData);
+    void turn(float linealSpeed);
 
 public slots:
 	void compute(); 	
@@ -57,6 +57,7 @@ private:
     state estado;
     float const VLIN_MAX = 700;
     float const VROT_MAX = 0.6;
+    bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
   
     struct Target
     {
