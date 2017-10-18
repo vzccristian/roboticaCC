@@ -46,7 +46,7 @@ public:
   void idle();
   float gotoTarget(TBaseState bState, TLaserData laserData);
   void end();
-  void skirt(TLaserData laserData);
+  void skirt(TLaserData &laserData);
   void turn(float linealSpeed,TLaserData laserData);
 
 public slots:
@@ -110,7 +110,14 @@ private:
       void setEmpty(){
 	  QMutexLocker ml(&mutex);
 	  empty =true;
-      }
+      };
+      
+      pair <float,float> getPose() {
+	std::pair <float,float> coorsTarget;
+	coorsTarget.first=xt;
+	coorsTarget.second=zt;
+	return coorsTarget;
+      };
 
   };
       

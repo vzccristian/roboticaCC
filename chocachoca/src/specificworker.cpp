@@ -100,8 +100,7 @@ void SpecificWorker::compute()
 
 // GOTOPICK
 float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
-    qDebug() << "Estado PICK";
-    
+    qDebug() << "Estado GOTO";
     std::sort( laserData.begin()+25, laserData.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //Ordenamos el array de menor a mayor
     
     float dist,linealSpeed;
@@ -109,7 +108,7 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
     QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
     dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
     
-    if(dist > 25 ) { //NO HEMOS LLEGADO AL OBJETIVO
+    if(dist > 50 ) { //NO HEMOS LLEGADO AL OBJETIVO
 	float rot=atan2(Trobot.x(),Trobot.z()); //Calculamos la rotacion con el arcotangente
 	qDebug() << "Distancia:"<<dist<< "Rot:"<<rot<<"Obstaculo:"<<laserData[50].dist;
 	
@@ -155,11 +154,23 @@ return 0;
 
 
 // SKIRT
- void SpecificWorker::skirt(TLaserData laserData){
+ void SpecificWorker::skirt(TLaserData &laserData){
     qDebug() << "Estado SKIRT";
-
+    QPolygonF polygon;
+    QVec laserToWorld;
     float dist;
-    TLaserData laserDataUnLado = laser_proxy->getLaserData(); //Tomar los datos del laser; //DATOS LASER PARA VER SOLO UN LADO
+    TLaserData laserDataUnLado = laserData;
+    
+    std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
+    QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
+   
+    dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
+        
+    if(dist < 200 ) {
+       estado=END; return;
+    }
+    
+   // TLaserData laserDataUnLado = laser_proxy->getLaserData(); //Tomar los datos del laser; //DATOS LASER PARA VER SOLO UN LADO
     
 //     int i=0;
 //     while (i<100) { //COPY
@@ -168,51 +179,45 @@ return 0;
 //         i++; 
 //     }
     
+    int i=25;
+    while (i<75) { //COPY
+      laserToWorld = innermodel->laserTo("world", "laser", laserData[i].dist, laserData[i].angle);
+      polygon << QPointF(laserToWorld.x(), laserToWorld.z()); 
+      i++;
+    }
+    pair <float,float> t =  target.getPose();
+    qDebug() << t.first << t.second;
+    if (polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )) {
+      estado=GOTO;
+      return;
+    }
+    
+    ///WORK
+    
     std::sort( laserData.begin()+10, laserData.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //ORDENACION COMPLETA INCLUYENDO LATERALES
     
-    std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
-    QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
-   
-    dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
-    
-    
-//CAMPUS VIRTUAL 
-//     QPolygonF polygon;
-// for (auto l, lasercopy)
-// {
-//    QVec lr = innermodel->laserTo("world", "laser", l.dist, l.angle)
-//    polygon << QPointF(lr.x(), lr.z());
-// }
-// QVec t = target.getPose();
-// return  polygon.contains( QPointF(t.x(), t.z() ) ) 
-
-
-    if (laserData[10].dist>dist) //si no hay obstaculo mas cercano que el target...
-        estado=GOTO;
-    else { //NO ALCANZABLE
-        //AVANCE
+    //NO ALCANZABLE
         differentialrobot_proxy->setSpeedBase(100,0);
 
-        //ORDENACION SOLO DEL LADO A BORDEAR
-        if (!lado){ //IZQUIERDA
-            qDebug() << laserDataUnLado[51].dist<<laserDataUnLado[51].angle;
-            std::sort( laserDataUnLado.begin()+51, laserDataUnLado.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;  
-            if (laserDataUnLado[51].dist<100) {
-                differentialrobot_proxy->setSpeedBase(0,0.3); 
-            } else if  (laserDataUnLado[51].dist>380) {
-                differentialrobot_proxy->setSpeedBase(0,-0.3); 
-            }
-        } else { //DERECHA
-            qDebug() << laserDataUnLado[10].dist<<laserDataUnLado[10].angle;
-            std::sort( laserDataUnLado.begin()+10, laserDataUnLado.end()-51, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;
-            if (laserDataUnLado[10].dist<100) {
-                differentialrobot_proxy->setSpeedBase(0,-0.3); 
-            } else if  (laserDataUnLado[10].dist>380) {
-                differentialrobot_proxy->setSpeedBase(0,0.3); 
-            }
-        }
+    //ORDENACION SOLO DEL LADO A BORDEAR
+    if (!lado){ //IZQUIERDA
+	//qDebug() << laserDataUnLado[51].dist<<laserDataUnLado[51].angle;
+	std::sort( laserDataUnLado.begin()+51, laserDataUnLado.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;  
+	if (laserDataUnLado[51].dist<150) {
+	    differentialrobot_proxy->setSpeedBase(0,0.3); 
+	} else if  (laserDataUnLado[51].dist>380) {
+	    differentialrobot_proxy->setSpeedBase(0,-0.3); 
+	}
+    } else { //DERECHA
+	//qDebug() << laserDataUnLado[10].dist<<laserDataUnLado[10].angle;
+	std::sort( laserDataUnLado.begin()+10, laserDataUnLado.end()-51, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;
+	if (laserDataUnLado[10].dist<150) {
+	    differentialrobot_proxy->setSpeedBase(0,-0.3); 
+	} else if  (laserDataUnLado[10].dist>380) {
+	    differentialrobot_proxy->setSpeedBase(0,0.3); 
+	}
     }
- }
+}
  
 // ----------------------
 
@@ -241,7 +246,7 @@ void SpecificWorker::setPick(const Pick &myPick)
   RoboCompDifferentialRobot::TBaseState bState;
   differentialrobot_proxy->getBaseState(bState);
   target.insert(myPick.x,myPick.z,bState.x,bState.z); 
-
+  estado=GOTO;
 }
 
 //   float distumbral = 300;
