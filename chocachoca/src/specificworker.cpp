@@ -56,6 +56,7 @@ void SpecificWorker::compute()
 
     TLaserData laserData = laser_proxy->getLaserData(); //Tomar los datos del laser
 
+// COMPROBACION DE DATOS LASER
 //     int i=0;
 //     while (i<100) {
 //         cout <<"["<<i<<"] D:"<< laserData[i].dist<<" A:"<<laserData[i].angle<< "  ";
@@ -81,7 +82,7 @@ void SpecificWorker::compute()
             turn(linealSpeed,laserData);
             break;
         case SKIRT:
-            skirt(laserData);
+            skirt(bState,laserData);
             break;
         default:  
 	    break;
@@ -101,7 +102,7 @@ void SpecificWorker::compute()
 // GOTOPICK
 float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
     qDebug() << "Estado GOTO";
-    std::sort( laserData.begin()+25, laserData.end()-25, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //Ordenamos el array de menor a mayor
+    std::sort( laserData.begin()+20, laserData.end()-20, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //Ordenamos el array de menor a mayor
     
     float dist,linealSpeed;
     std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
@@ -114,7 +115,7 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
 	
 	linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.5) * sinusoide(dist); ////Calcular velocidad
 	
-	if (laserData[25].dist<220) {  //400 tiene de ancho - 270 para no tocar nunca.
+	if (laserData[20].dist<220) {  //400 tiene de ancho - 270 para no tocar nunca.
 	    estado=TURN;
 	    return linealSpeed;
 	} else
@@ -154,69 +155,90 @@ return 0;
 
 
 // SKIRT
- void SpecificWorker::skirt(TLaserData &laserData){
+ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData){
     qDebug() << "Estado SKIRT";
     QPolygonF polygon;
     QVec laserToWorld;
     float dist;
+    int umbralVision = 1000;
     TLaserData laserDataUnLado = laserData;
     
     std::pair <std::pair <float,float>,std::pair <float,float>> coord = target.extract(); //Tomamos las coord del pick (target y robot)
     QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world"); //Desplaza el eje de coord del mundo al robot
    
     dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
-        
-    if(dist < 200 ) {
+       
+    
+    //ESTOY EN TARGET
+    
+    if(dist < 200 ) { 
+      qDebug() << "Estoy en target";
        estado=END; return;
     }
-    
-   // TLaserData laserDataUnLado = laser_proxy->getLaserData(); //Tomar los datos del laser; //DATOS LASER PARA VER SOLO UN LADO
-    
-//     int i=0;
-//     while (i<100) { //COPY
-// 	laserDataUnLado[i].dist=laserData[i].dist;
-// 	laserDataUnLado[i].angle=laserData[i].angle;
-//         i++; 
-//     }
-    
-    int i=25;
-    while (i<75) { //COPY
+  
+  
+    // COMPRUEBO SI VEO TARGET
+    polygon << QPointF(bState.x, bState.z); 
+  
+  
+    int i=20; //CERCA
+    if (dist > umbralVision) //LEJOS
+      i=35;
+      
+    while (i<(100-i)) { //CREA POLIGONO
       laserToWorld = innermodel->laserTo("world", "laser", laserData[i].dist, laserData[i].angle);
+      qDebug() << laserToWorld.x() << laserToWorld.z();
       polygon << QPointF(laserToWorld.x(), laserToWorld.z()); 
       i++;
     }
-    pair <float,float> t =  target.getPose();
-    qDebug() << t.first << t.second;
-    if (polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )) {
+   
+    pair <float,float> t =  target.getPose(); //Coor target
+    qDebug() <<"Target"<< t.first << t.second;
+    if (polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first, t.second+100),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first, t.second-100),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first-100, t.second),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first+100, t.second),Qt::WindingFill )
+    ) { //COMPROBACION COORS EN POLIGONO
+      qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Target";
       estado=GOTO;
       return;
-    }
+    } else
+      qDebug() << "No veo target";
     
-    ///WORK
+    // COMPRUEBO LA LINEA
     
+    
+    
+    //SI LLEGO AQUI --> BORDEAR
+    
+    //ORDENACION SOLO DEL LADO A BORDEAR
     std::sort( laserData.begin()+10, laserData.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //ORDENACION COMPLETA INCLUYENDO LATERALES
     
     //NO ALCANZABLE
-        differentialrobot_proxy->setSpeedBase(100,0);
 
-    //ORDENACION SOLO DEL LADO A BORDEAR
+  
     if (!lado){ //IZQUIERDA
 	//qDebug() << laserDataUnLado[51].dist<<laserDataUnLado[51].angle;
 	std::sort( laserDataUnLado.begin()+51, laserDataUnLado.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;  
-	if (laserDataUnLado[51].dist<150) {
-	    differentialrobot_proxy->setSpeedBase(0,0.3); 
-	} else if  (laserDataUnLado[51].dist>380) {
-	    differentialrobot_proxy->setSpeedBase(0,-0.3); 
-	}
+	if (laserDataUnLado[51].dist<340) {
+	    differentialrobot_proxy->setSpeedBase(20,0.3); 
+	} else if  (laserDataUnLado[51].dist>450) {
+	    differentialrobot_proxy->setSpeedBase(20,-0.3); 
+	} else
+	  differentialrobot_proxy->setSpeedBase(100,0);
     } else { //DERECHA
 	//qDebug() << laserDataUnLado[10].dist<<laserDataUnLado[10].angle;
 	std::sort( laserDataUnLado.begin()+10, laserDataUnLado.end()-51, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;
-	if (laserDataUnLado[10].dist<150) {
-	    differentialrobot_proxy->setSpeedBase(0,-0.3); 
-	} else if  (laserDataUnLado[10].dist>380) {
-	    differentialrobot_proxy->setSpeedBase(0,0.3); 
-	}
+	if (laserDataUnLado[10].dist<340) {
+	    differentialrobot_proxy->setSpeedBase(20,-0.3); 
+	} else if  (laserDataUnLado[10].dist>450) {
+	    differentialrobot_proxy->setSpeedBase(20,0.3); 
+	} else
+	  differentialrobot_proxy->setSpeedBase(100,0);
     }
+    
+     
 }
  
 // ----------------------

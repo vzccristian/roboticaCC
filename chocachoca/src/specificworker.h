@@ -46,7 +46,7 @@ public:
   void idle();
   float gotoTarget(TBaseState bState, TLaserData laserData);
   void end();
-  void skirt(TLaserData &laserData);
+  void skirt(TBaseState bState, TLaserData &laserData);
   void turn(float linealSpeed,TLaserData laserData);
 
 public slots:
@@ -111,7 +111,8 @@ private:
 	  QMutexLocker ml(&mutex);
 	  empty =true;
       };
-      
+
+      //Devuelve las coordenadas del target
       pair <float,float> getPose() {
 	std::pair <float,float> coorsTarget;
 	coorsTarget.first=xt;
