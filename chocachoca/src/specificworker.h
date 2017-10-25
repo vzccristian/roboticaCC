@@ -48,6 +48,7 @@ public:
   void end();
   void skirt(TBaseState bState, TLaserData &laserData);
   void turn(float linealSpeed,TLaserData laserData);
+  bool isOnLine(float x, float z);
 
 public slots:
   void compute(); 	
@@ -58,6 +59,7 @@ private:
   float const VLIN_MAX = 700;
   float const VROT_MAX = 0.6;
   bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
+  bool preState = true;
   
   struct Target
   {
@@ -113,11 +115,19 @@ private:
       };
 
       //Devuelve las coordenadas del target
-      pair <float,float> getPose() {
+      pair <float,float> getPoseTarget() {
 	std::pair <float,float> coorsTarget;
 	coorsTarget.first=xt;
 	coorsTarget.second=zt;
 	return coorsTarget;
+      };
+      
+            //Devuelve las coordenadas del target
+      pair <float,float> getPoseRobot() {
+	std::pair <float,float> coorsRobot;
+	coorsRobot.first=xr;
+	coorsRobot.second=zr;
+	return coorsRobot;
       };
 
   };

@@ -48,7 +48,6 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 void SpecificWorker::compute()
 {
     float linealSpeed=0;
-    
     RoboCompDifferentialRobot::TBaseState bState; 
     differentialrobot_proxy->getBaseState(bState);//TOMAR DATOS DEL MUNDO
     
@@ -102,6 +101,7 @@ void SpecificWorker::compute()
 // GOTOPICK
 float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
     qDebug() << "Estado GOTO";
+   
     std::sort( laserData.begin()+20, laserData.end()-20, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //Ordenamos el array de menor a mayor
     
     float dist,linealSpeed;
@@ -149,8 +149,11 @@ return 0;
       lado=true;
     }
     
-    if (abs(laserData[10].angle)>1.55 && abs(laserData[10].angle)<1.60)  //GIRAR HASTA X.
+
+    if (abs(laserData[10].angle)>1.55 && abs(laserData[10].angle)<1.60) {  //GIRAR HASTA X.
        estado=SKIRT;
+       preState=true;
+    }
 }
 
 
@@ -169,17 +172,26 @@ return 0;
     dist = Trobot.norm2(); //Calculamos la distancia entre los puntos
        
     
-    //ESTOY EN TARGET
-    
+    // COMPRUEBO SI ESTOY EN TARGET
     if(dist < 200 ) { 
       qDebug() << "Estoy en target";
        estado=END; return;
     }
-  
-  
+     
+    // COMPRUEBO LA LINEA
+    if (isOnLine(bState.x, bState.z)) {
+      qDebug() << "-----------------------> Estoy en la linea";
+	if (!preState) {
+	  estado=GOTO;
+	  return; 
+	}
+    } else 
+      preState=false;
+
+    //qDebug() << "Pre:"<<preState;
     // COMPRUEBO SI VEO TARGET
     polygon << QPointF(bState.x, bState.z); 
-  
+    
   
     int i=20; //CERCA
     if (dist > umbralVision) //LEJOS
@@ -187,12 +199,12 @@ return 0;
       
     while (i<(100-i)) { //CREA POLIGONO
       laserToWorld = innermodel->laserTo("world", "laser", laserData[i].dist, laserData[i].angle);
-      qDebug() << laserToWorld.x() << laserToWorld.z();
+      //qDebug() << laserToWorld.x() << laserToWorld.z();
       polygon << QPointF(laserToWorld.x(), laserToWorld.z()); 
       i++;
     }
    
-    pair <float,float> t =  target.getPose(); //Coor target
+    pair <float,float> t =  target.getPoseTarget(); //Coor target
     qDebug() <<"Target"<< t.first << t.second;
     if (polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
       && polygon.containsPoint( QPointF(t.first, t.second+100),Qt::WindingFill )
@@ -206,18 +218,13 @@ return 0;
     } else
       qDebug() << "No veo target";
     
-    // COMPRUEBO LA LINEA
-    
-    
-    
+
     //SI LLEGO AQUI --> BORDEAR
     
     //ORDENACION SOLO DEL LADO A BORDEAR
     std::sort( laserData.begin()+10, laserData.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;     //ORDENACION COMPLETA INCLUYENDO LATERALES
     
     //NO ALCANZABLE
-
-  
     if (!lado){ //IZQUIERDA
 	//qDebug() << laserDataUnLado[51].dist<<laserDataUnLado[51].angle;
 	std::sort( laserDataUnLado.begin()+51, laserDataUnLado.end()-10, [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return  a.dist < b.dist; }) ;  
@@ -237,8 +244,22 @@ return 0;
 	} else
 	  differentialrobot_proxy->setSpeedBase(100,0);
     }
-    
+
      
+}
+ 
+ 
+ bool SpecificWorker::isOnLine(float x, float z){
+    pair <float,float> coorsT =  target.getPoseTarget();
+    pair <float,float> coorsI =  target.getPoseRobot();
+//     qDebug() << "X-actual: "<<x<<"Z-actual:"<<z;
+//     qDebug() << "X-inicio: "<<coorsI.first<<"Z-inicio:"<<coorsI.second;
+//     qDebug() << "X-fin: "<<coorsT.first<<"Z-fin:"<<coorsT.second;
+    if ( abs(((coorsT.second-coorsI.second)*(x-coorsI.first)) - ((coorsT.first-coorsI.first)*(z-coorsI.second)))< 50 )
+      return true;
+    else
+      return false; 
+   
 }
  
 // ----------------------
