@@ -47,6 +47,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 
 void SpecificWorker::compute()
 {
+ 
     float linealSpeed=0;
     RoboCompDifferentialRobot::TBaseState bState; 
     differentialrobot_proxy->getBaseState(bState);//TOMAR DATOS DEL MUNDO
@@ -173,7 +174,7 @@ return 0;
        
     
     // COMPRUEBO SI ESTOY EN TARGET
-    if(dist < 200 ) { 
+    if(dist < 330 ) { 
       qDebug() << "Estoy en target";
        estado=END; return;
     }
@@ -181,12 +182,14 @@ return 0;
     // COMPRUEBO LA LINEA
     if (isOnLine(bState.x, bState.z)) {
       qDebug() << "-----------------------> Estoy en la linea";
-	if (!preState) {
-	  estado=GOTO;
-	  return; 
-	}
-    } else 
+        if (!preState) {
+        estado=GOTO;
+        return; 
+        }
+    } else {
       preState=false;
+      //qDebug() << "<----------------------- NO estoy en la linea";
+    }
 
     //qDebug() << "Pre:"<<preState;
     // COMPRUEBO SI VEO TARGET
@@ -205,19 +208,17 @@ return 0;
     }
    
     pair <float,float> t =  target.getPoseTarget(); //Coor target
-    qDebug() <<"Target"<< t.first << t.second;
+    //qDebug() <<"Target"<< t.first << t.second;
     if (polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
-      && polygon.containsPoint( QPointF(t.first, t.second+100),Qt::WindingFill )
-      && polygon.containsPoint( QPointF(t.first, t.second-100),Qt::WindingFill )
-      && polygon.containsPoint( QPointF(t.first-100, t.second),Qt::WindingFill )
-      && polygon.containsPoint( QPointF(t.first+100, t.second),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first, t.second+270),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first, t.second-270),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first-270, t.second),Qt::WindingFill )
+      && polygon.containsPoint( QPointF(t.first+270, t.second),Qt::WindingFill )
     ) { //COMPROBACION COORS EN POLIGONO
       qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Target";
       estado=GOTO;
       return;
-    } else
-      qDebug() << "No veo target";
-    
+    }     
 
     //SI LLEGO AQUI --> BORDEAR
     
@@ -252,10 +253,12 @@ return 0;
  bool SpecificWorker::isOnLine(float x, float z){
     pair <float,float> coorsT =  target.getPoseTarget();
     pair <float,float> coorsI =  target.getPoseRobot();
-//     qDebug() << "X-actual: "<<x<<"Z-actual:"<<z;
-//     qDebug() << "X-inicio: "<<coorsI.first<<"Z-inicio:"<<coorsI.second;
-//     qDebug() << "X-fin: "<<coorsT.first<<"Z-fin:"<<coorsT.second;
-    if ( abs(((coorsT.second-coorsI.second)*(x-coorsI.first)) - ((coorsT.first-coorsI.first)*(z-coorsI.second)))< 50 )
+     qDebug() << "X-actual: "<<x<<"Z-actual:"<<z;
+     qDebug() << "X-inicio: "<<coorsI.first<<"Z-inicio:"<<coorsI.second;
+     qDebug() << "X-fin: "<<coorsT.first<<"Z-fin:"<<coorsT.second;
+    float resul=abs( ((coorsT.second-coorsI.second)*(x-coorsI.first)) - ((coorsT.first-coorsI.first)*(z-coorsI.second)) );
+    qDebug() << resul;
+    if ( resul < 20000.0 )
       return true;
     else
       return false; 
