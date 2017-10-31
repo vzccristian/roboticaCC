@@ -1,12 +1,14 @@
 import "/robocomp/interfaces/IDSLs/Laser.idsl";
 import "/robocomp/interfaces/IDSLs/DifferentialRobot.idsl";
 import "/robocomp/interfaces/IDSLs/RCISMousePicker.idsl";
+import "/robocomp/interfaces/IDSLs/Chocachoca.idsl";
 
 Component chocachoca
 {
 	Communications
 	{
 		requires Laser, DifferentialRobot;
+		implements Chocachoca;
 		subscribesTo RCISMousePicker;
 	};
 	language Cpp;
