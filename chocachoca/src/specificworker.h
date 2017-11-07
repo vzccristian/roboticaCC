@@ -40,7 +40,16 @@ public:
   SpecificWorker(MapPrx& mprx);	
   ~SpecificWorker();
   bool setParams(RoboCompCommonBehavior::ParameterList params);
-  void setPick(const Pick &myPick);      
+ 
+ 
+  
+  void go(const float x, const float z);
+  void turn(const float speed);
+  void getState();
+  void stop();
+  void setPick(const Pick &myPick);
+  
+  
   float gauss(float Vrot, float Vx, float h);
   float sinusoide(float x);
   void idle();
@@ -50,6 +59,9 @@ public:
   void turn(float linealSpeed,TLaserData laserData);
   bool isOnLine(float x, float z);
 
+  
+  
+  
 public slots:
   void compute(); 	
 

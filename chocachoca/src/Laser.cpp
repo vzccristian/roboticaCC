@@ -145,7 +145,7 @@ IceProxy::RoboCompLaser::Laser::end_getLaserData(const ::Ice::AsyncResultPtr& __
 }
 
 ::RoboCompLaser::TLaserData
-IceProxy::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState, const ::Ice::Context* __ctx)
+IceProxy::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState, const ::Ice::Context* __ctx)
 {
     ::IceInternal::InvocationObserver __observer(this, __RoboCompLaser__Laser__getLaserAndBStateData_name, __ctx);
     int __cnt = 0;
@@ -189,7 +189,7 @@ IceProxy::RoboCompLaser::Laser::begin_getLaserAndBStateData(const ::Ice::Context
 }
 
 ::RoboCompLaser::TLaserData
-IceProxy::RoboCompLaser::Laser::end_getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState, const ::Ice::AsyncResultPtr& __result)
+IceProxy::RoboCompLaser::Laser::end_getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState, const ::Ice::AsyncResultPtr& __result)
 {
     ::Ice::AsyncResult::__check(__result, this, __RoboCompLaser__Laser__getLaserAndBStateData_name);
     ::RoboCompLaser::TLaserData __ret;
@@ -352,7 +352,7 @@ IceDelegateM::RoboCompLaser::Laser::getLaserData(const ::Ice::Context* __context
 }
 
 ::RoboCompLaser::TLaserData
-IceDelegateM::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __RoboCompLaser__Laser__getLaserAndBStateData_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
@@ -483,13 +483,13 @@ IceDelegateD::RoboCompLaser::Laser::getLaserData(const ::Ice::Context* __context
 }
 
 ::RoboCompLaser::TLaserData
-IceDelegateD::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(::RoboCompLaser::TLaserData& __result, ::RoboCompDifferentialRobot::TBaseState& __p_bState, const ::Ice::Current& __current) : 
+        _DirectI(::RoboCompLaser::TLaserData& __result, ::RoboCompGenericBase::TBaseState& __p_bState, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
             _result(__result),
             _m_bState(__p_bState)
@@ -511,7 +511,7 @@ IceDelegateD::RoboCompLaser::Laser::getLaserAndBStateData(::RoboCompDifferential
     private:
         
         ::RoboCompLaser::TLaserData& _result;
-        ::RoboCompDifferentialRobot::TBaseState& _m_bState;
+        ::RoboCompGenericBase::TBaseState& _m_bState;
     };
     
     ::Ice::Current __current;
@@ -669,7 +669,7 @@ RoboCompLaser::Laser::___getLaserAndBStateData(::IceInternal::Incoming& __inS, c
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
-    ::RoboCompDifferentialRobot::TBaseState bState;
+    ::RoboCompGenericBase::TBaseState bState;
     ::RoboCompLaser::TLaserData __ret = getLaserAndBStateData(bState, __current);
     ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
     __os->write(bState);

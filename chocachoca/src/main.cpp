@@ -71,6 +71,7 @@
 #include <Ice/Application.h>
 
 #include <rapplication/rapplication.h>
+#include <sigwatch/sigwatch.h>
 #include <qlog/qlog.h>
 
 #include "config.h"
@@ -80,11 +81,15 @@
 #include "specificmonitor.h"
 #include "commonbehaviorI.h"
 
+#include <chocachocaI.h>
 #include <rcismousepickerI.h>
 
 #include <Laser.h>
+#include <GenericBase.h>
 #include <DifferentialRobot.h>
+#include <GenericBase.h>
 #include <RCISMousePicker.h>
+#include <Chocachoca.h>
 
 
 // User includes here
@@ -92,12 +97,6 @@
 // Namespaces
 using namespace std;
 using namespace RoboCompCommonBehavior;
-
-
-using namespace RoboCompDifferentialRobot;
-using namespace RoboCompRCISMousePicker;
-using namespace RoboCompLaser;
-
 
 class chocachoca : public RoboComp::Application
 {
@@ -135,32 +134,18 @@ int ::chocachoca::run(int argc, char* argv[])
 	sigaddset(&sigs, SIGTERM);
 	sigprocmask(SIG_UNBLOCK, &sigs, 0);
 
-
+	UnixSignalWatcher sigwatch;
+	sigwatch.watchForSignal(SIGINT);
+	sigwatch.watchForSignal(SIGTERM);
+	QObject::connect(&sigwatch, SIGNAL(unixSignal(int)), &a, SLOT(quit()));
 
 	int status=EXIT_SUCCESS;
 
-	LaserPrx laser_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
+	LaserPrx laser_proxy;
 
 	string proxy, tmp;
 	initialize();
-
-
-	try
-	{
-		if (not GenericMonitor::configGetString(communicator(), prefix, "LaserProxy", proxy, ""))
-		{
-			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy LaserProxy\n";
-		}
-		laser_proxy = LaserPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
-	}
-	catch(const Ice::Exception& ex)
-	{
-		cout << "[" << PROGRAM_NAME << "]: Exception: " << ex;
-		return EXIT_FAILURE;
-	}
-	rInfo("LaserProxy initialized Ok!");
-	mprx["LaserProxy"] = (::IceProxy::Ice::Object*)(&laser_proxy);//Remote server proxy creation example
 
 
 	try
@@ -179,10 +164,30 @@ int ::chocachoca::run(int argc, char* argv[])
 	rInfo("DifferentialRobotProxy initialized Ok!");
 	mprx["DifferentialRobotProxy"] = (::IceProxy::Ice::Object*)(&differentialrobot_proxy);//Remote server proxy creation example
 
+
+	try
+	{
+		if (not GenericMonitor::configGetString(communicator(), prefix, "LaserProxy", proxy, ""))
+		{
+			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy LaserProxy\n";
+		}
+		laser_proxy = LaserPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
+	}
+	catch(const Ice::Exception& ex)
+	{
+		cout << "[" << PROGRAM_NAME << "]: Exception: " << ex;
+		return EXIT_FAILURE;
+	}
+	rInfo("LaserProxy initialized Ok!");
+	mprx["LaserProxy"] = (::IceProxy::Ice::Object*)(&laser_proxy);//Remote server proxy creation example
+
 	IceStorm::TopicManagerPrx topicManager;
-	try{
-	topicManager = IceStorm::TopicManagerPrx::checkedCast(communicator()->propertyToProxy("TopicManager.Proxy"));
-	} catch(const Ice::Exception& ex){
+	try
+	{
+		topicManager = IceStorm::TopicManagerPrx::checkedCast(communicator()->propertyToProxy("TopicManager.Proxy"));
+	}
+	catch (const Ice::Exception &ex)
+	{
 		cout << "[" << PROGRAM_NAME << "]: Exception: STORM not running: " << ex << endl;
 		return EXIT_FAILURE;
 	}
@@ -197,12 +202,12 @@ int ::chocachoca::run(int argc, char* argv[])
 
 	if ( !monitor->isRunning() )
 		return status;
-	
+
 	while (!monitor->ready)
 	{
 		usleep(10000);
 	}
-	
+
 	try
 	{
 		// Server adapter creation and publication
@@ -216,6 +221,18 @@ int ::chocachoca::run(int argc, char* argv[])
 		adapterCommonBehavior->activate();
 
 
+
+
+		// Server adapter creation and publication
+		if (not GenericMonitor::configGetString(communicator(), prefix, "Chocachoca.Endpoints", tmp, ""))
+		{
+			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy Chocachoca";
+		}
+		Ice::ObjectAdapterPtr adapterChocachoca = communicator()->createObjectAdapterWithEndpoints("Chocachoca", tmp);
+		ChocachocaI *chocachoca = new ChocachocaI(worker);
+		adapterChocachoca->add(chocachoca, communicator()->stringToIdentity("chocachoca"));
+		adapterChocachoca->activate();
+		cout << "[" << PROGRAM_NAME << "]: Chocachoca adapter created in port " << tmp << endl;
 
 
 
@@ -260,6 +277,10 @@ int ::chocachoca::run(int argc, char* argv[])
 #endif
 		// Run QT Application Event Loop
 		a.exec();
+
+		std::cout << "Unsubscribing topic: rcismousepicker " <<std::endl;
+		rcismousepicker_topic->unsubscribe( rcismousepicker );
+
 		status = EXIT_SUCCESS;
 	}
 	catch(const Ice::Exception& ex)
@@ -316,4 +337,3 @@ int main(int argc, char* argv[])
 
 	return app.main(argc, argv, configFile.c_str());
 }
-

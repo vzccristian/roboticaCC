@@ -36,6 +36,7 @@
 #include <IceUtil/ScopedArray.h>
 #include <IceUtil/Optional.h>
 #include <Ice/StreamF.h>
+#include <GenericBase.h>
 #include <Ice/UndefSysMacros.h>
 
 #ifndef ICE_IGNORE_VERSION
@@ -80,31 +81,6 @@ void __patch(DifferentialRobotPtr&, const ::Ice::ObjectPtr&);
 namespace RoboCompDifferentialRobot
 {
 
-class HardwareFailedException : public ::Ice::UserException
-{
-public:
-
-    HardwareFailedException() {}
-    explicit HardwareFailedException(const ::std::string&);
-    virtual ~HardwareFailedException() throw();
-
-    virtual ::std::string ice_name() const;
-    virtual HardwareFailedException* ice_clone() const;
-    virtual void ice_throw() const;
-
-    ::std::string what;
-
-protected:
-    virtual void __writeImpl(::IceInternal::BasicStream*) const;
-    virtual void __readImpl(::IceInternal::BasicStream*);
-    #ifdef __SUNPRO_CC
-    using ::Ice::UserException::__writeImpl;
-    using ::Ice::UserException::__readImpl;
-    #endif
-};
-
-static HardwareFailedException __HardwareFailedException_init;
-
 struct TMechParams
 {
     ::Ice::Int wheelRadius;
@@ -118,32 +94,10 @@ struct TMechParams
     ::std::string handler;
 };
 
-struct TBaseState
-{
-    bool isMoving;
-    ::Ice::Float x;
-    ::Ice::Float correctedX;
-    ::Ice::Float z;
-    ::Ice::Float correctedZ;
-    ::Ice::Float alpha;
-    ::Ice::Float correctedAlpha;
-    ::Ice::Float advV;
-    ::Ice::Float rotV;
-    ::Ice::Float adv;
-    ::Ice::Float rot;
-    ::Ice::Float voltage;
-};
-
 }
 
 namespace Ice
 {
-template<>
-struct StreamableTraits< ::RoboCompDifferentialRobot::HardwareFailedException>
-{
-    static const StreamHelperCategory helper = StreamHelperCategoryUserException;
-};
-
 template<>
 struct StreamableTraits< ::RoboCompDifferentialRobot::TMechParams>
 {
@@ -183,54 +137,6 @@ struct StreamReader< ::RoboCompDifferentialRobot::TMechParams, S>
         __is->read(v.maxVelRot);
         __is->read(v.device);
         __is->read(v.handler);
-    }
-};
-
-template<>
-struct StreamableTraits< ::RoboCompDifferentialRobot::TBaseState>
-{
-    static const StreamHelperCategory helper = StreamHelperCategoryStruct;
-    static const int minWireSize = 45;
-    static const bool fixedLength = true;
-};
-
-template<class S>
-struct StreamWriter< ::RoboCompDifferentialRobot::TBaseState, S>
-{
-    static void write(S* __os, const ::RoboCompDifferentialRobot::TBaseState& v)
-    {
-        __os->write(v.isMoving);
-        __os->write(v.x);
-        __os->write(v.correctedX);
-        __os->write(v.z);
-        __os->write(v.correctedZ);
-        __os->write(v.alpha);
-        __os->write(v.correctedAlpha);
-        __os->write(v.advV);
-        __os->write(v.rotV);
-        __os->write(v.adv);
-        __os->write(v.rot);
-        __os->write(v.voltage);
-    }
-};
-
-template<class S>
-struct StreamReader< ::RoboCompDifferentialRobot::TBaseState, S>
-{
-    static void read(S* __is, ::RoboCompDifferentialRobot::TBaseState& v)
-    {
-        __is->read(v.isMoving);
-        __is->read(v.x);
-        __is->read(v.correctedX);
-        __is->read(v.z);
-        __is->read(v.correctedZ);
-        __is->read(v.alpha);
-        __is->read(v.correctedAlpha);
-        __is->read(v.advV);
-        __is->read(v.rotV);
-        __is->read(v.adv);
-        __is->read(v.rot);
-        __is->read(v.voltage);
     }
 };
 
@@ -275,17 +181,17 @@ class DifferentialRobot : virtual public ::IceProxy::Ice::Object
 {
 public:
 
-    void getBaseState(::RoboCompDifferentialRobot::TBaseState& state)
+    void getBaseState(::RoboCompGenericBase::TBaseState& state)
     {
         getBaseState(state, 0);
     }
-    void getBaseState(::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx)
+    void getBaseState(::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx)
     {
         getBaseState(state, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_getBaseState(const ::IceInternal::Function<void (const ::RoboCompDifferentialRobot::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_getBaseState(const ::IceInternal::Function<void (const ::RoboCompGenericBase::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_getBaseState(0, __response, __exception, __sent);
     }
@@ -295,7 +201,7 @@ public:
         return begin_getBaseState(0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_getBaseState(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::RoboCompDifferentialRobot::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_getBaseState(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::RoboCompGenericBase::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_getBaseState(&__ctx, __response, __exception, __sent);
     }
@@ -307,13 +213,13 @@ public:
     
 private:
 
-    ::Ice::AsyncResultPtr __begin_getBaseState(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::RoboCompDifferentialRobot::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+    ::Ice::AsyncResultPtr __begin_getBaseState(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::RoboCompGenericBase::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
     {
         class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
         {
         public:
 
-            Cpp11CB(const ::std::function<void (const ::RoboCompDifferentialRobot::TBaseState&)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
+            Cpp11CB(const ::std::function<void (const ::RoboCompGenericBase::TBaseState&)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
                 ::IceInternal::Cpp11FnCallbackNC(exceptionFunc, sentFunc),
                 _response(responseFunc)
             {
@@ -323,7 +229,7 @@ private:
             virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
             {
                 ::RoboCompDifferentialRobot::DifferentialRobotPrx __proxy = ::RoboCompDifferentialRobot::DifferentialRobotPrx::uncheckedCast(__result->getProxy());
-                ::RoboCompDifferentialRobot::TBaseState state;
+                ::RoboCompGenericBase::TBaseState state;
                 try
                 {
                     __proxy->end_getBaseState(state, __result);
@@ -341,7 +247,7 @@ private:
         
         private:
             
-            ::std::function<void (const ::RoboCompDifferentialRobot::TBaseState&)> _response;
+            ::std::function<void (const ::RoboCompGenericBase::TBaseState&)> _response;
         };
         return begin_getBaseState(__ctx, new Cpp11CB(__response, __exception, __sent));
     }
@@ -379,11 +285,11 @@ public:
         return begin_getBaseState(&__ctx, __del, __cookie);
     }
 
-    void end_getBaseState(::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::AsyncResultPtr&);
+    void end_getBaseState(::RoboCompGenericBase::TBaseState& state, const ::Ice::AsyncResultPtr&);
     
 private:
 
-    void getBaseState(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*);
+    void getBaseState(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*);
     ::Ice::AsyncResultPtr begin_getBaseState(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
@@ -839,39 +745,39 @@ private:
     
 public:
 
-    void setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state)
+    void setOdometer(const ::RoboCompGenericBase::TBaseState& state)
     {
         setOdometer(state, 0);
     }
-    void setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx)
+    void setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx)
     {
         setOdometer(state, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_setOdometer(state, 0, __response, __exception, __sent);
     }
     ::Ice::AsyncResultPtr
-    begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
         return begin_setOdometer(state, 0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_setOdometer(state, &__ctx, __response, __exception, __sent);
     }
     ::Ice::AsyncResultPtr
-    begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
         return begin_setOdometer(state, &__ctx, ::Ice::newCallback(__completed, __sent));
     }
     
 private:
 
-    ::Ice::AsyncResultPtr __begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+    ::Ice::AsyncResultPtr __begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
     {
         class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
         {
@@ -912,32 +818,32 @@ private:
 public:
 #endif
 
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state)
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state)
     {
         return begin_setOdometer(state, 0, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx)
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx)
     {
         return begin_setOdometer(state, &__ctx, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
         return begin_setOdometer(state, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
         return begin_setOdometer(state, &__ctx, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::RoboCompDifferentialRobot::Callback_DifferentialRobot_setOdometerPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::RoboCompDifferentialRobot::Callback_DifferentialRobot_setOdometerPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
         return begin_setOdometer(state, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context& __ctx, const ::RoboCompDifferentialRobot::Callback_DifferentialRobot_setOdometerPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context& __ctx, const ::RoboCompDifferentialRobot::Callback_DifferentialRobot_setOdometerPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
         return begin_setOdometer(state, &__ctx, __del, __cookie);
     }
@@ -946,8 +852,8 @@ public:
     
 private:
 
-    void setOdometer(const ::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*);
-    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    void setOdometer(const ::RoboCompGenericBase::TBaseState&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_setOdometer(const ::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
 
@@ -1298,7 +1204,7 @@ class DifferentialRobot : virtual public ::IceDelegate::Ice::Object
 {
 public:
 
-    virtual void getBaseState(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void getBaseState(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual void getBasePose(::Ice::Int&, ::Ice::Int&, ::Ice::Float&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
@@ -1308,7 +1214,7 @@ public:
 
     virtual void resetOdometer(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual void setOdometer(const ::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void setOdometer(const ::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual void setOdometerPose(::Ice::Int, ::Ice::Int, ::Ice::Float, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
@@ -1330,7 +1236,7 @@ class DifferentialRobot : virtual public ::IceDelegate::RoboCompDifferentialRobo
 {
 public:
 
-    virtual void getBaseState(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void getBaseState(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void getBasePose(::Ice::Int&, ::Ice::Int&, ::Ice::Float&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
@@ -1340,7 +1246,7 @@ public:
 
     virtual void resetOdometer(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void setOdometer(const ::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void setOdometer(const ::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void setOdometerPose(::Ice::Int, ::Ice::Int, ::Ice::Float, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
@@ -1362,7 +1268,7 @@ class DifferentialRobot : virtual public ::IceDelegate::RoboCompDifferentialRobo
 {
 public:
 
-    virtual void getBaseState(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void getBaseState(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void getBasePose(::Ice::Int&, ::Ice::Int&, ::Ice::Float&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
@@ -1372,7 +1278,7 @@ public:
 
     virtual void resetOdometer(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void setOdometer(const ::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void setOdometer(const ::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void setOdometerPose(::Ice::Int, ::Ice::Int, ::Ice::Float, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
@@ -1398,7 +1304,7 @@ public:
     virtual const ::std::string& ice_id(const ::Ice::Current& = ::Ice::Current()) const;
     static const ::std::string& ice_staticId();
 
-    virtual void getBaseState(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    virtual void getBaseState(::RoboCompGenericBase::TBaseState&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___getBaseState(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual void getBasePose(::Ice::Int&, ::Ice::Int&, ::Ice::Float&, const ::Ice::Current& = ::Ice::Current()) = 0;
@@ -1413,7 +1319,7 @@ public:
     virtual void resetOdometer(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___resetOdometer(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual void setOdometer(const ::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    virtual void setOdometer(const ::RoboCompGenericBase::TBaseState&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___setOdometer(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual void setOdometerPose(::Ice::Int, ::Ice::Int, ::Ice::Float, const ::Ice::Current& = ::Ice::Current()) = 0;
@@ -1457,7 +1363,7 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception&);
     typedef void (T::*Sent)(bool);
-    typedef void (T::*Response)(const ::RoboCompDifferentialRobot::TBaseState&);
+    typedef void (T::*Response)(const ::RoboCompGenericBase::TBaseState&);
 
     CallbackNC_DifferentialRobot_getBaseState(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), response(cb)
@@ -1467,7 +1373,7 @@ public:
     virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
     {
         ::RoboCompDifferentialRobot::DifferentialRobotPrx __proxy = ::RoboCompDifferentialRobot::DifferentialRobotPrx::uncheckedCast(__result->getProxy());
-        ::RoboCompDifferentialRobot::TBaseState state;
+        ::RoboCompGenericBase::TBaseState state;
         try
         {
             __proxy->end_getBaseState(state, __result);
@@ -1487,13 +1393,13 @@ public:
 };
 
 template<class T> Callback_DifferentialRobot_getBaseStatePtr
-newCallback_DifferentialRobot_getBaseState(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompDifferentialRobot::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_DifferentialRobot_getBaseState(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompGenericBase::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_DifferentialRobot_getBaseState<T>(instance, cb, excb, sentcb);
 }
 
 template<class T> Callback_DifferentialRobot_getBaseStatePtr
-newCallback_DifferentialRobot_getBaseState(T* instance, void (T::*cb)(const ::RoboCompDifferentialRobot::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_DifferentialRobot_getBaseState(T* instance, void (T::*cb)(const ::RoboCompGenericBase::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_DifferentialRobot_getBaseState<T>(instance, cb, excb, sentcb);
 }
@@ -1507,7 +1413,7 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
     typedef void (T::*Sent)(bool , const CT&);
-    typedef void (T::*Response)(const ::RoboCompDifferentialRobot::TBaseState&, const CT&);
+    typedef void (T::*Response)(const ::RoboCompGenericBase::TBaseState&, const CT&);
 
     Callback_DifferentialRobot_getBaseState(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), response(cb)
@@ -1517,7 +1423,7 @@ public:
     virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
     {
         ::RoboCompDifferentialRobot::DifferentialRobotPrx __proxy = ::RoboCompDifferentialRobot::DifferentialRobotPrx::uncheckedCast(__result->getProxy());
-        ::RoboCompDifferentialRobot::TBaseState state;
+        ::RoboCompGenericBase::TBaseState state;
         try
         {
             __proxy->end_getBaseState(state, __result);
@@ -1537,13 +1443,13 @@ public:
 };
 
 template<class T, typename CT> Callback_DifferentialRobot_getBaseStatePtr
-newCallback_DifferentialRobot_getBaseState(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompDifferentialRobot::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_DifferentialRobot_getBaseState(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompGenericBase::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_DifferentialRobot_getBaseState<T, CT>(instance, cb, excb, sentcb);
 }
 
 template<class T, typename CT> Callback_DifferentialRobot_getBaseStatePtr
-newCallback_DifferentialRobot_getBaseState(T* instance, void (T::*cb)(const ::RoboCompDifferentialRobot::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_DifferentialRobot_getBaseState(T* instance, void (T::*cb)(const ::RoboCompGenericBase::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_DifferentialRobot_getBaseState<T, CT>(instance, cb, excb, sentcb);
 }

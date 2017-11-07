@@ -1,7 +1,7 @@
-import "/robocomp/interfaces/IDSLs/Laser.idsl";
-import "/robocomp/interfaces/IDSLs/DifferentialRobot.idsl";
-import "/robocomp/interfaces/IDSLs/RCISMousePicker.idsl";
-import "/robocomp/interfaces/IDSLs/Chocachoca.idsl";
+import "Laser.idsl";
+import "DifferentialRobot.idsl";
+import "RCISMousePicker.idsl";
+import "Chocachoca.idsl";
 
 Component chocachoca
 {

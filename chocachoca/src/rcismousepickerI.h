@@ -1,5 +1,5 @@
 /*
- *    Copyright (C) 2017 by YOUR NAME HERE
+ *    Copyright (C)2017 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -19,9 +19,6 @@
 #ifndef RCISMOUSEPICKER_H
 #define RCISMOUSEPICKER_H
 
-// QT includes
-#include <QtCore/QObject>
-
 // Ice includes
 #include <Ice/Ice.h>
 #include <RCISMousePicker.h>
@@ -31,21 +28,17 @@
 
 using namespace RoboCompRCISMousePicker;
 
-class RCISMousePickerI : public QObject , public virtual RoboCompRCISMousePicker::RCISMousePicker
+class RCISMousePickerI : public virtual RoboCompRCISMousePicker::RCISMousePicker
 {
-Q_OBJECT
 public:
-	RCISMousePickerI( GenericWorker *_worker, QObject *parent = 0 );
+RCISMousePickerI(GenericWorker *_worker);
 	~RCISMousePickerI();
-	
+
 	void setPick(const Pick  &myPick, const Ice::Current&);
 
-	QMutex *mutex;
 private:
 
 	GenericWorker *worker;
-public slots:
-
 
 };
 

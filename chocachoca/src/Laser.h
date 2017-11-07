@@ -36,7 +36,7 @@
 #include <IceUtil/ScopedArray.h>
 #include <IceUtil/Optional.h>
 #include <Ice/StreamF.h>
-#include <DifferentialRobot.h>
+#include <GenericBase.h>
 #include <Ice/UndefSysMacros.h>
 
 #ifndef ICE_IGNORE_VERSION
@@ -579,17 +579,17 @@ private:
     
 public:
 
-    ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState)
+    ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState)
     {
         return getLaserAndBStateData(bState, 0);
     }
-    ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState, const ::Ice::Context& __ctx)
+    ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState, const ::Ice::Context& __ctx)
     {
         return getLaserAndBStateData(bState, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_getLaserAndBStateData(const ::IceInternal::Function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_getLaserAndBStateData(const ::IceInternal::Function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_getLaserAndBStateData(0, __response, __exception, __sent);
     }
@@ -599,7 +599,7 @@ public:
         return begin_getLaserAndBStateData(0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_getLaserAndBStateData(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_getLaserAndBStateData(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_getLaserAndBStateData(&__ctx, __response, __exception, __sent);
     }
@@ -611,13 +611,13 @@ public:
     
 private:
 
-    ::Ice::AsyncResultPtr __begin_getLaserAndBStateData(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+    ::Ice::AsyncResultPtr __begin_getLaserAndBStateData(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
     {
         class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
         {
         public:
 
-            Cpp11CB(const ::std::function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
+            Cpp11CB(const ::std::function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
                 ::IceInternal::Cpp11FnCallbackNC(exceptionFunc, sentFunc),
                 _response(responseFunc)
             {
@@ -627,7 +627,7 @@ private:
             virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
             {
                 ::RoboCompLaser::LaserPrx __proxy = ::RoboCompLaser::LaserPrx::uncheckedCast(__result->getProxy());
-                ::RoboCompDifferentialRobot::TBaseState bState;
+                ::RoboCompGenericBase::TBaseState bState;
                 ::RoboCompLaser::TLaserData __ret;
                 try
                 {
@@ -646,7 +646,7 @@ private:
         
         private:
             
-            ::std::function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&)> _response;
+            ::std::function<void (const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&)> _response;
         };
         return begin_getLaserAndBStateData(__ctx, new Cpp11CB(__response, __exception, __sent));
     }
@@ -684,11 +684,11 @@ public:
         return begin_getLaserAndBStateData(&__ctx, __del, __cookie);
     }
 
-    ::RoboCompLaser::TLaserData end_getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState& bState, const ::Ice::AsyncResultPtr&);
+    ::RoboCompLaser::TLaserData end_getLaserAndBStateData(::RoboCompGenericBase::TBaseState& bState, const ::Ice::AsyncResultPtr&);
     
 private:
 
-    ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*);
+    ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*);
     ::Ice::AsyncResultPtr begin_getLaserAndBStateData(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
@@ -931,7 +931,7 @@ public:
 
     virtual ::RoboCompLaser::TLaserData getLaserData(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual ::RoboCompLaser::LaserConfData getLaserConfData(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
@@ -953,7 +953,7 @@ public:
 
     virtual ::RoboCompLaser::TLaserData getLaserData(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual ::RoboCompLaser::LaserConfData getLaserConfData(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -975,7 +975,7 @@ public:
 
     virtual ::RoboCompLaser::TLaserData getLaserData(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual ::RoboCompLaser::LaserConfData getLaserConfData(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -1002,7 +1002,7 @@ public:
     virtual ::RoboCompLaser::TLaserData getLaserData(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___getLaserData(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompDifferentialRobot::TBaseState&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    virtual ::RoboCompLaser::TLaserData getLaserAndBStateData(::RoboCompGenericBase::TBaseState&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___getLaserAndBStateData(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual ::RoboCompLaser::LaserConfData getLaserConfData(const ::Ice::Current& = ::Ice::Current()) = 0;
@@ -1143,7 +1143,7 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception&);
     typedef void (T::*Sent)(bool);
-    typedef void (T::*Response)(const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&);
+    typedef void (T::*Response)(const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&);
 
     CallbackNC_Laser_getLaserAndBStateData(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), response(cb)
@@ -1153,7 +1153,7 @@ public:
     virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
     {
         ::RoboCompLaser::LaserPrx __proxy = ::RoboCompLaser::LaserPrx::uncheckedCast(__result->getProxy());
-        ::RoboCompDifferentialRobot::TBaseState bState;
+        ::RoboCompGenericBase::TBaseState bState;
         ::RoboCompLaser::TLaserData __ret;
         try
         {
@@ -1174,13 +1174,13 @@ public:
 };
 
 template<class T> Callback_Laser_getLaserAndBStateDataPtr
-newCallback_Laser_getLaserAndBStateData(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Laser_getLaserAndBStateData(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Laser_getLaserAndBStateData<T>(instance, cb, excb, sentcb);
 }
 
 template<class T> Callback_Laser_getLaserAndBStateDataPtr
-newCallback_Laser_getLaserAndBStateData(T* instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Laser_getLaserAndBStateData(T* instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Laser_getLaserAndBStateData<T>(instance, cb, excb, sentcb);
 }
@@ -1194,7 +1194,7 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
     typedef void (T::*Sent)(bool , const CT&);
-    typedef void (T::*Response)(const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&, const CT&);
+    typedef void (T::*Response)(const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&, const CT&);
 
     Callback_Laser_getLaserAndBStateData(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), response(cb)
@@ -1204,7 +1204,7 @@ public:
     virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
     {
         ::RoboCompLaser::LaserPrx __proxy = ::RoboCompLaser::LaserPrx::uncheckedCast(__result->getProxy());
-        ::RoboCompDifferentialRobot::TBaseState bState;
+        ::RoboCompGenericBase::TBaseState bState;
         ::RoboCompLaser::TLaserData __ret;
         try
         {
@@ -1225,13 +1225,13 @@ public:
 };
 
 template<class T, typename CT> Callback_Laser_getLaserAndBStateDataPtr
-newCallback_Laser_getLaserAndBStateData(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Laser_getLaserAndBStateData(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Laser_getLaserAndBStateData<T, CT>(instance, cb, excb, sentcb);
 }
 
 template<class T, typename CT> Callback_Laser_getLaserAndBStateDataPtr
-newCallback_Laser_getLaserAndBStateData(T* instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompDifferentialRobot::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Laser_getLaserAndBStateData(T* instance, void (T::*cb)(const ::RoboCompLaser::TLaserData&, const ::RoboCompGenericBase::TBaseState&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Laser_getLaserAndBStateData<T, CT>(instance, cb, excb, sentcb);
 }

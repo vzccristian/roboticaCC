@@ -1,5 +1,5 @@
 /*
- *    Copyright (C) 2017 by YOUR NAME HERE
+ *    Copyright (C)2017 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -28,8 +28,8 @@ QObject()
 #endif
 
 {
-	laser_proxy = (*(LaserPrx*)mprx["LaserProxy"]);
 	differentialrobot_proxy = (*(DifferentialRobotPrx*)mprx["DifferentialRobotProxy"]);
+	laser_proxy = (*(LaserPrx*)mprx["LaserProxy"]);
 
 	mutex = new QMutex(QMutex::Recursive);
 
@@ -39,9 +39,7 @@ QObject()
 	#endif
 	Period = BASIC_PERIOD;
 	connect(&timer, SIGNAL(timeout()), this, SLOT(compute()));
-
 // 	timer.start(Period);
-    
 }
 
 /**
@@ -68,3 +66,8 @@ void GenericWorker::setPeriod(int p)
 }
 
 
+
+
+	
+	
+	

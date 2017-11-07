@@ -1,8 +1,7 @@
+cmake_minimum_required(VERSION 2.8.11)
+PROJECT( chocachoca )
 
-cmake_minimum_required(VERSION 2.6)
-PROJECT(  chocachoca )
 
- 
 IF ( "$ENV{ROBOCOMP}" STREQUAL "")
   MESSAGE(WARNING "ROBOCOMP variable not set. Using the default value: /opt/robocomp")
   SET (ENV{ROBOCOMP} "/opt/robocomp/")
@@ -19,6 +18,7 @@ INCLUDE ( CMakeListsSpecific.txt)
 SET ( SOURCES
   ${SOURCES}
   $ENV{ROBOCOMP}/classes/rapplication/rapplication.cpp
+  $ENV{ROBOCOMP}/classes/sigwatch/sigwatch.cpp
   $ENV{ROBOCOMP}/classes/qlog/qlog.cpp
   main.cpp
   genericmonitor.cpp
@@ -26,6 +26,7 @@ SET ( SOURCES
   commonbehaviorI.cpp
   genericworker.cpp
   specificworker.cpp
+  chocachocaI.cpp
   rcismousepickerI.cpp
 )
 
@@ -33,7 +34,7 @@ SET ( SOURCES
 
 #ROBOCOMP
 ROBOCOMP_INITIALIZE( $ENV{ROBOCOMP}/ )
-ROBOCOMP_WRAP_ICE( CommonBehavior Laser DifferentialRobot DifferentialRobot RCISMousePicker )
+ROBOCOMP_WRAP_ICE( CommonBehavior Laser  GenericBase  DifferentialRobot  GenericBase  RCISMousePicker  Chocachoca )
 SET (EXECUTABLE_OUTPUT_PATH ${RC_COMPONENT_DEVEL_PATH}/bin)
 
 # Qt4
@@ -46,10 +47,7 @@ SET( QT_USE_QTSTATE TRUE )
 SET( QT_USE_QTSTATEMACHINE TRUE )
 SET( CMAKE_AUTOMOC TRUE )
 INCLUDE( ${QT_USE_FILE} )
-
 QT4_WRAP_UI( UI_HEADERS mainUI.ui )
-
-
 
 # Specify construction and link process
 ADD_EXECUTABLE( chocachoca ${SOURCES} ${MOC_SOURCES} ${RC_SOURCES} ${UI_HEADERS} )

@@ -1,0 +1,16 @@
+import "Chocachoca.idsl";
+import "AprilTags.idsl";
+import "Planner.idsl";
+
+Component planner
+{
+	Communications
+	{
+		requires Chocachoca;
+		implements Planner;
+		subscribesTo AprilTags;
+	};
+	language Cpp;
+	gui Qt(QWidget);
+};
+
