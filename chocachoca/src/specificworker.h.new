@@ -1,5 +1,5 @@
 /*
- *    Copyright (C)2017 by YOUR NAME HERE
+ *    Copyright (C) 2017 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -24,6 +24,10 @@
 
 
 
+
+
+
+
 #ifndef SPECIFICWORKER_H
 #define SPECIFICWORKER_H
 
@@ -34,7 +38,7 @@ class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 public:
-	SpecificWorker(MapPrx& mprx);
+	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 
@@ -45,11 +49,11 @@ public:
 	void setPick(const Pick &myPick);
 
 public slots:
-	void compute();
+	void compute(); 	
 
 private:
-	InnerModel *innerModel;
-
+	
 };
 
 #endif
+

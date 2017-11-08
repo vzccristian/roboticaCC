@@ -1,5 +1,5 @@
 /*
- *    Copyright (C)2017 by YOUR NAME HERE
+ *    Copyright (C) 2017 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -27,13 +27,13 @@
 #include <ui_mainUI.h>
 
 #include <CommonBehavior.h>
-
-#include <Laser.h>
-#include <GenericBase.h>
 #include <DifferentialRobot.h>
-#include <GenericBase.h>
-#include <RCISMousePicker.h>
 #include <Chocachoca.h>
+#include <RCISMousePicker.h>
+#include <Laser.h>
+
+#include <IceStorm/IceStorm.h>
+
 
 #define CHECK_PERIOD 5000
 #define BASIC_PERIOD 100
@@ -44,14 +44,13 @@ using namespace std;
 
 using namespace RoboCompDifferentialRobot;
 using namespace RoboCompChocachoca;
-using namespace RoboCompGenericBase;
-using namespace RoboCompLaser;
 using namespace RoboCompRCISMousePicker;
+using namespace RoboCompLaser;
 
 
 
 
-class GenericWorker :
+class GenericWorker : 
 #ifdef USE_QTGUI
 public QWidget, public Ui_guiDlg
 #else
@@ -64,13 +63,14 @@ public:
 	virtual ~GenericWorker();
 	virtual void killYourSelf();
 	virtual void setPeriod(int p);
-
+	
 	virtual bool setParams(RoboCompCommonBehavior::ParameterList params) = 0;
 	QMutex *mutex;
-
+	
 
 	DifferentialRobotPrx differentialrobot_proxy;
 	LaserPrx laser_proxy;
+
 
 	virtual void go(const float x, const float z) = 0;
 	virtual void turn(const float speed) = 0;
@@ -78,15 +78,15 @@ public:
 	virtual void stop() = 0;
 	virtual void setPick(const Pick &myPick) = 0;
 
+
 protected:
 	QTimer timer;
 	int Period;
 
-private:
-
-
 public slots:
 	virtual void compute() = 0;
+
+
 signals:
 	void kill();
 };

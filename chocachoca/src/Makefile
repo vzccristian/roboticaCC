@@ -78,17 +78,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -99,6 +88,28 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -253,33 +264,6 @@ DifferentialRobot.s: DifferentialRobot.cpp.s
 DifferentialRobot.cpp.s:
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.s
 .PHONY : DifferentialRobot.cpp.s
-
-GenericBase.o: GenericBase.cpp.o
-
-.PHONY : GenericBase.o
-
-# target to build an object file
-GenericBase.cpp.o:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GenericBase.cpp.o
-.PHONY : GenericBase.cpp.o
-
-GenericBase.i: GenericBase.cpp.i
-
-.PHONY : GenericBase.i
-
-# target to preprocess a source file
-GenericBase.cpp.i:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GenericBase.cpp.i
-.PHONY : GenericBase.cpp.i
-
-GenericBase.s: GenericBase.cpp.s
-
-.PHONY : GenericBase.s
-
-# target to generate assembly for a file
-GenericBase.cpp.s:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GenericBase.cpp.s
-.PHONY : GenericBase.cpp.s
 
 Laser.o: Laser.cpp.o
 
@@ -524,33 +508,6 @@ home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s:
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s
 .PHONY : home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s
 
-home/salabeta/robocomp/classes/sigwatch/sigwatch.o: home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o
-
-.PHONY : home/salabeta/robocomp/classes/sigwatch/sigwatch.o
-
-# target to build an object file
-home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o
-.PHONY : home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.o
-
-home/salabeta/robocomp/classes/sigwatch/sigwatch.i: home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.i
-
-.PHONY : home/salabeta/robocomp/classes/sigwatch/sigwatch.i
-
-# target to preprocess a source file
-home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.i:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.i
-.PHONY : home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.i
-
-home/salabeta/robocomp/classes/sigwatch/sigwatch.s: home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.s
-
-.PHONY : home/salabeta/robocomp/classes/sigwatch/sigwatch.s
-
-# target to generate assembly for a file
-home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.s:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.s
-.PHONY : home/salabeta/robocomp/classes/sigwatch/sigwatch.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -667,9 +624,10 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... chocachoca"
-	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... chocachoca"
+	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... edit_cache"
 	@echo "... chocachoca_automoc"
 	@echo "... Chocachoca.o"
@@ -681,9 +639,6 @@ help:
 	@echo "... DifferentialRobot.o"
 	@echo "... DifferentialRobot.i"
 	@echo "... DifferentialRobot.s"
-	@echo "... GenericBase.o"
-	@echo "... GenericBase.i"
-	@echo "... GenericBase.s"
 	@echo "... Laser.o"
 	@echo "... Laser.i"
 	@echo "... Laser.s"
@@ -711,9 +666,6 @@ help:
 	@echo "... home/salabeta/robocomp/classes/rapplication/rapplication.o"
 	@echo "... home/salabeta/robocomp/classes/rapplication/rapplication.i"
 	@echo "... home/salabeta/robocomp/classes/rapplication/rapplication.s"
-	@echo "... home/salabeta/robocomp/classes/sigwatch/sigwatch.o"
-	@echo "... home/salabeta/robocomp/classes/sigwatch/sigwatch.i"
-	@echo "... home/salabeta/robocomp/classes/sigwatch/sigwatch.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

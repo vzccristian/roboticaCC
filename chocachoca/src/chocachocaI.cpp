@@ -18,9 +18,10 @@
  */
 #include "chocachocaI.h"
 
-ChocachocaI::ChocachocaI(GenericWorker *_worker)
+ChocachocaI::ChocachocaI(GenericWorker *_worker, QObject *parent) : QObject(parent)
 {
 	worker = _worker;
+	mutex = worker->mutex;       // Shared worker mutex
 }
 
 
@@ -47,4 +48,9 @@ void ChocachocaI::stop(const Ice::Current&)
 {
 	worker->stop();
 }
+
+
+
+
+
 

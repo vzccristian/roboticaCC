@@ -1,5 +1,5 @@
 /*
- *    Copyright (C)2017 by YOUR NAME HERE
+ *    Copyright (C) 2017 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -19,6 +19,9 @@
 #ifndef CHOCACHOCA_H
 #define CHOCACHOCA_H
 
+// QT includes
+#include <QtCore/QObject>
+
 // Ice includes
 #include <Ice/Ice.h>
 #include <Chocachoca.h>
@@ -28,20 +31,24 @@
 
 using namespace RoboCompChocachoca;
 
-class ChocachocaI : public virtual RoboCompChocachoca::Chocachoca
+class ChocachocaI : public QObject , public virtual RoboCompChocachoca::Chocachoca
 {
+Q_OBJECT
 public:
-ChocachocaI(GenericWorker *_worker);
+	ChocachocaI( GenericWorker *_worker, QObject *parent = 0 );
 	~ChocachocaI();
-
+	
 	void go(const float  x, const float  z, const Ice::Current&);
 	void turn(const float  speed, const Ice::Current&);
 	void getState(const Ice::Current&);
 	void stop(const Ice::Current&);
 
+	QMutex *mutex;
 private:
 
 	GenericWorker *worker;
+public slots:
+
 
 };
 

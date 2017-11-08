@@ -18,9 +18,10 @@
  */
 #include "rcismousepickerI.h"
 
-RCISMousePickerI::RCISMousePickerI(GenericWorker *_worker)
+RCISMousePickerI::RCISMousePickerI(GenericWorker *_worker, QObject *parent) : QObject(parent)
 {
 	worker = _worker;
+	mutex = worker->mutex;       // Shared worker mutex
 }
 
 
@@ -32,4 +33,9 @@ void RCISMousePickerI::setPick(const Pick  &myPick, const Ice::Current&)
 {
 	worker->setPick(myPick);
 }
+
+
+
+
+
 

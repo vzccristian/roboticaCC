@@ -1,6 +1,10 @@
 CommonBehavior.Endpoints=tcp -p 12000
 
 
+# Endpoints for implemented interfaces
+Chocachoca.Endpoints=tcp -p 10095
+
+
 # Proxies for required interfaces
 DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 10004
 LaserProxy = laser:tcp -h localhost -p 10003

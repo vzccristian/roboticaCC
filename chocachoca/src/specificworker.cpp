@@ -46,7 +46,7 @@ void SpecificWorker::compute()
 {
  
     float linealSpeed=0;
-    RoboCompGenericBase::TBaseState bState; 
+    RoboCompDifferentialRobot::TBaseState bState; 
     differentialrobot_proxy->getBaseState(bState);//TOMAR DATOS DEL MUNDO
     
     innermodel->updateTransformValues("base", bState.x,0, bState.z,0,bState.alpha, 0 );  //ACTUALIZAR ARBOL
@@ -242,25 +242,40 @@ float SpecificWorker::sinusoide(float x){
  
 //LLAMADAS INTERFAZ 
 void SpecificWorker::go(const float x, const float z) {
-
+  qDebug() << x << z ;
   
-  
+  //TOMAR DATOS DEL MUNDO
+  RoboCompDifferentialRobot::TBaseState bState;
+  differentialrobot_proxy->getBaseState(bState);
+  target.insert(x,z,bState.x,bState.z); 
+  estado=GOTO; 
 }
 
 void SpecificWorker::turn(const float speed) {
   
   
+  //while (!noObjetivo)
+  //Robot GIRAR
+  //Comprobar si ve QR
+    //Si QRvisto=estado
+      //switch estado
+      //estado0
+	//GOTO x0 y0
+	//estado=QR1
+      //estado1
+	//GOTO x1 y1
+	//estado=QR2
+	//etc..
+   
   
 }
 
 void SpecificWorker::getState(){ 
-  
-  
+  //return que narices hago
 }
 
 void SpecificWorker::stop() {
-  
-  
+  differentialrobot_proxy->setSpeedBase(0,0);
 }
 
  
@@ -270,7 +285,7 @@ void SpecificWorker::setPick(const Pick &myPick)
   qDebug() << myPick.x << myPick.z ;
   
   //TOMAR DATOS DEL MUNDO
-  RoboCompGenericBase::TBaseState bState;
+  RoboCompDifferentialRobot::TBaseState bState;
   differentialrobot_proxy->getBaseState(bState);
   target.insert(myPick.x,myPick.z,bState.x,bState.z); 
   estado=GOTO;

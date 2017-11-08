@@ -1,0 +1,15 @@
+import "/robocomp/interfaces/IDSLs/Chocachoca.idsl";
+import "/robocomp/interfaces/IDSLs/AprilTags.idsl";
+import "/robocomp/interfaces/IDSLs/DifferentialRobot.idsl";
+
+Component Supervisor
+{
+	Communications
+	{
+		requires Chocachoca,DifferentialRobot;
+		subscribesTo AprilTags;
+	};
+	language Cpp;
+	gui Qt(QWidget);
+};
+
