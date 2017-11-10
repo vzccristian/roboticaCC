@@ -40,7 +40,7 @@ public:
 	
 	void go(const float  x, const float  z, const Ice::Current&);
 	void turn(const float  speed, const Ice::Current&);
-	void getState(const Ice::Current&);
+	bool getState(const Ice::Current&);
 	void stop(const Ice::Current&);
 
 	QMutex *mutex;

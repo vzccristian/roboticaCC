@@ -71,7 +71,7 @@ void SpecificWorker::turn(const float speed)
 
 }
 
-void SpecificWorker::getState()
+bool SpecificWorker::getState()
 {
 
 }

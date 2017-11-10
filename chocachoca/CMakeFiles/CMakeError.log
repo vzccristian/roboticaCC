@@ -97,3 +97,498 @@ int main(int argc, char** argv)
 #endif
 }
 
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a4d4f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a4d4f.dir/build.make CMakeFiles/cmTC_a4d4f.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a4d4f.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_a4d4f.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_a4d4f.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_a4d4f.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_a4d4f.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_a4d4f/fast'
+make: *** [cmTC_a4d4f/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ca0cd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ca0cd.dir/build.make CMakeFiles/cmTC_ca0cd.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ca0cd.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_ca0cd.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_ca0cd.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_ca0cd.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_ca0cd.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_ca0cd/fast'
+make: *** [cmTC_ca0cd/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0654d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0654d.dir/build.make CMakeFiles/cmTC_0654d.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0654d.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_0654d.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_0654d.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_0654d.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_0654d.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_0654d/fast'
+make: *** [cmTC_0654d/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0bdbb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0bdbb.dir/build.make CMakeFiles/cmTC_0bdbb.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0bdbb.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_0bdbb.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_0bdbb.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_0bdbb.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_0bdbb.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_0bdbb/fast'
+make: *** [cmTC_0bdbb/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c4e4b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c4e4b.dir/build.make CMakeFiles/cmTC_c4e4b.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4e4b.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_c4e4b.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_c4e4b.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_c4e4b.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_c4e4b.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_c4e4b/fast'
+make: *** [cmTC_c4e4b/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_78f54/fast"
+/usr/bin/make -f CMakeFiles/cmTC_78f54.dir/build.make CMakeFiles/cmTC_78f54.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_78f54.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_78f54.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_78f54.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_78f54.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_78f54.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_78f54/fast'
+make: *** [cmTC_78f54/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_897f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_897f0.dir/build.make CMakeFiles/cmTC_897f0.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_897f0.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_897f0.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_897f0.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_897f0.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_897f0.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_897f0/fast'
+make: *** [cmTC_897f0/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_15c7a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_15c7a.dir/build.make CMakeFiles/cmTC_15c7a.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_15c7a.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_15c7a.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_15c7a.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_15c7a.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_15c7a.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_15c7a/fast'
+make: *** [cmTC_15c7a/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e12d7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e12d7.dir/build.make CMakeFiles/cmTC_e12d7.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e12d7.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_e12d7.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_e12d7.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_e12d7.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_e12d7.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_e12d7/fast'
+make: *** [cmTC_e12d7/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_067bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_067bd.dir/build.make CMakeFiles/cmTC_067bd.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_067bd.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_067bd.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_067bd.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_067bd.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_067bd.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_067bd/fast'
+make: *** [cmTC_067bd/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d80b1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d80b1.dir/build.make CMakeFiles/cmTC_d80b1.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d80b1.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_d80b1.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_d80b1.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_d80b1.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_d80b1.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_d80b1/fast'
+make: *** [cmTC_d80b1/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b3127/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b3127.dir/build.make CMakeFiles/cmTC_b3127.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b3127.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_b3127.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_b3127.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_b3127.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_b3127.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_b3127/fast'
+make: *** [cmTC_b3127/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_67dd6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_67dd6.dir/build.make CMakeFiles/cmTC_67dd6.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_67dd6.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_67dd6.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_67dd6.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_67dd6.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_67dd6.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_67dd6/fast'
+make: *** [cmTC_67dd6/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_36dd7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_36dd7.dir/build.make CMakeFiles/cmTC_36dd7.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_36dd7.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_36dd7.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_36dd7.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_36dd7.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_36dd7.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_36dd7/fast'
+make: *** [cmTC_36dd7/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ba2d3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ba2d3.dir/build.make CMakeFiles/cmTC_ba2d3.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ba2d3.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_ba2d3.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_ba2d3.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_ba2d3.dir/CheckSymbolExists.cxx.o'
+make[1]: *** [CMakeFiles/cmTC_ba2d3.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_ba2d3/fast'
+make: *** [cmTC_ba2d3/fast] Error 2
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

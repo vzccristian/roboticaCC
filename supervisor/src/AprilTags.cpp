@@ -42,6 +42,8 @@ namespace
 
 const ::std::string __RoboCompAprilTags__AprilTags__newAprilTag_name = "newAprilTag";
 
+const ::std::string __RoboCompAprilTags__AprilTags__newAprilTagAndPose_name = "newAprilTagAndPose";
+
 }
 
 namespace Ice
@@ -116,6 +118,59 @@ IceProxy::RoboCompAprilTags::AprilTags::end_newAprilTag(const ::Ice::AsyncResult
     __end(__result, __RoboCompAprilTags__AprilTags__newAprilTag_name);
 }
 
+void
+IceProxy::RoboCompAprilTags::AprilTags::newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __RoboCompAprilTags__AprilTags__newAprilTagAndPose_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::RoboCompAprilTags::AprilTags* __del = dynamic_cast< ::IceDelegate::RoboCompAprilTags::AprilTags*>(__delBase.get());
+            __del->newAprilTagAndPose(tags, bState, hState, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::RoboCompAprilTags::AprilTags::begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __RoboCompAprilTags__AprilTags__newAprilTagAndPose_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__RoboCompAprilTags__AprilTags__newAprilTagAndPose_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(tags);
+        __os->write(bState);
+        __os->write(hState);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::RoboCompAprilTags::AprilTags::end_newAprilTagAndPose(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __RoboCompAprilTags__AprilTags__newAprilTagAndPose_name);
+}
+
 const ::std::string&
 IceProxy::RoboCompAprilTags::AprilTags::ice_staticId()
 {
@@ -148,6 +203,48 @@ IceDelegateM::RoboCompAprilTags::AprilTags::newAprilTag(const ::RoboCompAprilTag
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
         __os->write(tags);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::RoboCompAprilTags::AprilTags::newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __RoboCompAprilTags__AprilTags__newAprilTagAndPose_name, ::Ice::Normal, __context, __observer);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(tags);
+        __os->write(bState);
+        __os->write(hState);
         __og.endWriteParams();
     }
     catch(const ::Ice::LocalException& __ex)
@@ -244,6 +341,74 @@ IceDelegateD::RoboCompAprilTags::AprilTags::newAprilTag(const ::RoboCompAprilTag
     }
 }
 
+void
+IceDelegateD::RoboCompAprilTags::AprilTags::newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(const ::RoboCompAprilTags::tagsList& __p_tags, const ::RoboCompGenericBase::TBaseState& __p_bState, const ::RoboCompJointMotor::MotorStateMap& __p_hState, const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current),
+            _m_tags(__p_tags),
+            _m_bState(__p_bState),
+            _m_hState(__p_hState)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::RoboCompAprilTags::AprilTags* servant = dynamic_cast< ::RoboCompAprilTags::AprilTags*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->newAprilTagAndPose(_m_tags, _m_bState, _m_hState, _current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+        const ::RoboCompAprilTags::tagsList& _m_tags;
+        const ::RoboCompGenericBase::TBaseState& _m_bState;
+        const ::RoboCompJointMotor::MotorStateMap& _m_hState;
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __RoboCompAprilTags__AprilTags__newAprilTagAndPose_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(tags, bState, hState, __current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
 ::Ice::Object* RoboCompAprilTags::upCast(::RoboCompAprilTags::AprilTags* p) { return p; }
 
 namespace
@@ -293,6 +458,23 @@ RoboCompAprilTags::AprilTags::___newAprilTag(::IceInternal::Incoming& __inS, con
     return ::Ice::DispatchOK;
 }
 
+::Ice::DispatchStatus
+RoboCompAprilTags::AprilTags::___newAprilTagAndPose(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::RoboCompAprilTags::tagsList tags;
+    ::RoboCompGenericBase::TBaseState bState;
+    ::RoboCompJointMotor::MotorStateMap hState;
+    __is->read(tags);
+    __is->read(bState);
+    __is->read(hState);
+    __inS.endReadParams();
+    newAprilTagAndPose(tags, bState, hState, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
 namespace
 {
 const ::std::string __RoboCompAprilTags__AprilTags_all[] =
@@ -301,7 +483,8 @@ const ::std::string __RoboCompAprilTags__AprilTags_all[] =
     "ice_ids",
     "ice_isA",
     "ice_ping",
-    "newAprilTag"
+    "newAprilTag",
+    "newAprilTagAndPose"
 };
 
 }
@@ -309,7 +492,7 @@ const ::std::string __RoboCompAprilTags__AprilTags_all[] =
 ::Ice::DispatchStatus
 RoboCompAprilTags::AprilTags::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
 {
-    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__RoboCompAprilTags__AprilTags_all, __RoboCompAprilTags__AprilTags_all + 5, current.operation);
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__RoboCompAprilTags__AprilTags_all, __RoboCompAprilTags__AprilTags_all + 6, current.operation);
     if(r.first == r.second)
     {
         throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
@@ -336,6 +519,10 @@ RoboCompAprilTags::AprilTags::__dispatch(::IceInternal::Incoming& in, const ::Ic
         case 4:
         {
             return ___newAprilTag(in, current);
+        }
+        case 5:
+        {
+            return ___newAprilTagAndPose(in, current);
         }
     }
 

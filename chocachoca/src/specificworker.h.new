@@ -44,7 +44,7 @@ public:
 
 	void go(const float x, const float z);
 	void turn(const float speed);
-	void getState();
+	bool getState();
 	void stop();
 	void setPick(const Pick &myPick);
 

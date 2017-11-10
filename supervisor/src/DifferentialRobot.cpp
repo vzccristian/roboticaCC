@@ -58,83 +58,6 @@ const ::std::string __RoboCompDifferentialRobot__DifferentialRobot__correctOdome
 
 }
 
-namespace
-{
-
-const char* __RoboCompDifferentialRobot__HardwareFailedException_name = "RoboCompDifferentialRobot::HardwareFailedException";
-
-struct __F__RoboCompDifferentialRobot__HardwareFailedException : public ::IceInternal::UserExceptionFactory
-{
-    virtual void
-    createAndThrow(const ::std::string&)
-    {
-        throw ::RoboCompDifferentialRobot::HardwareFailedException();
-    }
-};
-
-class __F__RoboCompDifferentialRobot__HardwareFailedException__Init
-{
-public:
-
-    __F__RoboCompDifferentialRobot__HardwareFailedException__Init()
-    {
-        ::IceInternal::factoryTable->addExceptionFactory("::RoboCompDifferentialRobot::HardwareFailedException", new __F__RoboCompDifferentialRobot__HardwareFailedException);
-    }
-
-    ~__F__RoboCompDifferentialRobot__HardwareFailedException__Init()
-    {
-        ::IceInternal::factoryTable->removeExceptionFactory("::RoboCompDifferentialRobot::HardwareFailedException");
-    }
-};
-
-const __F__RoboCompDifferentialRobot__HardwareFailedException__Init __F__RoboCompDifferentialRobot__HardwareFailedException__i;
-
-}
-
-RoboCompDifferentialRobot::HardwareFailedException::HardwareFailedException(const ::std::string& __ice_what) :
-    ::Ice::UserException(),
-    what(__ice_what)
-{
-}
-
-RoboCompDifferentialRobot::HardwareFailedException::~HardwareFailedException() throw()
-{
-}
-
-::std::string
-RoboCompDifferentialRobot::HardwareFailedException::ice_name() const
-{
-    return __RoboCompDifferentialRobot__HardwareFailedException_name;
-}
-
-RoboCompDifferentialRobot::HardwareFailedException*
-RoboCompDifferentialRobot::HardwareFailedException::ice_clone() const
-{
-    return new HardwareFailedException(*this);
-}
-
-void
-RoboCompDifferentialRobot::HardwareFailedException::ice_throw() const
-{
-    throw *this;
-}
-
-void
-RoboCompDifferentialRobot::HardwareFailedException::__writeImpl(::IceInternal::BasicStream* __os) const
-{
-    __os->startWriteSlice("::RoboCompDifferentialRobot::HardwareFailedException", -1, true);
-    __os->write(what);
-    __os->endWriteSlice();
-}
-
-void
-RoboCompDifferentialRobot::HardwareFailedException::__readImpl(::IceInternal::BasicStream* __is)
-{
-    __is->startReadSlice();
-    __is->read(what);
-    __is->endReadSlice();
-}
-
 namespace Ice
 {
 }
@@ -157,7 +80,7 @@ void
 }
 
 void
-IceProxy::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __ctx)
+IceProxy::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __ctx)
 {
     ::IceInternal::InvocationObserver __observer(this, __RoboCompDifferentialRobot__DifferentialRobot__getBaseState_name, __ctx);
     int __cnt = 0;
@@ -202,7 +125,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::begin_getBaseState(const
 }
 
 void
-IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_getBaseState(::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::AsyncResultPtr& __result)
+IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_getBaseState(::RoboCompGenericBase::TBaseState& state, const ::Ice::AsyncResultPtr& __result)
 {
     ::Ice::AsyncResult::__check(__result, this, __RoboCompDifferentialRobot__DifferentialRobot__getBaseState_name);
     bool __ok = __result->__wait();
@@ -214,7 +137,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_getBaseState(::RoboC
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -292,7 +215,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_getBasePose(::Ice::I
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -375,7 +298,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_setSpeedBase(const :
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -451,7 +374,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_stopBase(const ::Ice
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -527,7 +450,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_resetOdometer(const 
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -546,7 +469,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_resetOdometer(const 
 }
 
 void
-IceProxy::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __ctx)
+IceProxy::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __ctx)
 {
     ::IceInternal::InvocationObserver __observer(this, __RoboCompDifferentialRobot__DifferentialRobot__setOdometer_name, __ctx);
     int __cnt = 0;
@@ -573,7 +496,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::Robo
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::RoboCompDifferentialRobot::DifferentialRobot::begin_setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::RoboCompDifferentialRobot::DifferentialRobot::begin_setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
     __checkAsyncTwowayOnly(__RoboCompDifferentialRobot__DifferentialRobot__setOdometer_name);
     ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __RoboCompDifferentialRobot__DifferentialRobot__setOdometer_name, __del, __cookie);
@@ -605,7 +528,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_setOdometer(const ::
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -685,7 +608,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_setOdometerPose(cons
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -765,7 +688,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::end_correctOdometer(cons
             {
                 __result->__throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -808,7 +731,7 @@ IceProxy::RoboCompDifferentialRobot::DifferentialRobot::__newInstance() const
 }
 
 void
-IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __RoboCompDifferentialRobot__DifferentialRobot__getBaseState_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
@@ -821,7 +744,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboC
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -855,7 +778,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::getBasePose(::Ice::I
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -901,7 +824,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::setSpeedBase(::Ice::
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -933,7 +856,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::stopBase(const ::Ice
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -965,7 +888,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::resetOdometer(const 
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -984,7 +907,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::resetOdometer(const 
 }
 
 void
-IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __RoboCompDifferentialRobot__DifferentialRobot__setOdometer_name, ::Ice::Normal, __context, __observer);
     try
@@ -1006,7 +929,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -1049,7 +972,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::setOdometerPose(::Ic
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -1092,7 +1015,7 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::correctOdometer(::Ic
             {
                 __og.throwUserException();
             }
-            catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+            catch(const ::RoboCompGenericBase::HardwareFailedException&)
             {
                 throw;
             }
@@ -1111,13 +1034,13 @@ IceDelegateM::RoboCompDifferentialRobot::DifferentialRobot::correctOdometer(::Ic
 }
 
 void
-IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(::RoboCompDifferentialRobot::TBaseState& __p_state, const ::Ice::Current& __current) : 
+        _DirectI(::RoboCompGenericBase::TBaseState& __p_state, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
             _m_state(__p_state)
         {
@@ -1145,7 +1068,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboC
         
     private:
         
-        ::RoboCompDifferentialRobot::TBaseState& _m_state;
+        ::RoboCompGenericBase::TBaseState& _m_state;
     };
     
     ::Ice::Current __current;
@@ -1164,7 +1087,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::getBaseState(::RoboC
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1244,7 +1167,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::getBasePose(::Ice::I
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1322,7 +1245,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::setSpeedBase(::Ice::
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1396,7 +1319,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::stopBase(const ::Ice
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1470,7 +1393,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::resetOdometer(const 
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1493,13 +1416,13 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::resetOdometer(const 
 }
 
 void
-IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::RoboCompDifferentialRobot::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::RoboCompGenericBase::TBaseState& state, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(const ::RoboCompDifferentialRobot::TBaseState& __p_state, const ::Ice::Current& __current) : 
+        _DirectI(const ::RoboCompGenericBase::TBaseState& __p_state, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
             _m_state(__p_state)
         {
@@ -1527,7 +1450,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::
         
     private:
         
-        const ::RoboCompDifferentialRobot::TBaseState& _m_state;
+        const ::RoboCompGenericBase::TBaseState& _m_state;
     };
     
     ::Ice::Current __current;
@@ -1546,7 +1469,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::setOdometer(const ::
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1626,7 +1549,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::setOdometerPose(::Ic
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1706,7 +1629,7 @@ IceDelegateD::RoboCompDifferentialRobot::DifferentialRobot::correctOdometer(::Ic
         }
         __direct.destroy();
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException&)
+    catch(const ::RoboCompGenericBase::HardwareFailedException&)
     {
         throw;
     }
@@ -1769,7 +1692,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___getBaseState(::IceInternal::Inc
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
-    ::RoboCompDifferentialRobot::TBaseState state;
+    ::RoboCompGenericBase::TBaseState state;
     try
     {
         getBaseState(state, __current);
@@ -1778,7 +1701,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___getBaseState(::IceInternal::Inc
         __inS.__endWriteParams(true);
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1803,7 +1726,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___getBasePose(::IceInternal::Inco
         __inS.__endWriteParams(true);
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1826,7 +1749,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___setSpeedBase(::IceInternal::Inc
         __inS.__writeEmptyParams();
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1844,7 +1767,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___stopBase(::IceInternal::Incomin
         __inS.__writeEmptyParams();
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1862,7 +1785,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___resetOdometer(::IceInternal::In
         __inS.__writeEmptyParams();
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1874,7 +1797,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___setOdometer(::IceInternal::Inco
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::RoboCompDifferentialRobot::TBaseState state;
+    ::RoboCompGenericBase::TBaseState state;
     __is->read(state);
     __inS.endReadParams();
     try
@@ -1883,7 +1806,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___setOdometer(::IceInternal::Inco
         __inS.__writeEmptyParams();
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1908,7 +1831,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___setOdometerPose(::IceInternal::
         __inS.__writeEmptyParams();
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }
@@ -1933,7 +1856,7 @@ RoboCompDifferentialRobot::DifferentialRobot::___correctOdometer(::IceInternal::
         __inS.__writeEmptyParams();
         return ::Ice::DispatchOK;
     }
-    catch(const ::RoboCompDifferentialRobot::HardwareFailedException& __ex)
+    catch(const ::RoboCompGenericBase::HardwareFailedException& __ex)
     {
         __inS.__writeUserException(__ex, ::Ice::DefaultFormat);
     }

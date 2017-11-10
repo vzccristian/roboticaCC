@@ -39,9 +39,9 @@ void ChocachocaI::turn(const float  speed, const Ice::Current&)
 	worker->turn(speed);
 }
 
-void ChocachocaI::getState(const Ice::Current&)
+bool ChocachocaI::getState(const Ice::Current&)
 {
-	worker->getState();
+	return worker->getState();
 }
 
 void ChocachocaI::stop(const Ice::Current&)

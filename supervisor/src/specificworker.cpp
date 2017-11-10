@@ -48,23 +48,69 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 
 void SpecificWorker::compute()
 {
-// 	try
-// 	{
-// 		camera_proxy->getYImage(0,img, cState, bState);
-// 		memcpy(image_gray.data, &img[0], m_width*m_height*sizeof(uchar));
-// 		searchTags(image_gray);
-// 	}
-// 	catch(const Ice::Exception &e)
-// 	{
-// 		std::cout << "Error reading from Camera" << e << std::endl;
-// 	}
+    
+    mtx.lock();
+            
+    
+    mtx.unlock();
+    
+    //MAQUINA DE ESTADOS
+    switch (estado)  
+      {  
+        case SEARCH: 
+            search();
+            break; 
+        case WAIT:
+            wait();
+            break;  
+        default:  
+	    break;
+    } 
+      
+      
+      //while (!noObjetivo)
+  //Robot GIRAR
+  //Comprobar si ve QR
+    //Si QRvisto=estado
+      //switch estado
+      //estado0
+	//GOTO x0 y0
+	//estado=QR1
+      //estado1
+	//GOTO x1 y1
+	//estado=QR2
+	//etc..
+    
+    
 }
+
+void SpecificWorker::search() {
+    
+    
+}
+
+void SpecificWorker::wait() {
+
+    while (chocachoca_proxy->getState()) {
+        /* No hacer nada */ }
+        
+    
+}
+
+
+
 
 
 void SpecificWorker::newAprilTag(const tagsList &tags)
 {
-//TODO
-  
+    mtx.lock();
+        for (auto w:watchingtags)  //Inicialización
+            w=0; 
+        for (auto h:tags) { //Escritura
+            qDebug() << h.id;
+            watchingtags[h.id]=1;
+        }
+    mtx.unlock();
 }
 
 

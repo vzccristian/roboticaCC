@@ -1,0 +1,72 @@
+[
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/specificworker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/specificmonitor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o -c /opt/robocomp/classes/rapplication/rapplication.cpp",
+  "file": "/opt/robocomp/classes/rapplication/rapplication.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/opt/robocomp/classes/qlog/qlog.cpp.o -c /opt/robocomp/classes/qlog/qlog.cpp",
+  "file": "/opt/robocomp/classes/qlog/qlog.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/main.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/main.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/main.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/genericmonitor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/genericworker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/Laser.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp"
+},
+{
+  "directory": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src",
+  "command": "/usr/bin/c++   -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_XML_LIB -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src -I/home/crivac/robocomp/components/roboticaCC/chocachoca/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/chocachoca -I/opt/robocomp/classes -I/opt/robocomp/libs -I/opt/robocomp/interfaces -I/include  -g   -Wall -std=c++11 -Wall -o CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp",
+  "file": "/home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp"
+}
+]

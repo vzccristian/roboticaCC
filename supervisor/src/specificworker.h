@@ -33,6 +33,11 @@
 
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
+#include <mutex>          // std::mutex
+#include "Chocachoca.h"
+
+using namespace std;
+enum state{ SEARCH, WAIT};
 
 class SpecificWorker : public GenericWorker
 {
@@ -43,12 +48,16 @@ public:
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 
 	void newAprilTag(const tagsList &tags);
+    void search();
+    void wait();
 
 public slots:
 	void compute(); 	
 
 private:
-	
+	std::mutex mtx; 
+    int watchingtags[4]={0,0,0,0};
+    state estado;
 };
 
 #endif

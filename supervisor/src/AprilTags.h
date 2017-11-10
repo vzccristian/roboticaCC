@@ -32,9 +32,12 @@
 #include <Ice/OutgoingAsync.h>
 #include <Ice/Incoming.h>
 #include <Ice/Direct.h>
+#include <Ice/FactoryTableInit.h>
 #include <IceUtil/ScopedArray.h>
 #include <IceUtil/Optional.h>
 #include <Ice/StreamF.h>
+#include <JointMotor.h>
+#include <GenericBase.h>
 #include <Ice/UndefSysMacros.h>
 
 #ifndef ICE_IGNORE_VERSION
@@ -261,6 +264,9 @@ namespace RoboCompAprilTags
 class Callback_AprilTags_newAprilTag_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_AprilTags_newAprilTag_Base> Callback_AprilTags_newAprilTagPtr;
 
+class Callback_AprilTags_newAprilTagAndPose_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_AprilTags_newAprilTagAndPose_Base> Callback_AprilTags_newAprilTagAndPosePtr;
+
 }
 
 namespace IceProxy
@@ -340,6 +346,76 @@ private:
 
     void newAprilTag(const ::RoboCompAprilTags::tagsList&, const ::Ice::Context*);
     ::Ice::AsyncResultPtr begin_newAprilTag(const ::RoboCompAprilTags::tagsList&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    
+public:
+
+    void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState)
+    {
+        newAprilTagAndPose(tags, bState, hState, 0);
+    }
+    void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context& __ctx)
+    {
+        newAprilTagAndPose(tags, bState, hState, &__ctx);
+    }
+#ifdef ICE_CPP11
+    ::Ice::AsyncResultPtr
+    begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+    }
+    ::Ice::AsyncResultPtr
+    begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, 0, ::Ice::newCallback(__completed, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+    }
+    ::Ice::AsyncResultPtr
+    begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, &__ctx, ::Ice::newCallback(__completed, __sent));
+    }
+#endif
+
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState)
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, 0, ::IceInternal::__dummyCallback, 0);
+    }
+
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context& __ctx)
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, &__ctx, ::IceInternal::__dummyCallback, 0);
+    }
+
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, 0, __del, __cookie);
+    }
+
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, &__ctx, __del, __cookie);
+    }
+
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::RoboCompAprilTags::Callback_AprilTags_newAprilTagAndPosePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, 0, __del, __cookie);
+    }
+
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList& tags, const ::RoboCompGenericBase::TBaseState& bState, const ::RoboCompJointMotor::MotorStateMap& hState, const ::Ice::Context& __ctx, const ::RoboCompAprilTags::Callback_AprilTags_newAprilTagAndPosePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    {
+        return begin_newAprilTagAndPose(tags, bState, hState, &__ctx, __del, __cookie);
+    }
+
+    void end_newAprilTagAndPose(const ::Ice::AsyncResultPtr&);
+    
+private:
+
+    void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList&, const ::RoboCompGenericBase::TBaseState&, const ::RoboCompJointMotor::MotorStateMap&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_newAprilTagAndPose(const ::RoboCompAprilTags::tagsList&, const ::RoboCompGenericBase::TBaseState&, const ::RoboCompJointMotor::MotorStateMap&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
     
@@ -467,6 +543,8 @@ class AprilTags : virtual public ::IceDelegate::Ice::Object
 public:
 
     virtual void newAprilTag(const ::RoboCompAprilTags::tagsList&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+
+    virtual void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList&, const ::RoboCompGenericBase::TBaseState&, const ::RoboCompJointMotor::MotorStateMap&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
 
 }
@@ -485,6 +563,8 @@ class AprilTags : virtual public ::IceDelegate::RoboCompAprilTags::AprilTags,
 public:
 
     virtual void newAprilTag(const ::RoboCompAprilTags::tagsList&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+
+    virtual void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList&, const ::RoboCompGenericBase::TBaseState&, const ::RoboCompJointMotor::MotorStateMap&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
 
 }
@@ -503,6 +583,8 @@ class AprilTags : virtual public ::IceDelegate::RoboCompAprilTags::AprilTags,
 public:
 
     virtual void newAprilTag(const ::RoboCompAprilTags::tagsList&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+
+    virtual void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList&, const ::RoboCompGenericBase::TBaseState&, const ::RoboCompJointMotor::MotorStateMap&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
 
 }
@@ -526,6 +608,9 @@ public:
 
     virtual void newAprilTag(const ::RoboCompAprilTags::tagsList&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___newAprilTag(::IceInternal::Incoming&, const ::Ice::Current&);
+
+    virtual void newAprilTagAndPose(const ::RoboCompAprilTags::tagsList&, const ::RoboCompGenericBase::TBaseState&, const ::RoboCompJointMotor::MotorStateMap&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___newAprilTagAndPose(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual ::Ice::DispatchStatus __dispatch(::IceInternal::Incoming&, const ::Ice::Current&);
 
@@ -633,6 +718,88 @@ template<class T, typename CT> Callback_AprilTags_newAprilTagPtr
 newCallback_AprilTags_newAprilTag(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_AprilTags_newAprilTag<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T>
+class CallbackNC_AprilTags_newAprilTagAndPose : public Callback_AprilTags_newAprilTagAndPose_Base, public ::IceInternal::OnewayCallbackNC<T>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception&);
+    typedef void (T::*Sent)(bool);
+    typedef void (T::*Response)();
+
+    CallbackNC_AprilTags_newAprilTagAndPose(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_AprilTags_newAprilTagAndPose<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_AprilTags_newAprilTagAndPose<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_AprilTags_newAprilTagAndPose<T>(instance, cb, excb, sentcb);
+}
+
+template<class T> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_AprilTags_newAprilTagAndPose<T>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT>
+class Callback_AprilTags_newAprilTagAndPose : public Callback_AprilTags_newAprilTagAndPose_Base, public ::IceInternal::OnewayCallback<T, CT>
+{
+public:
+
+    typedef IceUtil::Handle<T> TPtr;
+
+    typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
+    typedef void (T::*Sent)(bool , const CT&);
+    typedef void (T::*Response)(const CT&);
+
+    Callback_AprilTags_newAprilTagAndPose(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
+    {
+    }
+};
+
+template<class T, typename CT> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_AprilTags_newAprilTagAndPose<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_AprilTags_newAprilTagAndPose<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_AprilTags_newAprilTagAndPose<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_AprilTags_newAprilTagAndPosePtr
+newCallback_AprilTags_newAprilTagAndPose(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_AprilTags_newAprilTagAndPose<T, CT>(instance, 0, excb, sentcb);
 }
 
 }

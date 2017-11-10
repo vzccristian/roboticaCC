@@ -254,24 +254,18 @@ void SpecificWorker::go(const float x, const float z) {
 void SpecificWorker::turn(const float speed) {
   
   
-  //while (!noObjetivo)
-  //Robot GIRAR
-  //Comprobar si ve QR
-    //Si QRvisto=estado
-      //switch estado
-      //estado0
-	//GOTO x0 y0
-	//estado=QR1
-      //estado1
-	//GOTO x1 y1
-	//estado=QR2
-	//etc..
-   
+    differentialrobot_proxy->setSpeedBase(0,speed);
   
 }
 
-void SpecificWorker::getState(){ 
-  //return que narices hago
+/*
+ * Return true if robot is working, otherwise false.
+ */
+bool SpecificWorker::getState(){ 
+  if (estado==IDLE)
+      return false;
+  else
+      return true;
 }
 
 void SpecificWorker::stop() {

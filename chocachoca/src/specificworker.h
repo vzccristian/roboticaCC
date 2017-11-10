@@ -41,15 +41,7 @@ public:
   ~SpecificWorker();
   bool setParams(RoboCompCommonBehavior::ParameterList params);
  
- 
-  
-  void go(const float x, const float z);
-  void turn(const float speed);
-  void getState();
-  void stop();
-  void setPick(const Pick &myPick);
-  
-  
+  //CONTROL DEL ROBOT Y LASER
   float gauss(float Vrot, float Vx, float h);
   float sinusoide(float x);
   void idle();
@@ -58,7 +50,14 @@ public:
   void skirt(TBaseState bState, TLaserData &laserData);
   void turn(float linealSpeed,TLaserData laserData);
   bool isOnLine(float x, float z);
-
+   
+  //LLAMADAS INTERFAZ 
+  void go(const float x, const float z);
+  void turn(const float speed);
+  bool getState();
+  void stop();
+  void setPick(const Pick &myPick);
+  
   
   
   

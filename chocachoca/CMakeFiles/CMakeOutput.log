@@ -580,3 +580,143 @@ int main(int argc, char** argv)
 #endif
 }
 
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_31359/fast"
+/usr/bin/make -f CMakeFiles/cmTC_31359.dir/build.make CMakeFiles/cmTC_31359.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_31359.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_31359.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_31359
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31359.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_31359.dir/CheckSymbolExists.cxx.o  -o cmTC_31359 -rdynamic 
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5d74b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5d74b.dir/build.make CMakeFiles/cmTC_5d74b.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5d74b.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_5d74b.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_5d74b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d74b.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_5d74b.dir/CheckSymbolExists.cxx.o  -o cmTC_5d74b -rdynamic 
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fea14/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fea14.dir/build.make CMakeFiles/cmTC_fea14.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fea14.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_fea14.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_fea14
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fea14.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_fea14.dir/CheckSymbolExists.cxx.o  -o cmTC_fea14 -rdynamic 
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_61846/fast"
+/usr/bin/make -f CMakeFiles/cmTC_61846.dir/build.make CMakeFiles/cmTC_61846.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_61846.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_61846.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_61846
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61846.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_61846.dir/CheckSymbolExists.cxx.o  -o cmTC_61846 -rdynamic 
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_X11 exist passed with the following output:
+Change Dir: /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d5246/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d5246.dir/build.make CMakeFiles/cmTC_d5246.dir/build
+make[1]: se entra en el directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d5246.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4   -o CMakeFiles/cmTC_d5246.dir/CheckSymbolExists.cxx.o -c /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_d5246
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d5246.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_d5246.dir/CheckSymbolExists.cxx.o  -o cmTC_d5246 -rdynamic 
+make[1]: se sale del directorio '/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp'
+
+File /home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_X11
+  return ((int*)(&Q_WS_X11))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
