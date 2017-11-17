@@ -83,12 +83,9 @@ protected:
 	QTimer timer;
 	int Period;
 
-	QTimer storm_timer;
-	int storm_period;
-
 public slots:
 	virtual void compute() = 0;
-	void check_storm();
+	
 
 signals:
 	void kill();
