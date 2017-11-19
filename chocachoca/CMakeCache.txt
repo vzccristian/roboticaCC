@@ -193,19 +193,19 @@ QT_MOC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/moc
 QT_PHONONWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_PHONONWIDGETS_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=QT_PHONONWIDGETS_PLUGIN_RELEASE-NOTFOUND
+QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libphononwidgets.so
 
 //Path to a file.
-QT_PHONON_INCLUDE_DIR:PATH=QT_PHONON_INCLUDE_DIR-NOTFOUND
+QT_PHONON_INCLUDE_DIR:PATH=/usr/include/qt4/phonon
 
 //The Qt PHONON library
-QT_PHONON_LIBRARY:STRING=
+QT_PHONON_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libphonon.so
 
 //Path to a library.
 QT_PHONON_LIBRARY_DEBUG:FILEPATH=QT_PHONON_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_PHONON_LIBRARY_RELEASE:FILEPATH=QT_PHONON_LIBRARY_RELEASE-NOTFOUND
+QT_PHONON_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libphonon.so
 
 //The location of the Qt plugins
 QT_PLUGINS_DIR:PATH=/usr/lib/x86_64-linux-gnu/qt4/plugins
@@ -291,8 +291,8 @@ QT_QKRCODECS_PLUGIN_DEBUG:FILEPATH=QT_QKRCODECS_PLUGIN_DEBUG-NOTFOUND
 //Path to a library.
 QT_QKRCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqkrcodecs.so
 
-//Where can the qmake-qt4 library be found
-QT_QMAKE_EXECUTABLE:FILEPATH=/usr/bin/qmake-qt4
+//The qmake executable for the Qt installation to use
+QT_QMAKE_EXECUTABLE:FILEPATH=/usr/bin/qmake
 
 //Path to a library.
 QT_QMNG_PLUGIN_DEBUG:FILEPATH=QT_QMNG_PLUGIN_DEBUG-NOTFOUND
@@ -882,7 +882,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake-qt4][/usr/lib/x86_64-linux-gnu/qt4/bin/moc][/usr/lib/x86_64-linux-gnu/qt4/bin/rcc][/usr/lib/x86_64-linux-gnu/qt4/bin/uic][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libQtCore.so][v4.8.7()]
+FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/lib/x86_64-linux-gnu/qt4/bin/moc][/usr/lib/x86_64-linux-gnu/qt4/bin/rcc][/usr/lib/x86_64-linux-gnu/qt4/bin/uic][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libQtCore.so][v4.8.7()]
 //ADVANCED property for variable: QT_ARTHURPLUGIN_PLUGIN_DEBUG
 QT_ARTHURPLUGIN_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_ARTHURPLUGIN_PLUGIN_RELEASE
@@ -987,7 +987,7 @@ QT_QJPEG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 QT_QKRCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QKRCODECS_PLUGIN_RELEASE
 QT_QKRCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-QT_QMAKE_EXECUTABLE_LAST:INTERNAL=/usr/bin/qmake-qt4
+QT_QMAKE_EXECUTABLE_LAST:INTERNAL=/usr/bin/qmake
 //ADVANCED property for variable: QT_QMNG_PLUGIN_DEBUG
 QT_QMNG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QMNG_PLUGIN_RELEASE

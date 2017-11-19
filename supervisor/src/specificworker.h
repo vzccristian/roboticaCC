@@ -64,6 +64,7 @@ private:
     std::pair<int,int> coorsCurrent;
     int watchingtags[4]= {0,0,0,0};
     state estado=SEARCH;
+    int maxDist=400;
 };
 
 #endif

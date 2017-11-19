@@ -49,9 +49,9 @@ public:
     void end();
     void skirt(TBaseState bState, TLaserData &laserData);
     void turn(float linealSpeed,TLaserData laserData);
-    void onTarget(float dist);
-    void isOnLine(TBaseState bState);
-    void reachableTarget(TBaseState bState, float dist, TLaserData &laserData);
+    bool onTarget(float dist);
+    bool isOnLine(TBaseState bState);
+    bool reachableTarget(TBaseState bState, float dist, TLaserData &laserData);
 
 
     //LLAMADAS INTERFAZ
@@ -75,6 +75,7 @@ private:
     bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
     bool preState = true;
     bool pick=false; /* Flag diferencia entre pick y searchTags */
+    pair <int, int> thresholdValues=make_pair(270,470); /* Min - max thresholdValues */
 
     struct Target
     {

@@ -63,8 +63,8 @@ void SpecificWorker::compute() {
 
 /* Search next tag */
 void SpecificWorker::search() {
+   qDebug() << "SEARCH";
     if (!chocachoca_proxy->getState()) {
-        qDebug() << "SEARCH activo"<<nextTag%4;
         chocachoca_proxy->turn(0.6);
         if (watchingtags[nextTag%4]==1)
             estado=GOTO;
@@ -73,6 +73,7 @@ void SpecificWorker::search() {
 
 /* Go to a specific target */
 void SpecificWorker::gotoTarget() {
+    qDebug() << "GOTOTARGET";
     if (!chocachoca_proxy->getState()) {
         chocachoca_proxy->go(coorsTag[nextTag%4].first,coorsTag[nextTag%4].second);
         estado=WAIT;
@@ -81,18 +82,21 @@ void SpecificWorker::gotoTarget() {
 
 /* Wait until robot arrive to target */
 void SpecificWorker::wait() {
+    qDebug() << "WAIT"; 
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
     if (!chocachoca_proxy->getState()) {
-        if ((abs(bState.x - (coorsTag[nextTag%4].first)) <= 400) && (abs(bState.z - (coorsTag[nextTag%4].second)) <= 400))
-            nextTag++;
+        if ((abs(bState.x - (coorsTag[nextTag%4].first)) <= maxDist) && (abs(bState.z - (coorsTag[nextTag%4].second)) <= maxDist)) {
+            nextTag++; 
+            
+        }
         estado = SEARCH;
     }
 }
 
 /* aprilTagsMaster */
 void SpecificWorker::newAprilTag(const tagsList &tags) {
-    int i,umbral=300;
+    int i,umbral=200;
     for (i=0; i<4; i++)  //Inicialización
         watchingtags[i]=0;
     for (i=0; i<(signed)tags.size(); i++) {
