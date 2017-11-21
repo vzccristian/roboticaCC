@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/simpleworld.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm.xml");
     timer.start(Period);
     return true;
 }
@@ -45,7 +45,7 @@ void SpecificWorker::compute() {
     float linealSpeed=0;
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);     //Tomar datos base
-    innermodel->updateTransformValues("base", bState.x,0, bState.z,0,bState.alpha, 0 );     //Actualizar arbol
+    innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 );     //Actualizar arbol
 
     TLaserData laserData = laser_proxy->getLaserData();     //Tomar los datos del laser
 
@@ -88,7 +88,7 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
         return a.dist < b.dist;
     });                                                                                                                                   //Ordenamos el array de menor a mayor
     std::pair <std::pair <float,float>,std::pair <float,float> > coord = target.extract();     //Tomamos las coord del pick (target y robot)
-    QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world");     //Desplaza el eje de coord del mundo al robot
+    QVec Trobot = innermodel->transform("robot",QVec::vec3(coord.first.first,0,coord.first.second),"world");     //Desplaza el eje de coord del mundo al robot
 
     dist = Trobot.norm2();     //Calcular la distancia entre los puntos
 
@@ -145,7 +145,7 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
     float dist=0.0;
 
     std::pair <std::pair <float,float>,std::pair <float,float> > coord = target.extract();     //Tomamos las coord del pick (target y robot)
-    QVec Trobot = innermodel->transform("base",QVec::vec3(coord.first.first,0,coord.first.second),"world");     //Desplaza el eje de coord del mundo al robot
+    QVec Trobot = innermodel->transform("robot",QVec::vec3(coord.first.first,0,coord.first.second),"world");     //Desplaza el eje de coord del mundo al robot
     dist = Trobot.norm2();
 
     // COMPRUEBO SI ESTOY EN TARGET
