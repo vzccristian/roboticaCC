@@ -66,6 +66,9 @@ void SpecificWorker::compute() {
     case SKIRT:
         skirt(bState,laserData);
         break;
+    case ARM:
+	arm();
+	break;
     default:
         break;
     }
@@ -186,6 +189,10 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
         differentialrobot_proxy->setSpeedBase(maxSpeed,0);
 }
 
+
+void SpecificWorker::arm(){
+  
+}
 // ----------------------
 
 /*
@@ -225,34 +232,46 @@ bool SpecificWorker::isOnLine(TBaseState bState) {
 bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &laserData) {
     QVec laserToWorld;
     QPolygonF polygon;
-    int umbralVision = 1500;
-    int anchoPunto=201;
+    int umbralVision = 1000;
+    int anchoPunto=100;
 
     polygon << QPointF(bState.x, bState.z);     //Punto inicio poligono.
 
-    int i=20;     //CERCA
+    int i=30;     //CERCA
     if (dist > umbralVision)     //LEJOS
         i=40;
-    qDebug() <<"Dist"<<dist<<"ANGULO:"<< i << 100-i;
-    while (i<(100-i)) {     //CREA POLIGONO
+    int finLaser=100-i;
+    qDebug() <<"Dist"<<dist<<"ANGULO:"<< i << finLaser;
+    while (i<finLaser) {     //CREA POLIGONO
         laserToWorld = innermodel->laserTo("world", "laser", laserData[i].dist, laserData[i].angle);
         polygon << QPointF(laserToWorld.x(), laserToWorld.z());
         i++;
     }
 
     pair <float,float> t =  target.getPoseTarget();    //Coor target
-
     if (	polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
-            && polygon.containsPoint( QPointF(t.first, t.second+anchoPunto),Qt::WindingFill )
-            && polygon.containsPoint( QPointF(t.first, t.second-anchoPunto),Qt::WindingFill )
-            && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second),Qt::WindingFill )
-            && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second),Qt::WindingFill )
+            && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second+anchoPunto),Qt::WindingFill )
+            && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second-anchoPunto),Qt::WindingFill )
+            && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second+anchoPunto),Qt::WindingFill )
+            && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second-anchoPunto),Qt::WindingFill )
        ) {     //COMPROBACION COORS EN POLIGONO
 	 qDebug() << "POLIGONO JODER";
         estado=GOTO;
         return true;
     }
     return false;
+    
+//     if (	polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
+//             && polygon.containsPoint( QPointF(t.first, t.second+anchoPunto),Qt::WindingFill )
+//             && polygon.containsPoint( QPointF(t.first, t.second-anchoPunto),Qt::WindingFill )
+//             && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second),Qt::WindingFill )
+//             && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second),Qt::WindingFill )
+//        ) {     //COMPROBACION COORS EN POLIGONO
+// 	 qDebug() << "POLIGONO JODER";
+//         estado=GOTO;
+//         return true;
+//     }
+//     return false;
 }
 
 

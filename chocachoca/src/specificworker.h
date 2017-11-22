@@ -31,7 +31,7 @@
 #include <math.h>       /* sqrt */
 
 using namespace std;
-enum state { IDLE, GOTO, TURN, SKIRT, END};
+enum state { IDLE, GOTO, TURN, SKIRT, END, ARM};
 
 class SpecificWorker : public GenericWorker
 {
@@ -40,19 +40,21 @@ public:
     SpecificWorker(MapPrx& mprx);
     ~SpecificWorker();
     bool setParams(RoboCompCommonBehavior::ParameterList params);
-
-    //CONTROL DEL ROBOT Y LASER
-    float gauss(float Vrot, float Vx, float h);
-    float sinusoide(float x);
+    
+    //MAQUINA DE ESTADOS
     void idle();
-    float gotoTarget(TBaseState bState, TLaserData laserData);
     void end();
+    float gotoTarget(TBaseState bState, TLaserData laserData);
     void skirt(TBaseState bState, TLaserData &laserData);
-    void turn(float linealSpeed,TLaserData laserData);
+    void turn(float linealSpeed,TLaserData laserData);   
+    void arm();
+    
+    //METODOS AUXILIARES
     bool onTarget(float dist);
     bool isOnLine(TBaseState bState);
     bool reachableTarget(TBaseState bState, float dist, TLaserData &laserData);
-
+    float gauss(float Vrot, float Vx, float h);
+    float sinusoide(float x);
 
     //LLAMADAS INTERFAZ
     void go(const float x, const float z);
