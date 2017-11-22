@@ -1,0 +1,14 @@
+import "/robocomp/interfaces/IDSLs/JointMotor.idsl";
+import "/robocomp/interfaces/IDSLs/Chocachoca.idsl";
+
+Component armando
+{
+	Communications
+	{
+		implements Chocachoca;
+		requires JointMotor;
+	};
+	language Cpp;
+	gui Qt(QWidget);
+};
+

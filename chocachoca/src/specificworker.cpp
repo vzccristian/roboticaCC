@@ -92,7 +92,7 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
 
     dist = Trobot.norm2();     //Calcular la distancia entre los puntos
 
-    if(dist > 100 ) {     //No se ha alzancado objetivo
+    if(dist > thresholdValues.first ) {     //No se ha alzancado objetivo
         float rot=atan2(Trobot.x(),Trobot.z());         //Calculamos la rotacion con el arcotangente
         linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.4) * sinusoide(dist);         ////Calcular velocidad
 
@@ -132,7 +132,7 @@ void SpecificWorker::turn(float linealSpeed, TLaserData laserData) {
         lado=true;
     }
 
-    if (abs(laserData[10].angle)>1.55 && abs(laserData[10].angle)<1.60)
+    if (abs(laserData[10].angle)>1.49 && abs(laserData[10].angle)<1.61)
         estado=SKIRT;
     preState=true;
 }
@@ -147,16 +147,17 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
     std::pair <std::pair <float,float>,std::pair <float,float> > coord = target.extract();     //Tomamos las coord del pick (target y robot)
     QVec Trobot = innermodel->transform("robot",QVec::vec3(coord.first.first,0,coord.first.second),"world");     //Desplaza el eje de coord del mundo al robot
     dist = Trobot.norm2();
+    
 
     // COMPRUEBO SI ESTOY EN TARGET
     if (onTarget(dist)) return;
 
     // COMPRUEBO LA LINEA
     if (isOnLine(bState)) return;
-
+    
     // COMPRUEBO SI VEO TARGET
     if (reachableTarget(bState,dist,laserData)) return;
-
+    
     // BORDEAR
     int vInicio=51;
     int vFinal=10;
@@ -175,6 +176,7 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
     std::sort( laserDataUnLado.begin()+vInicio, laserDataUnLado.end()-vFinal, [] (RoboCompLaser::TData a, RoboCompLaser::TData b) {
         return a.dist < b.dist;
     });
+
 
     if (laserDataUnLado[vInicio].dist<thresholdValues.first) 
         differentialrobot_proxy->setSpeedBase(speed,ladoRot); 
@@ -223,15 +225,15 @@ bool SpecificWorker::isOnLine(TBaseState bState) {
 bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &laserData) {
     QVec laserToWorld;
     QPolygonF polygon;
-    int umbralVision = 1000;
-    int anchoPunto=200;
+    int umbralVision = 1500;
+    int anchoPunto=201;
 
     polygon << QPointF(bState.x, bState.z);     //Punto inicio poligono.
 
-    int i=26;     //CERCA
+    int i=20;     //CERCA
     if (dist > umbralVision)     //LEJOS
         i=40;
-
+    qDebug() <<"Dist"<<dist<<"ANGULO:"<< i << 100-i;
     while (i<(100-i)) {     //CREA POLIGONO
         laserToWorld = innermodel->laserTo("world", "laser", laserData[i].dist, laserData[i].angle);
         polygon << QPointF(laserToWorld.x(), laserToWorld.z());
@@ -240,19 +242,18 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
 
     pair <float,float> t =  target.getPoseTarget();    //Coor target
 
-    if (polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
+    if (	polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
             && polygon.containsPoint( QPointF(t.first, t.second+anchoPunto),Qt::WindingFill )
             && polygon.containsPoint( QPointF(t.first, t.second-anchoPunto),Qt::WindingFill )
             && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second),Qt::WindingFill )
             && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second),Qt::WindingFill )
        ) {     //COMPROBACION COORS EN POLIGONO
+	 qDebug() << "POLIGONO JODER";
         estado=GOTO;
         return true;
     }
     return false;
 }
-
-
 
 
 /* Gaussian

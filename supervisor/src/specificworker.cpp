@@ -96,7 +96,7 @@ void SpecificWorker::wait() {
 
 /* aprilTagsMaster */
 void SpecificWorker::newAprilTag(const tagsList &tags) {
-    int i,umbral=200;
+    int i,umbral=450;
     for (i=0; i<4; i++)  //Inicialización
         watchingtags[i]=0;
     for (i=0; i<(signed)tags.size(); i++) {
@@ -111,6 +111,9 @@ void SpecificWorker::newAprilTag(const tagsList &tags) {
             if (z>0) z=z-umbral;
             else z=z+umbral;
         }
-        coorsTag[tags[i].id]=make_pair(x,z);
+	coorsTag[tags[i].id]=make_pair(x,z);
+	for (i=0; i<4; i++) {
+	  qDebug()<<i<<" -->"<<coorsTag[i].first<<coorsTag[i].second;
+	}
     }
 }
