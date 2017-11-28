@@ -35,7 +35,11 @@ SpecificWorker::~SpecificWorker()
 }
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
-    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/simpleworld.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm2.xml");
+//     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/betaWorldArm.xml ");
+    for (i=0; i<sizeof(movedBox); i++) 
+      movedBox[i]=-1;
+    
     timer.start(Period);
     return true;
 }
@@ -56,6 +60,8 @@ void SpecificWorker::compute() {
     case WAIT:
         wait();
         break;
+    case PICKBOX:
+	pickbox();
     default:
         break;
     }
@@ -66,6 +72,7 @@ void SpecificWorker::search() {
    qDebug() << "SEARCH";
     if (!chocachoca_proxy->getState()) {
         chocachoca_proxy->turn(0.6);
+	
         if (watchingtags[nextTag%4]==1)
             estado=GOTO;
     }
@@ -92,6 +99,12 @@ void SpecificWorker::wait() {
         }
         estado = SEARCH;
     }
+}
+
+
+void SpecificWorker::pickbox() {
+  
+  
 }
 
 /* aprilTagsMaster */

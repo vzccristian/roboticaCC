@@ -61,12 +61,7 @@ void SpecificWorker::compute()
 }
 
 
-void SpecificWorker::go(const float x, const float z)
-{
-
-}
-
-void SpecificWorker::turn(const float speed)
+bool SpecificWorker::pickingBox()
 {
 
 }
@@ -77,6 +72,21 @@ bool SpecificWorker::getState()
 }
 
 void SpecificWorker::stop()
+{
+
+}
+
+void SpecificWorker::turn(const float speed)
+{
+
+}
+
+void SpecificWorker::go(const float x, const float z)
+{
+
+}
+
+bool SpecificWorker::releasingBox()
 {
 
 }

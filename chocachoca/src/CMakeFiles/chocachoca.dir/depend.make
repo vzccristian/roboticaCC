@@ -10,6 +10,9 @@ src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
 src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.h
 
+src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o: src/JointMotor.cpp
+src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o: src/JointMotor.h
+
 src/CMakeFiles/chocachoca.dir/Laser.cpp.o: src/Laser.cpp
 src/CMakeFiles/chocachoca.dir/Laser.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/Laser.cpp.o: src/Laser.h
@@ -449,6 +452,7 @@ src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: /usr/include/qt4/QtGui/qwsembed
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/config.h
@@ -913,6 +917,7 @@ src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: /usr/include/qt4/QtGui/q
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/config.h
@@ -1351,6 +1356,7 @@ src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: /usr/include/qt4/QtGui/qwse
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/config.h
@@ -1789,6 +1795,7 @@ src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: /usr/include/qt4/QtGui/qwsem
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/ui_mainUI.h
@@ -2225,6 +2232,7 @@ src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: /usr/include/qt4/QtGui/qwsemb
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/ui_mainUI.h
@@ -3032,6 +3040,7 @@ src/CMakeFiles/chocachoca.dir/main.cpp.o: /usr/include/qt4/QtGui/qwsembedwidget.
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/main.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/chocachocaI.h
@@ -3470,6 +3479,7 @@ src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: /usr/include/qt4/QtGui/qws
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/config.h
@@ -3909,6 +3919,7 @@ src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: /usr/include/qt4/QtGui/qwse
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/ui_mainUI.h
@@ -4359,6 +4370,7 @@ src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: /usr/include/qt4/QtGui/qwsem
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/RCISMousePicker.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/config.h

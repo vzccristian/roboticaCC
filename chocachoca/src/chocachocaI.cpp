@@ -29,14 +29,9 @@ ChocachocaI::~ChocachocaI()
 {
 }
 
-void ChocachocaI::go(const float  x, const float  z, const Ice::Current&)
+bool ChocachocaI::pickingBox(const Ice::Current&)
 {
-	worker->go(x, z);
-}
-
-void ChocachocaI::turn(const float  speed, const Ice::Current&)
-{
-	worker->turn(speed);
+	return worker->pickingBox();
 }
 
 bool ChocachocaI::getState(const Ice::Current&)
@@ -47,6 +42,21 @@ bool ChocachocaI::getState(const Ice::Current&)
 void ChocachocaI::stop(const Ice::Current&)
 {
 	worker->stop();
+}
+
+void ChocachocaI::turn(const float  speed, const Ice::Current&)
+{
+	worker->turn(speed);
+}
+
+void ChocachocaI::go(const float  x, const float  z, const Ice::Current&)
+{
+	worker->go(x, z);
+}
+
+bool ChocachocaI::releasingBox(const Ice::Current&)
+{
+	return worker->releasingBox();
 }
 
 

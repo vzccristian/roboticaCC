@@ -31,6 +31,7 @@
 #include <Chocachoca.h>
 #include <RCISMousePicker.h>
 #include <Laser.h>
+#include <JointMotor.h>
 
 #include <IceStorm/IceStorm.h>
 
@@ -46,6 +47,7 @@ using namespace RoboCompDifferentialRobot;
 using namespace RoboCompChocachoca;
 using namespace RoboCompRCISMousePicker;
 using namespace RoboCompLaser;
+using namespace RoboCompJointMotor;
 
 
 
@@ -68,14 +70,17 @@ public:
 	QMutex *mutex;
 	
 
+	JointMotorPrx jointmotor_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
 	LaserPrx laser_proxy;
 	IceStorm::TopicManagerPrx topicmanager_proxy;
 
-	virtual void go(const float x, const float z) = 0;
-	virtual void turn(const float speed) = 0;
+	virtual bool pickingBox() = 0;
 	virtual bool getState() = 0;
 	virtual void stop() = 0;
+	virtual void turn(const float speed) = 0;
+	virtual void go(const float x, const float z) = 0;
+	virtual bool releasingBox() = 0;
 	virtual void setPick(const Pick &myPick) = 0;
 
 
@@ -85,8 +90,6 @@ protected:
 
 public slots:
 	virtual void compute() = 0;
-	
-
 signals:
 	void kill();
 };

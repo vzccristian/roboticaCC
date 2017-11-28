@@ -37,7 +37,7 @@
 #include "Chocachoca.h"
 
 using namespace std;
-enum state { SEARCH, WAIT, GOTO};
+enum state { SEARCH, WAIT, GOTO, PICKBOX};
 
 class SpecificWorker : public GenericWorker
 {
@@ -51,6 +51,7 @@ public:
     void search();
     void gotoTarget();
     void wait();
+    void pickbox();
 
 public slots:
     void compute();
@@ -59,12 +60,12 @@ private:
     InnerModel *innermodel;
     std::mutex mtx;
     int nextTag=0;
-//  std::pair<int,int> coorsTag[4]= {make_pair(0,2100),make_pair(2100,0),make_pair(0,-2100),make_pair(-2100,0)};
     std::pair<int,int> coorsTag[4];
     std::pair<int,int> coorsCurrent;
     int watchingtags[4]= {0,0,0,0};
     state estado=SEARCH;
     int maxDist=400;
+    int movedBox[10];
 };
 
 #endif

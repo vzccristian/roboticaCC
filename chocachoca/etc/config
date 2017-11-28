@@ -8,6 +8,7 @@ Chocachoca.Endpoints=tcp -p 10095
 # Proxies for required interfaces
 DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 10004
 LaserProxy = laser:tcp -h localhost -p 10003
+JointMotorProxy = jointmotor:tcp -h localhost -p 20000
 RCISMousePickerTopic.Endpoints=tcp -p 15000
 
 # This property is used by the clients to connect to IceStorm.

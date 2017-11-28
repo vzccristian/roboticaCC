@@ -10,6 +10,9 @@ src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o
 src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o
  /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp
  src/DifferentialRobot.h
+src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o
+ /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/JointMotor.cpp
+ src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/Laser.cpp.o
  /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp
  src/DifferentialRobot.h
@@ -450,6 +453,7 @@ src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/config.h
@@ -914,6 +918,7 @@ src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/config.h
@@ -1352,6 +1357,7 @@ src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/config.h
@@ -1790,6 +1796,7 @@ src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/ui_mainUI.h
@@ -2226,6 +2233,7 @@ src/CMakeFiles/chocachoca.dir/genericworker.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/ui_mainUI.h
@@ -3033,6 +3041,7 @@ src/CMakeFiles/chocachoca.dir/main.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/chocachocaI.h
@@ -3471,6 +3480,7 @@ src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/config.h
@@ -3910,6 +3920,7 @@ src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/ui_mainUI.h
@@ -4360,6 +4371,7 @@ src/CMakeFiles/chocachoca.dir/specificworker.cpp.o
  src/Chocachoca.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
  src/config.h

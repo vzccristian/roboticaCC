@@ -36,7 +36,9 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm2.xml");
+//     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/betaWorldArm.xml ");
+
     timer.start(Period);
     return true;
 }
@@ -261,17 +263,6 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
     }
     return false;
     
-//     if (	polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
-//             && polygon.containsPoint( QPointF(t.first, t.second+anchoPunto),Qt::WindingFill )
-//             && polygon.containsPoint( QPointF(t.first, t.second-anchoPunto),Qt::WindingFill )
-//             && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second),Qt::WindingFill )
-//             && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second),Qt::WindingFill )
-//        ) {     //COMPROBACION COORS EN POLIGONO
-// 	 qDebug() << "POLIGONO JODER";
-//         estado=GOTO;
-//         return true;
-//     }
-//     return false;
 }
 
 
@@ -336,4 +327,18 @@ void SpecificWorker::setPick(const Pick &myPick)
     differentialrobot_proxy->getBaseState(bState);
     target.insert(myPick.x,myPick.z,bState.x,bState.z);
     estado=GOTO;
+}
+
+
+bool SpecificWorker::releasingBox()
+{
+  qDebug() << "RELEASING BOX";
+  return true;
+}
+
+
+bool SpecificWorker::pickingBox()
+{
+  qDebug() << "PICKING BOX";
+  return true;
 }

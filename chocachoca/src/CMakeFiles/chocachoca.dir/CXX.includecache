@@ -76,6 +76,20 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/JointMotor.cpp
+JointMotor.h
+-
+Ice/LocalException.h
+-
+Ice/ObjectFactory.h
+-
+Ice/BasicStream.h
+-
+Ice/Object.h
+-
+IceUtil/Iterator.h
+-
+
 /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp
 Laser.h
 -
@@ -199,6 +213,8 @@ RCISMousePicker.h
 -
 Laser.h
 -
+JointMotor.h
+-
 IceStorm/IceStorm.h
 -
 
@@ -242,6 +258,8 @@ DifferentialRobot.h
 RCISMousePicker.h
 -
 Chocachoca.h
+-
+JointMotor.h
 -
 
 /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_chocachocaI.cpp
@@ -4372,6 +4390,40 @@ Ice/StreamF.h
 Ice/UndefSysMacros.h
 -
 
+src/JointMotor.h
+Ice/ProxyF.h
+-
+Ice/ObjectF.h
+-
+Ice/Exception.h
+-
+Ice/LocalObject.h
+-
+Ice/StreamHelpers.h
+-
+Ice/Proxy.h
+-
+Ice/Object.h
+-
+Ice/Outgoing.h
+-
+Ice/OutgoingAsync.h
+-
+Ice/Incoming.h
+-
+Ice/Direct.h
+-
+Ice/FactoryTableInit.h
+-
+IceUtil/ScopedArray.h
+-
+IceUtil/Optional.h
+-
+Ice/StreamF.h
+-
+Ice/UndefSysMacros.h
+-
+
 src/Laser.h
 Ice/ProxyF.h
 -
@@ -4474,6 +4526,8 @@ Chocachoca.h
 RCISMousePicker.h
 -
 Laser.h
+-
+JointMotor.h
 -
 IceStorm/IceStorm.h
 -

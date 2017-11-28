@@ -62,6 +62,8 @@ public:
     bool getState();
     void stop();
     void setPick(const Pick &myPick);
+    bool releasingBox();
+    bool pickingBox();
 
 
 
