@@ -18,7 +18,7 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 
 sess=`qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId`
 
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'rcis ~/robocomp/files/innermodel/simpleworld.xml'
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'killall -9 rcis; rcis ~/robocomp/components/roboticaCC/betaWorldArm.xml'
 
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'rcis'
 
@@ -36,9 +36,7 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'rm -f CMakeC
 
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cmake .'
 
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'make -j4'
-
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'bin/chocachoca etc/config'
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'killall -9 chocachoca; make -j4; bin/chocachoca etc/config'
 
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'chocachoca'
 
@@ -56,7 +54,7 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'rm -f CMakeC
 
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cmake .'
 
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'make -j4'
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'kilall -9 supervisor; make -j4; etc/Supervisor etc/config'
 
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'supervisor'
 
@@ -75,7 +73,7 @@ qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'rm -f CMakeC
 
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'cmake .'
 
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'make -j4'
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'make -j4;bin/AprilTagsComp etc/config'
 
 qdbus org.kde.yakuake /yakuake/tabs org.kde.yakuake.setTabTitle $sess 'apriltagsMASTER'
 

@@ -35,9 +35,15 @@
 #include <innermodel/innermodel.h>
 #include <mutex>          // std::mutex
 #include "Chocachoca.h"
+#include <stdlib.h>
+#include <ctime>
 
 using namespace std;
 enum state { SEARCH, WAIT, GOTO, PICKBOX};
+
+const int MAXBOXES=10;
+const int MAXTAGS=4;
+const int MAXDIST=400;
 
 class SpecificWorker : public GenericWorker
 {
@@ -52,6 +58,7 @@ public:
     void gotoTarget();
     void wait();
     void pickbox();
+    void searchTheNearestBox();
 
 public slots:
     void compute();
@@ -59,13 +66,20 @@ public slots:
 private:
     InnerModel *innermodel;
     std::mutex mtx;
-    int nextTag=0;
-    std::pair<int,int> coorsTag[4];
-    std::pair<int,int> coorsCurrent;
-    int watchingtags[4]= {0,0,0,0};
+    
+    //STATE MACHINE
     state estado=SEARCH;
-    int maxDist=400;
-    int movedBox[10];
+    
+    //TAGS
+    int nextTag;
+    int tagLocated;
+    std::pair<int,int> coorsTag[MAXTAGS];
+    int watchingtags[MAXTAGS];
+
+    //BOX
+    int movedBox[MAXBOXES];
+    int watchingBox[MAXBOXES];
+    std::pair<int,int> coorsBox[MAXTAGS];
 };
 
 #endif
