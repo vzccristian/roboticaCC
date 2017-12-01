@@ -40,10 +40,14 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     nextTag=0;
     tagLocated=-1;
     int i;
-    for (i=0; i<MAXBOXES; i++) 
-      movedBox[i]=-1;
+    for (i=0; i<MAXBOXES; i++) {
+        movedBox[i]=-1;
+        coorsBox[i][0]=-2;
+        coorsBox[i][1]=-2;
+        coorsBox[i][2]=-2;
+    }
     for (i=0; i<4; i++)
-      watchingtags[i]=0;
+        watchingtags[i]=0;
     timer.start(Period);
     return true;
 }
@@ -65,7 +69,7 @@ void SpecificWorker::compute() {
         wait();
         break;
     case PICKBOX:
-	pickbox();
+        pickbox();
     default:
         break;
     }
@@ -74,17 +78,15 @@ void SpecificWorker::compute() {
 /* Search next tag */
 void SpecificWorker::search() {
     qDebug() << "SEARCH";
-    
+
     // SEARCHING DUMPS AND BOXES
-    if (!chocachoca_proxy->getState()) {
-        chocachoca_proxy->turn(0.6);
+    if (tagLocated != -1) {
+        chocachoca_proxy->turn(0);
+        searchTheNearestBox();
     }
-    
-    if (tagLocated!=-1) {
-      chocachoca_proxy->turn(0);
-      searchTheNearestBox();
-    }
-    
+    else if (!chocachoca_proxy->getState() )
+        chocachoca_proxy->turn(0.8);
+
 }
 
 /* Go to a specific target */
@@ -98,13 +100,13 @@ void SpecificWorker::gotoTarget() {
 
 /* Wait until robot arrive to target */
 void SpecificWorker::wait() {
-    qDebug() << "WAIT"; 
+    qDebug() << "WAIT";
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
     if (!chocachoca_proxy->getState()) {
         if ((abs(bState.x - (coorsTag[nextTag%4].first)) <= MAXDIST) && (abs(bState.z - (coorsTag[nextTag%4].second)) <= MAXDIST)) {
-            nextTag++; 
-            
+            nextTag++;
+
         }
         estado = SEARCH;
     }
@@ -112,83 +114,120 @@ void SpecificWorker::wait() {
 
 
 void SpecificWorker::pickbox() {
-  
-  
+    qDebug() << "pickBox";
+
 }
 
 
-void SpecificWorker::searchTheNearestBox() {
-  int boxI,i,j;
-  float dist=0.0, auxDist=5000.0;
-  QVec Trobot;
- 
-  for (i=0; i<MAXBOXES; i++) {
+int SpecificWorker::searchTheNearestBox() {
+//     qDebug() << "searchTheNearestBox";
+    int boxI,i;
+    float dist=0.0, auxDist=5000.0;
+    QVec Trobot;
 
-    //TODO. Hay que hacer que la caja que compruebe no se haya movido previamente.
-    
-    
-	Trobot = innermodel->transform("robot",QVec::vec3(coorsBox[i].first,0,coorsBox[i].second),"world");    
-	dist = Trobot.norm2();     //Calcular la distancia entre los puntos
-	if (dist < auxDist) {
-	  auxDist=dist;
-	  boxI=i;
-	}
-    
-  }
-  return boxI;
- 
+    for (i=0; i<MAXBOXES; i++) {
+        if (!boxIsMoved(i)) {
+            Trobot = innermodel->transform("robot",QVec::vec3(coorsBox[i][1],0,coorsBox[i][2]),"world");
+            dist = Trobot.norm2();     //Calcular la distancia entre los puntos
+            if (dist < auxDist) {
+                auxDist=dist;
+                boxI=i;
+            }
+        }
+    }
+    return boxI;
+
 }
+
+
+bool SpecificWorker::boxIsMoved(int box) {
+//     qDebug() << "boxIsMoved "<<box;
+    int i;
+    for (i=0; i<MAXBOXES; i++) {
+        if (movedBox[i] == coorsBox[box][0]) {
+            qDebug()<< "Caja"<<watchingBox[box]<<" ya movida";
+            return true;
+        }
+    }
+    //qDebug()<< "Caja"<<coorsBox[box][0]<<" NO movida";
+    return false;
+
+}
+
 
 
 /* aprilTagsMaster */
 void SpecificWorker::newAprilTag(const tagsList &tags) {
+    if (tagLocated==-1) { //TAGS BASURERO
+        searchDump(tags);
+    }
+    addBoxes(tags);
+}
+
+
+void SpecificWorker::searchDump(const tagsList &tags) {
     int i,umbral=450;
-    bool stop=false;
+    QVec targetCoors;
+    for (i=0; i<(signed)tags.size(); i++) {
+        if (tags[i].id < 10 ) {
+            watchingtags[tags[i].id]=1;
+            targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
+            float x = targetCoors.x(); float z = targetCoors.z();
+            if (abs(x)>abs(z)) {
+                if (x>0) x=x-umbral;
+                else x=x+umbral;
+            }  else {
+                if (z>0) z=z-umbral;
+                else z=z+umbral;
+            }
+            coorsTag[tags[i].id]=make_pair(x,z);
+        }
+    }
+    //COMPROBACION VUELTA COMPLETA
+    int saw=0;
+    for (i=0; i<4; i++) {
+        if (watchingtags[i]==1)
+            saw++;
+    }
+
+    //SELECCION DE UN BASURERO
+    if (saw==MAXTAGS) {
+        srand( time( NULL ) );  //  using the time seed from srand explanation
+        tagLocated=rand()%MAXTAGS;
+    }
+}
+
+void SpecificWorker::addBoxes(const tagsList &tags) {
+    int i,j,k;
+    bool stopWB=false, stopCB=false;
     QVec targetCoors;
     
-    if (tagLocated==-1) {
-      for (i=0; i<(signed)tags.size(); i++) { 
-	if (tags[i].id < 10 ) {
-	  watchingtags[tags[i].id]=1;
-	  targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
-	  float x = targetCoors.x();
-	  float z = targetCoors.z();
-	  if (abs(x)>abs(z)) {
-	      if (x>0) x=x-umbral;
-	      else x=x+umbral;
-	  }  else {
-	      if (z>0) z=z-umbral;
-	      else z=z+umbral;
-	  }
-	  coorsTag[tags[i].id]=make_pair(x,z);
-	}
-      }
-      int saw=0;
-      for (i=0; i<4; i++) {
-	if (watchingtags[i]==1)
-	  saw++;
-      }
-	
-      if (saw==MAXTAGS) {
-	srand( time( NULL ) );  //  using the time seed from srand explanation 
-	tagLocated=rand()%MAXTAGS;
-      }
-    }
-    
-    for (i=0; i<MAXBOXES; i++) 
-      watchingBox[i]=-1;
-    
+    for (i=0; i<MAXBOXES; i++)
+        watchingBox[i]=-1;
+
     for (i=0; i<(signed)tags.size(); i++) { // FULL LIST
-	if (tags[i].id > 9 ) { //BOXES
-	  stop=false;
-	  for (i=0; i<MAXBOXES && !stop; i++) {
-	    if (watchingBox[i]==-1) {
-	      watchingBox[i] = tags[i].id;
-	      targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
-	      coorsBox[i]=make_pair(targetCoors.x(),targetCoors.z());
-	      stop=true;	      
-	    }
-	  }
-	}
+        qDebug() << tags[i].id ;
+        if (tags[i].id > 9 ) { //BOXES
+            stopWB=false;
+            for (j=0; j<MAXBOXES && !stopWB; j++) {
+                if (watchingBox[j]==-1) {
+                    watchingBox[j] = tags[i].id;
+                    
+                    targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
+                    stopWB=true;
+                    stopCB=false;
+                    qDebug() << "Coors antes de transformar"<<tags[i].tx<<tags[i].tz;
+                    qDebug() << "Coors despues de transformar"<<targetCoors.x()<<targetCoors.z();
+                    for (k=0; k<MAXBOXES && !stopCB; k++) {
+                        coorsBox[k][0]=tags[i].id; 
+                        coorsBox[k][1]=targetCoors.x();
+                        coorsBox[k][2]=targetCoors.z();
+                        qDebug() << "NUEVO ID ------------------> "<<coorsBox[k][0]<<coorsBox[k][1]<<coorsBox[k][2];
+                        stopCB=true;
+                    }
+                    
+                }
+            }
+        }
     }
 }

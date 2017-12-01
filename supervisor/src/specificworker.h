@@ -23,11 +23,6 @@
 */
 
 
-
-
-
-
-
 #ifndef SPECIFICWORKER_H
 #define SPECIFICWORKER_H
 
@@ -53,12 +48,15 @@ public:
     ~SpecificWorker();
     bool setParams(RoboCompCommonBehavior::ParameterList params);
 
+    //TAGS
     void newAprilTag(const tagsList &tags);
+    
     void search();
     void gotoTarget();
     void wait();
     void pickbox();
-    void searchTheNearestBox();
+    int searchTheNearestBox();
+    bool boxIsMoved(int box);
 
 public slots:
     void compute();
@@ -75,11 +73,13 @@ private:
     int tagLocated;
     std::pair<int,int> coorsTag[MAXTAGS];
     int watchingtags[MAXTAGS];
-
+    void searchDump(const tagsList &tags);
+    
     //BOX
     int movedBox[MAXBOXES];
     int watchingBox[MAXBOXES];
-    std::pair<int,int> coorsBox[MAXTAGS];
+    float coorsBox[MAXTAGS][3];
+    void addBoxes(const tagsList &tags);
 };
 
 #endif

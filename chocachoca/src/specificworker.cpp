@@ -69,7 +69,7 @@ void SpecificWorker::compute() {
         skirt(bState,laserData);
         break;
     case ARM:
-	arm();
+        arm();
 	break;
     default:
         break;
