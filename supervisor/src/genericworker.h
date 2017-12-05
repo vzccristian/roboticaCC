@@ -66,9 +66,8 @@ public:
 	QMutex *mutex;
 	
 
-	ChocachocaPrx chocachoca_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
-
+	ChocachocaPrx chocachoca_proxy;
 
 	virtual void newAprilTag(const tagsList &tags) = 0;
 

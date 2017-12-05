@@ -1,0 +1,12 @@
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles/install/local.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles/rebuild_cache.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles/edit_cache.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles/install.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles/list_install_components.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/install.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/list_install_components.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/AprilTagsComp.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/install/local.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/rebuild_cache.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/edit_cache.dir
+/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/AprilTagsComp_automoc.dir

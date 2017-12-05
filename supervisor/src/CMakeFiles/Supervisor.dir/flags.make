@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -std=c++11 -Wall
 
 CXX_DEFINES = -DQT_CORE_LIB -DQT_DLL -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_XML_LIB
 
-CXX_INCLUDES = -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/crivac/robocomp/components/roboticaCC/supervisor/src -I/home/crivac/robocomp/components/roboticaCC/supervisor/src/. -I/opt/robocomp/include -I/classes -I/home/crivac/robocomp/components/roboticaCC/supervisor -I/home/crivac/robocomp/classes -I/home/crivac/robocomp/libs -I/home/crivac/robocomp/interfaces -I/include 
+CXX_INCLUDES = -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtOpenGL -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtXml -isystem /usr/include/qt4/QtCore -I/home/salabeta/robocomp/components/roboticaCC/supervisor/src -I/home/salabeta/robocomp/components/roboticaCC/supervisor/src/. -I/opt/robocomp/include -I/classes -I/home/salabeta/robocomp/components/roboticaCC/supervisor -I/home/salabeta/robocomp/classes -I/home/salabeta/robocomp/libs -I/home/salabeta/robocomp/interfaces -I/include 
 

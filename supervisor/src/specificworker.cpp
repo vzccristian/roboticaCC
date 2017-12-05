@@ -36,27 +36,35 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm2.xml");
-//     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/betaWorldArm.xml ");
+
     nextTag=0;
     tagLocated=-1;
+    
+    for (auto x:movedBox)
+	x=-1;
+    for (auto x:watchingtags)
+	x=0;
+    
     int i;
-    for (i=0; i<MAXBOXES; i++) {
-        movedBox[i]=-1;
-        coorsBox[i][0]=-2;
-        coorsBox[i][1]=-2;
-        coorsBox[i][2]=-2;
+    for  (int i=0;i<MAXTAGS;i++) {
+      coorsBox[i][0]=-2;
+      coorsBox[i][1]=-2;
+      coorsBox[i][2]=-2;
     }
-    for (i=0; i<4; i++)
-        watchingtags[i]=0;
+	
+
+	
     timer.start(Period);
     return true;
 }
 
 void SpecificWorker::compute() {
+
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
+            
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
-
+            
     //MAQUINA DE ESTADOS
     switch (estado) {
     case SEARCH:
@@ -85,7 +93,7 @@ void SpecificWorker::search() {
         searchTheNearestBox();
     }
     else if (!chocachoca_proxy->getState() )
-        chocachoca_proxy->turn(0.8);
+        chocachoca_proxy->turn(0.5);
 
 }
 
@@ -213,11 +221,12 @@ void SpecificWorker::addBoxes(const tagsList &tags) {
                 if (watchingBox[j]==-1) {
                     watchingBox[j] = tags[i].id;
                     
-                    targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
+                    targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"robot");
                     stopWB=true;
                     stopCB=false;
                     qDebug() << "Coors antes de transformar"<<tags[i].tx<<tags[i].tz;
                     qDebug() << "Coors despues de transformar"<<targetCoors.x()<<targetCoors.z();
+		    qDebug() << "Coors despues de transformar / 2 "<<targetCoors.x()/2<<targetCoors.z()/2;
                     for (k=0; k<MAXBOXES && !stopCB; k++) {
                         coorsBox[k][0]=tags[i].id; 
                         coorsBox[k][1]=targetCoors.x();

@@ -28,8 +28,9 @@ QObject()
 #endif
 
 {
-	differentialrobot_proxy = (*(DifferentialRobotPrx*)mprx["DifferentialRobotProxy"]);
 	chocachoca_proxy = (*(ChocachocaPrx*)mprx["ChocachocaProxy"]);
+	differentialrobot_proxy = (*(DifferentialRobotPrx*)mprx["DifferentialRobotProxy"]);
+
 
 
 	mutex = new QMutex(QMutex::Recursive);
@@ -40,7 +41,6 @@ QObject()
 	#endif
 	Period = BASIC_PERIOD;
 	connect(&timer, SIGNAL(timeout()), this, SLOT(compute()));
-
 
 
 // 	timer.start(Period);
@@ -69,4 +69,4 @@ void GenericWorker::setPeriod(int p)
 	timer.start(Period);
 }
 
-
+// 

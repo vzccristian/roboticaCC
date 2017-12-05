@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/crivac/robocomp/components/roboticaCC/chocachoca
+CMAKE_SOURCE_DIR = /home/salabeta/robocomp/components/roboticaCC/chocachoca
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/chocachoca
+CMAKE_BINARY_DIR = /home/salabeta/robocomp/components/roboticaCC/chocachoca
 
 # Utility rule file for chocachoca_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/chocachoca
 include src/CMakeFiles/chocachoca_automoc.dir/progress.make
 
 src/CMakeFiles/chocachoca_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target chocachoca"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/cmake -E cmake_autogen /home/crivac/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir/ ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target chocachoca"
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/cmake -E cmake_autogen /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir/ Debug
 
 chocachoca_automoc: src/CMakeFiles/chocachoca_automoc
 chocachoca_automoc: src/CMakeFiles/chocachoca_automoc.dir/build.make
@@ -68,10 +68,10 @@ src/CMakeFiles/chocachoca_automoc.dir/build: chocachoca_automoc
 .PHONY : src/CMakeFiles/chocachoca_automoc.dir/build
 
 src/CMakeFiles/chocachoca_automoc.dir/clean:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && $(CMAKE_COMMAND) -P CMakeFiles/chocachoca_automoc.dir/cmake_clean.cmake
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && $(CMAKE_COMMAND) -P CMakeFiles/chocachoca_automoc.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/chocachoca_automoc.dir/clean
 
 src/CMakeFiles/chocachoca_automoc.dir/depend:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/crivac/robocomp/components/roboticaCC/chocachoca /home/crivac/robocomp/components/roboticaCC/chocachoca/src /home/crivac/robocomp/components/roboticaCC/chocachoca /home/crivac/robocomp/components/roboticaCC/chocachoca/src /home/crivac/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robocomp/components/roboticaCC/chocachoca /home/salabeta/robocomp/components/roboticaCC/chocachoca/src /home/salabeta/robocomp/components/roboticaCC/chocachoca /home/salabeta/robocomp/components/roboticaCC/chocachoca/src /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/chocachoca_automoc.dir/depend
 

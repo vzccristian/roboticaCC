@@ -73,7 +73,7 @@ public:
 	JointMotorPrx jointmotor_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
 	LaserPrx laser_proxy;
-	IceStorm::TopicManagerPrx topicmanager_proxy;
+
 
 	virtual bool pickingBox() = 0;
 	virtual bool getState() = 0;
