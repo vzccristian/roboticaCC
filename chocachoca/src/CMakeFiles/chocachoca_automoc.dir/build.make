@@ -55,7 +55,7 @@ include src/CMakeFiles/chocachoca_automoc.dir/progress.make
 
 src/CMakeFiles/chocachoca_automoc:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target chocachoca"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/cmake -E cmake_autogen /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir/ Debug
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/cmake -E cmake_autogen /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca_automoc.dir/ ""
 
 chocachoca_automoc: src/CMakeFiles/chocachoca_automoc
 chocachoca_automoc: src/CMakeFiles/chocachoca_automoc.dir/build.make

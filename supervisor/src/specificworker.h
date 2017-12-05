@@ -37,7 +37,7 @@ using namespace std;
 enum state { SEARCH, WAIT, GOTO, PICKBOX};
 
 const int MAXBOXES=10;
-const int MAXTAGS=4;
+const int MAXDUMPS=4;
 const int MAXDIST=400;
 
 class SpecificWorker : public GenericWorker
@@ -70,16 +70,16 @@ private:
     
     //TAGS
     int nextTag;
-    int tagLocated;
-    std::pair<int,int> coorsTag[MAXTAGS];
-    int watchingtags[MAXTAGS];
-    void searchDump(const tagsList &tags);
+    int dump;
+    std::pair<int,int> coorsTag[MAXDUMPS];
+    int watchingtags[MAXDUMPS];
+    void searchDump(const tagsList &tags, int i);
     
     //BOX
     int movedBox[MAXBOXES];
     int watchingBox[MAXBOXES];
-    float coorsBox[MAXTAGS][3];
-    void addBoxes(const tagsList &tags);
+    float coorsBox[MAXDUMPS][3];
+    void searchBoxes(const tagsList &tags, int i);
 };
 
 #endif

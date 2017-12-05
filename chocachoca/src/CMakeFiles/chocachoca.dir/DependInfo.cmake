@@ -15,9 +15,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o"
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o"
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/genericworker.cpp.o"
+  "/home/salabeta/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/salabeta/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/main.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/main.cpp.o"
-  "/opt/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
-  "/opt/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o"
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o"
   "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp" "/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/specificworker.cpp.o"
@@ -29,6 +29,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_CORE_LIB"
   "QT_DLL"
   "QT_GUI_LIB"
+  "QT_NO_DEBUG"
   "QT_OPENGL_LIB"
   "QT_XML_LIB"
   )
@@ -45,9 +46,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/opt/robocomp/classes"
-  "/opt/robocomp/libs"
-  "/opt/robocomp/interfaces"
+  "/home/salabeta/robocomp/classes"
+  "/home/salabeta/robocomp/libs"
+  "/home/salabeta/robocomp/interfaces"
   "/include"
   )
 
