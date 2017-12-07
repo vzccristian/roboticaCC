@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm2.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm.xml");
 //     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/betaWorldArm.xml ");
 
     timer.start(Period);
@@ -314,7 +314,7 @@ bool SpecificWorker::getState() {
 
 /* Stop the robot */
 void SpecificWorker::stop() {
-    differentialrobot_proxy->setSpeedBase(0,0);
+    estado=END;
 }
 
 /* New pick */

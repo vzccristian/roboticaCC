@@ -39,6 +39,7 @@ enum state { SEARCH, WAIT, GOTO, PICKBOX};
 const int MAXBOXES=10;
 const int MAXDUMPS=4;
 const int MAXDIST=400;
+const float MAXSEARCHBOX=999999.0;
 
 class SpecificWorker : public GenericWorker
 {
@@ -55,8 +56,6 @@ public:
     void gotoTarget();
     void wait();
     void pickbox();
-    int searchTheNearestBox();
-    bool boxIsMoved(int box);
 
 public slots:
     void compute();
@@ -68,18 +67,16 @@ private:
     //STATE MACHINE
     state estado=SEARCH;
     
-    //TAGS
-    int nextTag;
+    //TAGS;
     int dump;
-    std::pair<int,int> coorsTag[MAXDUMPS];
-    int watchingtags[MAXDUMPS];
-    void searchDump(const tagsList &tags, int i);
+    std::pair<int,int> coorsTag;
+    void searchDump(const tagsList &tags);
     
     //BOX
-    int movedBox[MAXBOXES];
-    int watchingBox[MAXBOXES];
-    float coorsBox[MAXDUMPS][3];
-    void searchBoxes(const tagsList &tags, int i);
+    int movedBoxes[MAXBOXES];
+    float coorsBox[3];
+    void searchBoxes(const tagsList &tags);
+    bool boxIsMoved(int id);
 };
 
 #endif

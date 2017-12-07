@@ -4,20 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/AprilTags.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/AprilTags.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/apriltagsI.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/apriltagsI.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/genericworker.cpp.o"
-  "/home/salabeta/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/salabeta/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/main.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/main.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/specificworker.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/AprilTags.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/AprilTags.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/apriltagsI.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/apriltagsI.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/genericworker.cpp.o"
+  "/home/crivac/robocomp/classes/qlog/qlog.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/crivac/robocomp/classes/rapplication/rapplication.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/main.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/main.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/specificworker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -43,18 +43,18 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/home/salabeta/robocomp/classes"
-  "/home/salabeta/robocomp/libs"
-  "/home/salabeta/robocomp/interfaces"
+  "/home/crivac/robocomp/classes"
+  "/home/crivac/robocomp/libs"
+  "/home/crivac/robocomp/interfaces"
   "/include"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/AprilTags.h" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/AprilTags.cpp"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/Chocachoca.h" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.h" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp"
-  "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.h" "/home/salabeta/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/AprilTags.h" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/AprilTags.cpp"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/Chocachoca.h" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.h" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp"
+  "/home/crivac/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.h" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp"
   )
 
 
