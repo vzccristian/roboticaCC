@@ -37,7 +37,6 @@ SpecificWorker::~SpecificWorker()
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm.xml");
-//     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/betaWorldArm.xml ");
 
     timer.start(Period);
     return true;
@@ -101,10 +100,15 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
         float rot=atan2(Trobot.x(),Trobot.z());         //Calculamos la rotacion con el arcotangente
         linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.4) * sinusoide(dist);         ////Calcular velocidad
 
-        if (laserData[12].dist<thresholdValues.first) {         //400 tiene de ancho - 270 para no tocar nunca.
-            estado=TURN;
-            return linealSpeed;
-        } else
+//         if (laserData[12].dist<thresholdValues.first) {         //400 tiene de ancho - 270 para no tocar nunca.
+//             
+//             
+/////////////////////////////////////////////////////////////////
+//             OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+//             estado=TURN;
+//////////////////////////////////////////////////////////////////
+//             return linealSpeed;
+//         } else
             differentialrobot_proxy->setSpeedBase(linealSpeed, rot);             //Movimiento
     } else 
         estado=END; //Objetivo alcanzado

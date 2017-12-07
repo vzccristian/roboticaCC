@@ -35,17 +35,19 @@ SpecificWorker::~SpecificWorker()
 }
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
-    innermodel = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm2.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm.xml");
 
     dump=-1;
-    coorsTag.first=0;
-    coorsTag.second=0;
+    coorsDump.first=0;
+    coorsDump.second=0;
+    boxInArm=false;
     
-    for (auto x:movedBoxes)
+    for (auto &x:movedBoxes)
         x=-1;
-    for (auto x:coorsBox)
+    for (auto &x:coorsBox)
         x=-2;
     
+    begin_time = clock();
     timer.start(Period);
     return true;
 }
@@ -69,7 +71,11 @@ void SpecificWorker::compute() {
         wait();
         break;
     case PICKBOX:
-        pickbox();
+        pickBox();
+        break;
+    case RELEASEBOX:
+        releaseBox();
+        break;
     default:
         break;
     }
@@ -77,52 +83,95 @@ void SpecificWorker::compute() {
 
 /* Search next tag */
 void SpecificWorker::search() {
-    qDebug() << "SEARCH";
-    if (!chocachoca_proxy->getState())
-        chocachoca_proxy->turn(0.6);
+    qDebug() << "SEARCH ";
+    int x,z;
+    if (float(clock() - begin_time) /10000.0 > 10.0 ) {
+        srand( time( NULL ) );  //  using the time seed from srand explanation
+        x=rand()%1000-500;
+        z=rand()%1000-500;
+        qDebug() << x<<z;
+        chocachoca_proxy->go(x,z);
+        begin_time=float(clock());
+    } else {
+        if (!chocachoca_proxy->getState())
+            chocachoca_proxy->turn(-0.9);
+
+    }
 
 }
 
 /* Go to a specific target */
 void SpecificWorker::gotoTarget() {
     qDebug() << "GOTO";
-    if (!chocachoca_proxy->getState()) {
+//     if (!chocachoca_proxy->getState()) {
         chocachoca_proxy->go(coorsBox[1],coorsBox[2]);
         estado=WAIT;
-    }
+//     }
 }
 
 /* Wait until robot arrive to target */
 void SpecificWorker::wait() {
-    qDebug() << "WAIT";
+//     qDebug() << "WAIT";
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
-    if ((abs(bState.x - (coorsBox[1])) <= MAXDIST) && (abs(bState.z - (coorsBox[2])) <= MAXDIST)) { //ENCONTRADO
-        chocachoca_proxy->stop();
-        estado=PICKBOX;
-    } 
+    qDebug() << "ROBOT. x-->"<<bState.x<<"  z-->"<<bState.z;
+    qDebug() << "BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2];
+    if (boxInArm) {
+        if ((abs(bState.x - (coorsDump.first)) <= MAXDIST*1.5) && (abs(bState.z - (coorsDump.second)) <= MAXDIST*1.5)) { //ENCONTRADO
+            chocachoca_proxy->stop();
+            estado=RELEASEBOX;
+        } 
+    }  else {
+        if ((abs(bState.x - (coorsBox[1])) <= MAXDIST) && (abs(bState.z - (coorsBox[2])) <= MAXDIST)) { //ENCONTRADO
+            chocachoca_proxy->stop();
+            estado=PICKBOX;
+        } 
+    }
 
 }
 
 
-void SpecificWorker::pickbox() {
-    qDebug() << "pickBox";
+void SpecificWorker::pickBox() {
+    qDebug() << "pickedBox";
+    boxInArm=true;
+    chocachoca_proxy->go(coorsDump.first,coorsDump.second);
+    estado=WAIT;
+}
 
+void SpecificWorker::releaseBox() {
+    qDebug() << "releaseBox";
+    boxInArm=false;
+    addToMovedBoxes(coorsBox[0]);
+    begin_time=float(clock());
+    estado=SEARCH;
+    
 }
 
 
-
+void SpecificWorker::addToMovedBoxes(int id) {
+    qDebug() << "addToMovedBoxes";
+    int i=0;
+    bool added=false;
+    while (i<MAXBOXES && !added) {
+        if (movedBoxes[i] == -1) {
+            movedBoxes[i] = id;
+            qDebug() << "Aniadido ID: "<<id<<" posicion "<<i;
+            added=true;
+        }
+        i++;
+    }
+}
 
 /* aprilTagsMaster */
 void SpecificWorker::newAprilTag(const tagsList &tags) {
     if (dump == -1)
         searchDump(tags);
-    if (estado==SEARCH)
+//     if (estado==SEARCH)
         searchBoxes(tags);
 }
 
 void SpecificWorker::searchDump(const tagsList &tags) {
-    int umbral=450,i;
+    int umbral=300,i;
     QVec targetCoors;
     
     for (i=0; i<(signed)tags.size(); i++) {
@@ -136,7 +185,7 @@ void SpecificWorker::searchDump(const tagsList &tags) {
                 if (z>0) z=z-umbral;
                 else z=z+umbral;
             }
-            coorsTag=make_pair(x,z); //Coordenadas
+            coorsDump=make_pair(x,z); //Coordenadas
             dump = tags[i].id;
             qDebug() << "Dump:"<<dump;
             return;
@@ -153,15 +202,17 @@ void SpecificWorker::searchBoxes(const tagsList &tags) {
     
     for (i=0; i<(signed)tags.size(); i++) {
          if (tags[i].id > 9 && !boxIsMoved(tags[i].id)) {
-            targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
+            targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"robot");
             Trobot = innermodel->transform("robot",QVec::vec3(targetCoors.x(),0,targetCoors.z()),"world");    
             currentDist = Trobot.norm2();     
             if (currentDist < dist) { //MEJOR
                 dist=currentDist;
                 coorsBox[0]=tags[i].id; 
-                coorsBox[1]=Trobot.x();
-                coorsBox[2]=Trobot.z();
+                coorsBox[1]=targetCoors.x();
+                coorsBox[2]=targetCoors.z();
+                qDebug() << "UPDATE -> BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2]<< ". distancia"<<currentDist;
             }
+           
          }
     }
     if (dist!=MAXSEARCHBOX)
@@ -170,8 +221,10 @@ void SpecificWorker::searchBoxes(const tagsList &tags) {
 
 bool SpecificWorker::boxIsMoved(int id) {
     for (auto x:movedBoxes) {
-        if (x == id)
+        if (x == id) {
             return true;
+            qDebug() << "Encontrado "<<id;
+        }
     }
     return false;
     

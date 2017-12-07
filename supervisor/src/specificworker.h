@@ -34,11 +34,11 @@
 #include <ctime>
 
 using namespace std;
-enum state { SEARCH, WAIT, GOTO, PICKBOX};
+enum state { SEARCH, WAIT, GOTO, PICKBOX, RELEASEBOX};
 
 const int MAXBOXES=10;
 const int MAXDUMPS=4;
-const int MAXDIST=400;
+const int MAXDIST=300;
 const float MAXSEARCHBOX=999999.0;
 
 class SpecificWorker : public GenericWorker
@@ -55,7 +55,8 @@ public:
     void search();
     void gotoTarget();
     void wait();
-    void pickbox();
+    void pickBox();
+    void releaseBox();
 
 public slots:
     void compute();
@@ -63,20 +64,24 @@ public slots:
 private:
     InnerModel *innermodel;
     std::mutex mtx;
-    
+    clock_t begin_time;
     //STATE MACHINE
     state estado=SEARCH;
     
     //TAGS;
     int dump;
-    std::pair<int,int> coorsTag;
+    
+    std::pair<int,int> coorsDump;
     void searchDump(const tagsList &tags);
     
     //BOX
     int movedBoxes[MAXBOXES];
+    bool boxInArm;
     float coorsBox[3];
+    
     void searchBoxes(const tagsList &tags);
     bool boxIsMoved(int id);
+    void addToMovedBoxes(int id);
 };
 
 #endif
