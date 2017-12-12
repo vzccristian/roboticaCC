@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
 
     timer.start(Period);
     return true;
@@ -350,9 +350,12 @@ bool SpecificWorker::pickingBox()
 
 void SpecificWorker::newAprilTag(const tagsList &tags)
 {
-
   qDebug() << "newAprilTag choca";
+  int i;
   
+  for (i=0; i<(signed)tags.size(); i++) {
+    qDebug() << "CHOCA VEO"<<tags[i].id;
+  }
   
 }
 

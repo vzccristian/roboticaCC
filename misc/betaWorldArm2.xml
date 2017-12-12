@@ -37,13 +37,13 @@
 		</transform>
 		
 		
-		<transform id="C10" tx="-800" ty="5" tz="-800"> 
+		<transform id="C10" tx="0" ty="5" tz="-200"> 
 			
-			<transform id="axisCube" tx="0" ty="0" tz="0"> 
+			<!--<transform id="axisCube" tx="0" ty="0" tz="0"> 
 				<plane id="axisCubex" px="50" nx="1" size="2,2,100" repeat="1" texture="#ff0000" />
 				<plane id="axisCubey" py="50" nx="1" size="2,100,2" repeat="1" texture="#00ff00" />
 				<plane id="axisCubez" pz="50" nx="1" size="100,2,2" repeat="1" texture="#0000ff" />
-			</transform>
+			</transform>-->
 			
 			<plane id="C10_1" nx="1"  px="-50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-10.png" />
 			<plane id="C10_2" nx="1"  px="50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-10.png" />
@@ -65,7 +65,7 @@
 			
 		</transform>
 		
-		<transform id="C12" tx="400" ty="5" tz="700"> 
+		<transform id="C12" tx="100" ty="5" tz="300"> 
 					
 			<plane id="C12_1" nx="1"  px="-50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-12.png" />
 			<plane id="C12_2" nx="1"  px="50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-12.png" />
@@ -162,7 +162,7 @@
 						<transform id="arm_right_2" tz="30" rx="1.5707963267948966" >
 <!-- 							Gira en X -->
 							<mesh id="shoulder_right_2_mesh" file="/home/robocomp/robocomp/files/osgModels/basics/cube.3ds" ty="0" tz="-22" scale="20"    />
-							<joint id="shoulder_right_2" port="20000" min="-1.5707963267948966" max="0" axis="x" home="-1" >
+							<joint id="shoulder_right_2" port="20000" min="-1.5707963267948966" max="0" axis="x" home="-0.785398" >
 								<mesh id="shoulder_right_2_mesh2" file="/home/robocomp/robocomp/files/osgModels/basics/cylinder.3ds" tz="18" scale="10,10,20"    />
 								<transform id="axisArm2" tx="0" ty="0" tz="0"> 
 									<plane id="axisArm2x" px="50" nx="1" size="2,2,100" repeat="1" texture="#ff0000" />
@@ -206,7 +206,7 @@
 														<transform id="arm_right_6" tz="200" >
 <!-- 															Gira en X -->
 															<mesh id="wrist_right_2_mesh" file="/home/robocomp/robocomp/files/osgModels/basics/cube.3ds" ty="0" tz="-22" scale="20"    />
-															<joint id="wrist_right_2" port="20000" min="-1.5707963267948966" max="1.5707963267948966" axis="x" home="0,75" >
+															<joint id="wrist_right_2" port="20000" min="-1.5707963267948966" max="1.5707963267948966" axis="x" home="0" >
 																<mesh id="wrist_right_2_mesh2" file="/home/robocomp/robocomp/files/osgModels/basics/cylinder.3ds" tz="18" scale="10,10,20"    />
 																<transform id="axisArm6" tx="0" ty="0" tz="0"> 
 																	<plane id="axisArm6x" px="50" nx="1" size="2,2,100" repeat="1" texture="#ff0000" />

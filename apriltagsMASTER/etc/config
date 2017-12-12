@@ -9,7 +9,7 @@ CameraProxy = camera:tcp -h localhost -p 10001
 RGBDProxy = rgbd:tcp -h localhost -p 10096
 RGBDBusProxy = rgbdbus:tcp -h localhost -p 10239
 
-AprilTagsProxy = apriltags:tcp -h localhost -p 10261
+AprilTagsProxy = apriltags:tcp -h localhost -p 14410
 
 InnerModelPath=/home/robocomp/robocomp/files/innermodel/simpleworld.xml
 CameraName=rgbd

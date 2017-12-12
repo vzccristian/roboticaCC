@@ -35,7 +35,7 @@ SpecificWorker::~SpecificWorker()
 }
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
-    innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
 
     dump=-1;
     coorsDump.first=0;
@@ -201,6 +201,7 @@ void SpecificWorker::searchBoxes(const tagsList &tags) {
     QVec targetCoors,Trobot;
     
     for (i=0; i<(signed)tags.size(); i++) {
+	qDebug() << tags[i].id;
          if (tags[i].id > 9 && !boxIsMoved(tags[i].id)) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"robot");
             Trobot = innermodel->transform("robot",QVec::vec3(targetCoors.x(),0,targetCoors.z()),"world");    
