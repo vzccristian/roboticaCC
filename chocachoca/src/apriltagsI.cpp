@@ -16,47 +16,26 @@
  *    You should have received a copy of the GNU General Public License
  *    along with RoboComp.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include "apriltagsI.h"
 
-/**
-       \brief
-       @author authorname
-*/
-
-
-
-
-
-
-
-#ifndef SPECIFICWORKER_H
-#define SPECIFICWORKER_H
-
-#include <genericworker.h>
-#include <innermodel/innermodel.h>
-
-class SpecificWorker : public GenericWorker
+AprilTagsI::AprilTagsI(GenericWorker *_worker, QObject *parent) : QObject(parent)
 {
-Q_OBJECT
-public:
-	SpecificWorker(MapPrx& mprx);	
-	~SpecificWorker();
-	bool setParams(RoboCompCommonBehavior::ParameterList params);
+	worker = _worker;
+	mutex = worker->mutex;       // Shared worker mutex
+}
 
-	bool pickingBox();
-	bool getState();
-	void stop();
-	void turn(const float speed);
-	void go(const float x, const float z);
-	bool releasingBox();
-	void setPick(const Pick &myPick);
-	void newAprilTag(const tagsList &tags);
 
-public slots:
-	void compute(); 	
+AprilTagsI::~AprilTagsI()
+{
+}
 
-private:
-	
-};
+void AprilTagsI::newAprilTag(const tagsList  &tags, const Ice::Current&)
+{
+	worker->newAprilTag(tags);
+}
 
-#endif
+
+
+
+
 

@@ -96,6 +96,11 @@ void SpecificWorker::setPick(const Pick &myPick)
 
 }
 
+void SpecificWorker::newAprilTag(const tagsList &tags)
+{
+  
+}
+
 
 
 

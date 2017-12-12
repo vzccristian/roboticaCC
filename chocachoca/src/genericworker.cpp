@@ -33,7 +33,6 @@ QObject()
 	laser_proxy = (*(LaserPrx*)mprx["LaserProxy"]);
 
 
-
 	mutex = new QMutex(QMutex::Recursive);
 
 	#ifdef USE_QTGUI
@@ -42,7 +41,6 @@ QObject()
 	#endif
 	Period = BASIC_PERIOD;
 	connect(&timer, SIGNAL(timeout()), this, SLOT(compute()));
-
 
 
 // 	timer.start(Period);
@@ -70,4 +68,5 @@ void GenericWorker::setPeriod(int p)
 	Period = p;
 	timer.start(Period);
 }
+
 

@@ -2,7 +2,7 @@ CommonBehavior.Endpoints=tcp -p 10600
 
 
 # Endpoints for subscriptions
-AprilTagsTopic.Endpoints=tcp -p 10601
+AprilTagsTopic.Endpoints=tcp -p 14410
 
 
 # Proxies for required interfaces

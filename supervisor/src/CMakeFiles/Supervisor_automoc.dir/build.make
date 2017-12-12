@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/crivac/robocomp/components/roboticaCC/supervisor
+CMAKE_SOURCE_DIR = /home/salabeta/robocomp/components/roboticaCC/supervisor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/supervisor
+CMAKE_BINARY_DIR = /home/salabeta/robocomp/components/roboticaCC/supervisor
 
 # Utility rule file for Supervisor_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/supervisor
 include src/CMakeFiles/Supervisor_automoc.dir/progress.make
 
 src/CMakeFiles/Supervisor_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target Supervisor"
-	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/cmake -E cmake_autogen /home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor_automoc.dir/ ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target Supervisor"
+	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/cmake -E cmake_autogen /home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor_automoc.dir/ ""
 
 Supervisor_automoc: src/CMakeFiles/Supervisor_automoc
 Supervisor_automoc: src/CMakeFiles/Supervisor_automoc.dir/build.make
@@ -68,10 +68,10 @@ src/CMakeFiles/Supervisor_automoc.dir/build: Supervisor_automoc
 .PHONY : src/CMakeFiles/Supervisor_automoc.dir/build
 
 src/CMakeFiles/Supervisor_automoc.dir/clean:
-	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && $(CMAKE_COMMAND) -P CMakeFiles/Supervisor_automoc.dir/cmake_clean.cmake
+	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && $(CMAKE_COMMAND) -P CMakeFiles/Supervisor_automoc.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/Supervisor_automoc.dir/clean
 
 src/CMakeFiles/Supervisor_automoc.dir/depend:
-	cd /home/crivac/robocomp/components/roboticaCC/supervisor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/crivac/robocomp/components/roboticaCC/supervisor /home/crivac/robocomp/components/roboticaCC/supervisor/src /home/crivac/robocomp/components/roboticaCC/supervisor /home/crivac/robocomp/components/roboticaCC/supervisor/src /home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/salabeta/robocomp/components/roboticaCC/supervisor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robocomp/components/roboticaCC/supervisor /home/salabeta/robocomp/components/roboticaCC/supervisor/src /home/salabeta/robocomp/components/roboticaCC/supervisor /home/salabeta/robocomp/components/roboticaCC/supervisor/src /home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/Supervisor_automoc.dir/depend
 

@@ -346,3 +346,14 @@ bool SpecificWorker::pickingBox()
   qDebug() << "PICKING BOX";
   return true;
 }
+
+
+void SpecificWorker::newAprilTag(const tagsList &tags)
+{
+
+  qDebug() << "newAprilTag choca";
+  
+  
+}
+
+

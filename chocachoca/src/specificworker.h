@@ -35,125 +35,124 @@ enum state { IDLE, GOTO, TURN, SKIRT, END, ARM};
 
 class SpecificWorker : public GenericWorker
 {
-    Q_OBJECT
-public:
-    SpecificWorker(MapPrx& mprx);
-    ~SpecificWorker();
-    bool setParams(RoboCompCommonBehavior::ParameterList params);
-    
-    //MAQUINA DE ESTADOS
-    void idle();
-    void end();
-    float gotoTarget(TBaseState bState, TLaserData laserData);
-    void skirt(TBaseState bState, TLaserData &laserData);
-    void turn(float linealSpeed,TLaserData laserData);   
-    void arm();
-    
-    //METODOS AUXILIARES
-    bool onTarget(float dist);
-    bool isOnLine(TBaseState bState);
-    bool reachableTarget(TBaseState bState, float dist, TLaserData &laserData);
-    float gauss(float Vrot, float Vx, float h);
-    float sinusoide(float x);
+  Q_OBJECT
+  public:
+      SpecificWorker(MapPrx& mprx);
+      ~SpecificWorker();
+      bool setParams(RoboCompCommonBehavior::ParameterList params);
+      
+      //MAQUINA DE ESTADOS
+      void idle();
+      void end();
+      float gotoTarget(TBaseState bState, TLaserData laserData);
+      void skirt(TBaseState bState, TLaserData &laserData);
+      void turn(float linealSpeed,TLaserData laserData);   
+      void arm();
+      
+      //METODOS AUXILIARES
+      bool onTarget(float dist);
+      bool isOnLine(TBaseState bState);
+      bool reachableTarget(TBaseState bState, float dist, TLaserData &laserData);
+      float gauss(float Vrot, float Vx, float h);
+      float sinusoide(float x);
 
-    //LLAMADAS INTERFAZ
-    void go(const float x, const float z);
-    void turn(const float speed);
-    bool getState();
-    void stop();
-    void setPick(const Pick &myPick);
-    bool releasingBox();
-    bool pickingBox();
-
-
-
-
-public slots:
-    void compute();
-
-private:
-    InnerModel *innermodel;
-    state estado;
-    float const VLIN_MAX = 700;
-    float const VROT_MAX = 0.6;
-    bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
-    bool preState = true;
-    bool pick=false; /* Flag diferencia entre pick y searchTags */
-    pair <int, int> thresholdValues=make_pair(270,470); /* Min - max thresholdValues */
-
-    struct Target
-    {
-        QMutex mutex; //Para hacer las operaciones sobre el target atómicas
-        float xt, zt, xr, zr;
-        bool empty;
+      //LLAMADAS INTERFAZ
+      void go(const float x, const float z);
+      void turn(const float speed);
+      bool getState();
+      void stop();
+      void setPick(const Pick &myPick);
+      bool releasingBox();
+      bool pickingBox();
+      void newAprilTag(const tagsList &tags);
 
 
-        //Constructor
-        Target() {
-            xt = 0;
-            zt = 0;
-            xr = 0;
-            zr = 0;
-            empty = true;
-        };
+  public slots:
+      void compute();
 
-        //Inserta las coord x y z en el target
-        bool insert(float _xt, float _zt, float _xr, float _zr ) {
-            QMutexLocker ml(&mutex); //Controla el mutex
-            xt = _xt;
-            zt = _zt;
-            xr = _xr;
-            zr = _zr;
-            empty = false;
-            return true;
-        };
+  private:
+      InnerModel *innermodel;
+      state estado;
+      float const VLIN_MAX = 700;
+      float const VROT_MAX = 0.6;
+      bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
+      bool preState = true;
+      bool pick=false; /* Flag diferencia entre pick y searchTags */
+      pair <int, int> thresholdValues=make_pair(270,470); /* Min - max thresholdValues */
 
-        //Extrae las coord x y z del target y del robot
-        std::pair <std::pair <float,float>,std::pair <float,float>> extract() {
-            QMutexLocker ml(&mutex);
-            std::pair <std::pair <float,float>,std::pair <float,float>> coors;
-            std::pair <float,float> coorsTarget;
-            std::pair <float,float> coorsRobot;
-            coorsTarget.first=xt;
-            coorsTarget.second=zt;
-            coorsRobot.first=xr;
-            coorsRobot.second=zr;
-            coors.first=coorsTarget;
-            coors.second=coorsRobot;
-            return coors;
-        };
+      struct Target
+      {
+	  QMutex mutex; //Para hacer las operaciones sobre el target atómicas
+	  float xt, zt, xr, zr;
+	  bool empty;
 
-        //Devuelve si el target esta vacio
-        bool isEmpty() {
-            QMutexLocker ml(&mutex);
-            return empty;
-        };
 
-        //Pone a vacio el target
-        void setEmpty() {
-            QMutexLocker ml(&mutex);
-            empty =true;
-        };
+	  //Constructor
+	  Target() {
+	      xt = 0;
+	      zt = 0;
+	      xr = 0;
+	      zr = 0;
+	      empty = true;
+	  };
 
-        //Devuelve las coordenadas del target
-        pair <float,float> getPoseTarget() {
-            std::pair <float,float> coorsTarget;
-            coorsTarget.first=xt;
-            coorsTarget.second=zt;
-            return coorsTarget;
-        };
+	  //Inserta las coord x y z en el target
+	  bool insert(float _xt, float _zt, float _xr, float _zr ) {
+	      QMutexLocker ml(&mutex); //Controla el mutex
+	      xt = _xt;
+	      zt = _zt;
+	      xr = _xr;
+	      zr = _zr;
+	      empty = false;
+	      return true;
+	  };
 
-        //Devuelve las coordenadas del target
-        pair <float,float> getPoseRobot() {
-            std::pair <float,float> coorsRobot;
-            coorsRobot.first=xr;
-            coorsRobot.second=zr;
-            return coorsRobot;
-        };
+	  //Extrae las coord x y z del target y del robot
+	  std::pair <std::pair <float,float>,std::pair <float,float>> extract() {
+	      QMutexLocker ml(&mutex);
+	      std::pair <std::pair <float,float>,std::pair <float,float>> coors;
+	      std::pair <float,float> coorsTarget;
+	      std::pair <float,float> coorsRobot;
+	      coorsTarget.first=xt;
+	      coorsTarget.second=zt;
+	      coorsRobot.first=xr;
+	      coorsRobot.second=zr;
+	      coors.first=coorsTarget;
+	      coors.second=coorsRobot;
+	      return coors;
+	  };
 
-    };
+	  //Devuelve si el target esta vacio
+	  bool isEmpty() {
+	      QMutexLocker ml(&mutex);
+	      return empty;
+	  };
 
-    Target target;
+	  //Pone a vacio el target
+	  void setEmpty() {
+	      QMutexLocker ml(&mutex);
+	      empty =true;
+	  };
+
+	  //Devuelve las coordenadas del target
+	  pair <float,float> getPoseTarget() {
+	      std::pair <float,float> coorsTarget;
+	      coorsTarget.first=xt;
+	      coorsTarget.second=zt;
+	      return coorsTarget;
+	  };
+
+	  //Devuelve las coordenadas del target
+	  pair <float,float> getPoseRobot() {
+	      std::pair <float,float> coorsRobot;
+	      coorsRobot.first=xr;
+	      coorsRobot.second=zr;
+	      return coorsRobot;
+	  };
+
+      };
+
+      Target target;
 
 
 };

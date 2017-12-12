@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/crivac/robocomp/classes/qlog/qlog.cpp
+/home/salabeta/robocomp/classes/qlog/qlog.cpp
 qlog.h
-/home/crivac/robocomp/classes/qlog/qlog.h
+/home/salabeta/robocomp/classes/qlog/qlog.h
 
-/home/crivac/robocomp/classes/qlog/qlog.h
+/home/salabeta/robocomp/classes/qlog/qlog.h
 config.h
-/home/crivac/robocomp/classes/qlog/config.h
+/home/salabeta/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
@@ -20,11 +20,11 @@ iostream
 Logger.h
 -
 
-/home/crivac/robocomp/classes/rapplication/rapplication.cpp
+/home/salabeta/robocomp/classes/rapplication/rapplication.cpp
 rapplication.h
-/home/crivac/robocomp/classes/rapplication/rapplication.h
+/home/salabeta/robocomp/classes/rapplication/rapplication.h
 
-/home/crivac/robocomp/classes/rapplication/rapplication.h
+/home/salabeta/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
 -
 Ice/Application.h
@@ -34,7 +34,21 @@ IceUtil/IceUtil.h
 QtCore
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/Chocachoca.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/AprilTags.cpp
+AprilTags.h
+-
+Ice/LocalException.h
+-
+Ice/ObjectFactory.h
+-
+Ice/BasicStream.h
+-
+Ice/Object.h
+-
+IceUtil/Iterator.h
+-
+
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Chocachoca.cpp
 Chocachoca.h
 -
 Ice/LocalException.h
@@ -48,7 +62,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp
 CommonBehavior.h
 -
 Ice/LocalException.h
@@ -62,7 +76,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp
 DifferentialRobot.h
 -
 Ice/LocalException.h
@@ -76,7 +90,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/JointMotor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/JointMotor.cpp
 JointMotor.h
 -
 Ice/LocalException.h
@@ -90,7 +104,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp
 Laser.h
 -
 Ice/LocalException.h
@@ -104,7 +118,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp
 RCISMousePicker.h
 -
 Ice/LocalException.h
@@ -118,11 +132,27 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.cpp
-chocachocaI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.cpp
+apriltagsI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.h
+QtCore/QObject
+-
+Ice/Ice.h
+-
+AprilTags.h
+-
+config.h
+-
+genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.cpp
+chocachocaI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.h
+
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -132,29 +162,31 @@ Chocachoca.h
 config.h
 -
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp
+moc_apriltagsI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_apriltagsI.cpp
 moc_chocachocaI.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_chocachocaI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_chocachocaI.cpp
 moc_commonbehaviorI.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_commonbehaviorI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_commonbehaviorI.cpp
 moc_genericmonitor.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_genericmonitor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_genericmonitor.cpp
 moc_genericworker.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_genericworker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_genericworker.cpp
 moc_rcismousepickerI.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_rcismousepickerI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_rcismousepickerI.cpp
 moc_specificmonitor.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_specificmonitor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_specificmonitor.cpp
 moc_specificworker.cpp
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_specificworker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_specificworker.cpp
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.cpp
 commonbehaviorI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -164,37 +196,37 @@ CommonBehavior.h
 config.h
 -
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 genericmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/config.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/config.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.cpp
 genericmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
 Ice/Ice.h
 -
 QtCore
 -
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 config.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/config.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/config.h
 qlog/qlog.h
 -
 CommonBehavior.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.cpp
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 config.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/config.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/config.h
 QtGui
 -
 stdint.h
@@ -209,16 +241,18 @@ DifferentialRobot.h
 -
 Chocachoca.h
 -
-RCISMousePicker.h
+JointMotor.h
 -
 Laser.h
 -
-JointMotor.h
+RCISMousePicker.h
+-
+AprilTags.h
 -
 IceStorm/IceStorm.h
 -
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/main.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/main.cpp
 signal.h
 -
 QtCore
@@ -236,20 +270,22 @@ rapplication/rapplication.h
 qlog/qlog.h
 -
 config.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/config.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/config.h
 genericmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 specificworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
 specificmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
 commonbehaviorI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
 chocachocaI.h
 -
 rcismousepickerI.h
+-
+apriltagsI.h
 -
 Laser.h
 -
@@ -261,40 +297,46 @@ Chocachoca.h
 -
 JointMotor.h
 -
+AprilTags.h
+-
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_chocachocaI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_apriltagsI.cpp
+apriltagsI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.h
+
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_chocachocaI.cpp
 chocachocaI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachocaI.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_commonbehaviorI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_commonbehaviorI.cpp
 commonbehaviorI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/commonbehaviorI.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_genericmonitor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_genericmonitor.cpp
 genericmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_genericworker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_genericworker.cpp
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_rcismousepickerI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_rcismousepickerI.cpp
 rcismousepickerI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_specificmonitor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_specificmonitor.cpp
 specificmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/moc_specificworker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/moc_specificworker.cpp
 specificworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.cpp
 rcismousepickerI.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/rcismousepickerI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -304,21 +346,21 @@ RCISMousePicker.h
 config.h
 -
 genericworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericworker.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.cpp
 specificmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificmonitor.h
 genericmonitor.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/genericmonitor.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.cpp
 specificworker.h
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
 
-/home/crivac/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
+/home/salabeta/robocomp/components/roboticaCC/chocachoca/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h
@@ -4292,6 +4334,38 @@ QtGui/qwidget.h
 QtGui/qwidget.h
 -
 
+src/AprilTags.h
+Ice/ProxyF.h
+-
+Ice/ObjectF.h
+-
+Ice/Exception.h
+-
+Ice/LocalObject.h
+-
+Ice/StreamHelpers.h
+-
+Ice/Proxy.h
+-
+Ice/Object.h
+-
+Ice/Outgoing.h
+-
+Ice/OutgoingAsync.h
+-
+Ice/Incoming.h
+-
+Ice/Direct.h
+-
+IceUtil/ScopedArray.h
+-
+IceUtil/Optional.h
+-
+Ice/StreamF.h
+-
+Ice/UndefSysMacros.h
+-
+
 src/Chocachoca.h
 Ice/ProxyF.h
 -
@@ -4492,6 +4566,18 @@ Ice/StreamF.h
 Ice/UndefSysMacros.h
 -
 
+src/apriltagsI.h
+QtCore/QObject
+-
+Ice/Ice.h
+-
+AprilTags.h
+-
+config.h
+-
+genericworker.h
+src/genericworker.h
+
 src/chocachocaI.h
 QtCore/QObject
 -
@@ -4523,11 +4609,13 @@ DifferentialRobot.h
 -
 Chocachoca.h
 -
-RCISMousePicker.h
+JointMotor.h
 -
 Laser.h
 -
-JointMotor.h
+RCISMousePicker.h
+-
+AprilTags.h
 -
 IceStorm/IceStorm.h
 -
