@@ -56,7 +56,12 @@ void SpecificWorker::compute() {
 
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
-            
+    try{
+      newAprilTag(getapriltags_proxy->checkMarcas());
+    } catch(const Ice::Exception &e) {
+      std::cout << e <<endl;
+    }
+    
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
             
     //MAQUINA DE ESTADOS
@@ -163,14 +168,14 @@ void SpecificWorker::addToMovedBoxes(int id) {
 }
 
 /* aprilTagsMaster */
-void SpecificWorker::newAprilTag(const tagsList &tags) {
+void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) {
     if (dump == -1)
         searchDump(tags);
 //     if (estado==SEARCH)
         searchBoxes(tags);
 }
 
-void SpecificWorker::searchDump(const tagsList &tags) {
+void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
     int umbral=300,i;
     QVec targetCoors;
     
@@ -195,13 +200,12 @@ void SpecificWorker::searchDump(const tagsList &tags) {
     
 }
 
-void SpecificWorker::searchBoxes(const tagsList &tags) {
+void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) {
     int i;
     float dist=MAXSEARCHBOX, currentDist=0.0;
     QVec targetCoors,Trobot;
     
     for (i=0; i<(signed)tags.size(); i++) {
-	qDebug() << tags[i].id;
          if (tags[i].id > 9 && !boxIsMoved(tags[i].id)) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"robot");
             Trobot = innermodel->transform("robot",QVec::vec3(targetCoors.x(),0,targetCoors.z()),"world");    

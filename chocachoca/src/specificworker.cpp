@@ -49,7 +49,13 @@ void SpecificWorker::compute() {
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 );     //Actualizar arbol
 
     TLaserData laserData = laser_proxy->getLaserData();     //Tomar los datos del laser
-
+    
+    try{
+      newAprilTag(getapriltags_proxy->checkMarcas());
+    } catch(const Ice::Exception &e) {
+      std::cout << e <<endl;
+    }
+    
     //MAQUINA DE ESTADOS
     switch (estado) {
     case IDLE:
@@ -348,11 +354,9 @@ bool SpecificWorker::pickingBox()
 }
 
 
-void SpecificWorker::newAprilTag(const tagsList &tags)
+void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
-  qDebug() << "newAprilTag choca";
   int i;
-  
   for (i=0; i<(signed)tags.size(); i++) {
     qDebug() << "CHOCA VEO"<<tags[i].id;
   }

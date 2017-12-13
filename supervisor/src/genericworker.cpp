@@ -28,8 +28,9 @@ QObject()
 #endif
 
 {
-	chocachoca_proxy = (*(ChocachocaPrx*)mprx["ChocachocaProxy"]);
 	differentialrobot_proxy = (*(DifferentialRobotPrx*)mprx["DifferentialRobotProxy"]);
+	getapriltags_proxy = (*(GetAprilTagsPrx*)mprx["GetAprilTagsProxy"]);
+	chocachoca_proxy = (*(ChocachocaPrx*)mprx["ChocachocaProxy"]);
 
 
 
@@ -69,4 +70,4 @@ void GenericWorker::setPeriod(int p)
 	timer.start(Period);
 }
 
-// 
+

@@ -4,6 +4,7 @@ d4c54f4af672c84ca95e6a9d7a4ec7a4 src/CMakeFiles/chocachoca_automoc
 57605b40f75fd364004db48133e71fd0 src/Chocachoca.cpp
 ee49b82744a35bd02aff3058c51ed219 src/CommonBehavior.cpp
 738bcb3deb4f231e749d2a58a3ccf213 src/DifferentialRobot.cpp
+9ae48025e8a921f580ba6b82b3133b80 src/GetAprilTags.cpp
 54989bddd855ea3357cb76a347d37fe8 src/JointMotor.cpp
 dc4057815a7ccc8e72a20398efae595f src/Laser.cpp
 ae3a334e041843d9d6335e0fd7237f7b src/RCISMousePicker.cpp

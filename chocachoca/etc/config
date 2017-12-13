@@ -3,7 +3,6 @@ CommonBehavior.Endpoints=tcp -p 12000
 
 # Endpoints for implemented interfaces
 Chocachoca.Endpoints=tcp -p 10095
-AprilTagsTopic.Endpoints=tcp -p 14411
 
 
 # Proxies for required interfaces
@@ -11,6 +10,9 @@ DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 10004
 LaserProxy = laser:tcp -h localhost -p 10003
 JointMotorProxy = jointmotor:tcp -h localhost -p 20000
 RCISMousePickerTopic.Endpoints=tcp -p 15000
+GetAprilTagsProxy = getapriltags:tcp -h localhost -p 14311
+
+
 
 # This property is used by the clients to connect to IceStorm.
 TopicManager.Proxy=IceStorm/TopicManager:default -p 9999

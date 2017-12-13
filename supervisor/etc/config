@@ -1,13 +1,10 @@
 CommonBehavior.Endpoints=tcp -p 10600
 
 
-# Endpoints for subscriptions
-AprilTagsTopic.Endpoints=tcp -p 14410
-
-
 # Proxies for required interfaces
 DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 10004
 ChocachocaProxy = chocachoca:tcp -h localhost -p 10095
+GetAprilTagsProxy = getapriltags:tcp -h localhost -p 14310
 
 
 # This property is used by the clients to connect to IceStorm.

@@ -48,9 +48,6 @@ public:
     SpecificWorker(MapPrx& mprx);
     ~SpecificWorker();
     bool setParams(RoboCompCommonBehavior::ParameterList params);
-
-    //TAGS
-    void newAprilTag(const tagsList &tags);
     
     void search();
     void gotoTarget();
@@ -64,22 +61,24 @@ public slots:
 private:
     InnerModel *innermodel;
     std::mutex mtx;
+    
     clock_t begin_time;
+    
     //STATE MACHINE
     state estado=SEARCH;
     
-    //TAGS;
-    int dump;
     
+    //TAGS
+    void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);
+    int dump;
     std::pair<int,int> coorsDump;
-    void searchDump(const tagsList &tags);
+    void searchDump(const RoboCompGetAprilTags::listaMarcas &tags);
     
     //BOX
     int movedBoxes[MAXBOXES];
     bool boxInArm;
     float coorsBox[3];
-    
-    void searchBoxes(const tagsList &tags);
+    void searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags);
     bool boxIsMoved(int id);
     void addToMovedBoxes(int id);
 };

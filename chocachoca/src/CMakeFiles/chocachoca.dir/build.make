@@ -99,12 +99,12 @@ src/JointMotor.cpp: /opt/robocomp/interfaces/JointMotor.ice
 src/JointMotor.h: src/JointMotor.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/JointMotor.h
 
-src/AprilTags.cpp: /opt/robocomp/interfaces/AprilTags.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating AprilTags.cpp and AprilTags.h from AprilTags.ice"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/AprilTags.ice --output-dir .
+src/GetAprilTags.cpp: /opt/robocomp/interfaces/GetAprilTags.ice
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
 
-src/AprilTags.h: src/AprilTags.cpp
-	@$(CMAKE_COMMAND) -E touch_nocreate src/AprilTags.h
+src/GetAprilTags.h: src/GetAprilTags.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate src/GetAprilTags.h
 
 src/ui_mainUI.h: src/mainUI.ui
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating ui_mainUI.h"
@@ -350,33 +350,9 @@ src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o.provides: src/CMakeFiles/ch
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o.provides.build: src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o
 
 
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o: src/apriltagsI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/apriltagsI.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.cpp
-
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chocachoca.dir/apriltagsI.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.cpp > CMakeFiles/chocachoca.dir/apriltagsI.cpp.i
-
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chocachoca.dir/apriltagsI.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/apriltagsI.cpp -o CMakeFiles/chocachoca.dir/apriltagsI.cpp.s
-
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.requires:
-
-.PHONY : src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.requires
-
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.provides: src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.provides.build
-.PHONY : src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.provides
-
-src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.provides.build: src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o
-
-
 src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CommonBehavior.cpp
 
 src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.i: cmake_force
@@ -400,7 +376,7 @@ src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/chocachoca.dir/Laser.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/Laser.cpp.o: src/Laser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/CMakeFiles/chocachoca.dir/Laser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/chocachoca.dir/Laser.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/Laser.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Laser.cpp
 
 src/CMakeFiles/chocachoca.dir/Laser.cpp.i: cmake_force
@@ -424,7 +400,7 @@ src/CMakeFiles/chocachoca.dir/Laser.cpp.o.provides.build: src/CMakeFiles/chocach
 
 src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/DifferentialRobot.cpp
 
 src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.i: cmake_force
@@ -448,7 +424,7 @@ src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o: src/RCISMousePicker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/RCISMousePicker.cpp
 
 src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.i: cmake_force
@@ -472,7 +448,7 @@ src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o: src/Chocachoca.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/Chocachoca.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/Chocachoca.cpp
 
 src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.i: cmake_force
@@ -496,7 +472,7 @@ src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o.provides.build: src/CMakeFiles/ch
 
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o: src/JointMotor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/JointMotor.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/JointMotor.cpp
 
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.i: cmake_force
@@ -518,33 +494,33 @@ src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o.provides: src/CMakeFiles/chocacho
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o.provides.build: src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o
 
 
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o: src/AprilTags.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/AprilTags.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/AprilTags.cpp
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o: src/GetAprilTags.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o"
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/GetAprilTags.cpp
 
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chocachoca.dir/AprilTags.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/AprilTags.cpp > CMakeFiles/chocachoca.dir/AprilTags.cpp.i
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chocachoca.dir/GetAprilTags.cpp.i"
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/GetAprilTags.cpp > CMakeFiles/chocachoca.dir/GetAprilTags.cpp.i
 
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chocachoca.dir/AprilTags.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/AprilTags.cpp -o CMakeFiles/chocachoca.dir/AprilTags.cpp.s
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chocachoca.dir/GetAprilTags.cpp.s"
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/GetAprilTags.cpp -o CMakeFiles/chocachoca.dir/GetAprilTags.cpp.s
 
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.requires:
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.requires
+.PHONY : src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.requires
 
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.provides: src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.provides.build
-.PHONY : src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.provides
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.provides: src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.provides.build
+.PHONY : src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.provides
 
-src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.provides.build: src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o
+src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.provides.build: src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o
 
 
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/CMakeFiles/chocachoca.dir/flags.make
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/chocachoca_automoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/chocachoca_automoc.cpp
 
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.i: cmake_force
@@ -578,14 +554,13 @@ chocachoca_OBJECTS = \
 "CMakeFiles/chocachoca.dir/genericworker.cpp.o" \
 "CMakeFiles/chocachoca.dir/chocachocaI.cpp.o" \
 "CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o" \
-"CMakeFiles/chocachoca.dir/apriltagsI.cpp.o" \
 "CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o" \
 "CMakeFiles/chocachoca.dir/Laser.cpp.o" \
 "CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o" \
 "CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o" \
 "CMakeFiles/chocachoca.dir/Chocachoca.cpp.o" \
 "CMakeFiles/chocachoca.dir/JointMotor.cpp.o" \
-"CMakeFiles/chocachoca.dir/AprilTags.cpp.o" \
+"CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o" \
 "CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o"
 
 # External object files for target chocachoca
@@ -601,14 +576,13 @@ bin/chocachoca: src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/genericworker.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o
-bin/chocachoca: src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/Laser.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o
-bin/chocachoca: src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o
+bin/chocachoca: src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/build.make
 bin/chocachoca: /usr/lib/x86_64-linux-gnu/libQtOpenGL.so
@@ -620,7 +594,7 @@ bin/chocachoca: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/chocachoca: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/chocachoca: /usr/lib/x86_64-linux-gnu/libQtCore.so
 bin/chocachoca: src/CMakeFiles/chocachoca.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable ../bin/chocachoca"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable ../bin/chocachoca"
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chocachoca.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -638,14 +612,13 @@ src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/commonbeha
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/genericworker.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o.requires
-src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/CommonBehavior.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/Laser.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/Chocachoca.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o.requires
-src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o.requires
+src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o.requires
 src/CMakeFiles/chocachoca.dir/requires: src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o.requires
 
 .PHONY : src/CMakeFiles/chocachoca.dir/requires
@@ -666,8 +639,8 @@ src/CMakeFiles/chocachoca.dir/depend: src/Chocachoca.cpp
 src/CMakeFiles/chocachoca.dir/depend: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/depend: src/JointMotor.cpp
 src/CMakeFiles/chocachoca.dir/depend: src/JointMotor.h
-src/CMakeFiles/chocachoca.dir/depend: src/AprilTags.cpp
-src/CMakeFiles/chocachoca.dir/depend: src/AprilTags.h
+src/CMakeFiles/chocachoca.dir/depend: src/GetAprilTags.cpp
+src/CMakeFiles/chocachoca.dir/depend: src/GetAprilTags.h
 src/CMakeFiles/chocachoca.dir/depend: src/ui_mainUI.h
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robocomp/components/roboticaCC/chocachoca /home/salabeta/robocomp/components/roboticaCC/chocachoca/src /home/salabeta/robocomp/components/roboticaCC/chocachoca /home/salabeta/robocomp/components/roboticaCC/chocachoca/src /home/salabeta/robocomp/components/roboticaCC/chocachoca/src/CMakeFiles/chocachoca.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/chocachoca.dir/depend

@@ -173,33 +173,6 @@ chocachoca_automoc/fast:
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca_automoc.dir/build.make src/CMakeFiles/chocachoca_automoc.dir/build
 .PHONY : chocachoca_automoc/fast
 
-AprilTags.o: AprilTags.cpp.o
-
-.PHONY : AprilTags.o
-
-# target to build an object file
-AprilTags.cpp.o:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/AprilTags.cpp.o
-.PHONY : AprilTags.cpp.o
-
-AprilTags.i: AprilTags.cpp.i
-
-.PHONY : AprilTags.i
-
-# target to preprocess a source file
-AprilTags.cpp.i:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/AprilTags.cpp.i
-.PHONY : AprilTags.cpp.i
-
-AprilTags.s: AprilTags.cpp.s
-
-.PHONY : AprilTags.s
-
-# target to generate assembly for a file
-AprilTags.cpp.s:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/AprilTags.cpp.s
-.PHONY : AprilTags.cpp.s
-
 Chocachoca.o: Chocachoca.cpp.o
 
 .PHONY : Chocachoca.o
@@ -281,6 +254,33 @@ DifferentialRobot.cpp.s:
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.s
 .PHONY : DifferentialRobot.cpp.s
 
+GetAprilTags.o: GetAprilTags.cpp.o
+
+.PHONY : GetAprilTags.o
+
+# target to build an object file
+GetAprilTags.cpp.o:
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o
+.PHONY : GetAprilTags.cpp.o
+
+GetAprilTags.i: GetAprilTags.cpp.i
+
+.PHONY : GetAprilTags.i
+
+# target to preprocess a source file
+GetAprilTags.cpp.i:
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.i
+.PHONY : GetAprilTags.cpp.i
+
+GetAprilTags.s: GetAprilTags.cpp.s
+
+.PHONY : GetAprilTags.s
+
+# target to generate assembly for a file
+GetAprilTags.cpp.s:
+	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.s
+.PHONY : GetAprilTags.cpp.s
+
 JointMotor.o: JointMotor.cpp.o
 
 .PHONY : JointMotor.o
@@ -361,33 +361,6 @@ RCISMousePicker.s: RCISMousePicker.cpp.s
 RCISMousePicker.cpp.s:
 	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/RCISMousePicker.cpp.s
 .PHONY : RCISMousePicker.cpp.s
-
-apriltagsI.o: apriltagsI.cpp.o
-
-.PHONY : apriltagsI.o
-
-# target to build an object file
-apriltagsI.cpp.o:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.o
-.PHONY : apriltagsI.cpp.o
-
-apriltagsI.i: apriltagsI.cpp.i
-
-.PHONY : apriltagsI.i
-
-# target to preprocess a source file
-apriltagsI.cpp.i:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.i
-.PHONY : apriltagsI.cpp.i
-
-apriltagsI.s: apriltagsI.cpp.s
-
-.PHONY : apriltagsI.s
-
-# target to generate assembly for a file
-apriltagsI.cpp.s:
-	cd /home/salabeta/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/apriltagsI.cpp.s
-.PHONY : apriltagsI.cpp.s
 
 chocachocaI.o: chocachocaI.cpp.o
 
@@ -699,9 +672,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... chocachoca_automoc"
-	@echo "... AprilTags.o"
-	@echo "... AprilTags.i"
-	@echo "... AprilTags.s"
 	@echo "... Chocachoca.o"
 	@echo "... Chocachoca.i"
 	@echo "... Chocachoca.s"
@@ -711,6 +681,9 @@ help:
 	@echo "... DifferentialRobot.o"
 	@echo "... DifferentialRobot.i"
 	@echo "... DifferentialRobot.s"
+	@echo "... GetAprilTags.o"
+	@echo "... GetAprilTags.i"
+	@echo "... GetAprilTags.s"
 	@echo "... JointMotor.o"
 	@echo "... JointMotor.i"
 	@echo "... JointMotor.s"
@@ -720,9 +693,6 @@ help:
 	@echo "... RCISMousePicker.o"
 	@echo "... RCISMousePicker.i"
 	@echo "... RCISMousePicker.s"
-	@echo "... apriltagsI.o"
-	@echo "... apriltagsI.i"
-	@echo "... apriltagsI.s"
 	@echo "... chocachocaI.o"
 	@echo "... chocachocaI.i"
 	@echo "... chocachocaI.s"

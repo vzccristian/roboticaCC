@@ -1,13 +1,12 @@
 import "/robocomp/interfaces/IDSLs/Chocachoca.idsl";
-import "/robocomp/interfaces/IDSLs/AprilTags.idsl";
+import "/robocomp/interfaces/IDSLs/GetAprilTags.idsl";
 import "/robocomp/interfaces/IDSLs/DifferentialRobot.idsl";
 
 Component Supervisor
 {
 	Communications
 	{
-		requires Chocachoca,DifferentialRobot;
-		subscribesTo AprilTags;
+		requires Chocachoca,DifferentialRobot, GetAprilTags;
 	};
 	language Cpp;
 	gui Qt(QWidget);

@@ -82,14 +82,13 @@
 
 #include <chocachocaI.h>
 #include <rcismousepickerI.h>
-#include <apriltagsI.h>
 
 #include <Laser.h>
 #include <DifferentialRobot.h>
 #include <RCISMousePicker.h>
 #include <Chocachoca.h>
 #include <JointMotor.h>
-#include <AprilTags.h>
+#include <GetAprilTags.h>
 
 
 // User includes here
@@ -100,11 +99,11 @@ using namespace RoboCompCommonBehavior;
 
 
 using namespace RoboCompDifferentialRobot;
+using namespace RoboCompGetAprilTags;
 using namespace RoboCompChocachoca;
 using namespace RoboCompJointMotor;
 using namespace RoboCompLaser;
 using namespace RoboCompRCISMousePicker;
-using namespace RoboCompAprilTags;
 
 
 class chocachoca : public RoboComp::Application
@@ -148,8 +147,9 @@ int ::chocachoca::run(int argc, char* argv[])
 	int status=EXIT_SUCCESS;
 
 	DifferentialRobotPrx differentialrobot_proxy;
-	JointMotorPrx jointmotor_proxy;
 	LaserPrx laser_proxy;
+	JointMotorPrx jointmotor_proxy;
+	GetAprilTagsPrx getapriltags_proxy;
 
 	string proxy, tmp;
 	initialize();
@@ -174,6 +174,23 @@ int ::chocachoca::run(int argc, char* argv[])
 
 	try
 	{
+		if (not GenericMonitor::configGetString(communicator(), prefix, "LaserProxy", proxy, ""))
+		{
+			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy LaserProxy\n";
+		}
+		laser_proxy = LaserPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
+	}
+	catch(const Ice::Exception& ex)
+	{
+		cout << "[" << PROGRAM_NAME << "]: Exception: " << ex;
+		return EXIT_FAILURE;
+	}
+	rInfo("LaserProxy initialized Ok!");
+	mprx["LaserProxy"] = (::IceProxy::Ice::Object*)(&laser_proxy);//Remote server proxy creation example
+
+
+	try
+	{
 		if (not GenericMonitor::configGetString(communicator(), prefix, "JointMotorProxy", proxy, ""))
 		{
 			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy JointMotorProxy\n";
@@ -191,19 +208,19 @@ int ::chocachoca::run(int argc, char* argv[])
 
 	try
 	{
-		if (not GenericMonitor::configGetString(communicator(), prefix, "LaserProxy", proxy, ""))
+		if (not GenericMonitor::configGetString(communicator(), prefix, "GetAprilTagsProxy", proxy, ""))
 		{
-			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy LaserProxy\n";
+			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy GetAprilTagsProxy\n";
 		}
-		laser_proxy = LaserPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
+		getapriltags_proxy = GetAprilTagsPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
 	}
 	catch(const Ice::Exception& ex)
 	{
 		cout << "[" << PROGRAM_NAME << "]: Exception: " << ex;
 		return EXIT_FAILURE;
 	}
-	rInfo("LaserProxy initialized Ok!");
-	mprx["LaserProxy"] = (::IceProxy::Ice::Object*)(&laser_proxy);//Remote server proxy creation example
+	rInfo("GetAprilTagsProxy initialized Ok!");
+	mprx["GetAprilTagsProxy"] = (::IceProxy::Ice::Object*)(&getapriltags_proxy);//Remote server proxy creation example
 
 	IceStorm::TopicManagerPrx topicManager;
 	try{
@@ -286,34 +303,6 @@ int ::chocachoca::run(int argc, char* argv[])
 		rcismousepicker_topic->subscribeAndGetPublisher(qos, rcismousepicker);
 		}
 		RCISMousePicker_adapter->activate();
-
-		// Server adapter creation and publication
-		if (not GenericMonitor::configGetString(communicator(), prefix, "AprilTagsTopic.Endpoints", tmp, ""))
-		{
-			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy AprilTagsProxy";
-		}
-		Ice::ObjectAdapterPtr AprilTags_adapter = communicator()->createObjectAdapterWithEndpoints("apriltags", tmp);
-		AprilTagsPtr apriltagsI_ = new AprilTagsI(worker);
-		Ice::ObjectPrx apriltags = AprilTags_adapter->addWithUUID(apriltagsI_)->ice_oneway();
-		IceStorm::TopicPrx apriltags_topic;
-		if(!apriltags_topic){
-		try {
-			apriltags_topic = topicManager->create("AprilTags");
-		}
-		catch (const IceStorm::TopicExists&) {
-		//Another client created the topic
-		try{
-			apriltags_topic = topicManager->retrieve("AprilTags");
-		}
-		catch(const IceStorm::NoSuchTopic&)
-		{
-			//Error. Topic does not exist
-			}
-		}
-		IceStorm::QoS qos;
-		apriltags_topic->subscribeAndGetPublisher(qos, apriltags);
-		}
-		AprilTags_adapter->activate();
 
 		// Server adapter creation and publication
 		cout << SERVER_FULL_NAME " started" << endl;

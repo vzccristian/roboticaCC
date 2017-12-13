@@ -3,15 +3,15 @@ import "/robocomp/interfaces/IDSLs/DifferentialRobot.idsl";
 import "/robocomp/interfaces/IDSLs/RCISMousePicker.idsl";
 import "/robocomp/interfaces/IDSLs/Chocachoca.idsl";
 import "/robocomp/interfaces/IDSLs/JointMotor.idsl";
-import "/robocomp/interfaces/IDSLs/AprilTags.idsl";
+import "/robocomp/interfaces/IDSLs/GetAprilTags.idsl";
 
 Component chocachoca
 {
 	Communications
 	{
-		requires Laser, DifferentialRobot, JointMotor;
+		requires Laser, DifferentialRobot, JointMotor, GetAprilTags;
 		implements Chocachoca;
-		subscribesTo RCISMousePicker,  AprilTags;
+		subscribesTo RCISMousePicker;
 	};
 	language Cpp;
 	gui Qt(QWidget);

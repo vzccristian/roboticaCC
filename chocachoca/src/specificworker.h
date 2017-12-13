@@ -64,7 +64,7 @@ class SpecificWorker : public GenericWorker
       void setPick(const Pick &myPick);
       bool releasingBox();
       bool pickingBox();
-      void newAprilTag(const tagsList &tags);
+      void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);
 
 
   public slots:

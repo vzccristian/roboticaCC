@@ -29,9 +29,8 @@
 #include <CommonBehavior.h>
 #include <Chocachoca.h>
 #include <DifferentialRobot.h>
-#include <AprilTags.h>
+#include <GetAprilTags.h>
 
-#include <IceStorm/IceStorm.h>
 
 
 #define CHECK_PERIOD 5000
@@ -43,7 +42,7 @@ using namespace std;
 
 using namespace RoboCompChocachoca;
 using namespace RoboCompDifferentialRobot;
-using namespace RoboCompAprilTags;
+using namespace RoboCompGetAprilTags;
 
 
 
@@ -66,10 +65,10 @@ public:
 	QMutex *mutex;
 	
 
+	GetAprilTagsPrx getapriltags_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
 	ChocachocaPrx chocachoca_proxy;
 
-	virtual void newAprilTag(const tagsList &tags) = 0;
 
 
 protected:
