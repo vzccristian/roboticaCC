@@ -119,8 +119,8 @@ void SpecificWorker::wait() {
 //     qDebug() << "WAIT";
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
-    qDebug() << "ROBOT. x-->"<<bState.x<<"  z-->"<<bState.z;
-    qDebug() << "BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2];
+//     qDebug() << "ROBOT. x-->"<<bState.x<<"  z-->"<<bState.z;
+//     qDebug() << "BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2];
     if (boxInArm) {
         if ((abs(bState.x - (coorsDump.first)) <= MAXDIST*1.5) && (abs(bState.z - (coorsDump.second)) <= MAXDIST*1.5)) { //ENCONTRADO
             chocachoca_proxy->stop();
@@ -137,10 +137,12 @@ void SpecificWorker::wait() {
 
 
 void SpecificWorker::pickBox() {
-    qDebug() << "pickedBox";
-    boxInArm=true;
-    chocachoca_proxy->go(coorsDump.first,coorsDump.second);
-    estado=WAIT;
+    qDebug() << "pickBox";
+    if (chocachoca_proxy->pickingBox()) {
+      boxInArm=true;
+      chocachoca_proxy->go(coorsDump.first,coorsDump.second);
+      estado=WAIT;
+    }
 }
 
 void SpecificWorker::releaseBox() {

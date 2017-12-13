@@ -19,5 +19,8 @@ Name=GCC
 Path=gcc
 Type=GCC
 
+[MakeBuilder]
+Number Of Jobs=4
+
 [Project]
 VersionControlSupport=kdevgit

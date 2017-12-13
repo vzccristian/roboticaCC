@@ -23,6 +23,8 @@
 */
 
 
+//innermodel->jacobian
+
 #ifndef SPECIFICWORKER_H
 #define SPECIFICWORKER_H
 
@@ -31,7 +33,7 @@
 #include <math.h>       /* sqrt */
 
 using namespace std;
-enum state { IDLE, GOTO, TURN, SKIRT, END, ARM};
+enum state { IDLE, GOTO, TURN, SKIRT, END, PICK, RELEASE};
 
 class SpecificWorker : public GenericWorker
 {
@@ -73,13 +75,18 @@ class SpecificWorker : public GenericWorker
   private:
       InnerModel *innermodel;
       state estado;
-      float const VLIN_MAX = 700;
+      float const VLIN_MAX = 400;
       float const VROT_MAX = 0.6;
       bool lado; //TRUE = DERECHA, FALSE = IZQUIERDA.
       bool preState = true;
       bool pick=false; /* Flag diferencia entre pick y searchTags */
       pair <int, int> thresholdValues=make_pair(270,470); /* Min - max thresholdValues */
 
+      //ARMS METHOD
+      void updateJoints();
+      QStringList joints;
+      QVec motores;
+      
       struct Target
       {
 	  QMutex mutex; //Para hacer las operaciones sobre el target atómicas

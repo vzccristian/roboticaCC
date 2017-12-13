@@ -37,7 +37,8 @@ SpecificWorker::~SpecificWorker()
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
-
+    joints << "shoulder_right_1"<<"shoulder_right_2"<<"shoulder_right_3"<<"elbow_right"<<"wrist_right_1"<<"wrist_right_2";
+    motores = QVec::zeros(joints.size());
     timer.start(Period);
     return true;
 }
@@ -49,7 +50,7 @@ void SpecificWorker::compute() {
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 );     //Actualizar arbol
 
     TLaserData laserData = laser_proxy->getLaserData();     //Tomar los datos del laser
-    
+    updateJoints();
     try{
       newAprilTag(getapriltags_proxy->checkMarcas());
     } catch(const Ice::Exception &e) {
@@ -73,9 +74,13 @@ void SpecificWorker::compute() {
     case SKIRT:
         skirt(bState,laserData);
         break;
-    case ARM:
-        arm();
+    case PICK:
+	pickingBox();
 	break;
+    case RELEASE:
+        releasingBox();
+	break;
+
     default:
         break;
     }
@@ -202,9 +207,6 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
 }
 
 
-void SpecificWorker::arm(){
-  
-}
 // ----------------------
 
 /*
@@ -343,22 +345,71 @@ void SpecificWorker::setPick(const Pick &myPick)
 bool SpecificWorker::releasingBox()
 {
   qDebug() << "RELEASING BOX";
+  estado=RELEASE;
+  
+  
   return true;
 }
 
 
 bool SpecificWorker::pickingBox()
 {
-  qDebug() << "PICKING BOX";
+  qDebug() << "PICKING BOX CHOCA";
+  estado=PICK;
+  
+  //moveArm
+  QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
+  qDebug() << " JACOBIAN "<<jacobian.getRows()<<jacobian.getCols();
+  jacobian.print("jacobian");
+  
+  QMat jacobianInv=jacobian.invert();
+  QVec result = jacobianInv * QVec::vec6(-10,0,0,0,0,0);
+  
+  jacobianInv.print("jacobianInv");
+  result.print("result");
+  
+  RoboCompJointMotor::MotorGoalPositionList ml(6);
+  int i = 0;
+  for (i = 0; i<6; i++) {
+    ml[i].name=joints.at(i).toUtf8().constData();
+    ml[i].maxSpeed=1;
+    ml[i].position+=result[i];
+  }
+  jointmotor_proxy->setSyncPosition(ml);
+  
   return true;
 }
+
+
+void SpecificWorker::updateJoints()
+{
+//   qDebug() << "UpdateJoints";
+ 	try
+	{
+		RoboCompJointMotor::MotorStateMap mMap;
+		jointmotor_proxy->getAllMotorState(mMap);
+		for(auto m: mMap)
+		{
+			innermodel->updateJointValue(QString::fromStdString(m.first),m.second.pos);
+// 			std::cout << m.first << "		" << m.second.pos << std::endl;
+		}
+// 		std::cout << "--------------------------" << std::endl;
+	}
+	catch(const Ice::Exception &e)
+	{	std::cout << e.what() << std::endl;}
+	
+} 
+
 
 
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
   int i;
   for (i=0; i<(signed)tags.size(); i++) {
-    qDebug() << "CHOCA VEO"<<tags[i].id;
+    if (tags[i].id > 9) {
+      differentialrobot_proxy->setSpeedBase(0, 0);   
+      estado=PICK;
+    }
   }
   
 }
