@@ -39,6 +39,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
     joints << "shoulder_right_1"<<"shoulder_right_2"<<"shoulder_right_3"<<"elbow_right"<<"wrist_right_1"<<"wrist_right_2";
     motores = QVec::zeros(joints.size());
+    error = QVec::vec6(0,0,0,0,0,0);
     timer.start(Period);
     return true;
 }
@@ -352,34 +353,40 @@ bool SpecificWorker::releasingBox()
 }
 
 
-bool SpecificWorker::pickingBox()
-{
+bool SpecificWorker::pickingBox() {
   qDebug() << "PICKING BOX CHOCA";
-  estado=PICK;
-  
-  //moveArm
+
   QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
-  qDebug() << " JACOBIAN "<<jacobian.getRows()<<jacobian.getCols();
-  jacobian.print("jacobian");
-  
-  QMat jacobianInv=jacobian.invert();
-  QVec result = jacobianInv * QVec::vec6(-10,0,0,0,0,0);
-  
-  jacobianInv.print("jacobianInv");
-  result.print("result");
-  
-  RoboCompJointMotor::MotorGoalPositionList ml(6);
-  int i = 0;
-  for (i = 0; i<6; i++) {
-    ml[i].name=joints.at(i).toUtf8().constData();
-    ml[i].maxSpeed=1;
-    ml[i].position+=result[i];
+  RoboCompJointMotor::MotorGoalVelocityList vl;
+
+  if (queremosMovernos) {
+    try {	
+      QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
+	int i=0;
+	for(auto m: joints) {
+	  RoboCompJointMotor::MotorGoalVelocity vg{FACTOR*incs[i], 1.0, m.toStdString()};
+	  vl.push_back(vg);
+	  i++;
+	}
+    } catch(const QString &e){ 
+      qDebug() << e << "Error inverting matrix";}
+  } else {
+    for(auto m: joints){
+      RoboCompJointMotor::MotorGoalVelocity vg{0.0, 1.0, m.toStdString()};
+      vl.push_back(vg);
+    }
   }
-  jointmotor_proxy->setSyncPosition(ml);
   
+  //Do it bro
+  try { 
+    jointmotor_proxy->setSyncVelocity(vl);
+  } catch(const Ice::Exception &e){ 
+    std::cout << e.what() << std::endl;}
+  
+  if (catched)
+    estado=PICK; //MAL. HAY QUE CAMBIAR AL ESTADO DE "YA HE COGIDO" y no "ESTOY COGIENDO".
   return true;
 }
-
 
 void SpecificWorker::updateJoints()
 {
@@ -406,8 +413,9 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
   int i;
   for (i=0; i<(signed)tags.size(); i++) {
-    if (tags[i].id > 9) {
+    if (tags[i].id > 9 && (estado != PICK)) {
       differentialrobot_proxy->setSpeedBase(0, 0);   
+      targetBox=tags[i];
       estado=PICK;
     }
   }

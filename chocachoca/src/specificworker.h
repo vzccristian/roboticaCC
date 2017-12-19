@@ -32,6 +32,9 @@
 #include <innermodel/innermodel.h>
 #include <math.h>       /* sqrt */
 
+#define INCREMENT 10
+#define FACTOR 1
+
 using namespace std;
 enum state { IDLE, GOTO, TURN, SKIRT, END, PICK, RELEASE};
 
@@ -86,6 +89,8 @@ class SpecificWorker : public GenericWorker
       void updateJoints();
       QStringList joints;
       QVec motores;
+      QVec error;
+      RoboCompGetAprilTags::marca targetBox;
       
       struct Target
       {
