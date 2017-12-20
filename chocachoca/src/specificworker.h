@@ -31,7 +31,7 @@
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
 #include <math.h>       /* sqrt */
-
+#include <unistd.h>
 #define INCREMENT 10
 #define FACTOR 1
 
@@ -91,6 +91,8 @@ class SpecificWorker : public GenericWorker
       QVec motores;
       QVec error;
       RoboCompGetAprilTags::marca targetBox;
+      bool picked;
+      bool nearToBox;
       
       struct Target
       {

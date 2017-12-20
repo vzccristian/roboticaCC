@@ -107,10 +107,10 @@ void SpecificWorker::search() {
 
 /* Go to a specific target */
 void SpecificWorker::gotoTarget() {
-    qDebug() << "GOTO";
+    qDebug() << "GOTO " << coorsBox[1] << coorsBox[2];
 //     if (!chocachoca_proxy->getState()) {
-        chocachoca_proxy->go(coorsBox[1],coorsBox[2]);
-        estado=WAIT;
+    chocachoca_proxy->go(coorsBox[1],coorsBox[2]);
+    estado=WAIT;
 //     }
 }
 
@@ -137,8 +137,9 @@ void SpecificWorker::wait() {
 
 
 void SpecificWorker::pickBox() {
-    qDebug() << "pickBox";
+    qDebug() << "pickBox supervisor";
     if (chocachoca_proxy->pickingBox()) {
+      qDebug() << "chocachoca dice que ya ha cogido la caja";
       boxInArm=true;
       chocachoca_proxy->go(coorsDump.first,coorsDump.second);
       estado=WAIT;

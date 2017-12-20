@@ -39,7 +39,8 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
     joints << "shoulder_right_1"<<"shoulder_right_2"<<"shoulder_right_3"<<"elbow_right"<<"wrist_right_1"<<"wrist_right_2";
     motores = QVec::zeros(joints.size());
-    error = QVec::vec6(0,0,0,0,0,0);
+    picked = false;
+    nearToBox = false;
     timer.start(Period);
     return true;
 }
@@ -302,6 +303,7 @@ float SpecificWorker::sinusoide(float x) {
 
 /* Go to target if there isnt pick */
 void SpecificWorker::go(const float x, const float z) {
+  //TODO
     while (pick) {
         /* No hace nada */
     }
@@ -355,13 +357,37 @@ bool SpecificWorker::releasingBox()
 
 bool SpecificWorker::pickingBox() {
   qDebug() << "PICKING BOX CHOCA";
-
+  estado = PICK;
   QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
   RoboCompJointMotor::MotorGoalVelocityList vl;
-
-  if (queremosMovernos) {
+  qDebug() << "picked" << picked;
+  if (!picked) { //NO COGIDO
+    //Calculo del error
+    qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
+	      <<targetBox.rx<< " -- RY: "<<targetBox.ry<< " -- RZ: "<<targetBox.rz;
+    error = QVec::vec6(0,0,0,0,0,0);
+    
+    if ( targetBox.tx > 1)
+      error += QVec::vec6(-INCREMENT,0,0,0,0,0);
+    else if  (targetBox.tx < -1)
+      error += QVec::vec6(INCREMENT,0,0,0,0,0);
+    
+    if ( targetBox.ty > 1)
+      error += QVec::vec6(0,-INCREMENT,0,0,0,0);
+    else if  (targetBox.ty < -1)
+      error += QVec::vec6(0,INCREMENT,0,0,0,0);
+    
+    if ( targetBox.tz > 100)
+      error += QVec::vec6(0,0,-INCREMENT,0,0,0);
+    else if  (targetBox.tz < 100 && !nearToBox ) {
+      nearToBox= true;
+      error += QVec::vec6(0,0,-INCREMENT*5,0,0,0);
+    }
+    
+//     error.print("error");
+    
     try {	
-      QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
+	QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
 	int i=0;
 	for(auto m: joints) {
 	  RoboCompJointMotor::MotorGoalVelocity vg{FACTOR*incs[i], 1.0, m.toStdString()};
@@ -381,16 +407,21 @@ bool SpecificWorker::pickingBox() {
   try { 
     jointmotor_proxy->setSyncVelocity(vl);
   } catch(const Ice::Exception &e){ 
-    std::cout << e.what() << std::endl;}
+    std::cout << e.what() << std::endl;
+  }
   
-  if (catched)
-    estado=PICK; //MAL. HAY QUE CAMBIAR AL ESTADO DE "YA HE COGIDO" y no "ESTOY COGIENDO".
-  return true;
+//   qDebug() << "TX: "<<targetBox.tx<<" TY: "<<targetBox.ty<< "RZ: "<<targetBox.rz;
+//   if ((targetBox.tx < 10) && (targetBox.ty < 10) && (targetBox.rz < 10)) {
+//     //CAJA PASA DE SUELO A MANO
+//     picked = true;
+//     
+//   }
+  //MAL. HAY QUE CAMBIAR AL ESTADO DE "YA HE COGIDO" y no "ESTOY COGIEND
+  return picked ;
 }
 
 void SpecificWorker::updateJoints()
 {
-//   qDebug() << "UpdateJoints";
  	try
 	{
 		RoboCompJointMotor::MotorStateMap mMap;
@@ -408,17 +439,27 @@ void SpecificWorker::updateJoints()
 } 
 
 
-
+//HAND 
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
   int i;
-  for (i=0; i<(signed)tags.size(); i++) {
-    if (tags[i].id > 9 && (estado != PICK)) {
-      differentialrobot_proxy->setSpeedBase(0, 0);   
-      targetBox=tags[i];
-      estado=PICK;
+  
+  if (estado != PICK) { //NO OBJETIVO SELECCIONADO
+    for (i=0; i<(signed)tags.size(); i++) {
+      if (tags[i].id > 9 && estado != PICK) {
+	differentialrobot_proxy->setSpeedBase(0, 0);   
+	targetBox=tags[i];
+	estado = PICK;
+      }
     }
+  } else { //OBJETIVO SELECCIONADO, SOLO ACTUALIZO ESE
+      for (i=0; i<(signed)tags.size(); i++) {
+      if (tags[i].id == targetBox.id) 
+	targetBox=tags[i]; //Actualizo
+    }
+    
   }
+  
   
 }
 
