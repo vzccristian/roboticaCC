@@ -77,8 +77,8 @@ void SpecificWorker::compute() {
         skirt(bState,laserData);
         break;
     case PICK:
-	pickingBox();
-	break;
+        pickingBox();
+        break;
     case RELEASE:
         releasingBox();
 	break;
@@ -360,33 +360,59 @@ bool SpecificWorker::pickingBox() {
   estado = PICK;
   QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
   RoboCompJointMotor::MotorGoalVelocityList vl;
-  qDebug() << "picked" << picked;
   if (!picked) { //NO COGIDO
     //Calculo del error
     qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
 	      <<targetBox.rx<< " -- RY: "<<targetBox.ry<< " -- RZ: "<<targetBox.rz;
     error = QVec::vec6(0,0,0,0,0,0);
     
+    //MOVIMIENTO RESPECTO A EJE X
     if ( targetBox.tx > 1)
-      error += QVec::vec6(-INCREMENT,0,0,0,0,0);
+      error += QVec::vec6(-LINEAL_INCREMENT,0,0,0,0,0);
     else if  (targetBox.tx < -1)
-      error += QVec::vec6(INCREMENT,0,0,0,0,0);
+      error += QVec::vec6(LINEAL_INCREMENT,0,0,0,0,0);
     
+    //MOVIMIENTO RESPECTO A EJE Y
     if ( targetBox.ty > 1)
-      error += QVec::vec6(0,-INCREMENT,0,0,0,0);
+      error += QVec::vec6(0,-LINEAL_INCREMENT,0,0,0,0);
     else if  (targetBox.ty < -1)
-      error += QVec::vec6(0,INCREMENT,0,0,0,0);
+      error += QVec::vec6(0,LINEAL_INCREMENT,0,0,0,0);
     
-    if ( targetBox.tz > 100)
-      error += QVec::vec6(0,0,-INCREMENT,0,0,0);
-    else if  (targetBox.tz < 100 && !nearToBox ) {
+    //ALTURA
+    if ( targetBox.tz > 105)
+      error += QVec::vec6(0,0,-LINEAL_INCREMENT,0,0,0);
+    else if  (targetBox.tz < 105 && !nearToBox ) {
       nearToBox= true;
-      error += QVec::vec6(0,0,-INCREMENT*5,0,0,0);
+      error += QVec::vec6(0,0,-LINEAL_INCREMENT*7,0,0);
     }
     
-//     error.print("error");
+    if (targetBox.tz > 200) {
+        //ROTACION DE LA MANO
+        if (( targetBox.rz > -PI/4) && (targetBox.rz < PI/4)) {
+            qDebug() << "RZ [0]: "<< targetBox.rz;
+            if (targetBox.rz <0)
+                error += QVec::vec6(0,0,0,0,0,ANGULAR_INCREMENT/targetBox.rz);
+            else
+                error += QVec::vec6(0,0,0,0,0,-ANGULAR_INCREMENT/targetBox.rz);
+        } else if (targetBox.rz >(-3*PI/4) && (targetBox.rz < (PI/4)*-1)) {
+            qDebug() << "RZ [-1.5]: "<< targetBox.rz;
+            if (targetBox.rz < -PI/2)
+                error += QVec::vec6(0,0,0,0,0,-ANGULAR_INCREMENT/targetBox.rz);
+            else
+                error += QVec::vec6(0,0,0,0,0,ANGULAR_INCREMENT/targetBox.rz);
+        } else if (( targetBox.rz > PI/4) && (targetBox.rz < PI/2 + PI/4)) {
+            qDebug() << "RZ [1.5]: "<< targetBox.rz;
+            if (targetBox.rz < PI/2)
+                error += QVec::vec6(0,0,0,0,0,ANGULAR_INCREMENT*targetBox.rz);
+            else
+                error += QVec::vec6(0,0,0,0,0,-ANGULAR_INCREMENT*targetBox.rz);
+        }
+    }
+
+    error.print("error");
     
     try {	
+        //TODO: Tratar matriz no invertible
 	QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
 	int i=0;
 	for(auto m: joints) {
@@ -403,12 +429,18 @@ bool SpecificWorker::pickingBox() {
     }
   }
   
-  //Do it bro
+  //Do it 
   try { 
     jointmotor_proxy->setSyncVelocity(vl);
   } catch(const Ice::Exception &e){ 
     std::cout << e.what() << std::endl;
   }
+  
+    if (nearToBox) {
+        sleep(1);
+        picked = true;
+        
+    }
   
 //   qDebug() << "TX: "<<targetBox.tx<<" TY: "<<targetBox.ty<< "RZ: "<<targetBox.rz;
 //   if ((targetBox.tx < 10) && (targetBox.ty < 10) && (targetBox.rz < 10)) {
@@ -417,6 +449,7 @@ bool SpecificWorker::pickingBox() {
 //     
 //   }
   //MAL. HAY QUE CAMBIAR AL ESTADO DE "YA HE COGIDO" y no "ESTOY COGIEND
+    qDebug() << "picked" << picked;
   return picked ;
 }
 

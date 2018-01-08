@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER
+CMAKE_SOURCE_DIR = /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER
+CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER
 
 # Utility rule file for AprilTagsComp_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/salabeta/robocomp/components/robocomp-robolab/component
 include src/CMakeFiles/AprilTagsComp_automoc.dir/progress.make
 
 src/CMakeFiles/AprilTagsComp_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target AprilTagsComp"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/cmake -E cmake_autogen /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/AprilTagsComp_automoc.dir/ ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target AprilTagsComp"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/cmake -E cmake_autogen /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CMakeFiles/AprilTagsComp_automoc.dir/ ""
 
 AprilTagsComp_automoc: src/CMakeFiles/AprilTagsComp_automoc
 AprilTagsComp_automoc: src/CMakeFiles/AprilTagsComp_automoc.dir/build.make
@@ -68,10 +68,10 @@ src/CMakeFiles/AprilTagsComp_automoc.dir/build: AprilTagsComp_automoc
 .PHONY : src/CMakeFiles/AprilTagsComp_automoc.dir/build
 
 src/CMakeFiles/AprilTagsComp_automoc.dir/clean:
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && $(CMAKE_COMMAND) -P CMakeFiles/AprilTagsComp_automoc.dir/cmake_clean.cmake
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && $(CMAKE_COMMAND) -P CMakeFiles/AprilTagsComp_automoc.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/AprilTagsComp_automoc.dir/clean
 
 src/CMakeFiles/AprilTagsComp_automoc.dir/depend:
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/AprilTagsComp_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CMakeFiles/AprilTagsComp_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/AprilTagsComp_automoc.dir/depend
 

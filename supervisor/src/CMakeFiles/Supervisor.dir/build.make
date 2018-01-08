@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salabeta/robocomp/components/roboticaCC/supervisor
+CMAKE_SOURCE_DIR = /home/crivac/robocomp/components/roboticaCC/supervisor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salabeta/robocomp/components/roboticaCC/supervisor
+CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/supervisor
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/Supervisor.dir/depend.make
@@ -58,49 +58,49 @@ include src/CMakeFiles/Supervisor.dir/progress.make
 include src/CMakeFiles/Supervisor.dir/flags.make
 
 src/CommonBehavior.cpp: /opt/robocomp/interfaces/CommonBehavior.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonBehavior.h
 
 src/Chocachoca.cpp: /opt/robocomp/interfaces/Chocachoca.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Chocachoca.cpp and Chocachoca.h from Chocachoca.ice"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Chocachoca.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Chocachoca.cpp and Chocachoca.h from Chocachoca.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Chocachoca.ice --output-dir .
 
 src/Chocachoca.h: src/Chocachoca.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Chocachoca.h
 
 src/GetAprilTags.cpp: /opt/robocomp/interfaces/GetAprilTags.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
 
 src/GetAprilTags.h: src/GetAprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GetAprilTags.h
 
 src/DifferentialRobot.cpp: /opt/robocomp/interfaces/DifferentialRobot.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/DifferentialRobot.h
 
 src/ui_mainUI.h: src/mainUI.ui
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating ui_mainUI.h"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/lib/x86_64-linux-gnu/qt4/bin/uic -o /home/salabeta/robocomp/components/roboticaCC/supervisor/src/ui_mainUI.h /home/salabeta/robocomp/components/roboticaCC/supervisor/src/mainUI.ui
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating ui_mainUI.h"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/lib/x86_64-linux-gnu/qt4/bin/uic -o /home/crivac/robocomp/components/roboticaCC/supervisor/src/ui_mainUI.h /home/crivac/robocomp/components/roboticaCC/supervisor/src/mainUI.ui
 
 src/CMakeFiles/Supervisor.dir/specificworker.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/specificworker.cpp.o: src/specificworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/Supervisor.dir/specificworker.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/specificworker.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/Supervisor.dir/specificworker.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/specificworker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp
 
 src/CMakeFiles/Supervisor.dir/specificworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/specificworker.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp > CMakeFiles/Supervisor.dir/specificworker.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp > CMakeFiles/Supervisor.dir/specificworker.cpp.i
 
 src/CMakeFiles/Supervisor.dir/specificworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/specificworker.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp -o CMakeFiles/Supervisor.dir/specificworker.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp -o CMakeFiles/Supervisor.dir/specificworker.cpp.s
 
 src/CMakeFiles/Supervisor.dir/specificworker.cpp.o.requires:
 
@@ -115,16 +115,16 @@ src/CMakeFiles/Supervisor.dir/specificworker.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o: src/specificmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/specificmonitor.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/specificmonitor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp
 
 src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/specificmonitor.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp > CMakeFiles/Supervisor.dir/specificmonitor.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp > CMakeFiles/Supervisor.dir/specificmonitor.cpp.i
 
 src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/specificmonitor.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp -o CMakeFiles/Supervisor.dir/specificmonitor.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp -o CMakeFiles/Supervisor.dir/specificmonitor.cpp.s
 
 src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o.requires:
 
@@ -137,66 +137,66 @@ src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o.provides: src/CMakeFiles/Sup
 src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o.provides.build: src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o
 
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o: /home/salabeta/robocomp/classes/rapplication/rapplication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o -c /home/salabeta/robocomp/classes/rapplication/rapplication.cpp
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o: /home/crivac/robocomp/classes/rapplication/rapplication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o -c /home/crivac/robocomp/classes/rapplication/rapplication.cpp
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires:
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
+.PHONY : src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/Supervisor.dir/build.make src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
-.PHONY : src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/Supervisor.dir/build.make src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
+.PHONY : src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
 
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o -c /home/salabeta/robocomp/classes/qlog/qlog.cpp
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o: /home/crivac/robocomp/classes/qlog/qlog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o -c /home/crivac/robocomp/classes/qlog/qlog.cpp
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/classes/qlog/qlog.cpp > CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/classes/qlog/qlog.cpp > CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires:
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
+.PHONY : src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/Supervisor.dir/build.make src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides.build
-.PHONY : src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/Supervisor.dir/build.make src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides.build
+.PHONY : src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides
 
-src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o
+src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o
 
 
 src/CMakeFiles/Supervisor.dir/main.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/Supervisor.dir/main.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/main.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/Supervisor.dir/main.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/main.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/main.cpp
 
 src/CMakeFiles/Supervisor.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/main.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/main.cpp > CMakeFiles/Supervisor.dir/main.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/main.cpp > CMakeFiles/Supervisor.dir/main.cpp.i
 
 src/CMakeFiles/Supervisor.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/main.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/main.cpp -o CMakeFiles/Supervisor.dir/main.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/main.cpp -o CMakeFiles/Supervisor.dir/main.cpp.s
 
 src/CMakeFiles/Supervisor.dir/main.cpp.o.requires:
 
@@ -211,16 +211,16 @@ src/CMakeFiles/Supervisor.dir/main.cpp.o.provides.build: src/CMakeFiles/Supervis
 
 src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o: src/genericmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/genericmonitor.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/genericmonitor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp
 
 src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/genericmonitor.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp > CMakeFiles/Supervisor.dir/genericmonitor.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp > CMakeFiles/Supervisor.dir/genericmonitor.cpp.i
 
 src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/genericmonitor.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp -o CMakeFiles/Supervisor.dir/genericmonitor.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp -o CMakeFiles/Supervisor.dir/genericmonitor.cpp.s
 
 src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o.requires:
 
@@ -235,16 +235,16 @@ src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp
 
 src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp > CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp > CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.i
 
 src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp -o CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp -o CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.s
 
 src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o.requires:
 
@@ -259,16 +259,16 @@ src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/Supervisor.dir/genericworker.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/genericworker.cpp.o: src/genericworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/Supervisor.dir/genericworker.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/genericworker.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/Supervisor.dir/genericworker.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/genericworker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp
 
 src/CMakeFiles/Supervisor.dir/genericworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/genericworker.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp > CMakeFiles/Supervisor.dir/genericworker.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp > CMakeFiles/Supervisor.dir/genericworker.cpp.i
 
 src/CMakeFiles/Supervisor.dir/genericworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/genericworker.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp -o CMakeFiles/Supervisor.dir/genericworker.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp -o CMakeFiles/Supervisor.dir/genericworker.cpp.s
 
 src/CMakeFiles/Supervisor.dir/genericworker.cpp.o.requires:
 
@@ -283,16 +283,16 @@ src/CMakeFiles/Supervisor.dir/genericworker.cpp.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp
 
 src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/CommonBehavior.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp > CMakeFiles/Supervisor.dir/CommonBehavior.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp > CMakeFiles/Supervisor.dir/CommonBehavior.cpp.i
 
 src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/CommonBehavior.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp -o CMakeFiles/Supervisor.dir/CommonBehavior.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/CommonBehavior.cpp -o CMakeFiles/Supervisor.dir/CommonBehavior.cpp.s
 
 src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o.requires:
 
@@ -307,16 +307,16 @@ src/CMakeFiles/Supervisor.dir/CommonBehavior.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o: src/Chocachoca.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/Chocachoca.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/Chocachoca.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp
 
 src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/Chocachoca.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp > CMakeFiles/Supervisor.dir/Chocachoca.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp > CMakeFiles/Supervisor.dir/Chocachoca.cpp.i
 
 src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/Chocachoca.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp -o CMakeFiles/Supervisor.dir/Chocachoca.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/Chocachoca.cpp -o CMakeFiles/Supervisor.dir/Chocachoca.cpp.s
 
 src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o.requires:
 
@@ -331,16 +331,16 @@ src/CMakeFiles/Supervisor.dir/Chocachoca.cpp.o.provides.build: src/CMakeFiles/Su
 
 src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o: src/GetAprilTags.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/GetAprilTags.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/GetAprilTags.cpp
 
 src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/GetAprilTags.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/GetAprilTags.cpp > CMakeFiles/Supervisor.dir/GetAprilTags.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/GetAprilTags.cpp > CMakeFiles/Supervisor.dir/GetAprilTags.cpp.i
 
 src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/GetAprilTags.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/GetAprilTags.cpp -o CMakeFiles/Supervisor.dir/GetAprilTags.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/GetAprilTags.cpp -o CMakeFiles/Supervisor.dir/GetAprilTags.cpp.s
 
 src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o.requires:
 
@@ -355,16 +355,16 @@ src/CMakeFiles/Supervisor.dir/GetAprilTags.cpp.o.provides.build: src/CMakeFiles/
 
 src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp
 
 src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp > CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp > CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.i
 
 src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp -o CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/DifferentialRobot.cpp -o CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.s
 
 src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o.requires:
 
@@ -379,16 +379,16 @@ src/CMakeFiles/Supervisor.dir/DifferentialRobot.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o: src/CMakeFiles/Supervisor.dir/flags.make
 src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o: src/Supervisor_automoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o -c /home/salabeta/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o -c /home/crivac/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp
 
 src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.i"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp > CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp > CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.i
 
 src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.s"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp -o CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/supervisor/src/Supervisor_automoc.cpp -o CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.s
 
 src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o.requires:
 
@@ -405,8 +405,8 @@ src/CMakeFiles/Supervisor.dir/Supervisor_automoc.cpp.o.provides.build: src/CMake
 Supervisor_OBJECTS = \
 "CMakeFiles/Supervisor.dir/specificworker.cpp.o" \
 "CMakeFiles/Supervisor.dir/specificmonitor.cpp.o" \
-"CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o" \
-"CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o" \
+"CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o" \
+"CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o" \
 "CMakeFiles/Supervisor.dir/main.cpp.o" \
 "CMakeFiles/Supervisor.dir/genericmonitor.cpp.o" \
 "CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o" \
@@ -422,8 +422,8 @@ Supervisor_EXTERNAL_OBJECTS =
 
 bin/Supervisor: src/CMakeFiles/Supervisor.dir/specificworker.cpp.o
 bin/Supervisor: src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o
-bin/Supervisor: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o
-bin/Supervisor: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o
+bin/Supervisor: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
+bin/Supervisor: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o
 bin/Supervisor: src/CMakeFiles/Supervisor.dir/main.cpp.o
 bin/Supervisor: src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o
 bin/Supervisor: src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o
@@ -443,8 +443,8 @@ bin/Supervisor: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/Supervisor: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/Supervisor: /usr/lib/x86_64-linux-gnu/libQtCore.so
 bin/Supervisor: src/CMakeFiles/Supervisor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salabeta/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable ../bin/Supervisor"
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Supervisor.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/supervisor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable ../bin/Supervisor"
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Supervisor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/Supervisor.dir/build: bin/Supervisor
@@ -453,8 +453,8 @@ src/CMakeFiles/Supervisor.dir/build: bin/Supervisor
 
 src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/specificworker.cpp.o.requires
 src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o.requires
-src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
-src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
+src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires
+src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires
 src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/main.cpp.o.requires
 src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o.requires
 src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o.requires
@@ -468,7 +468,7 @@ src/CMakeFiles/Supervisor.dir/requires: src/CMakeFiles/Supervisor.dir/Supervisor
 .PHONY : src/CMakeFiles/Supervisor.dir/requires
 
 src/CMakeFiles/Supervisor.dir/clean:
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor/src && $(CMAKE_COMMAND) -P CMakeFiles/Supervisor.dir/cmake_clean.cmake
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor/src && $(CMAKE_COMMAND) -P CMakeFiles/Supervisor.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/Supervisor.dir/clean
 
 src/CMakeFiles/Supervisor.dir/depend: src/CommonBehavior.cpp
@@ -480,6 +480,6 @@ src/CMakeFiles/Supervisor.dir/depend: src/GetAprilTags.h
 src/CMakeFiles/Supervisor.dir/depend: src/DifferentialRobot.cpp
 src/CMakeFiles/Supervisor.dir/depend: src/DifferentialRobot.h
 src/CMakeFiles/Supervisor.dir/depend: src/ui_mainUI.h
-	cd /home/salabeta/robocomp/components/roboticaCC/supervisor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robocomp/components/roboticaCC/supervisor /home/salabeta/robocomp/components/roboticaCC/supervisor/src /home/salabeta/robocomp/components/roboticaCC/supervisor /home/salabeta/robocomp/components/roboticaCC/supervisor/src /home/salabeta/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/crivac/robocomp/components/roboticaCC/supervisor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/crivac/robocomp/components/roboticaCC/supervisor /home/crivac/robocomp/components/roboticaCC/supervisor/src /home/crivac/robocomp/components/roboticaCC/supervisor /home/crivac/robocomp/components/roboticaCC/supervisor/src /home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/Supervisor.dir/depend
 

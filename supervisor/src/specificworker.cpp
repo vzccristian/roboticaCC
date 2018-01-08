@@ -139,7 +139,7 @@ void SpecificWorker::wait() {
 void SpecificWorker::pickBox() {
     qDebug() << "pickBox supervisor";
     if (chocachoca_proxy->pickingBox()) {
-      qDebug() << "chocachoca dice que ya ha cogido la caja";
+      qDebug() << " ------------------- >>>>>>>>>>>>>>>>>>>>>>>            chocachoca dice que ya ha cogido la caja";
       boxInArm=true;
       chocachoca_proxy->go(coorsDump.first,coorsDump.second);
       estado=WAIT;
@@ -150,6 +150,8 @@ void SpecificWorker::releaseBox() {
     qDebug() << "releaseBox";
     boxInArm=false;
     addToMovedBoxes(coorsBox[0]);
+    for (auto &x:coorsBox)
+        x=-2;
     begin_time=float(clock());
     estado=SEARCH;
     
@@ -209,7 +211,7 @@ void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) 
     QVec targetCoors,Trobot;
     
     for (i=0; i<(signed)tags.size(); i++) {
-         if (tags[i].id > 9 && !boxIsMoved(tags[i].id)) {
+         if (tags[i].id > 9 && !boxIsMoved(tags[i].id) && (coorsBox[0]<0 || coorsBox[0]==tags[i].id) ) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"robot");
             Trobot = innermodel->transform("robot",QVec::vec3(targetCoors.x(),0,targetCoors.z()),"world");    
             currentDist = Trobot.norm2();     

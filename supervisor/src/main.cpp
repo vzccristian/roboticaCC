@@ -1,5 +1,5 @@
 /*
- *    Copyright (C) 2017 by YOUR NAME HERE
+ *    Copyright (C) 2018 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -138,29 +138,12 @@ int ::Supervisor::run(int argc, char* argv[])
 
 	int status=EXIT_SUCCESS;
 
-	ChocachocaPrx chocachoca_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
 	GetAprilTagsPrx getapriltags_proxy;
+	ChocachocaPrx chocachoca_proxy;
 
 	string proxy, tmp;
 	initialize();
-
-
-	try
-	{
-		if (not GenericMonitor::configGetString(communicator(), prefix, "ChocachocaProxy", proxy, ""))
-		{
-			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy ChocachocaProxy\n";
-		}
-		chocachoca_proxy = ChocachocaPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
-	}
-	catch(const Ice::Exception& ex)
-	{
-		cout << "[" << PROGRAM_NAME << "]: Exception: " << ex;
-		return EXIT_FAILURE;
-	}
-	rInfo("ChocachocaProxy initialized Ok!");
-	mprx["ChocachocaProxy"] = (::IceProxy::Ice::Object*)(&chocachoca_proxy);//Remote server proxy creation example
 
 
 	try
@@ -195,6 +178,23 @@ int ::Supervisor::run(int argc, char* argv[])
 	}
 	rInfo("GetAprilTagsProxy initialized Ok!");
 	mprx["GetAprilTagsProxy"] = (::IceProxy::Ice::Object*)(&getapriltags_proxy);//Remote server proxy creation example
+
+
+	try
+	{
+		if (not GenericMonitor::configGetString(communicator(), prefix, "ChocachocaProxy", proxy, ""))
+		{
+			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy ChocachocaProxy\n";
+		}
+		chocachoca_proxy = ChocachocaPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
+	}
+	catch(const Ice::Exception& ex)
+	{
+		cout << "[" << PROGRAM_NAME << "]: Exception: " << ex;
+		return EXIT_FAILURE;
+	}
+	rInfo("ChocachocaProxy initialized Ok!");
+	mprx["ChocachocaProxy"] = (::IceProxy::Ice::Object*)(&chocachoca_proxy);//Remote server proxy creation example
 
 
 

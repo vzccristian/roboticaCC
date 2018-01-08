@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/salabeta/robocomp/classes/qlog/qlog.cpp
+/home/crivac/robocomp/classes/qlog/qlog.cpp
 qlog.h
-/home/salabeta/robocomp/classes/qlog/qlog.h
+/home/crivac/robocomp/classes/qlog/qlog.h
 
-/home/salabeta/robocomp/classes/qlog/qlog.h
+/home/crivac/robocomp/classes/qlog/qlog.h
 config.h
-/home/salabeta/robocomp/classes/qlog/config.h
+/home/crivac/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
@@ -20,11 +20,11 @@ iostream
 Logger.h
 -
 
-/home/salabeta/robocomp/classes/rapplication/rapplication.cpp
+/home/crivac/robocomp/classes/rapplication/rapplication.cpp
 rapplication.h
-/home/salabeta/robocomp/classes/rapplication/rapplication.h
+/home/crivac/robocomp/classes/rapplication/rapplication.h
 
-/home/salabeta/robocomp/classes/rapplication/rapplication.h
+/home/crivac/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
 -
 Ice/Application.h
@@ -34,7 +34,7 @@ IceUtil/IceUtil.h
 QtCore
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags.cpp
 AprilTags.h
 -
 Ice/LocalException.h
@@ -48,19 +48,19 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Edge.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Edge.h
 vector
 -
 AprilTags/FloatImage.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/AprilTags/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/AprilTags/FloatImage.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/FloatImage.h
 algorithm
 -
 vector
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GLine2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GLine2D.h
 cmath
 -
 utility
@@ -68,11 +68,11 @@ utility
 vector
 -
 MathUtil.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/MathUtil.h
 XYWeight.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/XYWeight.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/XYWeight.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GLineSegment2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GLineSegment2D.h
 algorithm
 -
 cfloat
@@ -82,23 +82,23 @@ cmath
 utility
 -
 GLine2D.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GLine2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GLine2D.h
 XYWeight.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/XYWeight.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/XYWeight.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Gaussian.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Gaussian.h
 cmath
 -
 vector
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GrayModel.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GrayModel.h
 Eigen/Dense
 -
 vector
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Gridder.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Gridder.h
 algorithm
 -
 iterator
@@ -106,9 +106,9 @@ iterator
 vector
 -
 Segment.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Segment.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Segment.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Homography33.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Homography33.h
 utility
 -
 vector
@@ -116,7 +116,7 @@ vector
 Eigen/Dense
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/MathUtil.h
 cmath
 -
 cfloat
@@ -128,7 +128,7 @@ ostream
 utility
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Quad.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Quad.h
 utility
 -
 vector
@@ -136,41 +136,41 @@ vector
 Eigen/Dense
 -
 Homography33.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Homography33.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Homography33.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Segment.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Segment.h
 cmath
 -
 vector
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag16h5.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag16h5.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag16h5_other.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag16h5_other.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag25h7.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag25h7.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag25h9.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag25h9.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h11.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h11.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h11_other.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h11_other.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h9.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h9.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/TagDetector.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/TagDetector.h
 vector
 -
 opencv2/opencv.hpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/opencv2/opencv.hpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/opencv2/opencv.hpp
 AprilTags/TagDetection.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/AprilTags/TagDetection.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/AprilTags/TagDetection.h
 AprilTags/TagFamily.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/AprilTags/TagFamily.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/AprilTags/TagFamily.h
 AprilTags/FloatImage.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/AprilTags/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/AprilTags/FloatImage.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/TagFamily.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/TagFamily.h
 climits
 -
 cmath
@@ -182,29 +182,29 @@ vector
 map
 -
 AprilTags/TagDetection.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/AprilTags/TagDetection.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/AprilTags/TagDetection.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/UnionFindSimple.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/UnionFindSimple.h
 vector
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/XYWeight.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/XYWeight.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTagsComp_automoc.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTagsComp_automoc.cpp
 moc_commonbehaviorI.cpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_commonbehaviorI.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_commonbehaviorI.cpp
 moc_genericmonitor.cpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_genericmonitor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_genericmonitor.cpp
 moc_genericworker.cpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_genericworker.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_genericworker.cpp
 moc_getapriltagsI.cpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_getapriltagsI.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_getapriltagsI.cpp
 moc_specificmonitor.cpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_specificmonitor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_specificmonitor.cpp
 moc_specificworker.cpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_specificworker.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_specificworker.cpp
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Camera.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Camera.cpp
 Camera.h
 -
 Ice/LocalException.h
@@ -218,7 +218,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonBehavior.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonBehavior.cpp
 CommonBehavior.h
 -
 Ice/LocalException.h
@@ -232,7 +232,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonHead.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonHead.cpp
 CommonHead.h
 -
 Ice/LocalException.h
@@ -246,7 +246,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/DifferentialRobot.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/DifferentialRobot.cpp
 DifferentialRobot.h
 -
 Ice/LocalException.h
@@ -260,41 +260,41 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Edge.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Edge.cc
 AprilTags/Edge.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Edge.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Edge.h
 AprilTags/FloatImage.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/FloatImage.h
 AprilTags/MathUtil.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/MathUtil.h
 AprilTags/UnionFindSimple.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/UnionFindSimple.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/UnionFindSimple.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/FloatImage.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/FloatImage.cc
 FloatImage.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/FloatImage.h
 Gaussian.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Gaussian.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Gaussian.h
 iostream
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLine2D.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLine2D.cc
 GLine2D.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLine2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLine2D.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLineSegment2D.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLineSegment2D.cc
 GLineSegment2D.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLineSegment2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLineSegment2D.h
 limits
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Gaussian.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Gaussian.cc
 Gaussian.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Gaussian.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Gaussian.h
 iostream
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GetAprilTags.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GetAprilTags.cpp
 GetAprilTags.h
 -
 Ice/LocalException.h
@@ -308,7 +308,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GrayModel.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GrayModel.cc
 iostream
 -
 Eigen/Dense
@@ -316,9 +316,9 @@ Eigen/Dense
 Eigen/LU
 -
 AprilTags/GrayModel.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GrayModel.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GrayModel.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Homography33.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Homography33.cc
 iostream
 -
 Eigen/Dense
@@ -326,9 +326,9 @@ Eigen/Dense
 opencv2/opencv.hpp
 -
 Homography33.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Homography33.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Homography33.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/JointMotor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/JointMotor.cpp
 JointMotor.h
 -
 Ice/LocalException.h
@@ -342,25 +342,25 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/MathUtil.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/MathUtil.cc
 MathUtil.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/MathUtil.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Quad.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Quad.cc
 Eigen/Dense
 -
 AprilTags/FloatImage.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/FloatImage.h
 AprilTags/MathUtil.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/MathUtil.h
 AprilTags/GLine2D.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GLine2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GLine2D.h
 AprilTags/Quad.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Quad.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Quad.h
 AprilTags/Segment.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Segment.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Segment.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBD.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBD.cpp
 RGBD.h
 -
 Ice/LocalException.h
@@ -374,7 +374,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBDBus.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBDBus.cpp
 RGBDBus.h
 -
 Ice/LocalException.h
@@ -388,21 +388,21 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Segment.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Segment.cc
 Segment.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Segment.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Segment.h
 iostream
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetection.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetection.cc
 opencv2/opencv.hpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/opencv2/opencv.hpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/opencv2/opencv.hpp
 TagDetection.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetection.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetection.h
 MathUtil.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/MathUtil.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetector.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetector.cc
 algorithm
 -
 cmath
@@ -418,75 +418,75 @@ iostream
 Eigen/Dense
 -
 AprilTags/Edge.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Edge.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Edge.h
 AprilTags/FloatImage.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/FloatImage.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/FloatImage.h
 AprilTags/Gaussian.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Gaussian.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Gaussian.h
 AprilTags/GrayModel.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GrayModel.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GrayModel.h
 AprilTags/GLine2D.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GLine2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GLine2D.h
 AprilTags/GLineSegment2D.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/GLineSegment2D.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/GLineSegment2D.h
 AprilTags/Gridder.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Gridder.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Gridder.h
 AprilTags/Homography33.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Homography33.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Homography33.h
 AprilTags/MathUtil.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/MathUtil.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/MathUtil.h
 AprilTags/Quad.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Quad.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Quad.h
 AprilTags/Segment.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Segment.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Segment.h
 AprilTags/TagFamily.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/TagFamily.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/TagFamily.h
 AprilTags/UnionFindSimple.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/UnionFindSimple.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/UnionFindSimple.h
 AprilTags/XYWeight.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/XYWeight.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/XYWeight.h
 AprilTags/TagDetector.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/TagDetector.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/TagDetector.h
 opencv/cv.h
 -
 opencv/highgui.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagFamily.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagFamily.cc
 iostream
 -
 TagFamily.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagFamily.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagFamily.h
 AprilTags/TagFamily.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/TagFamily.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/TagFamily.h
 AprilTags/Tag36h11.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h11.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h11.h
 AprilTags/Tag16h5.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag16h5.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag16h5.h
 AprilTags/Tag16h5_other.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag16h5_other.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag16h5_other.h
 AprilTags/Tag25h7.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag25h7.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag25h7.h
 AprilTags/Tag25h9.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag25h9.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag25h9.h
 AprilTags/Tag36h11.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h11.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h11.h
 AprilTags/Tag36h11_other.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h11_other.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h11_other.h
 AprilTags/Tag36h9.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags/Tag36h9.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags/Tag36h9.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/UnionFindSimple.cc
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/UnionFindSimple.cc
 UnionFindSimple.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/UnionFindSimple.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/UnionFindSimple.h
 iostream
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.cpp
 commonbehaviorI.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -496,37 +496,37 @@ CommonBehavior.h
 config.h
 -
 genericworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 genericmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/config.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/config.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.cpp
 genericmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.h
 Ice/Ice.h
 -
 QtCore
 -
 genericworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 config.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/config.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/config.h
 qlog/qlog.h
 -
 CommonBehavior.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.cpp
 genericworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 config.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/config.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/config.h
 QtGui
 -
 stdint.h
@@ -554,11 +554,11 @@ AprilTags.h
 IceStorm/IceStorm.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.cpp
 getapriltagsI.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -568,9 +568,9 @@ GetAprilTags.h
 config.h
 -
 genericworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/main.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/main.cpp
 signal.h
 -
 QtCore
@@ -588,17 +588,17 @@ rapplication/rapplication.h
 qlog/qlog.h
 -
 config.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/config.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/config.h
 genericmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.h
 genericworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 specificworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.h
 specificmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.h
 commonbehaviorI.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.h
 getapriltagsI.h
 -
 GetAprilTags.h
@@ -612,51 +612,51 @@ RGBDBus.h
 Camera.h
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_commonbehaviorI.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_commonbehaviorI.cpp
 commonbehaviorI.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_genericmonitor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_genericmonitor.cpp
 genericmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_genericworker.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_genericworker.cpp
 genericworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_getapriltagsI.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_getapriltagsI.cpp
 getapriltagsI.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_specificmonitor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_specificmonitor.cpp
 specificmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/moc_specificworker.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/moc_specificworker.cpp
 specificworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.cpp
 specificmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.h
 genericmonitor.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.h
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.cpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.cpp
 specificworker.h
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.h
 opencv2/highgui/highgui.hpp
 -
 
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.h
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h
 -
 opencv2/opencv.hpp
-/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/opencv2/opencv.hpp
+/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/opencv2/opencv.hpp
 AprilTags/TagDetector.h
 -
 AprilTags/Tag16h5.h

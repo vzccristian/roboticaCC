@@ -1,5 +1,5 @@
 /*
- *    Copyright (C) 2017 by YOUR NAME HERE
+ *    Copyright (C) 2018 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -72,10 +72,10 @@ public:
 	QMutex *mutex;
 	
 
-	DifferentialRobotPrx differentialrobot_proxy;
-	JointMotorPrx jointmotor_proxy;
-	GetAprilTagsPrx getapriltags_proxy;
 	LaserPrx laser_proxy;
+	DifferentialRobotPrx differentialrobot_proxy;
+	GetAprilTagsPrx getapriltags_proxy;
+	JointMotorPrx jointmotor_proxy;
 
 	virtual bool pickingBox() = 0;
 	virtual bool getState() = 0;

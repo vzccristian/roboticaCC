@@ -11,7 +11,9 @@ RGBDBusProxy = rgbdbus:tcp -h localhost -p 10239
 
 AprilTagsProxy = apriltags:tcp -h localhost -p 14410
 
-InnerModelPath=/home/robocomp/robocomp/files/innermodel/simpleworld.xml
+#InnerModelPath=/home/robocomp/robocomp/files/innermodel/simpleworld.xml
+InnerModelPath=/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml
+
 CameraName=rgbd
 
 InputInterface = RGBD

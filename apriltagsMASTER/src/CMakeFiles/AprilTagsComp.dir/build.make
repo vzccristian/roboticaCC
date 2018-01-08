@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER
+CMAKE_SOURCE_DIR = /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER
+CMAKE_BINARY_DIR = /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/AprilTagsComp.dir/depend.make
@@ -58,80 +58,80 @@ include src/CMakeFiles/AprilTagsComp.dir/progress.make
 include src/CMakeFiles/AprilTagsComp.dir/flags.make
 
 src/CommonBehavior.cpp: /opt/robocomp/interfaces/CommonBehavior.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonBehavior.h
 
 src/GetAprilTags.cpp: /opt/robocomp/interfaces/GetAprilTags.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
 
 src/GetAprilTags.h: src/GetAprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GetAprilTags.h
 
 src/AprilTags.cpp: /opt/robocomp/interfaces/AprilTags.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating AprilTags.cpp and AprilTags.h from AprilTags.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/AprilTags.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating AprilTags.cpp and AprilTags.h from AprilTags.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/AprilTags.ice --output-dir .
 
 src/AprilTags.h: src/AprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/AprilTags.h
 
 src/RGBD.cpp: /opt/robocomp/interfaces/RGBD.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating RGBD.cpp and RGBD.h from RGBD.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBD.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating RGBD.cpp and RGBD.h from RGBD.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBD.ice --output-dir .
 
 src/RGBD.h: src/RGBD.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/RGBD.h
 
 src/JointMotor.cpp: /opt/robocomp/interfaces/JointMotor.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating JointMotor.cpp and JointMotor.h from JointMotor.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating JointMotor.cpp and JointMotor.h from JointMotor.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
 
 src/JointMotor.h: src/JointMotor.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/JointMotor.h
 
 src/DifferentialRobot.cpp: /opt/robocomp/interfaces/DifferentialRobot.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/DifferentialRobot.h
 
 src/RGBDBus.cpp: /opt/robocomp/interfaces/RGBDBus.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating RGBDBus.cpp and RGBDBus.h from RGBDBus.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBDBus.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating RGBDBus.cpp and RGBDBus.h from RGBDBus.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBDBus.ice --output-dir .
 
 src/RGBDBus.h: src/RGBDBus.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/RGBDBus.h
 
 src/Camera.cpp: /opt/robocomp/interfaces/Camera.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Camera.cpp and Camera.h from Camera.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Camera.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Camera.cpp and Camera.h from Camera.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Camera.ice --output-dir .
 
 src/Camera.h: src/Camera.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Camera.h
 
 src/CommonHead.cpp: /opt/robocomp/interfaces/CommonHead.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating CommonHead.cpp and CommonHead.h from CommonHead.ice"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonHead.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating CommonHead.cpp and CommonHead.h from CommonHead.ice"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonHead.ice --output-dir .
 
 src/CommonHead.h: src/CommonHead.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonHead.h
 
 src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o: src/specificworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/specificworker.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.cpp > CMakeFiles/AprilTagsComp.dir/specificworker.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.cpp > CMakeFiles/AprilTagsComp.dir/specificworker.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/specificworker.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificworker.cpp -o CMakeFiles/AprilTagsComp.dir/specificworker.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificworker.cpp -o CMakeFiles/AprilTagsComp.dir/specificworker.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o.requires:
 
@@ -146,16 +146,16 @@ src/CMakeFiles/AprilTagsComp.dir/specificworker.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o: src/specificmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.cpp > CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.cpp > CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/specificmonitor.cpp -o CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/specificmonitor.cpp -o CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o.requires:
 
@@ -170,16 +170,16 @@ src/CMakeFiles/AprilTagsComp.dir/specificmonitor.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/AprilTagsComp.dir/Edge.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/Edge.cc.o: src/Edge.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Edge.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Edge.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Edge.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Edge.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Edge.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Edge.cc
 
 src/CMakeFiles/AprilTagsComp.dir/Edge.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/Edge.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Edge.cc > CMakeFiles/AprilTagsComp.dir/Edge.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Edge.cc > CMakeFiles/AprilTagsComp.dir/Edge.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/Edge.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/Edge.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Edge.cc -o CMakeFiles/AprilTagsComp.dir/Edge.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Edge.cc -o CMakeFiles/AprilTagsComp.dir/Edge.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/Edge.cc.o.requires:
 
@@ -194,16 +194,16 @@ src/CMakeFiles/AprilTagsComp.dir/Edge.cc.o.provides.build: src/CMakeFiles/AprilT
 
 src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o: src/FloatImage.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/FloatImage.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/FloatImage.cc
 
 src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/FloatImage.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/FloatImage.cc > CMakeFiles/AprilTagsComp.dir/FloatImage.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/FloatImage.cc > CMakeFiles/AprilTagsComp.dir/FloatImage.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/FloatImage.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/FloatImage.cc -o CMakeFiles/AprilTagsComp.dir/FloatImage.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/FloatImage.cc -o CMakeFiles/AprilTagsComp.dir/FloatImage.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o.requires:
 
@@ -218,16 +218,16 @@ src/CMakeFiles/AprilTagsComp.dir/FloatImage.cc.o.provides.build: src/CMakeFiles/
 
 src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o: src/Gaussian.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Gaussian.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Gaussian.cc
 
 src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/Gaussian.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Gaussian.cc > CMakeFiles/AprilTagsComp.dir/Gaussian.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Gaussian.cc > CMakeFiles/AprilTagsComp.dir/Gaussian.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/Gaussian.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Gaussian.cc -o CMakeFiles/AprilTagsComp.dir/Gaussian.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Gaussian.cc -o CMakeFiles/AprilTagsComp.dir/Gaussian.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o.requires:
 
@@ -242,16 +242,16 @@ src/CMakeFiles/AprilTagsComp.dir/Gaussian.cc.o.provides.build: src/CMakeFiles/Ap
 
 src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o: src/GLine2D.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLine2D.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLine2D.cc
 
 src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/GLine2D.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLine2D.cc > CMakeFiles/AprilTagsComp.dir/GLine2D.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLine2D.cc > CMakeFiles/AprilTagsComp.dir/GLine2D.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/GLine2D.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLine2D.cc -o CMakeFiles/AprilTagsComp.dir/GLine2D.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLine2D.cc -o CMakeFiles/AprilTagsComp.dir/GLine2D.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o.requires:
 
@@ -266,16 +266,16 @@ src/CMakeFiles/AprilTagsComp.dir/GLine2D.cc.o.provides.build: src/CMakeFiles/Apr
 
 src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o: src/GLineSegment2D.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLineSegment2D.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLineSegment2D.cc
 
 src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLineSegment2D.cc > CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLineSegment2D.cc > CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GLineSegment2D.cc -o CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GLineSegment2D.cc -o CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o.requires:
 
@@ -290,16 +290,16 @@ src/CMakeFiles/AprilTagsComp.dir/GLineSegment2D.cc.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o: src/GrayModel.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GrayModel.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GrayModel.cc
 
 src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/GrayModel.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GrayModel.cc > CMakeFiles/AprilTagsComp.dir/GrayModel.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GrayModel.cc > CMakeFiles/AprilTagsComp.dir/GrayModel.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/GrayModel.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GrayModel.cc -o CMakeFiles/AprilTagsComp.dir/GrayModel.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GrayModel.cc -o CMakeFiles/AprilTagsComp.dir/GrayModel.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o.requires:
 
@@ -314,16 +314,16 @@ src/CMakeFiles/AprilTagsComp.dir/GrayModel.cc.o.provides.build: src/CMakeFiles/A
 
 src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.o: src/Homography33.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Homography33.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Homography33.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Homography33.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Homography33.cc
 
 src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/Homography33.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Homography33.cc > CMakeFiles/AprilTagsComp.dir/Homography33.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Homography33.cc > CMakeFiles/AprilTagsComp.dir/Homography33.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/Homography33.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Homography33.cc -o CMakeFiles/AprilTagsComp.dir/Homography33.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Homography33.cc -o CMakeFiles/AprilTagsComp.dir/Homography33.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.o.requires:
 
@@ -338,16 +338,16 @@ src/CMakeFiles/AprilTagsComp.dir/Homography33.cc.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o: src/MathUtil.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/MathUtil.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/MathUtil.cc
 
 src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/MathUtil.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/MathUtil.cc > CMakeFiles/AprilTagsComp.dir/MathUtil.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/MathUtil.cc > CMakeFiles/AprilTagsComp.dir/MathUtil.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/MathUtil.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/MathUtil.cc -o CMakeFiles/AprilTagsComp.dir/MathUtil.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/MathUtil.cc -o CMakeFiles/AprilTagsComp.dir/MathUtil.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o.requires:
 
@@ -362,16 +362,16 @@ src/CMakeFiles/AprilTagsComp.dir/MathUtil.cc.o.provides.build: src/CMakeFiles/Ap
 
 src/CMakeFiles/AprilTagsComp.dir/Quad.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/Quad.cc.o: src/Quad.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Quad.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Quad.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Quad.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Quad.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Quad.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Quad.cc
 
 src/CMakeFiles/AprilTagsComp.dir/Quad.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/Quad.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Quad.cc > CMakeFiles/AprilTagsComp.dir/Quad.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Quad.cc > CMakeFiles/AprilTagsComp.dir/Quad.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/Quad.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/Quad.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Quad.cc -o CMakeFiles/AprilTagsComp.dir/Quad.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Quad.cc -o CMakeFiles/AprilTagsComp.dir/Quad.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/Quad.cc.o.requires:
 
@@ -386,16 +386,16 @@ src/CMakeFiles/AprilTagsComp.dir/Quad.cc.o.provides.build: src/CMakeFiles/AprilT
 
 src/CMakeFiles/AprilTagsComp.dir/Segment.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/Segment.cc.o: src/Segment.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Segment.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Segment.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Segment.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Segment.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Segment.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Segment.cc
 
 src/CMakeFiles/AprilTagsComp.dir/Segment.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/Segment.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Segment.cc > CMakeFiles/AprilTagsComp.dir/Segment.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Segment.cc > CMakeFiles/AprilTagsComp.dir/Segment.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/Segment.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/Segment.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Segment.cc -o CMakeFiles/AprilTagsComp.dir/Segment.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Segment.cc -o CMakeFiles/AprilTagsComp.dir/Segment.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/Segment.cc.o.requires:
 
@@ -410,16 +410,16 @@ src/CMakeFiles/AprilTagsComp.dir/Segment.cc.o.provides.build: src/CMakeFiles/Apr
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o: src/TagDetection.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetection.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetection.cc
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/TagDetection.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetection.cc > CMakeFiles/AprilTagsComp.dir/TagDetection.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetection.cc > CMakeFiles/AprilTagsComp.dir/TagDetection.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/TagDetection.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetection.cc -o CMakeFiles/AprilTagsComp.dir/TagDetection.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetection.cc -o CMakeFiles/AprilTagsComp.dir/TagDetection.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o.requires:
 
@@ -434,16 +434,16 @@ src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o: src/TagDetector.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetector.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetector.cc
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/TagDetector.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetector.cc > CMakeFiles/AprilTagsComp.dir/TagDetector.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetector.cc > CMakeFiles/AprilTagsComp.dir/TagDetector.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/TagDetector.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagDetector.cc -o CMakeFiles/AprilTagsComp.dir/TagDetector.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagDetector.cc -o CMakeFiles/AprilTagsComp.dir/TagDetector.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o.requires:
 
@@ -458,16 +458,16 @@ src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o: src/TagFamily.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagFamily.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagFamily.cc
 
 src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/TagFamily.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagFamily.cc > CMakeFiles/AprilTagsComp.dir/TagFamily.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagFamily.cc > CMakeFiles/AprilTagsComp.dir/TagFamily.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/TagFamily.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/TagFamily.cc -o CMakeFiles/AprilTagsComp.dir/TagFamily.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/TagFamily.cc -o CMakeFiles/AprilTagsComp.dir/TagFamily.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o.requires:
 
@@ -482,16 +482,16 @@ src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o.provides.build: src/CMakeFiles/A
 
 src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o: src/UnionFindSimple.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/UnionFindSimple.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/UnionFindSimple.cc
 
 src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/UnionFindSimple.cc > CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/UnionFindSimple.cc > CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.i
 
 src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/UnionFindSimple.cc -o CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/UnionFindSimple.cc -o CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.s
 
 src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o.requires:
 
@@ -504,66 +504,66 @@ src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o.provides: src/CMakeFiles/A
 src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o.provides.build: src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o
 
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o: /home/salabeta/robocomp/classes/rapplication/rapplication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o -c /home/salabeta/robocomp/classes/rapplication/rapplication.cpp
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o: /home/crivac/robocomp/classes/rapplication/rapplication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o -c /home/crivac/robocomp/classes/rapplication/rapplication.cpp
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires:
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
+.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/AprilTagsComp.dir/build.make src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
-.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/AprilTagsComp.dir/build.make src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
+.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
 
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o -c /home/salabeta/robocomp/classes/qlog/qlog.cpp
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o: /home/crivac/robocomp/classes/qlog/qlog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o -c /home/crivac/robocomp/classes/qlog/qlog.cpp
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/classes/qlog/qlog.cpp > CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/classes/qlog/qlog.cpp > CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires:
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
+.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/AprilTagsComp.dir/build.make src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides.build
-.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/AprilTagsComp.dir/build.make src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides.build
+.PHONY : src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides
 
-src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o
+src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o
 
 
 src/CMakeFiles/AprilTagsComp.dir/main.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/main.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/main.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/main.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/main.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/main.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/main.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/main.cpp > CMakeFiles/AprilTagsComp.dir/main.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/main.cpp > CMakeFiles/AprilTagsComp.dir/main.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/main.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/main.cpp -o CMakeFiles/AprilTagsComp.dir/main.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/main.cpp -o CMakeFiles/AprilTagsComp.dir/main.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/main.cpp.o.requires:
 
@@ -578,16 +578,16 @@ src/CMakeFiles/AprilTagsComp.dir/main.cpp.o.provides.build: src/CMakeFiles/April
 
 src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o: src/genericmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.cpp > CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.cpp > CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericmonitor.cpp -o CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericmonitor.cpp -o CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o.requires:
 
@@ -602,16 +602,16 @@ src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.cpp > CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.cpp > CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/commonbehaviorI.cpp -o CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/commonbehaviorI.cpp -o CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o.requires:
 
@@ -626,16 +626,16 @@ src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o: src/genericworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/genericworker.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.cpp > CMakeFiles/AprilTagsComp.dir/genericworker.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.cpp > CMakeFiles/AprilTagsComp.dir/genericworker.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/genericworker.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/genericworker.cpp -o CMakeFiles/AprilTagsComp.dir/genericworker.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/genericworker.cpp -o CMakeFiles/AprilTagsComp.dir/genericworker.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o.requires:
 
@@ -650,16 +650,16 @@ src/CMakeFiles/AprilTagsComp.dir/genericworker.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o: src/getapriltagsI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.cpp > CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.cpp > CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/getapriltagsI.cpp -o CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/getapriltagsI.cpp -o CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o.requires:
 
@@ -674,16 +674,16 @@ src/CMakeFiles/AprilTagsComp.dir/getapriltagsI.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonBehavior.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonBehavior.cpp > CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonBehavior.cpp > CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonBehavior.cpp -o CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonBehavior.cpp -o CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o.requires:
 
@@ -698,16 +698,16 @@ src/CMakeFiles/AprilTagsComp.dir/CommonBehavior.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o: src/GetAprilTags.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GetAprilTags.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GetAprilTags.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GetAprilTags.cpp > CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GetAprilTags.cpp > CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/GetAprilTags.cpp -o CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/GetAprilTags.cpp -o CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o.requires:
 
@@ -722,16 +722,16 @@ src/CMakeFiles/AprilTagsComp.dir/GetAprilTags.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o: src/AprilTags.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags.cpp > CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags.cpp > CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTags.cpp -o CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTags.cpp -o CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o.requires:
 
@@ -746,16 +746,16 @@ src/CMakeFiles/AprilTagsComp.dir/AprilTags.cpp.o.provides.build: src/CMakeFiles/
 
 src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o: src/RGBD.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBD.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBD.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/RGBD.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBD.cpp > CMakeFiles/AprilTagsComp.dir/RGBD.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBD.cpp > CMakeFiles/AprilTagsComp.dir/RGBD.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/RGBD.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBD.cpp -o CMakeFiles/AprilTagsComp.dir/RGBD.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBD.cpp -o CMakeFiles/AprilTagsComp.dir/RGBD.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o.requires:
 
@@ -770,16 +770,16 @@ src/CMakeFiles/AprilTagsComp.dir/RGBD.cpp.o.provides.build: src/CMakeFiles/April
 
 src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o: src/JointMotor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/JointMotor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/JointMotor.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/JointMotor.cpp > CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/JointMotor.cpp > CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/JointMotor.cpp -o CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/JointMotor.cpp -o CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o.requires:
 
@@ -794,16 +794,16 @@ src/CMakeFiles/AprilTagsComp.dir/JointMotor.cpp.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/DifferentialRobot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/DifferentialRobot.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/DifferentialRobot.cpp > CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/DifferentialRobot.cpp > CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/DifferentialRobot.cpp -o CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/DifferentialRobot.cpp -o CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o.requires:
 
@@ -818,16 +818,16 @@ src/CMakeFiles/AprilTagsComp.dir/DifferentialRobot.cpp.o.provides.build: src/CMa
 
 src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o: src/RGBDBus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBDBus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBDBus.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBDBus.cpp > CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBDBus.cpp > CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/RGBDBus.cpp -o CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/RGBDBus.cpp -o CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o.requires:
 
@@ -842,16 +842,16 @@ src/CMakeFiles/AprilTagsComp.dir/RGBDBus.cpp.o.provides.build: src/CMakeFiles/Ap
 
 src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.o: src/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Camera.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/Camera.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Camera.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/Camera.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Camera.cpp > CMakeFiles/AprilTagsComp.dir/Camera.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Camera.cpp > CMakeFiles/AprilTagsComp.dir/Camera.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/Camera.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/Camera.cpp -o CMakeFiles/AprilTagsComp.dir/Camera.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/Camera.cpp -o CMakeFiles/AprilTagsComp.dir/Camera.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.o.requires:
 
@@ -866,16 +866,16 @@ src/CMakeFiles/AprilTagsComp.dir/Camera.cpp.o.provides.build: src/CMakeFiles/Apr
 
 src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o: src/CommonHead.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonHead.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonHead.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonHead.cpp > CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonHead.cpp > CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CommonHead.cpp -o CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CommonHead.cpp -o CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o.requires:
 
@@ -890,16 +890,16 @@ src/CMakeFiles/AprilTagsComp.dir/CommonHead.cpp.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o: src/CMakeFiles/AprilTagsComp.dir/flags.make
 src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o: src/AprilTagsComp_automoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o -c /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTagsComp_automoc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o -c /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTagsComp_automoc.cpp
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.i"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTagsComp_automoc.cpp > CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.i
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTagsComp_automoc.cpp > CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.i
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.s"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/AprilTagsComp_automoc.cpp -o CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.s
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/AprilTagsComp_automoc.cpp -o CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.s
 
 src/CMakeFiles/AprilTagsComp.dir/AprilTagsComp_automoc.cpp.o.requires:
 
@@ -930,8 +930,8 @@ AprilTagsComp_OBJECTS = \
 "CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o" \
 "CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o" \
 "CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o" \
-"CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o" \
-"CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o" \
+"CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o" \
+"CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o" \
 "CMakeFiles/AprilTagsComp.dir/main.cpp.o" \
 "CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o" \
 "CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o" \
@@ -967,8 +967,8 @@ bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/TagDetection.cc.o
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o
-bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o
-bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o
+bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
+bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/main.cpp.o
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o
@@ -989,34 +989,31 @@ bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtOpenGL.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtCore.so
-bin/AprilTagsComp: /usr/local/lib/libopencv_videostab.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_superres.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_stitching.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_shape.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_photo.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_objdetect.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_hal.a
-bin/AprilTagsComp: /usr/local/lib/libopencv_calib3d.so.3.0.0
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_ts.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.9
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtOpenGL.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtCore.so
-bin/AprilTagsComp: /usr/local/lib/libopencv_features2d.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_ml.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_highgui.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_videoio.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_imgcodecs.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_flann.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_video.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_imgproc.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_core.so.3.0.0
-bin/AprilTagsComp: /usr/local/lib/libopencv_hal.a
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libGLU.so
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libGL.so
-bin/AprilTagsComp: /usr/local/share/OpenCV/3rdparty/lib/libippicv.a
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.9
+bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.9
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable ../bin/AprilTagsComp"
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AprilTagsComp.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable ../bin/AprilTagsComp"
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AprilTagsComp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/AprilTagsComp.dir/build: bin/AprilTagsComp
@@ -1039,8 +1036,8 @@ src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/TagD
 src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/TagDetector.cc.o.requires
 src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/TagFamily.cc.o.requires
 src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/UnionFindSimple.cc.o.requires
-src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
-src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
+src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o.requires
+src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o.requires
 src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/main.cpp.o.requires
 src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/genericmonitor.cpp.o.requires
 src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/commonbehaviorI.cpp.o.requires
@@ -1060,7 +1057,7 @@ src/CMakeFiles/AprilTagsComp.dir/requires: src/CMakeFiles/AprilTagsComp.dir/Apri
 .PHONY : src/CMakeFiles/AprilTagsComp.dir/requires
 
 src/CMakeFiles/AprilTagsComp.dir/clean:
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src && $(CMAKE_COMMAND) -P CMakeFiles/AprilTagsComp.dir/cmake_clean.cmake
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && $(CMAKE_COMMAND) -P CMakeFiles/AprilTagsComp.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/AprilTagsComp.dir/clean
 
 src/CMakeFiles/AprilTagsComp.dir/depend: src/CommonBehavior.cpp
@@ -1081,6 +1078,6 @@ src/CMakeFiles/AprilTagsComp.dir/depend: src/Camera.cpp
 src/CMakeFiles/AprilTagsComp.dir/depend: src/Camera.h
 src/CMakeFiles/AprilTagsComp.dir/depend: src/CommonHead.cpp
 src/CMakeFiles/AprilTagsComp.dir/depend: src/CommonHead.h
-	cd /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src/CMakeFiles/AprilTagsComp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src/CMakeFiles/AprilTagsComp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/AprilTagsComp.dir/depend
 

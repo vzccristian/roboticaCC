@@ -37,7 +37,7 @@
 		</transform>
 		
 		
-		<transform id="C10" tx="1000" ty="5" tz="-1200"> 
+		<transform id="C10" tx="-1200" ty="5" tz="0"> 
 			
 <!--			<transform id="axisCube" tx="0" ty="0" tz="0"> 
 				<plane id="axisCubex" px="50" nx="1" size="2,2,100" repeat="1" texture="#ff0000" />
@@ -54,7 +54,7 @@
 			
 		</transform>
 
-		<transform id="C11" tx="2200" ty="5" tz="1800"> 
+		<transform id="C11" tx="0" ty="5" tz="1800"> 
 					
 			<plane id="C11_1" nx="1"  px="-50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-11.png" />
 			<plane id="C11_2" nx="1"  px="50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-11.png" />
@@ -65,7 +65,7 @@
 			
 		</transform>
 		
-		<transform id="C12" tx="-1400" ty="5" tz="2"> 
+		<transform id="C12" tx="1400" ty="5" tz="000"> 
 					
 			<plane id="C12_1" nx="1"  px="-50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-12.png" />
 			<plane id="C12_2" nx="1"  px="50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-12.png" />

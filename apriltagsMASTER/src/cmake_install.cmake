@@ -1,4 +1,4 @@
-# Install script for directory: /home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/src
+# Install script for directory: /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -41,6 +41,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/opt/robocomp/bin" TYPE FILE PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE FILES "/home/salabeta/robocomp/components/robocomp-robolab/components/apriltagsMASTER/bin/AprilTagsComp")
+file(INSTALL DESTINATION "/opt/robocomp/bin" TYPE FILE PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE FILES "/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/bin/AprilTagsComp")
 endif()
 

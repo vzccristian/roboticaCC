@@ -32,8 +32,11 @@
 #include <innermodel/innermodel.h>
 #include <math.h>       /* sqrt */
 #include <unistd.h>
-#define INCREMENT 10
+#include <time.h>
+#define LINEAL_INCREMENT 10
+#define ANGULAR_INCREMENT 0.01
 #define FACTOR 1
+#define PI 3.14159265358979323846
 
 using namespace std;
 enum state { IDLE, GOTO, TURN, SKIRT, END, PICK, RELEASE};
