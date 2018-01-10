@@ -54,7 +54,7 @@
 			
 		</transform>
 
-		<transform id="C11" tx="0" ty="5" tz="1800"> 
+		<transform id="C11" tx="0" ty="5" tz="-1800"> 
 					
 			<plane id="C11_1" nx="1"  px="-50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-11.png" />
 			<plane id="C11_2" nx="1"  px="50" py="50" pz="0" size="100,100,1" texture="/home/robocomp/robocomp/files/innermodel/tar36h11-11.png" />

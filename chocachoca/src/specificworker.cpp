@@ -356,92 +356,111 @@ bool SpecificWorker::releasingBox()
 
 
 bool SpecificWorker::pickingBox() {
-  qDebug() << "PICKING BOX CHOCA";
-  estado = PICK;
-  QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
-  RoboCompJointMotor::MotorGoalVelocityList vl;
-  if (!picked) { //NO COGIDO
-    //Calculo del error
-    qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
-	      <<targetBox.rx<< " -- RY: "<<targetBox.ry<< " -- RZ: "<<targetBox.rz;
-    error = QVec::vec6(0,0,0,0,0,0);
+    estado = PICK;
+    bool jacobianFails=false;
+    QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
+    RoboCompJointMotor::MotorGoalVelocityList vl;
+    if (!picked) { //NO COGIDO
+        //Calculo del error
+        qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
+            <<targetBox.rx<< " -- RY: "<<targetBox.ry<< " -- RZ: "<<targetBox.rz;
+        error = QVec::vec6(0,0,0,0,0,0);
+        
+        if (targetBox.tz < 105) { //ESTOY CORRECTO 
+            nearToBox = true;
+            error += QVec::vec6(0,0,-LINEAL_INCREMENT*8,0,0);
+        } else { //CORREGIR
+            //MOVIMIENTO RESPECTO A EJE X
+            if ( targetBox.tx > 1)
+                error += QVec::vec6(-LINEAL_INCREMENT,0,0,0,0,0);
+            else if  (targetBox.tx < -1)
+                error += QVec::vec6(LINEAL_INCREMENT,0,0,0,0,0);
+            
+            //MOVIMIENTO RESPECTO A EJE Y
+            if ( targetBox.ty > 1)
+                error += QVec::vec6(0,-LINEAL_INCREMENT,0,0,0,0);
+            else if  (targetBox.ty < -1)
+                error += QVec::vec6(0,LINEAL_INCREMENT,0,0,0,0);
+            
+            //ALTURA
+            if ( targetBox.tz > 105)
+                error += QVec::vec6(0,0,-LINEAL_INCREMENT,0,0,0);
+            
+            //ROTACION MANO
+            if (targetBox.tz > 150) {
+                if (( targetBox.rz > -PI/2) && (targetBox.rz < -PI/4)) {    //A. GIRA ANTI-HORARIO
+                    qDebug() << "RZ-A [>-PI/2 y -PI/4]: "<< targetBox.rz;
+                    error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP); 
+                } else if (( targetBox.rz > PI/4) && (targetBox.rz < PI/2)) { //B. GIRA HORARIO
+                    qDebug() << "RZ-B [PI/4 y <PI/2]: "<< targetBox.rz;
+                    error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP); 
+                } else if (targetBox.rz > 0 && targetBox.rz < PI/4) { //C. GIRA ANTI-HORARIO
+                    qDebug() << "RZ-C [>0 y <PI/4]: "<< targetBox.rz;
+                    error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
+                } else if (( targetBox.rz > -PI/4) && (targetBox.rz < 0)) { //D. GIRA HORARIO
+                    qDebug() << "RZ-D [>-PI/4 Y <0]: "<< targetBox.rz;
+                    error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
+                } else {
+                    qDebug() << "RZ [------------------------->]: "<< targetBox.rz;
+                }
+            }
+        }
+        
+    //     if (targetBox.tz > 150) {
+    //         //ROTACION DE LA MANO
+    //         if (( targetBox.rz > -PI/4) && (targetBox.rz < PI/4)) {
+    //             qDebug() << "RZ [0]: "<< targetBox.rz;
+    //             error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
+    //         } else if (targetBox.rz >(-3*PI/4) && (targetBox.rz < (PI/4)*-1)) {
+    //             qDebug() << "RZ [-1.5]: "<< targetBox.rz;
+    //             if (targetBox.rz < (-PI/2)-0.1)
+    //                 error += QVec::vec6(0,0,0,0,0,(targetBox.rz-PI/2)/ANGULAR_PROP);
+    //             else if (targetBox.rz > (-PI/2)+0.1)
+    //                 error += QVec::vec6(0,0,0,0,0,-(targetBox.rz+PI/2)/ANGULAR_PROP);
+    //         } else if (( targetBox.rz > PI/4) && (targetBox.rz < 3*PI/4)) {
+    //             qDebug() << "RZ [1.5]: "<< targetBox.rz;
+    //             if (targetBox.rz < PI/2 - 0.1)
+    //                 error += QVec::vec6(0,0,0,0,0,-(targetBox.rz-PI/2)/ANGULAR_PROP);
+    //         } else {
+    //             qDebug() << "RZ [------------------------->]: "<< targetBox.rz;
+    //         }
+    //     }
     
-    //MOVIMIENTO RESPECTO A EJE X
-    if ( targetBox.tx > 1)
-      error += QVec::vec6(-LINEAL_INCREMENT,0,0,0,0,0);
-    else if  (targetBox.tx < -1)
-      error += QVec::vec6(LINEAL_INCREMENT,0,0,0,0,0);
-    
-    //MOVIMIENTO RESPECTO A EJE Y
-    if ( targetBox.ty > 1)
-      error += QVec::vec6(0,-LINEAL_INCREMENT,0,0,0,0);
-    else if  (targetBox.ty < -1)
-      error += QVec::vec6(0,LINEAL_INCREMENT,0,0,0,0);
-    
-    //ALTURA
-    if ( targetBox.tz > 105)
-      error += QVec::vec6(0,0,-LINEAL_INCREMENT,0,0,0);
-    else if  (targetBox.tz < 105 && !nearToBox ) {
-      nearToBox= true;
-      error += QVec::vec6(0,0,-LINEAL_INCREMENT*7,0,0);
-    }
-    
-    if (targetBox.tz > 200) {
-        //ROTACION DE LA MANO
-        if (( targetBox.rz > -PI/4) && (targetBox.rz < PI/4)) {
-            qDebug() << "RZ [0]: "<< targetBox.rz;
-            if (targetBox.rz <0)
-                error += QVec::vec6(0,0,0,0,0,ANGULAR_INCREMENT/targetBox.rz);
-            else
-                error += QVec::vec6(0,0,0,0,0,-ANGULAR_INCREMENT/targetBox.rz);
-        } else if (targetBox.rz >(-3*PI/4) && (targetBox.rz < (PI/4)*-1)) {
-            qDebug() << "RZ [-1.5]: "<< targetBox.rz;
-            if (targetBox.rz < -PI/2)
-                error += QVec::vec6(0,0,0,0,0,-ANGULAR_INCREMENT/targetBox.rz);
-            else
-                error += QVec::vec6(0,0,0,0,0,ANGULAR_INCREMENT/targetBox.rz);
-        } else if (( targetBox.rz > PI/4) && (targetBox.rz < PI/2 + PI/4)) {
-            qDebug() << "RZ [1.5]: "<< targetBox.rz;
-            if (targetBox.rz < PI/2)
-                error += QVec::vec6(0,0,0,0,0,ANGULAR_INCREMENT*targetBox.rz);
-            else
-                error += QVec::vec6(0,0,0,0,0,-ANGULAR_INCREMENT*targetBox.rz);
+        error.print("MOVIMIENTO DE LOS MOTORES");
+        try {	
+            QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
+            incs.print("INCREMENTOS");
+            int i=0;
+            for(auto m: joints) {
+                RoboCompJointMotor::MotorGoalVelocity vg{FACTOR*incs[i], 1.0, m.toStdString()};
+                vl.push_back(vg);
+                i++;
+            }
+        } catch(const QString &e){ 
+            jacobianFails=true;
+            qDebug() << e << "Error inverting matrix";
+        }
+    } 
+    else {
+        for(auto m: joints){
+            RoboCompJointMotor::MotorGoalVelocity vg{0.0, 1.0, m.toStdString()};
+            vl.push_back(vg);
         }
     }
-
-    error.print("error");
-    
-    try {	
-        //TODO: Tratar matriz no invertible
-	QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
-	int i=0;
-	for(auto m: joints) {
-	  RoboCompJointMotor::MotorGoalVelocity vg{FACTOR*incs[i], 1.0, m.toStdString()};
-	  vl.push_back(vg);
-	  i++;
-	}
-    } catch(const QString &e){ 
-      qDebug() << e << "Error inverting matrix";}
-  } else {
-    for(auto m: joints){
-      RoboCompJointMotor::MotorGoalVelocity vg{0.0, 1.0, m.toStdString()};
-      vl.push_back(vg);
+    //Do it
+    if (!jacobianFails) {
+        try {
+            jointmotor_proxy->setSyncVelocity(vl);
+        } catch(const Ice::Exception &e) {
+            std::cout << e.what() << std::endl; }
     }
-  }
-  
-  //Do it 
-  try { 
-    jointmotor_proxy->setSyncVelocity(vl);
-  } catch(const Ice::Exception &e){ 
-    std::cout << e.what() << std::endl;
-  }
-  
+    
     if (nearToBox) {
         sleep(1);
         picked = true;
-        
+        qDebug() << "picked -------->" << picked;
     }
-  
+    targetBox={targetBox.id,0,0,0,0,0,0};
 //   qDebug() << "TX: "<<targetBox.tx<<" TY: "<<targetBox.ty<< "RZ: "<<targetBox.rz;
 //   if ((targetBox.tx < 10) && (targetBox.ty < 10) && (targetBox.rz < 10)) {
 //     //CAJA PASA DE SUELO A MANO
@@ -449,7 +468,7 @@ bool SpecificWorker::pickingBox() {
 //     
 //   }
   //MAL. HAY QUE CAMBIAR AL ESTADO DE "YA HE COGIDO" y no "ESTOY COGIEND
-    qDebug() << "picked" << picked;
+   // qDebug() << "picked" << picked;
   return picked ;
 }
 
@@ -475,23 +494,21 @@ void SpecificWorker::updateJoints()
 //HAND 
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
-  int i;
-  
-  if (estado != PICK) { //NO OBJETIVO SELECCIONADO
-    for (i=0; i<(signed)tags.size(); i++) {
-      if (tags[i].id > 9 && estado != PICK) {
-	differentialrobot_proxy->setSpeedBase(0, 0);   
-	targetBox=tags[i];
-	estado = PICK;
-      }
+    int i;
+    if (estado != PICK) { //NO OBJETIVO SELECCIONADO
+        for (i=0; i<(signed)tags.size(); i++) {
+            if (tags[i].id > 9 && estado != PICK) {
+            differentialrobot_proxy->setSpeedBase(0, 0);   
+            targetBox=tags[i];
+            estado = PICK;
+            }
+        }
+    } else { //OBJETIVO SELECCIONADO, SOLO ACTUALIZO ESE
+        for (i=0; i<(signed)tags.size(); i++) {
+            if (tags[i].id == targetBox.id) 
+                targetBox=tags[i]; //Actualizo
+            }
     }
-  } else { //OBJETIVO SELECCIONADO, SOLO ACTUALIZO ESE
-      for (i=0; i<(signed)tags.size(); i++) {
-      if (tags[i].id == targetBox.id) 
-	targetBox=tags[i]; //Actualizo
-    }
-    
-  }
   
   
 }

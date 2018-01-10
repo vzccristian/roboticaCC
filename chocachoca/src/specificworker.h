@@ -34,7 +34,7 @@
 #include <unistd.h>
 #include <time.h>
 #define LINEAL_INCREMENT 10
-#define ANGULAR_INCREMENT 0.01
+#define ANGULAR_PROP 4.0
 #define FACTOR 1
 #define PI 3.14159265358979323846
 
