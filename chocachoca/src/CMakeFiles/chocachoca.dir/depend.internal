@@ -13,6 +13,9 @@ src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o
 src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o
  /home/crivac/robocomp/components/roboticaCC/chocachoca/src/GetAprilTags.cpp
  src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/InnerModelManager.cpp.o
+ /home/crivac/robocomp/components/roboticaCC/chocachoca/src/InnerModelManager.cpp
+ src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o
  /home/crivac/robocomp/components/roboticaCC/chocachoca/src/JointMotor.cpp
  src/JointMotor.h
@@ -457,6 +460,7 @@ src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -923,6 +927,7 @@ src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -1363,6 +1368,7 @@ src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -1803,6 +1809,7 @@ src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -2241,6 +2248,7 @@ src/CMakeFiles/chocachoca.dir/genericworker.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -3050,6 +3058,7 @@ src/CMakeFiles/chocachoca.dir/main.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -3490,6 +3499,7 @@ src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -3931,6 +3941,7 @@ src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h
@@ -4383,6 +4394,7 @@ src/CMakeFiles/chocachoca.dir/specificworker.cpp.o
  src/CommonBehavior.h
  src/DifferentialRobot.h
  src/GetAprilTags.h
+ src/InnerModelManager.h
  src/JointMotor.h
  src/Laser.h
  src/RCISMousePicker.h

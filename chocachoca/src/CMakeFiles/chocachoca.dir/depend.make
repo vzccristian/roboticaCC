@@ -13,6 +13,9 @@ src/CMakeFiles/chocachoca.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o: src/GetAprilTags.cpp
 src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.o: src/GetAprilTags.h
 
+src/CMakeFiles/chocachoca.dir/InnerModelManager.cpp.o: src/InnerModelManager.cpp
+src/CMakeFiles/chocachoca.dir/InnerModelManager.cpp.o: src/InnerModelManager.h
+
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o: src/JointMotor.cpp
 src/CMakeFiles/chocachoca.dir/JointMotor.cpp.o: src/JointMotor.h
 
@@ -456,6 +459,7 @@ src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/chocachocaI.cpp.o: src/RCISMousePicker.h
@@ -922,6 +926,7 @@ src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/chocachoca_automoc.cpp.o: src/RCISMousePicker.h
@@ -1362,6 +1367,7 @@ src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/commonbehaviorI.cpp.o: src/RCISMousePicker.h
@@ -1802,6 +1808,7 @@ src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/genericmonitor.cpp.o: src/RCISMousePicker.h
@@ -2240,6 +2247,7 @@ src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/genericworker.cpp.o: src/RCISMousePicker.h
@@ -3049,6 +3057,7 @@ src/CMakeFiles/chocachoca.dir/main.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/main.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/main.cpp.o: src/RCISMousePicker.h
@@ -3489,6 +3498,7 @@ src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/rcismousepickerI.cpp.o: src/RCISMousePicker.h
@@ -3930,6 +3940,7 @@ src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/specificmonitor.cpp.o: src/RCISMousePicker.h
@@ -4382,6 +4393,7 @@ src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/Chocachoca.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/GetAprilTags.h
+src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/InnerModelManager.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/JointMotor.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/Laser.h
 src/CMakeFiles/chocachoca.dir/specificworker.cpp.o: src/RCISMousePicker.h

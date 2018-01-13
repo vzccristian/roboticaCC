@@ -11,6 +11,7 @@ LaserProxy = laser:tcp -h localhost -p 10003
 JointMotorProxy = jointmotor:tcp -h localhost -p 20000
 RCISMousePickerTopic.Endpoints=tcp -p 15000
 GetAprilTagsProxy = getapriltags:tcp -h localhost -p 14311
+InnerModelManagerProxy = innermodelmanager:tcp -h localhost -p 11175
 
 
 

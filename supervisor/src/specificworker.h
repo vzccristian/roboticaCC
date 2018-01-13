@@ -60,6 +60,7 @@ public slots:
 
 private:
     InnerModel *innermodel;
+
     std::mutex mtx;
     
     clock_t begin_time;

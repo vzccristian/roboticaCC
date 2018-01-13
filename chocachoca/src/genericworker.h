@@ -29,6 +29,7 @@
 #include <CommonBehavior.h>
 #include <DifferentialRobot.h>
 #include <GetAprilTags.h>
+#include <InnerModelManager.h>
 #include <Chocachoca.h>
 #include <JointMotor.h>
 #include <Laser.h>
@@ -46,6 +47,7 @@ using namespace std;
 
 using namespace RoboCompDifferentialRobot;
 using namespace RoboCompGetAprilTags;
+using namespace RoboCompInnerModelManager;
 using namespace RoboCompChocachoca;
 using namespace RoboCompJointMotor;
 using namespace RoboCompLaser;
@@ -72,10 +74,11 @@ public:
 	QMutex *mutex;
 	
 
-	LaserPrx laser_proxy;
-	DifferentialRobotPrx differentialrobot_proxy;
+	InnerModelManagerPrx innermodelmanager_proxy;
 	GetAprilTagsPrx getapriltags_proxy;
+	LaserPrx laser_proxy;
 	JointMotorPrx jointmotor_proxy;
+	DifferentialRobotPrx differentialrobot_proxy;
 
 	virtual bool pickingBox() = 0;
 	virtual bool getState() = 0;
@@ -89,7 +92,6 @@ public:
 protected:
 	QTimer timer;
 	int Period;
-
 
 public slots:
 	virtual void compute() = 0;

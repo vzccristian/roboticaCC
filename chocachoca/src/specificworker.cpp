@@ -36,15 +36,24 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
+    // Innermodel load file
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
+    
+    // Motors
     joints << "shoulder_right_1"<<"shoulder_right_2"<<"shoulder_right_3"<<"elbow_right"<<"wrist_right_1"<<"wrist_right_2";
     motores = QVec::zeros(joints.size());
-    picked = false;
-    nearToBox = false;
+    
+    //Flags
+    picked = nearToBox = false;
+    
+    setDefaultArmPosition(true);
+    
     timer.start(Period);
     return true;
 }
 
+
+// Compute 
 void SpecificWorker::compute() {
     float linealSpeed=0;
     RoboCompDifferentialRobot::TBaseState bState;
@@ -67,9 +76,6 @@ void SpecificWorker::compute() {
     case GOTO:
         linealSpeed=gotoTarget(bState,laserData);
         break;
-    case END:
-        end();
-        break;
     case TURN:
         turn(linealSpeed,laserData);
         break;
@@ -81,29 +87,36 @@ void SpecificWorker::compute() {
         break;
     case RELEASE:
         releasingBox();
-	break;
-
+        break;
+    case END:
+        end();
+        break;
     default:
         break;
     }
 }
 
-// --------- ESTADOS --------------
-// IDLE
+
+/*
+// --------- STATES -------------- //
+*/
+
+// IDLE - Main method 
 void SpecificWorker::idle() {
     qDebug() << "IDLE";
     if(!target.isEmpty())
         estado=GOTO;
 }
 
-// GOTO
+// GOTO - Main method 
 float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
     qDebug() << "GOTO";
 
     float dist,linealSpeed;
     std::sort( laserData.begin()+12, laserData.end()-12, [] (RoboCompLaser::TData a, RoboCompLaser::TData b) {
         return a.dist < b.dist;
-    });                                                                                                                                   //Ordenamos el array de menor a mayor
+    });                                                                                                                                   
+    
     std::pair <std::pair <float,float>,std::pair <float,float> > coord = target.extract();     //Tomamos las coord del pick (target y robot)
     QVec Trobot = innermodel->transform("robot",QVec::vec3(coord.first.first,0,coord.first.second),"world");     //Desplaza el eje de coord del mundo al robot
 
@@ -113,15 +126,15 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
         float rot=atan2(Trobot.x(),Trobot.z());         //Calculamos la rotacion con el arcotangente
         linealSpeed = VLIN_MAX * gauss(rot,0.3, 0.4) * sinusoide(dist);         ////Calcular velocidad
 
-//         if (laserData[12].dist<thresholdValues.first) {         //400 tiene de ancho - 270 para no tocar nunca.
-//             
-//             
-/////////////////////////////////////////////////////////////////
-//             OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-//             estado=TURN;
-//////////////////////////////////////////////////////////////////
-//             return linealSpeed;
-//         } else
+        //         if (laserData[12].dist<thresholdValues.first) {         //400 tiene de ancho - 270 para no tocar nunca.
+        //             
+        //             
+        /////////////////////////////////////////////////////////////////
+        //             OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+        //             estado=TURN;
+        //////////////////////////////////////////////////////////////////
+        //             return linealSpeed;
+        //         } else
             differentialrobot_proxy->setSpeedBase(linealSpeed, rot);             //Movimiento
     } else 
         estado=END; //Objetivo alcanzado
@@ -129,29 +142,43 @@ float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
     return 0;
 }
 
-// END
-void SpecificWorker::end() {
-    qDebug() << "END";
-    target.setEmpty();
-    estado=IDLE;
-    differentialrobot_proxy->setSpeedBase(0, 0);     //Parar
-    pick = false;     /* Condicion pick=false permite continuar aprilTagsMaster */
+
+// GOTO - Auxiliary methods
+
+/* 
+    Gaussian
+    @vrot Rotation speed
+    @vx Angle Speed
+    @h Parameter of cut in Gaussian function
+    @return float gauss operation
+*/
+float SpecificWorker::gauss(float vrot,float vx, float h) {
+    float lambda = (-pow(vx,2.0)/log(h));
+    return exp(-pow(vrot,2.0)/lambda);
 }
 
 
-// TURN
+/* /
+    Sinusoid 
+*/
+float SpecificWorker::sinusoide(float x) {
+    return 1/(1+exp(-x))-0.5;
+}
+
+
+// TURN - Main method
+
 void SpecificWorker::turn(float linealSpeed, TLaserData laserData) {
      qDebug() << "TURN";
     std::sort( laserData.begin()+10, laserData.end()-10, [] (RoboCompLaser::TData a, RoboCompLaser::TData b) {
-        return a.dist < b.dist;
-    });
+        return a.dist < b.dist; });
 
     if (laserData[10].angle<0) {
         differentialrobot_proxy->setSpeedBase(0,0.2);
-        lado=false;
+        side=false;
     } else {
         differentialrobot_proxy->setSpeedBase(0,-0.2);
-        lado=true;
+        side=true;
     }
 
     if (abs(laserData[10].angle)>1.49 && abs(laserData[10].angle)<1.61)
@@ -160,7 +187,8 @@ void SpecificWorker::turn(float linealSpeed, TLaserData laserData) {
 }
 
 
-// SKIRT
+// SKIRT - Main method
+
 void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
     qDebug() << "SKIRT";
     TLaserData laserDataUnLado = laserData;
@@ -181,13 +209,10 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
     if (reachableTarget(bState,dist,laserData)) return;
     
     // BORDEAR
-    int vInicio=51;
-    int vFinal=10;
+    int vInicio=51, vFinal=10, speed=20, maxSpeed=100;
     float ladoRot=0.2;
-    int speed=20;
-    int maxSpeed=100;
 
-    if (lado) {
+    if (side) {
         int aux=vInicio;
         vInicio=vFinal;
         vFinal=aux;
@@ -196,9 +221,7 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
     
     //ORDENACION SOLO DEL LADO A BORDEAR
     std::sort( laserDataUnLado.begin()+vInicio, laserDataUnLado.end()-vFinal, [] (RoboCompLaser::TData a, RoboCompLaser::TData b) {
-        return a.dist < b.dist;
-    });
-
+        return a.dist < b.dist;});
 
     if (laserDataUnLado[vInicio].dist<thresholdValues.first) 
         differentialrobot_proxy->setSpeedBase(speed,ladoRot); 
@@ -209,14 +232,13 @@ void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
 }
 
 
-// ----------------------
 
-/*
-/ Auxiliary methods
+// SKIRT - Auxiliary methods
+
+
+/* 
+    Check if robot is on target 
 */
-
-
-/* Check if robot is on target */
 bool SpecificWorker::onTarget(float dist) {
     if(dist < thresholdValues.first ) {
         estado=END;
@@ -225,13 +247,14 @@ bool SpecificWorker::onTarget(float dist) {
     return false;
 }
 
-/* Check if robot is on line */
+/* 
+    Check if robot is on line
+*/
 bool SpecificWorker::isOnLine(TBaseState bState) {
     pair <float,float> coorsT =  target.getPoseTarget();
     pair <float,float> coorsI =  target.getPoseRobot();
     float resul=abs( ((coorsT.second-coorsI.second)*(bState.x-coorsI.first)) - ((coorsT.first-coorsI.first)*(bState.z-coorsI.second)) );
     resul = (resul / sqrt(pow(coorsT.second - coorsI.second, 2.0) + pow(coorsT.first - coorsI.first, 2.0)));
-    //qDebug()<<"ISONLINE RESULT:"<<resul;
 
     if ( resul <= 20 ) {
         if (!preState) {
@@ -239,17 +262,17 @@ bool SpecificWorker::isOnLine(TBaseState bState) {
         }
     } else
         preState=false;
-    return false;
     
+    return false;
 }
 
-
-/* Check if target is reachable  */
+/* 
+    Check if target is reachable 
+*/
 bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &laserData) {
     QVec laserToWorld;
     QPolygonF polygon;
-    int umbralVision = 1000;
-    int anchoPunto=100;
+    int umbralVision = 1000, anchoPunto=100;
 
     polygon << QPointF(bState.x, bState.z);     //Punto inicio poligono.
 
@@ -257,8 +280,8 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
     if (dist > umbralVision)     //LEJOS
         i=40;
     int finLaser=100-i;
-    qDebug() <<"Dist"<<dist<<"ANGULO:"<< i << finLaser;
-    while (i<finLaser) {     //CREA POLIGONO
+    
+    while (i<finLaser) {  
         laserToWorld = innermodel->laserTo("world", "laser", laserData[i].dist, laserData[i].angle);
         polygon << QPointF(laserToWorld.x(), laserToWorld.z());
         i++;
@@ -270,38 +293,224 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
             && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second-anchoPunto),Qt::WindingFill )
             && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second+anchoPunto),Qt::WindingFill )
             && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second-anchoPunto),Qt::WindingFill )
-       ) {     //COMPROBACION COORS EN POLIGONO
-	 qDebug() << "POLIGONO JODER";
+       ) {    
         estado=GOTO;
         return true;
     }
+    
     return false;
+}
+
+
+// PICK - Main method
+
+bool SpecificWorker::pickingBox() {
+    estado = PICK;
+    if (!picked) { 
+        qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
+            <<targetBox.rx<< " -- RY: "<<targetBox.ry<< " -- RZ: "<<targetBox.rz;
+        
+        error = QVec::vec6(0,0,0,0,0,0);
+        
+        if (targetBox.tz < 105) {
+            nearToBox = true;
+            error += QVec::vec6(0,0,-LINEAL_INCREMENT*6,0,0);
+        } else { 
+            fixPosition();
+            fixRotation();
+        }
+        
+        //error.print("MOVIMIENTO DE LOS MOTORES");
+        adjustMotors();
+    } else 
+        stopMotors();
+    
+    if (nearToBox) {
+        picked = true;
+        sleep(1);
+
+        prepareToMove();
+        
+        qDebug() << "picked -------->" << picked;
+    }
+    
+    targetBox={targetBox.id,0,0,0,0,0,0};
+    
+  return picked ;
+}
+
+// PICK - Auxiliary methods
+
+void SpecificWorker::fixPosition() {
+    //MOVIMIENTO RESPECTO A EJE X
+    if ( targetBox.tx > 1)
+        error += QVec::vec6(-LINEAL_INCREMENT,0,0,0,0,0);
+    else if  (targetBox.tx < -1)
+        error += QVec::vec6(LINEAL_INCREMENT,0,0,0,0,0);
+    
+    //MOVIMIENTO RESPECTO A EJE Y
+    if ( targetBox.ty > 1)
+        error += QVec::vec6(0,-LINEAL_INCREMENT,0,0,0,0);
+    else if  (targetBox.ty < -1)
+        error += QVec::vec6(0,LINEAL_INCREMENT,0,0,0,0);
+    
+    //ALTURA
+    if ( targetBox.tz > 105)
+        error += QVec::vec6(0,0,-LINEAL_INCREMENT,0,0,0);
+    
+}
+void SpecificWorker::fixRotation() {
+    if (targetBox.tz > 150) {
+        if (( targetBox.rz > -PI/2) && (targetBox.rz < -PI/4)) {    //A. GIRA ANTI-HORARIO
+            qDebug() << "RZ-A [>-PI/2 y -PI/4]: "<< targetBox.rz;
+            error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP); 
+        } else if (( targetBox.rz > PI/4) && (targetBox.rz < PI/2)) { //B. GIRA HORARIO
+            qDebug() << "RZ-B [PI/4 y <PI/2]: "<< targetBox.rz;
+            error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP); 
+        } else if (targetBox.rz > 0 && targetBox.rz < PI/4) { //C. GIRA ANTI-HORARIO
+            qDebug() << "RZ-C [>0 y <PI/4]: "<< targetBox.rz;
+            error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
+        } else if (( targetBox.rz > -PI/4) && (targetBox.rz < 0)) { //D. GIRA HORARIO
+            qDebug() << "RZ-D [>-PI/4 Y <0]: "<< targetBox.rz;
+            error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
+        } else {
+            qDebug() << "RZ [------------------------->]: "<< targetBox.rz;
+        }
+    }
+}
+
+void SpecificWorker::adjustMotors() {
+    bool jacobianWorks=true;
+    QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
+    RoboCompJointMotor::MotorGoalVelocityList vl;
+    
+    try {	
+        QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
+        //incs.print("INCREMENTOS");
+        
+        int i=0;
+        for(auto m: joints) {
+            RoboCompJointMotor::MotorGoalVelocity vg{FACTOR*incs[i], 1.0, m.toStdString()};
+            vl.push_back(vg);
+            i++;
+        }
+    } catch(const QString &e){ 
+        jacobianWorks=false;
+        qDebug() << e << "Error inverting matrix";
+    }
+    
+    if (jacobianWorks) {
+        try {
+            jointmotor_proxy->setSyncVelocity(vl);
+        } catch(const Ice::Exception &e) {
+            std::cout << e.what() << std::endl; }
+    }
+}
+
+void SpecificWorker::stopMotors() {
+    RoboCompJointMotor::MotorGoalVelocityList vl;
+    for(auto m: joints){
+        RoboCompJointMotor::MotorGoalVelocity vg{0.0, 1.0, m.toStdString()};
+        vl.push_back(vg);
+    }
+    try {
+        jointmotor_proxy->setSyncVelocity(vl);
+    } catch(const Ice::Exception &e) {
+        std::cout << e.what() << std::endl; }
     
 }
 
+bool SpecificWorker::prepareToMove() {
+    //CERRAR DEDOS
+    RoboCompJointMotor::MotorGoalPositionList pFingers;
+    pFingers.push_back(RoboCompJointMotor::MotorGoalPosition{-FACTOR_FINGERS, 1.0,"finger_right_1"});
+    pFingers.push_back(RoboCompJointMotor::MotorGoalPosition{FACTOR_FINGERS, 1.0,"finger_right_2"});
+    jointmotor_proxy->setSyncPosition(pFingers);
+    
+    //PASAR A LA MANO //TODO
+    //         string caja = "C"+std::to_string(targetBox.id);
+    //         for (int i=1; i<7; i++) {
+    //             try {	
+    //                 if(innermodelmanager_proxy->collide(string("finger_right_1_mesh4"),caja+"_"+std::to_string(i)))
+    //                     qDebug() << "Collide" << i;
+    //                 else
+    //                     qDebug() << "NO Collide" << i;
+    //             }catch(const Ice::Exception &e){
+    //                 std::cout << e << std::endl;
+    //             }
+    //         }
+    
+    
+    //LEVANTAR BRAZO
+    //sleep(2);
+    //setDefaultArmPosition(false);
+}
 
-/* Gaussian
-/ VROT = Rotation speed
-/ VX = Angle Speed
-/ H = Parameter of cut in Gaussian function
-*/
-float SpecificWorker::gauss(float Vrot,float Vx, float h) {
-    float lambda = (-pow(Vx,2.0)/log(h));
-    return exp(-pow(Vrot,2.0)/lambda);
+void SpecificWorker::setDefaultArmPosition(bool init) {
+    // Set positions
+    
+    RoboCompJointMotor::MotorGoalPosition wrist_right, elbow_right, shoulder_right_2, finger_right_1, finger_right_2;
+    
+    wrist_right.name = "wrist_right_2";
+	wrist_right.position = 1.2;
+	wrist_right.maxSpeed = 1;
+	
+	elbow_right.name = "elbow_right";
+	elbow_right.position = 1.5;
+	elbow_right.maxSpeed = 1;
+	
+	shoulder_right_2.name = "shoulder_right_2";
+	shoulder_right_2.position = -1.2;
+	shoulder_right_2.maxSpeed = 1;
+    
+    jointmotor_proxy->setPosition(wrist_right);
+	jointmotor_proxy->setPosition(elbow_right);
+	jointmotor_proxy->setPosition(shoulder_right_2);
+    
+    if (init) {
+        finger_right_1.name = "finger_right_1";
+        finger_right_1.position = 0.0;
+        finger_right_1.maxSpeed = 1;
+        
+        finger_right_2.name = "finger_right_2";
+        finger_right_2.position = 0.0;
+        finger_right_2.maxSpeed = 1;
+        
+        jointmotor_proxy->setPosition(finger_right_1);
+        jointmotor_proxy->setPosition(finger_right_2);
+    }
+}
+
+// RELEASE - Main method
+bool SpecificWorker::releasingBox()
+{
+  qDebug() << "RELEASING BOX";
+  estado=RELEASE;
+  
+  
+  return true;
 }
 
 
-/* Sinusoid */
-float SpecificWorker::sinusoide(float x) {
-    return 1/(1+exp(-x))-0.5;
+// END - Main method
+void SpecificWorker::end() {
+    qDebug() << "END";
+    target.setEmpty();
+    estado=IDLE;
+    differentialrobot_proxy->setSpeedBase(0, 0);     //Parar
+    pick = false;     /* Condicion pick=false permite continuar aprilTagsMaster */
 }
+
+
 
 
 /*
-/ Calls to the interface
+// --------- Calls to our own interface -------------- //
 */
 
-/* Go to target if there isnt pick */
+/* 
+    Go to target if there isnt pick
+*/
 void SpecificWorker::go(const float x, const float z) {
   //TODO
     while (pick) {
@@ -313,13 +522,17 @@ void SpecificWorker::go(const float x, const float z) {
     estado=GOTO;
 }
 
-/* Just Turn on itself */
+/* 
+    Just Turn on itself
+*/
 void SpecificWorker::turn(const float speed) {
     estado=IDLE;
     differentialrobot_proxy->setSpeedBase(0,speed);
 }
 
-/* Return true if robot is working, otherwise false. */
+/* 
+    Return true if robot is working, otherwise false. 
+*/
 bool SpecificWorker::getState() {
     if (estado==IDLE)
         return false;
@@ -327,12 +540,16 @@ bool SpecificWorker::getState() {
         return true;
 }
 
-/* Stop the robot */
+/* 
+    Stop the robot 
+*/
 void SpecificWorker::stop() {
     estado=END;
 }
 
-/* New pick */
+/*
+    New pick
+*/
 void SpecificWorker::setPick(const Pick &myPick)
 {
     qDebug() << myPick.x << myPick.z;
@@ -345,151 +562,20 @@ void SpecificWorker::setPick(const Pick &myPick)
 }
 
 
-bool SpecificWorker::releasingBox()
-{
-  qDebug() << "RELEASING BOX";
-  estado=RELEASE;
-  
-  
-  return true;
-}
-
-
-bool SpecificWorker::pickingBox() {
-    estado = PICK;
-    bool jacobianFails=false;
-    QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
-    RoboCompJointMotor::MotorGoalVelocityList vl;
-    if (!picked) { //NO COGIDO
-        //Calculo del error
-        qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
-            <<targetBox.rx<< " -- RY: "<<targetBox.ry<< " -- RZ: "<<targetBox.rz;
-        error = QVec::vec6(0,0,0,0,0,0);
-        
-        if (targetBox.tz < 105) { //ESTOY CORRECTO 
-            nearToBox = true;
-            error += QVec::vec6(0,0,-LINEAL_INCREMENT*8,0,0);
-        } else { //CORREGIR
-            //MOVIMIENTO RESPECTO A EJE X
-            if ( targetBox.tx > 1)
-                error += QVec::vec6(-LINEAL_INCREMENT,0,0,0,0,0);
-            else if  (targetBox.tx < -1)
-                error += QVec::vec6(LINEAL_INCREMENT,0,0,0,0,0);
-            
-            //MOVIMIENTO RESPECTO A EJE Y
-            if ( targetBox.ty > 1)
-                error += QVec::vec6(0,-LINEAL_INCREMENT,0,0,0,0);
-            else if  (targetBox.ty < -1)
-                error += QVec::vec6(0,LINEAL_INCREMENT,0,0,0,0);
-            
-            //ALTURA
-            if ( targetBox.tz > 105)
-                error += QVec::vec6(0,0,-LINEAL_INCREMENT,0,0,0);
-            
-            //ROTACION MANO
-            if (targetBox.tz > 150) {
-                if (( targetBox.rz > -PI/2) && (targetBox.rz < -PI/4)) {    //A. GIRA ANTI-HORARIO
-                    qDebug() << "RZ-A [>-PI/2 y -PI/4]: "<< targetBox.rz;
-                    error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP); 
-                } else if (( targetBox.rz > PI/4) && (targetBox.rz < PI/2)) { //B. GIRA HORARIO
-                    qDebug() << "RZ-B [PI/4 y <PI/2]: "<< targetBox.rz;
-                    error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP); 
-                } else if (targetBox.rz > 0 && targetBox.rz < PI/4) { //C. GIRA ANTI-HORARIO
-                    qDebug() << "RZ-C [>0 y <PI/4]: "<< targetBox.rz;
-                    error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
-                } else if (( targetBox.rz > -PI/4) && (targetBox.rz < 0)) { //D. GIRA HORARIO
-                    qDebug() << "RZ-D [>-PI/4 Y <0]: "<< targetBox.rz;
-                    error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
-                } else {
-                    qDebug() << "RZ [------------------------->]: "<< targetBox.rz;
-                }
-            }
-        }
-        
-    //     if (targetBox.tz > 150) {
-    //         //ROTACION DE LA MANO
-    //         if (( targetBox.rz > -PI/4) && (targetBox.rz < PI/4)) {
-    //             qDebug() << "RZ [0]: "<< targetBox.rz;
-    //             error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
-    //         } else if (targetBox.rz >(-3*PI/4) && (targetBox.rz < (PI/4)*-1)) {
-    //             qDebug() << "RZ [-1.5]: "<< targetBox.rz;
-    //             if (targetBox.rz < (-PI/2)-0.1)
-    //                 error += QVec::vec6(0,0,0,0,0,(targetBox.rz-PI/2)/ANGULAR_PROP);
-    //             else if (targetBox.rz > (-PI/2)+0.1)
-    //                 error += QVec::vec6(0,0,0,0,0,-(targetBox.rz+PI/2)/ANGULAR_PROP);
-    //         } else if (( targetBox.rz > PI/4) && (targetBox.rz < 3*PI/4)) {
-    //             qDebug() << "RZ [1.5]: "<< targetBox.rz;
-    //             if (targetBox.rz < PI/2 - 0.1)
-    //                 error += QVec::vec6(0,0,0,0,0,-(targetBox.rz-PI/2)/ANGULAR_PROP);
-    //         } else {
-    //             qDebug() << "RZ [------------------------->]: "<< targetBox.rz;
-    //         }
-    //     }
-    
-        error.print("MOVIMIENTO DE LOS MOTORES");
-        try {	
-            QVec incs = jacobian.invert() * error; //Vector de incrementos de velocidad
-            incs.print("INCREMENTOS");
-            int i=0;
-            for(auto m: joints) {
-                RoboCompJointMotor::MotorGoalVelocity vg{FACTOR*incs[i], 1.0, m.toStdString()};
-                vl.push_back(vg);
-                i++;
-            }
-        } catch(const QString &e){ 
-            jacobianFails=true;
-            qDebug() << e << "Error inverting matrix";
-        }
-    } 
-    else {
-        for(auto m: joints){
-            RoboCompJointMotor::MotorGoalVelocity vg{0.0, 1.0, m.toStdString()};
-            vl.push_back(vg);
-        }
-    }
-    //Do it
-    if (!jacobianFails) {
-        try {
-            jointmotor_proxy->setSyncVelocity(vl);
-        } catch(const Ice::Exception &e) {
-            std::cout << e.what() << std::endl; }
-    }
-    
-    if (nearToBox) {
-        sleep(1);
-        picked = true;
-        qDebug() << "picked -------->" << picked;
-    }
-    targetBox={targetBox.id,0,0,0,0,0,0};
-//   qDebug() << "TX: "<<targetBox.tx<<" TY: "<<targetBox.ty<< "RZ: "<<targetBox.rz;
-//   if ((targetBox.tx < 10) && (targetBox.ty < 10) && (targetBox.rz < 10)) {
-//     //CAJA PASA DE SUELO A MANO
-//     picked = true;
-//     
-//   }
-  //MAL. HAY QUE CAMBIAR AL ESTADO DE "YA HE COGIDO" y no "ESTOY COGIEND
-   // qDebug() << "picked" << picked;
-  return picked ;
-}
-
 void SpecificWorker::updateJoints()
 {
  	try
 	{
 		RoboCompJointMotor::MotorStateMap mMap;
 		jointmotor_proxy->getAllMotorState(mMap);
-		for(auto m: mMap)
-		{
+		for(auto m: mMap){
 			innermodel->updateJointValue(QString::fromStdString(m.first),m.second.pos);
-// 			std::cout << m.first << "		" << m.second.pos << std::endl;
 		}
-// 		std::cout << "--------------------------" << std::endl;
 	}
 	catch(const Ice::Exception &e)
 	{	std::cout << e.what() << std::endl;}
 	
 } 
-
 
 //HAND 
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)

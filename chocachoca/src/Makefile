@@ -281,6 +281,33 @@ GetAprilTags.cpp.s:
 	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/GetAprilTags.cpp.s
 .PHONY : GetAprilTags.cpp.s
 
+InnerModelManager.o: InnerModelManager.cpp.o
+
+.PHONY : InnerModelManager.o
+
+# target to build an object file
+InnerModelManager.cpp.o:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/InnerModelManager.cpp.o
+.PHONY : InnerModelManager.cpp.o
+
+InnerModelManager.i: InnerModelManager.cpp.i
+
+.PHONY : InnerModelManager.i
+
+# target to preprocess a source file
+InnerModelManager.cpp.i:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/InnerModelManager.cpp.i
+.PHONY : InnerModelManager.cpp.i
+
+InnerModelManager.s: InnerModelManager.cpp.s
+
+.PHONY : InnerModelManager.s
+
+# target to generate assembly for a file
+InnerModelManager.cpp.s:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/InnerModelManager.cpp.s
+.PHONY : InnerModelManager.cpp.s
+
 JointMotor.o: JointMotor.cpp.o
 
 .PHONY : JointMotor.o
@@ -684,6 +711,9 @@ help:
 	@echo "... GetAprilTags.o"
 	@echo "... GetAprilTags.i"
 	@echo "... GetAprilTags.s"
+	@echo "... InnerModelManager.o"
+	@echo "... InnerModelManager.i"
+	@echo "... InnerModelManager.s"
 	@echo "... JointMotor.o"
 	@echo "... JointMotor.i"
 	@echo "... JointMotor.s"
