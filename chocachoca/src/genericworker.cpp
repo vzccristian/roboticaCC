@@ -34,7 +34,6 @@ QObject()
 	jointmotor_proxy = (*(JointMotorPrx*)mprx["JointMotorProxy"]);
 	innermodelmanager_proxy = (*(InnerModelManagerPrx*)mprx["InnerModelManagerProxy"]);
 
-
 	mutex = new QMutex(QMutex::Recursive);
 
 	#ifdef USE_QTGUI

@@ -34,7 +34,7 @@ bool ChocachocaI::pickingBox(const Ice::Current&)
 	return worker->pickingBox();
 }
 
-bool ChocachocaI::getState(const Ice::Current&)
+string ChocachocaI::getState(const Ice::Current&)
 {
 	return worker->getState();
 }

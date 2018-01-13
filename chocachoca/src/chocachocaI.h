@@ -39,7 +39,7 @@ public:
 	~ChocachocaI();
 	
 	bool pickingBox(const Ice::Current&);
-	bool getState(const Ice::Current&);
+	string getState(const Ice::Current&);
 	void stop(const Ice::Current&);
 	void turn(const float  speed, const Ice::Current&);
 	void go(const float  x, const float  z, const Ice::Current&);

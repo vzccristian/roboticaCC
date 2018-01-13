@@ -223,7 +223,7 @@ IceProxy::RoboCompChocachoca::Chocachoca::end_stop(const ::Ice::AsyncResultPtr& 
     __end(__result, __RoboCompChocachoca__Chocachoca__stop_name);
 }
 
-bool
+::std::string
 IceProxy::RoboCompChocachoca::Chocachoca::getState(const ::Ice::Context* __ctx)
 {
     ::IceInternal::InvocationObserver __observer(this, __RoboCompChocachoca__Chocachoca__getState_name, __ctx);
@@ -267,11 +267,11 @@ IceProxy::RoboCompChocachoca::Chocachoca::begin_getState(const ::Ice::Context* _
     return __result;
 }
 
-bool
+::std::string
 IceProxy::RoboCompChocachoca::Chocachoca::end_getState(const ::Ice::AsyncResultPtr& __result)
 {
     ::Ice::AsyncResult::__check(__result, this, __RoboCompChocachoca__Chocachoca__getState_name);
-    bool __ret;
+    ::std::string __ret;
     bool __ok = __result->__wait();
     try
     {
@@ -584,13 +584,13 @@ IceDelegateM::RoboCompChocachoca::Chocachoca::stop(const ::Ice::Context* __conte
     }
 }
 
-bool
+::std::string
 IceDelegateM::RoboCompChocachoca::Chocachoca::getState(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __RoboCompChocachoca__Chocachoca__getState_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
     bool __ok = __og.invoke();
-    bool __ret;
+    ::std::string __ret;
     try
     {
         if(!__ok)
@@ -872,14 +872,14 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::stop(const ::Ice::Context* __conte
     }
 }
 
-bool
+::std::string
 IceDelegateD::RoboCompChocachoca::Chocachoca::getState(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(bool& __result, const ::Ice::Current& __current) : 
+        _DirectI(::std::string& __result, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
             _result(__result)
         {
@@ -899,12 +899,12 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::getState(const ::Ice::Context* __c
         
     private:
         
-        bool& _result;
+        ::std::string& _result;
     };
     
     ::Ice::Current __current;
     __initCurrent(__current, __RoboCompChocachoca__Chocachoca__getState_name, ::Ice::Normal, __context);
-    bool __result;
+    ::std::string __result;
     try
     {
         _DirectI __direct(__result, __current);
@@ -1149,7 +1149,7 @@ RoboCompChocachoca::Chocachoca::___getState(::IceInternal::Incoming& __inS, cons
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
-    bool __ret = getState(__current);
+    ::std::string __ret = getState(__current);
     ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
     __os->write(__ret);
     __inS.__endWriteParams(true);

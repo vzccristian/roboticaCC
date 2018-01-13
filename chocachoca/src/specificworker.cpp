@@ -76,6 +76,9 @@ void SpecificWorker::compute() {
     case GOTO:
         linealSpeed=gotoTarget(bState,laserData);
         break;
+    case WAITING:
+        wait();
+        break;
     case TURN:
         turn(linealSpeed,laserData);
         break;
@@ -163,6 +166,10 @@ float SpecificWorker::gauss(float vrot,float vx, float h) {
 */
 float SpecificWorker::sinusoide(float x) {
     return 1/(1+exp(-x))-0.5;
+}
+
+void SpecificWorker::wait() {
+    sleep(1);
 }
 
 
@@ -322,21 +329,21 @@ bool SpecificWorker::pickingBox() {
         
         //error.print("MOVIMIENTO DE LOS MOTORES");
         adjustMotors();
-    } else 
+    } else {
         stopMotors();
+        prepareToMove();
+        return true;
+    }
     
     if (nearToBox) {
         picked = true;
-        sleep(1);
-
-        prepareToMove();
-        
+        sleep(1); //Sleep para esperar a bajar
         qDebug() << "picked -------->" << picked;
     }
     
     targetBox={targetBox.id,0,0,0,0,0,0};
     
-  return picked ;
+  return false;
 }
 
 // PICK - Auxiliary methods
@@ -356,7 +363,7 @@ void SpecificWorker::fixPosition() {
     
     //ALTURA
     if ( targetBox.tz > 105)
-        error += QVec::vec6(0,0,-LINEAL_INCREMENT,0,0,0);
+        error += QVec::vec6(0,0,-LINEAL_INCREMENT*2,0,0,0);
     
 }
 void SpecificWorker::fixRotation() {
@@ -442,8 +449,9 @@ bool SpecificWorker::prepareToMove() {
     
     
     //LEVANTAR BRAZO
-    //sleep(2);
-    //setDefaultArmPosition(false);
+    sleep(1); //Esperar a cerrar dedos
+    setDefaultArmPosition(false);
+    sleep(1);
 }
 
 void SpecificWorker::setDefaultArmPosition(bool init) {
@@ -512,7 +520,7 @@ void SpecificWorker::end() {
     Go to target if there isnt pick
 */
 void SpecificWorker::go(const float x, const float z) {
-  //TODO
+    //TODO
     while (pick) {
         /* No hace nada */
     }
@@ -533,11 +541,9 @@ void SpecificWorker::turn(const float speed) {
 /* 
     Return true if robot is working, otherwise false. 
 */
-bool SpecificWorker::getState() {
-    if (estado==IDLE)
-        return false;
-    else
-        return true;
+string SpecificWorker::getState() {
+//     return std::toStdString(estado);
+    return "estado";
 }
 
 /* 

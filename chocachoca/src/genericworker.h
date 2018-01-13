@@ -79,9 +79,10 @@ public:
 	LaserPrx laser_proxy;
 	JointMotorPrx jointmotor_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
+	IceStorm::TopicManagerPrx topicmanager_proxy;
 
 	virtual bool pickingBox() = 0;
-	virtual bool getState() = 0;
+	virtual string getState() = 0;
 	virtual void stop() = 0;
 	virtual void turn(const float speed) = 0;
 	virtual void go(const float x, const float z) = 0;
@@ -92,6 +93,7 @@ public:
 protected:
 	QTimer timer;
 	int Period;
+
 
 public slots:
 	virtual void compute() = 0;

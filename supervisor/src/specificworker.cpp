@@ -98,7 +98,7 @@ void SpecificWorker::search() {
         chocachoca_proxy->go(x,z);
         begin_time=float(clock());
     } else {
-        if (!chocachoca_proxy->getState())
+        if (chocachoca_proxy->getState().compare("IDLE")==0)
             chocachoca_proxy->turn(-0.9);
 
     }
@@ -143,7 +143,8 @@ void SpecificWorker::pickBox() {
       boxInArm=true;
       chocachoca_proxy->go(coorsDump.first,coorsDump.second);
       estado=WAIT;
-    }
+    } else 
+        qDebug() << "colega, donde está mi caja??";
 }
 
 void SpecificWorker::releaseBox() {

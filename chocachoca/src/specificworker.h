@@ -41,7 +41,7 @@
 #define PI 3.14159265358979323846
 
 using namespace std;
-enum state { IDLE, GOTO, TURN, SKIRT, END, PICK, RELEASE};
+enum state { IDLE, GOTO, WAITING, TURN, SKIRT, END, PICK, RELEASE};
 
 class SpecificWorker : public GenericWorker
 {
@@ -55,6 +55,7 @@ class SpecificWorker : public GenericWorker
         void idle();
         void end();
         float gotoTarget(TBaseState bState, TLaserData laserData);
+        void wait();
         void skirt(TBaseState bState, TLaserData &laserData);
         void turn(float linealSpeed,TLaserData laserData);   
         void arm();
@@ -78,7 +79,7 @@ class SpecificWorker : public GenericWorker
         //OWN INTERFACE CALLS
         void go(const float x, const float z);
         void turn(const float speed);
-        bool getState();
+        string getState();
         void stop();
         void setPick(const Pick &myPick);
         bool releasingBox();

@@ -15,7 +15,7 @@ module RoboCompChocachoca
 		void go (float x, float z);
 		void turn (float speed);
 		void stop ();
-		bool getState ();
+		string getState ();
 		bool pickingBox ();
 		bool releasingBox ();
 	};

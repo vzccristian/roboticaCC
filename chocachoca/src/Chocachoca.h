@@ -319,17 +319,17 @@ private:
     
 public:
 
-    bool getState()
+    ::std::string getState()
     {
         return getState(0);
     }
-    bool getState(const ::Ice::Context& __ctx)
+    ::std::string getState(const ::Ice::Context& __ctx)
     {
         return getState(&__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_getState(const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_getState(const ::IceInternal::Function<void (const ::std::string&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_getState(0, __response, __exception, __sent);
     }
@@ -339,7 +339,7 @@ public:
         return begin_getState(0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_getState(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_getState(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::std::string&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
         return __begin_getState(&__ctx, __response, __exception, __sent);
     }
@@ -351,13 +351,13 @@ public:
     
 private:
 
-    ::Ice::AsyncResultPtr __begin_getState(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
+    ::Ice::AsyncResultPtr __begin_getState(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (const ::std::string&)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
     {
         class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
         {
         public:
 
-            Cpp11CB(const ::std::function<void (bool)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
+            Cpp11CB(const ::std::function<void (const ::std::string&)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
                 ::IceInternal::Cpp11FnCallbackNC(exceptionFunc, sentFunc),
                 _response(responseFunc)
             {
@@ -367,7 +367,7 @@ private:
             virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
             {
                 ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-                bool __ret;
+                ::std::string __ret;
                 try
                 {
                     __ret = __proxy->end_getState(__result);
@@ -385,7 +385,7 @@ private:
         
         private:
             
-            ::std::function<void (bool)> _response;
+            ::std::function<void (const ::std::string&)> _response;
         };
         return begin_getState(__ctx, new Cpp11CB(__response, __exception, __sent));
     }
@@ -423,11 +423,11 @@ public:
         return begin_getState(&__ctx, __del, __cookie);
     }
 
-    bool end_getState(const ::Ice::AsyncResultPtr&);
+    ::std::string end_getState(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    bool getState(const ::Ice::Context*);
+    ::std::string getState(const ::Ice::Context*);
     ::Ice::AsyncResultPtr begin_getState(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
@@ -787,7 +787,7 @@ public:
 
     virtual void stop(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual bool getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual ::std::string getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual bool pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
@@ -815,7 +815,7 @@ public:
 
     virtual void stop(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual bool getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual ::std::string getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual bool pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
@@ -843,7 +843,7 @@ public:
 
     virtual void stop(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual bool getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual ::std::string getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual bool pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
@@ -878,7 +878,7 @@ public:
     virtual void stop(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___stop(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual bool getState(const ::Ice::Current& = ::Ice::Current()) = 0;
+    virtual ::std::string getState(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___getState(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual bool pickingBox(const ::Ice::Current& = ::Ice::Current()) = 0;
@@ -1168,7 +1168,7 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception&);
     typedef void (T::*Sent)(bool);
-    typedef void (T::*Response)(bool);
+    typedef void (T::*Response)(const ::std::string&);
 
     CallbackNC_Chocachoca_getState(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), response(cb)
@@ -1178,7 +1178,7 @@ public:
     virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
     {
         ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-        bool __ret;
+        ::std::string __ret;
         try
         {
             __ret = __proxy->end_getState(__result);
@@ -1198,13 +1198,13 @@ public:
 };
 
 template<class T> Callback_Chocachoca_getStatePtr
-newCallback_Chocachoca_getState(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Chocachoca_getState(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::std::string&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Chocachoca_getState<T>(instance, cb, excb, sentcb);
 }
 
 template<class T> Callback_Chocachoca_getStatePtr
-newCallback_Chocachoca_getState(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Chocachoca_getState(T* instance, void (T::*cb)(const ::std::string&), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Chocachoca_getState<T>(instance, cb, excb, sentcb);
 }
@@ -1218,7 +1218,7 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
     typedef void (T::*Sent)(bool , const CT&);
-    typedef void (T::*Response)(bool, const CT&);
+    typedef void (T::*Response)(const ::std::string&, const CT&);
 
     Callback_Chocachoca_getState(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), response(cb)
@@ -1228,7 +1228,7 @@ public:
     virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
     {
         ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-        bool __ret;
+        ::std::string __ret;
         try
         {
             __ret = __proxy->end_getState(__result);
@@ -1248,13 +1248,13 @@ public:
 };
 
 template<class T, typename CT> Callback_Chocachoca_getStatePtr
-newCallback_Chocachoca_getState(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Chocachoca_getState(const IceUtil::Handle<T>& instance, void (T::*cb)(const ::std::string&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Chocachoca_getState<T, CT>(instance, cb, excb, sentcb);
 }
 
 template<class T, typename CT> Callback_Chocachoca_getStatePtr
-newCallback_Chocachoca_getState(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Chocachoca_getState(T* instance, void (T::*cb)(const ::std::string&, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Chocachoca_getState<T, CT>(instance, cb, excb, sentcb);
 }

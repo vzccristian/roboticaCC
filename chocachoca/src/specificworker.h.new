@@ -43,7 +43,7 @@ public:
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 
 	bool pickingBox();
-	bool getState();
+	string getState();
 	void stop();
 	void turn(const float speed);
 	void go(const float x, const float z);
