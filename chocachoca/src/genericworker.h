@@ -74,19 +74,18 @@ public:
 	QMutex *mutex;
 	
 
-	InnerModelManagerPrx innermodelmanager_proxy;
-	GetAprilTagsPrx getapriltags_proxy;
-	LaserPrx laser_proxy;
-	JointMotorPrx jointmotor_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
-	IceStorm::TopicManagerPrx topicmanager_proxy;
+	GetAprilTagsPrx getapriltags_proxy;
+	JointMotorPrx jointmotor_proxy;
+	InnerModelManagerPrx innermodelmanager_proxy;
+	LaserPrx laser_proxy;
 
-	virtual bool pickingBox() = 0;
+	virtual void pickingBox() = 0;
 	virtual string getState() = 0;
 	virtual void stop() = 0;
 	virtual void turn(const float speed) = 0;
 	virtual void go(const float x, const float z) = 0;
-	virtual bool releasingBox() = 0;
+	virtual void releasingBox() = 0;
 	virtual void setPick(const Pick &myPick) = 0;
 
 
@@ -94,10 +93,8 @@ protected:
 	QTimer timer;
 	int Period;
 
-
 public slots:
 	virtual void compute() = 0;
-
 
 signals:
 	void kill();

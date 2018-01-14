@@ -61,7 +61,7 @@ void SpecificWorker::compute()
 }
 
 
-bool SpecificWorker::pickingBox()
+void SpecificWorker::pickingBox()
 {
 
 }
@@ -86,7 +86,7 @@ void SpecificWorker::go(const float x, const float z)
 
 }
 
-bool SpecificWorker::releasingBox()
+void SpecificWorker::releasingBox()
 {
 
 }

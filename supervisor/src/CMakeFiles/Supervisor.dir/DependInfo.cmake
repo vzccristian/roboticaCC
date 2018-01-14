@@ -12,9 +12,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/crivac/robocomp/components/roboticaCC/supervisor/src/commonbehaviorI.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/commonbehaviorI.cpp.o"
   "/home/crivac/robocomp/components/roboticaCC/supervisor/src/genericmonitor.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/genericmonitor.cpp.o"
   "/home/crivac/robocomp/components/roboticaCC/supervisor/src/genericworker.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/genericworker.cpp.o"
-  "/home/crivac/robocomp/classes/qlog/qlog.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/crivac/robocomp/classes/rapplication/rapplication.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o"
   "/home/crivac/robocomp/components/roboticaCC/supervisor/src/main.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/main.cpp.o"
+  "/opt/robocomp/classes/qlog/qlog.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
+  "/opt/robocomp/classes/rapplication/rapplication.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
   "/home/crivac/robocomp/components/roboticaCC/supervisor/src/specificmonitor.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/specificmonitor.cpp.o"
   "/home/crivac/robocomp/components/roboticaCC/supervisor/src/specificworker.cpp" "/home/crivac/robocomp/components/roboticaCC/supervisor/src/CMakeFiles/Supervisor.dir/specificworker.cpp.o"
   )
@@ -42,9 +42,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/home/crivac/robocomp/classes"
-  "/home/crivac/robocomp/libs"
-  "/home/crivac/robocomp/interfaces"
+  "/opt/robocomp/classes"
+  "/opt/robocomp/libs"
+  "/opt/robocomp/interfaces"
   "/include"
   )
 

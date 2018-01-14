@@ -432,19 +432,19 @@ private:
     
 public:
 
-    bool pickingBox()
+    void pickingBox()
     {
-        return pickingBox(0);
+        pickingBox(0);
     }
-    bool pickingBox(const ::Ice::Context& __ctx)
+    void pickingBox(const ::Ice::Context& __ctx)
     {
-        return pickingBox(&__ctx);
+        pickingBox(&__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_pickingBox(const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_pickingBox(const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return __begin_pickingBox(0, __response, __exception, __sent);
+        return begin_pickingBox(0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
     }
     ::Ice::AsyncResultPtr
     begin_pickingBox(const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
@@ -452,58 +452,15 @@ public:
         return begin_pickingBox(0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_pickingBox(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_pickingBox(const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return __begin_pickingBox(&__ctx, __response, __exception, __sent);
+        return begin_pickingBox(&__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
     }
     ::Ice::AsyncResultPtr
     begin_pickingBox(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
         return begin_pickingBox(&__ctx, ::Ice::newCallback(__completed, __sent));
     }
-    
-private:
-
-    ::Ice::AsyncResultPtr __begin_pickingBox(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
-    {
-        class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
-        {
-        public:
-
-            Cpp11CB(const ::std::function<void (bool)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
-                ::IceInternal::Cpp11FnCallbackNC(exceptionFunc, sentFunc),
-                _response(responseFunc)
-            {
-                CallbackBase::checkCallback(true, responseFunc || exceptionFunc != nullptr);
-            }
-
-            virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
-            {
-                ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-                bool __ret;
-                try
-                {
-                    __ret = __proxy->end_pickingBox(__result);
-                }
-                catch(::Ice::Exception& ex)
-                {
-                    Cpp11FnCallbackNC::__exception(__result, ex);
-                    return;
-                }
-                if(_response != nullptr)
-                {
-                    _response(__ret);
-                }
-            }
-        
-        private:
-            
-            ::std::function<void (bool)> _response;
-        };
-        return begin_pickingBox(__ctx, new Cpp11CB(__response, __exception, __sent));
-    }
-    
-public:
 #endif
 
     ::Ice::AsyncResultPtr begin_pickingBox()
@@ -536,28 +493,28 @@ public:
         return begin_pickingBox(&__ctx, __del, __cookie);
     }
 
-    bool end_pickingBox(const ::Ice::AsyncResultPtr&);
+    void end_pickingBox(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    bool pickingBox(const ::Ice::Context*);
+    void pickingBox(const ::Ice::Context*);
     ::Ice::AsyncResultPtr begin_pickingBox(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
 
-    bool releasingBox()
+    void releasingBox()
     {
-        return releasingBox(0);
+        releasingBox(0);
     }
-    bool releasingBox(const ::Ice::Context& __ctx)
+    void releasingBox(const ::Ice::Context& __ctx)
     {
-        return releasingBox(&__ctx);
+        releasingBox(&__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_releasingBox(const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_releasingBox(const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return __begin_releasingBox(0, __response, __exception, __sent);
+        return begin_releasingBox(0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
     }
     ::Ice::AsyncResultPtr
     begin_releasingBox(const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
@@ -565,58 +522,15 @@ public:
         return begin_releasingBox(0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_releasingBox(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_releasingBox(const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return __begin_releasingBox(&__ctx, __response, __exception, __sent);
+        return begin_releasingBox(&__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
     }
     ::Ice::AsyncResultPtr
     begin_releasingBox(const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
         return begin_releasingBox(&__ctx, ::Ice::newCallback(__completed, __sent));
     }
-    
-private:
-
-    ::Ice::AsyncResultPtr __begin_releasingBox(const ::Ice::Context* __ctx, const ::IceInternal::Function<void (bool)>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception, const ::IceInternal::Function<void (bool)>& __sent)
-    {
-        class Cpp11CB : public ::IceInternal::Cpp11FnCallbackNC
-        {
-        public:
-
-            Cpp11CB(const ::std::function<void (bool)>& responseFunc, const ::std::function<void (const ::Ice::Exception&)>& exceptionFunc, const ::std::function<void (bool)>& sentFunc) :
-                ::IceInternal::Cpp11FnCallbackNC(exceptionFunc, sentFunc),
-                _response(responseFunc)
-            {
-                CallbackBase::checkCallback(true, responseFunc || exceptionFunc != nullptr);
-            }
-
-            virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
-            {
-                ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-                bool __ret;
-                try
-                {
-                    __ret = __proxy->end_releasingBox(__result);
-                }
-                catch(::Ice::Exception& ex)
-                {
-                    Cpp11FnCallbackNC::__exception(__result, ex);
-                    return;
-                }
-                if(_response != nullptr)
-                {
-                    _response(__ret);
-                }
-            }
-        
-        private:
-            
-            ::std::function<void (bool)> _response;
-        };
-        return begin_releasingBox(__ctx, new Cpp11CB(__response, __exception, __sent));
-    }
-    
-public:
 #endif
 
     ::Ice::AsyncResultPtr begin_releasingBox()
@@ -649,11 +563,11 @@ public:
         return begin_releasingBox(&__ctx, __del, __cookie);
     }
 
-    bool end_releasingBox(const ::Ice::AsyncResultPtr&);
+    void end_releasingBox(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    bool releasingBox(const ::Ice::Context*);
+    void releasingBox(const ::Ice::Context*);
     ::Ice::AsyncResultPtr begin_releasingBox(const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
@@ -789,9 +703,9 @@ public:
 
     virtual ::std::string getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual bool pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual bool releasingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void releasingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
 
 }
@@ -817,9 +731,9 @@ public:
 
     virtual ::std::string getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual bool pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual bool releasingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void releasingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
 
 }
@@ -845,9 +759,9 @@ public:
 
     virtual ::std::string getState(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual bool pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void pickingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual bool releasingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void releasingBox(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
 
 }
@@ -881,10 +795,10 @@ public:
     virtual ::std::string getState(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___getState(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual bool pickingBox(const ::Ice::Current& = ::Ice::Current()) = 0;
+    virtual void pickingBox(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___pickingBox(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual bool releasingBox(const ::Ice::Current& = ::Ice::Current()) = 0;
+    virtual void releasingBox(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___releasingBox(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual ::Ice::DispatchStatus __dispatch(::IceInternal::Incoming&, const ::Ice::Current&);
@@ -1260,7 +1174,7 @@ newCallback_Chocachoca_getState(T* instance, void (T::*cb)(const ::std::string&,
 }
 
 template<class T>
-class CallbackNC_Chocachoca_pickingBox : public Callback_Chocachoca_pickingBox_Base, public ::IceInternal::TwowayCallbackNC<T>
+class CallbackNC_Chocachoca_pickingBox : public Callback_Chocachoca_pickingBox_Base, public ::IceInternal::OnewayCallbackNC<T>
 {
 public:
 
@@ -1268,49 +1182,40 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception&);
     typedef void (T::*Sent)(bool);
-    typedef void (T::*Response)(bool);
+    typedef void (T::*Response)();
 
     CallbackNC_Chocachoca_pickingBox(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), response(cb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
     {
     }
-
-    virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
-    {
-        ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-        bool __ret;
-        try
-        {
-            __ret = __proxy->end_pickingBox(__result);
-        }
-        catch(::Ice::Exception& ex)
-        {
-            ::IceInternal::CallbackNC<T>::__exception(__result, ex);
-            return;
-        }
-        if(response)
-        {
-            (::IceInternal::CallbackNC<T>::callback.get()->*response)(__ret);
-        }
-    }
-
-    Response response;
 };
 
 template<class T> Callback_Chocachoca_pickingBoxPtr
-newCallback_Chocachoca_pickingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Chocachoca_pickingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Chocachoca_pickingBox<T>(instance, cb, excb, sentcb);
 }
 
 template<class T> Callback_Chocachoca_pickingBoxPtr
-newCallback_Chocachoca_pickingBox(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Chocachoca_pickingBox(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Chocachoca_pickingBox<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_Chocachoca_pickingBoxPtr
+newCallback_Chocachoca_pickingBox(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Chocachoca_pickingBox<T>(instance, cb, excb, sentcb);
 }
 
+template<class T> Callback_Chocachoca_pickingBoxPtr
+newCallback_Chocachoca_pickingBox(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Chocachoca_pickingBox<T>(instance, 0, excb, sentcb);
+}
+
 template<class T, typename CT>
-class Callback_Chocachoca_pickingBox : public Callback_Chocachoca_pickingBox_Base, public ::IceInternal::TwowayCallback<T, CT>
+class Callback_Chocachoca_pickingBox : public Callback_Chocachoca_pickingBox_Base, public ::IceInternal::OnewayCallback<T, CT>
 {
 public:
 
@@ -1318,49 +1223,40 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
     typedef void (T::*Sent)(bool , const CT&);
-    typedef void (T::*Response)(bool, const CT&);
+    typedef void (T::*Response)(const CT&);
 
     Callback_Chocachoca_pickingBox(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), response(cb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
     {
     }
-
-    virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
-    {
-        ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-        bool __ret;
-        try
-        {
-            __ret = __proxy->end_pickingBox(__result);
-        }
-        catch(::Ice::Exception& ex)
-        {
-            ::IceInternal::Callback<T, CT>::__exception(__result, ex);
-            return;
-        }
-        if(response)
-        {
-            (::IceInternal::Callback<T, CT>::callback.get()->*response)(__ret, CT::dynamicCast(__result->getCookie()));
-        }
-    }
-
-    Response response;
 };
 
 template<class T, typename CT> Callback_Chocachoca_pickingBoxPtr
-newCallback_Chocachoca_pickingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Chocachoca_pickingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Chocachoca_pickingBox<T, CT>(instance, cb, excb, sentcb);
 }
 
 template<class T, typename CT> Callback_Chocachoca_pickingBoxPtr
-newCallback_Chocachoca_pickingBox(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Chocachoca_pickingBox(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Chocachoca_pickingBox<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Chocachoca_pickingBoxPtr
+newCallback_Chocachoca_pickingBox(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Chocachoca_pickingBox<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Chocachoca_pickingBoxPtr
+newCallback_Chocachoca_pickingBox(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Chocachoca_pickingBox<T, CT>(instance, 0, excb, sentcb);
 }
 
 template<class T>
-class CallbackNC_Chocachoca_releasingBox : public Callback_Chocachoca_releasingBox_Base, public ::IceInternal::TwowayCallbackNC<T>
+class CallbackNC_Chocachoca_releasingBox : public Callback_Chocachoca_releasingBox_Base, public ::IceInternal::OnewayCallbackNC<T>
 {
 public:
 
@@ -1368,49 +1264,40 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception&);
     typedef void (T::*Sent)(bool);
-    typedef void (T::*Response)(bool);
+    typedef void (T::*Response)();
 
     CallbackNC_Chocachoca_releasingBox(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-        : ::IceInternal::TwowayCallbackNC<T>(obj, cb != 0, excb, sentcb), response(cb)
+        : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
     {
     }
-
-    virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
-    {
-        ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-        bool __ret;
-        try
-        {
-            __ret = __proxy->end_releasingBox(__result);
-        }
-        catch(::Ice::Exception& ex)
-        {
-            ::IceInternal::CallbackNC<T>::__exception(__result, ex);
-            return;
-        }
-        if(response)
-        {
-            (::IceInternal::CallbackNC<T>::callback.get()->*response)(__ret);
-        }
-    }
-
-    Response response;
 };
 
 template<class T> Callback_Chocachoca_releasingBoxPtr
-newCallback_Chocachoca_releasingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Chocachoca_releasingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Chocachoca_releasingBox<T>(instance, cb, excb, sentcb);
 }
 
 template<class T> Callback_Chocachoca_releasingBoxPtr
-newCallback_Chocachoca_releasingBox(T* instance, void (T::*cb)(bool), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+newCallback_Chocachoca_releasingBox(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Chocachoca_releasingBox<T>(instance, 0, excb, sentcb);
+}
+
+template<class T> Callback_Chocachoca_releasingBoxPtr
+newCallback_Chocachoca_releasingBox(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
     return new CallbackNC_Chocachoca_releasingBox<T>(instance, cb, excb, sentcb);
 }
 
+template<class T> Callback_Chocachoca_releasingBoxPtr
+newCallback_Chocachoca_releasingBox(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+{
+    return new CallbackNC_Chocachoca_releasingBox<T>(instance, 0, excb, sentcb);
+}
+
 template<class T, typename CT>
-class Callback_Chocachoca_releasingBox : public Callback_Chocachoca_releasingBox_Base, public ::IceInternal::TwowayCallback<T, CT>
+class Callback_Chocachoca_releasingBox : public Callback_Chocachoca_releasingBox_Base, public ::IceInternal::OnewayCallback<T, CT>
 {
 public:
 
@@ -1418,45 +1305,36 @@ public:
 
     typedef void (T::*Exception)(const ::Ice::Exception& , const CT&);
     typedef void (T::*Sent)(bool , const CT&);
-    typedef void (T::*Response)(bool, const CT&);
+    typedef void (T::*Response)(const CT&);
 
     Callback_Chocachoca_releasingBox(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
-        : ::IceInternal::TwowayCallback<T, CT>(obj, cb != 0, excb, sentcb), response(cb)
+        : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
     {
     }
-
-    virtual void __completed(const ::Ice::AsyncResultPtr& __result) const
-    {
-        ::RoboCompChocachoca::ChocachocaPrx __proxy = ::RoboCompChocachoca::ChocachocaPrx::uncheckedCast(__result->getProxy());
-        bool __ret;
-        try
-        {
-            __ret = __proxy->end_releasingBox(__result);
-        }
-        catch(::Ice::Exception& ex)
-        {
-            ::IceInternal::Callback<T, CT>::__exception(__result, ex);
-            return;
-        }
-        if(response)
-        {
-            (::IceInternal::Callback<T, CT>::callback.get()->*response)(__ret, CT::dynamicCast(__result->getCookie()));
-        }
-    }
-
-    Response response;
 };
 
 template<class T, typename CT> Callback_Chocachoca_releasingBoxPtr
-newCallback_Chocachoca_releasingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Chocachoca_releasingBox(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Chocachoca_releasingBox<T, CT>(instance, cb, excb, sentcb);
 }
 
 template<class T, typename CT> Callback_Chocachoca_releasingBoxPtr
-newCallback_Chocachoca_releasingBox(T* instance, void (T::*cb)(bool, const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+newCallback_Chocachoca_releasingBox(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Chocachoca_releasingBox<T, CT>(instance, 0, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Chocachoca_releasingBoxPtr
+newCallback_Chocachoca_releasingBox(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
     return new Callback_Chocachoca_releasingBox<T, CT>(instance, cb, excb, sentcb);
+}
+
+template<class T, typename CT> Callback_Chocachoca_releasingBoxPtr
+newCallback_Chocachoca_releasingBox(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+{
+    return new Callback_Chocachoca_releasingBox<T, CT>(instance, 0, excb, sentcb);
 }
 
 }

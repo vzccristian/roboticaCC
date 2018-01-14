@@ -40,7 +40,6 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     dump=-1;
     coorsDump.first=0;
     coorsDump.second=0;
-    waitingFor=0; 
     for (auto &x:movedBoxes)
         x=-1;
     for (auto &x:coorsBox)
@@ -89,6 +88,7 @@ void SpecificWorker::compute() {
 void SpecificWorker::search() {
     qDebug() << "SEARCH ";
     int x,z;
+    waitingFor=0;
     if (float(clock() - begin_time) /10000.0 > 10.0 ) {
         srand( time( NULL ) );  //  using the time seed from srand explanation
         x=rand()%1000-500;
@@ -162,10 +162,9 @@ void SpecificWorker::sendPickBox() {
 
 void SpecificWorker::sendReleaseBox() {
     qDebug() << "releaseBox supervisor";
-    
-    //MANDAR RELEASE 
+    chocachoca_proxy->releasingBox();
     waitingFor=4;
-    
+    estado=WAIT;
 }
 
 
@@ -194,7 +193,6 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) 
 void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
     int umbral=700,i;
     QVec targetCoors;
-    
     for (i=0; i<(signed)tags.size(); i++) {
         if (tags[i].id < 10) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");

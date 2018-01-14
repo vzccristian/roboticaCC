@@ -45,7 +45,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
     
     //Flags
     picked = nearToBox = false;
-    
+    handCamera = true;
     setDefaultArmPosition(true);
     
     timer.start(Period);
@@ -95,9 +95,10 @@ void SpecificWorker::compute() {
         end();
         break;
     default:
+        qDebug() << "DEFAULT";
         break;
     }
-    qDebug() << "fuera";
+
 }
 
 
@@ -335,7 +336,7 @@ void SpecificWorker::pickingBox() {
         stopMotors();
         prepareToMove();
         estado=IDLE;
-        qDebug() << "mandoIDLE";
+        handCamera=false;
     }
     
     if (nearToBox) {
@@ -492,14 +493,73 @@ void SpecificWorker::setDefaultArmPosition(bool init) {
     }
 }
 
+
+
 // RELEASE - Main method
 void SpecificWorker::releasingBox()
 {
   qDebug() << "RELEASING BOX";
   estado=RELEASE;
+  setArmReleasingPosition();
+  handCamera=true;
   
 }
 
+// RELEASE - Auxiliary method
+
+
+void SpecificWorker::setArmReleasingPosition() {
+    qDebug() << "----------_>releasing";
+    RoboCompJointMotor::MotorGoalPosition wrist_right_1, wrist_right_2, elbow_right,shoulder_right_1, shoulder_right_2, shoulder_right_3, finger_right_1, finger_right_2;
+    
+    wrist_right_1.name = "wrist_right_1";
+	wrist_right_1.position = -0.426643;
+	wrist_right_1.maxSpeed = 1;
+    
+    wrist_right_2.name = "wrist_right_2";
+	wrist_right_2.position = 1.00764;
+	wrist_right_2.maxSpeed = 1;
+	
+	elbow_right.name = "elbow_right";
+	elbow_right.position = 0.671048;
+	elbow_right.maxSpeed = 1;
+
+    shoulder_right_1.name = "shoulder_right_1";
+	shoulder_right_1.position = -0.147257;
+	shoulder_right_1.maxSpeed = 1;
+    
+	shoulder_right_2.name = "shoulder_right_2";
+	shoulder_right_2.position = -0.254585;
+	shoulder_right_2.maxSpeed = 1;
+    
+    shoulder_right_3.name = "shoulder_right_3";
+	shoulder_right_3.position = 0.396206;
+	shoulder_right_3.maxSpeed = 1;
+    
+    jointmotor_proxy->setPosition(wrist_right_1);
+    jointmotor_proxy->setPosition(wrist_right_2);
+	jointmotor_proxy->setPosition(elbow_right);
+    jointmotor_proxy->setPosition(shoulder_right_1);
+	jointmotor_proxy->setPosition(shoulder_right_2);
+    jointmotor_proxy->setPosition(shoulder_right_3);
+
+    sleep(2);
+    
+    finger_right_1.name = "finger_right_1";
+    finger_right_1.position = 0.0;
+    finger_right_1.maxSpeed = 1;
+    
+    finger_right_2.name = "finger_right_2";
+    finger_right_2.position = 0.0;
+    finger_right_2.maxSpeed = 1;
+    
+    jointmotor_proxy->setPosition(finger_right_1);
+    jointmotor_proxy->setPosition(finger_right_2);
+    
+    setDefaultArmPosition(false);
+    sleep(1);
+    estado = IDLE;
+}
 
 // END - Main method
 void SpecificWorker::end() {
@@ -606,21 +666,24 @@ void SpecificWorker::updateJoints()
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
     int i;
-    if (estado != PICK) { //NO OBJETIVO SELECCIONADO
-        for (i=0; i<(signed)tags.size(); i++) {
-            if (tags[i].id > 9 && estado != PICK) {
-            differentialrobot_proxy->setSpeedBase(0, 0);   
-            targetBox=tags[i];
-            estado=HAND_WATCHING_BOX;
+    if (handCamera) {
+        if (estado != PICK) { //NO OBJETIVO SELECCIONADO
+            for (i=0; i<(signed)tags.size(); i++) {
+                if (tags[i].id > 9) {
+                    differentialrobot_proxy->setSpeedBase(0, 0);   
+                    targetBox=tags[i];
+                    estado=HAND_WATCHING_BOX;
+                }
+            }
+        } else { //OBJETIVO SELECCIONADO, SOLO ACTUALIZO ESE
+            for (i=0; i<(signed)tags.size(); i++) {
+                if (tags[i].id == targetBox.id) 
+                    targetBox=tags[i]; //Actualizo
             }
         }
-    } else { //OBJETIVO SELECCIONADO, SOLO ACTUALIZO ESE
-        for (i=0; i<(signed)tags.size(); i++) {
-            if (tags[i].id == targetBox.id) 
-                targetBox=tags[i]; //Actualizo
-            }
+        
     }
-  
+
   
 }
 

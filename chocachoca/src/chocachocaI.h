@@ -38,12 +38,12 @@ public:
 	ChocachocaI( GenericWorker *_worker, QObject *parent = 0 );
 	~ChocachocaI();
 	
-	bool pickingBox(const Ice::Current&);
+	void pickingBox(const Ice::Current&);
 	string getState(const Ice::Current&);
 	void stop(const Ice::Current&);
 	void turn(const float  speed, const Ice::Current&);
 	void go(const float  x, const float  z, const Ice::Current&);
-	bool releasingBox(const Ice::Current&);
+	void releasingBox(const Ice::Current&);
 
 	QMutex *mutex;
 private:

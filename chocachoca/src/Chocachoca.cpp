@@ -298,7 +298,7 @@ IceProxy::RoboCompChocachoca::Chocachoca::end_getState(const ::Ice::AsyncResultP
     }
 }
 
-bool
+void
 IceProxy::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* __ctx)
 {
     ::IceInternal::InvocationObserver __observer(this, __RoboCompChocachoca__Chocachoca__pickingBox_name, __ctx);
@@ -308,10 +308,10 @@ IceProxy::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* __ctx
         ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
         try
         {
-            __checkTwowayOnly(__RoboCompChocachoca__Chocachoca__pickingBox_name);
             __delBase = __getDelegate(false);
             ::IceDelegate::RoboCompChocachoca::Chocachoca* __del = dynamic_cast< ::IceDelegate::RoboCompChocachoca::Chocachoca*>(__delBase.get());
-            return __del->pickingBox(__ctx, __observer);
+            __del->pickingBox(__ctx, __observer);
+            return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
         {
@@ -327,7 +327,6 @@ IceProxy::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* __ctx
 ::Ice::AsyncResultPtr
 IceProxy::RoboCompChocachoca::Chocachoca::begin_pickingBox(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    __checkAsyncTwowayOnly(__RoboCompChocachoca__Chocachoca__pickingBox_name);
     ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __RoboCompChocachoca__Chocachoca__pickingBox_name, __del, __cookie);
     try
     {
@@ -342,38 +341,13 @@ IceProxy::RoboCompChocachoca::Chocachoca::begin_pickingBox(const ::Ice::Context*
     return __result;
 }
 
-bool
+void
 IceProxy::RoboCompChocachoca::Chocachoca::end_pickingBox(const ::Ice::AsyncResultPtr& __result)
 {
-    ::Ice::AsyncResult::__check(__result, this, __RoboCompChocachoca__Chocachoca__pickingBox_name);
-    bool __ret;
-    bool __ok = __result->__wait();
-    try
-    {
-        if(!__ok)
-        {
-            try
-            {
-                __result->__throwUserException();
-            }
-            catch(const ::Ice::UserException& __ex)
-            {
-                throw ::Ice::UnknownUserException(__FILE__, __LINE__, __ex.ice_name());
-            }
-        }
-        ::IceInternal::BasicStream* __is = __result->__startReadParams();
-        __is->read(__ret);
-        __result->__endReadParams();
-        return __ret;
-    }
-    catch(const ::Ice::LocalException& ex)
-    {
-        __result->__getObserver().failed(ex.ice_name());
-        throw;
-    }
+    __end(__result, __RoboCompChocachoca__Chocachoca__pickingBox_name);
 }
 
-bool
+void
 IceProxy::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context* __ctx)
 {
     ::IceInternal::InvocationObserver __observer(this, __RoboCompChocachoca__Chocachoca__releasingBox_name, __ctx);
@@ -383,10 +357,10 @@ IceProxy::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context* __c
         ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
         try
         {
-            __checkTwowayOnly(__RoboCompChocachoca__Chocachoca__releasingBox_name);
             __delBase = __getDelegate(false);
             ::IceDelegate::RoboCompChocachoca::Chocachoca* __del = dynamic_cast< ::IceDelegate::RoboCompChocachoca::Chocachoca*>(__delBase.get());
-            return __del->releasingBox(__ctx, __observer);
+            __del->releasingBox(__ctx, __observer);
+            return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
         {
@@ -402,7 +376,6 @@ IceProxy::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context* __c
 ::Ice::AsyncResultPtr
 IceProxy::RoboCompChocachoca::Chocachoca::begin_releasingBox(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    __checkAsyncTwowayOnly(__RoboCompChocachoca__Chocachoca__releasingBox_name);
     ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __RoboCompChocachoca__Chocachoca__releasingBox_name, __del, __cookie);
     try
     {
@@ -417,35 +390,10 @@ IceProxy::RoboCompChocachoca::Chocachoca::begin_releasingBox(const ::Ice::Contex
     return __result;
 }
 
-bool
+void
 IceProxy::RoboCompChocachoca::Chocachoca::end_releasingBox(const ::Ice::AsyncResultPtr& __result)
 {
-    ::Ice::AsyncResult::__check(__result, this, __RoboCompChocachoca__Chocachoca__releasingBox_name);
-    bool __ret;
-    bool __ok = __result->__wait();
-    try
-    {
-        if(!__ok)
-        {
-            try
-            {
-                __result->__throwUserException();
-            }
-            catch(const ::Ice::UserException& __ex)
-            {
-                throw ::Ice::UnknownUserException(__FILE__, __LINE__, __ex.ice_name());
-            }
-        }
-        ::IceInternal::BasicStream* __is = __result->__startReadParams();
-        __is->read(__ret);
-        __result->__endReadParams();
-        return __ret;
-    }
-    catch(const ::Ice::LocalException& ex)
-    {
-        __result->__getObserver().failed(ex.ice_name());
-        throw;
-    }
+    __end(__result, __RoboCompChocachoca__Chocachoca__releasingBox_name);
 }
 
 const ::std::string&
@@ -616,67 +564,65 @@ IceDelegateM::RoboCompChocachoca::Chocachoca::getState(const ::Ice::Context* __c
     }
 }
 
-bool
+void
 IceDelegateM::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __RoboCompChocachoca__Chocachoca__pickingBox_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
     bool __ok = __og.invoke();
-    bool __ret;
-    try
+    if(__og.hasResponse())
     {
-        if(!__ok)
+        try
         {
-            try
+            if(!__ok)
             {
-                __og.throwUserException();
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
             }
-            catch(const ::Ice::UserException& __ex)
-            {
-                ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
-                throw __uue;
-            }
+            __og.readEmptyParams();
         }
-        ::IceInternal::BasicStream* __is = __og.startReadParams();
-        __is->read(__ret);
-        __og.endReadParams();
-        return __ret;
-    }
-    catch(const ::Ice::LocalException& __ex)
-    {
-        throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
     }
 }
 
-bool
+void
 IceDelegateM::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __RoboCompChocachoca__Chocachoca__releasingBox_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
     bool __ok = __og.invoke();
-    bool __ret;
-    try
+    if(__og.hasResponse())
     {
-        if(!__ok)
+        try
         {
-            try
+            if(!__ok)
             {
-                __og.throwUserException();
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
             }
-            catch(const ::Ice::UserException& __ex)
-            {
-                ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
-                throw __uue;
-            }
+            __og.readEmptyParams();
         }
-        ::IceInternal::BasicStream* __is = __og.startReadParams();
-        __is->read(__ret);
-        __og.endReadParams();
-        return __ret;
-    }
-    catch(const ::Ice::LocalException& __ex)
-    {
-        throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
     }
 }
 
@@ -938,16 +884,15 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::getState(const ::Ice::Context* __c
     return __result;
 }
 
-bool
+void
 IceDelegateD::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(bool& __result, const ::Ice::Current& __current) : 
-            ::IceInternal::Direct(__current),
-            _result(__result)
+        _DirectI(const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current)
         {
         }
         
@@ -959,21 +904,19 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* _
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            _result = servant->pickingBox(_current);
+            servant->pickingBox(_current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        bool& _result;
     };
     
     ::Ice::Current __current;
     __initCurrent(__current, __RoboCompChocachoca__Chocachoca__pickingBox_name, ::Ice::Normal, __context);
-    bool __result;
     try
     {
-        _DirectI __direct(__result, __current);
+        _DirectI __direct(__current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -1001,19 +944,17 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::pickingBox(const ::Ice::Context* _
     {
         throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
     }
-    return __result;
 }
 
-bool
+void
 IceDelegateD::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(bool& __result, const ::Ice::Current& __current) : 
-            ::IceInternal::Direct(__current),
-            _result(__result)
+        _DirectI(const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current)
         {
         }
         
@@ -1025,21 +966,19 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context*
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            _result = servant->releasingBox(_current);
+            servant->releasingBox(_current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        bool& _result;
     };
     
     ::Ice::Current __current;
     __initCurrent(__current, __RoboCompChocachoca__Chocachoca__releasingBox_name, ::Ice::Normal, __context);
-    bool __result;
     try
     {
-        _DirectI __direct(__result, __current);
+        _DirectI __direct(__current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -1067,7 +1006,6 @@ IceDelegateD::RoboCompChocachoca::Chocachoca::releasingBox(const ::Ice::Context*
     {
         throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
     }
-    return __result;
 }
 
 ::Ice::Object* RoboCompChocachoca::upCast(::RoboCompChocachoca::Chocachoca* p) { return p; }
@@ -1161,10 +1099,8 @@ RoboCompChocachoca::Chocachoca::___pickingBox(::IceInternal::Incoming& __inS, co
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
-    bool __ret = pickingBox(__current);
-    ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
-    __os->write(__ret);
-    __inS.__endWriteParams(true);
+    pickingBox(__current);
+    __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
 
@@ -1173,10 +1109,8 @@ RoboCompChocachoca::Chocachoca::___releasingBox(::IceInternal::Incoming& __inS, 
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
-    bool __ret = releasingBox(__current);
-    ::IceInternal::BasicStream* __os = __inS.__startWriteParams(::Ice::DefaultFormat);
-    __os->write(__ret);
-    __inS.__endWriteParams(true);
+    releasingBox(__current);
+    __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
 

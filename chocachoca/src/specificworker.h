@@ -73,6 +73,7 @@ class SpecificWorker : public GenericWorker
         void stopMotors();
         bool prepareToMove();
         void setDefaultArmPosition(bool init);
+        void setArmReleasingPosition();
         
         
         //OWN INTERFACE CALLS
@@ -112,6 +113,7 @@ class SpecificWorker : public GenericWorker
         RoboCompGetAprilTags::marca targetBox;
         
         bool picked;
+        bool handCamera; /* True = handCamera ON, False = handCamera OFF */
         bool nearToBox;
         
         void updateJoints();

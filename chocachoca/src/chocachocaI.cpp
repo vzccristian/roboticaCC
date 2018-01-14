@@ -29,9 +29,9 @@ ChocachocaI::~ChocachocaI()
 {
 }
 
-bool ChocachocaI::pickingBox(const Ice::Current&)
+void ChocachocaI::pickingBox(const Ice::Current&)
 {
-	return worker->pickingBox();
+	worker->pickingBox();
 }
 
 string ChocachocaI::getState(const Ice::Current&)
@@ -54,9 +54,9 @@ void ChocachocaI::go(const float  x, const float  z, const Ice::Current&)
 	worker->go(x, z);
 }
 
-bool ChocachocaI::releasingBox(const Ice::Current&)
+void ChocachocaI::releasingBox(const Ice::Current&)
 {
-	return worker->releasingBox();
+	worker->releasingBox();
 }
 
 

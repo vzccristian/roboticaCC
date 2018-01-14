@@ -4,8 +4,8 @@ module RoboCompChocachoca{
 		void turn(float speed);
 		void stop();
 		string getState();
-		bool pickingBox();
-		bool releasingBox();
+		void pickingBox();
+		void releasingBox();
 	};
 };
   
