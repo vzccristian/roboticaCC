@@ -35,7 +35,7 @@
 #include <time.h>
 
 #define LINEAL_INCREMENT 10
-#define ANGULAR_PROP 10.0
+#define ANGULAR_PROP 12.0
 #define FACTOR 1
 #define FACTOR_FINGERS 0.6
 #define PI 3.14159265358979323846

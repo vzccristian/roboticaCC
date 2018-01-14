@@ -438,19 +438,19 @@ bool SpecificWorker::prepareToMove() {
     pFingers.push_back(RoboCompJointMotor::MotorGoalPosition{FACTOR_FINGERS, 1.0,"finger_right_2"});
     jointmotor_proxy->setSyncPosition(pFingers);
     
-    //PASAR A LA MANO //TODO
-    //         string caja = "C"+std::to_string(targetBox.id);
-    //         for (int i=1; i<7; i++) {
-    //             try {	
-    //                 if(innermodelmanager_proxy->collide(string("finger_right_1_mesh4"),caja+"_"+std::to_string(i)))
-    //                     qDebug() << "Collide" << i;
-    //                 else
-    //                     qDebug() << "NO Collide" << i;
-    //             }catch(const Ice::Exception &e){
-    //                 std::cout << e << std::endl;
-    //             }
-    //         }
-    
+
+    string caja = "C"+std::to_string(targetBox.id);
+    for (int i=1; i<7; i++) {
+        try {	
+            if(innermodelmanager_proxy->collide(string("finger_right_2_mesh4"),caja+"_"+std::to_string(i)))
+                qDebug() << "Collide" << i;
+            else
+                qDebug() << "NO Collide" << i;
+        }catch(const Ice::Exception &e){
+            std::cout << e << std::endl;
+        }
+    }
+
     
     //LEVANTAR BRAZO
     sleep(1); //Esperar a cerrar dedos
@@ -468,11 +468,11 @@ void SpecificWorker::setDefaultArmPosition(bool init) {
 	wrist_right.maxSpeed = 1;
 	
 	elbow_right.name = "elbow_right";
-	elbow_right.position = 1;
+	elbow_right.position = 1.5;
 	elbow_right.maxSpeed = 1;
 	
 	shoulder_right_2.name = "shoulder_right_2";
-	shoulder_right_2.position = -0.785398;
+	shoulder_right_2.position = -1.2;
 	shoulder_right_2.maxSpeed = 1;
     
     jointmotor_proxy->setPosition(wrist_right);
@@ -500,6 +500,7 @@ void SpecificWorker::releasingBox()
 {
   qDebug() << "RELEASING BOX";
   estado=RELEASE;
+    //TRANSFORM DE LA CAJA AL SUELO
   setArmReleasingPosition();
   handCamera=true;
   
@@ -543,7 +544,7 @@ void SpecificWorker::setArmReleasingPosition() {
 	jointmotor_proxy->setPosition(shoulder_right_2);
     jointmotor_proxy->setPosition(shoulder_right_3);
 
-    sleep(2);
+    sleep(5);
     
     finger_right_1.name = "finger_right_1";
     finger_right_1.position = 0.0;
