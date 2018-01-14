@@ -76,9 +76,6 @@ void SpecificWorker::compute() {
     case GOTO:
         linealSpeed=gotoTarget(bState,laserData);
         break;
-    case WAITING:
-        wait();
-        break;
     case TURN:
         turn(linealSpeed,laserData);
         break;
@@ -91,12 +88,16 @@ void SpecificWorker::compute() {
     case RELEASE:
         releasingBox();
         break;
+    case HAND_WATCHING_BOX:
+        handWatchingBox();
+        break;
     case END:
         end();
         break;
     default:
         break;
     }
+    qDebug() << "fuera";
 }
 
 
@@ -168,7 +169,7 @@ float SpecificWorker::sinusoide(float x) {
     return 1/(1+exp(-x))-0.5;
 }
 
-void SpecificWorker::wait() {
+void SpecificWorker::handWatchingBox() {
     sleep(1);
 }
 
@@ -311,7 +312,7 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
 
 // PICK - Main method
 
-bool SpecificWorker::pickingBox() {
+void SpecificWorker::pickingBox() {
     estado = PICK;
     if (!picked) { 
         qDebug() << "TX: "<<targetBox.tx<<" -- TY: "<<targetBox.ty<<" -- TZ: "<<targetBox.tz<< " ....... RX: "
@@ -330,20 +331,22 @@ bool SpecificWorker::pickingBox() {
         //error.print("MOVIMIENTO DE LOS MOTORES");
         adjustMotors();
     } else {
+        nearToBox=false;
         stopMotors();
         prepareToMove();
-        return true;
+        estado=IDLE;
+        qDebug() << "mandoIDLE";
     }
     
     if (nearToBox) {
         picked = true;
         sleep(1); //Sleep para esperar a bajar
         qDebug() << "picked -------->" << picked;
+
     }
     
     targetBox={targetBox.id,0,0,0,0,0,0};
     
-  return false;
 }
 
 // PICK - Auxiliary methods
@@ -363,7 +366,7 @@ void SpecificWorker::fixPosition() {
     
     //ALTURA
     if ( targetBox.tz > 105)
-        error += QVec::vec6(0,0,-LINEAL_INCREMENT*2,0,0,0);
+        error += QVec::vec6(0,0,-LINEAL_INCREMENT*1.5,0,0,0);
     
 }
 void SpecificWorker::fixRotation() {
@@ -464,11 +467,11 @@ void SpecificWorker::setDefaultArmPosition(bool init) {
 	wrist_right.maxSpeed = 1;
 	
 	elbow_right.name = "elbow_right";
-	elbow_right.position = 1.5;
+	elbow_right.position = 1;
 	elbow_right.maxSpeed = 1;
 	
 	shoulder_right_2.name = "shoulder_right_2";
-	shoulder_right_2.position = -1.2;
+	shoulder_right_2.position = -0.785398;
 	shoulder_right_2.maxSpeed = 1;
     
     jointmotor_proxy->setPosition(wrist_right);
@@ -490,13 +493,11 @@ void SpecificWorker::setDefaultArmPosition(bool init) {
 }
 
 // RELEASE - Main method
-bool SpecificWorker::releasingBox()
+void SpecificWorker::releasingBox()
 {
   qDebug() << "RELEASING BOX";
   estado=RELEASE;
   
-  
-  return true;
 }
 
 
@@ -520,9 +521,9 @@ void SpecificWorker::end() {
     Go to target if there isnt pick
 */
 void SpecificWorker::go(const float x, const float z) {
-    //TODO
     while (pick) {
-        /* No hace nada */
+        qDebug() << "Waiting for userpick";
+        sleep(1);
     }
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
@@ -542,8 +543,26 @@ void SpecificWorker::turn(const float speed) {
     Return true if robot is working, otherwise false. 
 */
 string SpecificWorker::getState() {
-//     return std::toStdString(estado);
-    return "estado";
+    switch (estado) {
+        case IDLE:
+            return "IDLE";
+        case GOTO:
+            return "GOTO";
+        case HAND_WATCHING_BOX:
+            return "HAND_WATCHING_BOX";
+        case TURN:
+            return "TURN";
+        case SKIRT:
+            return "SKIRT";
+        case PICK:
+            return "PICK";
+        case RELEASE:
+            return "RELEASE";
+        case END:
+            return "END";
+        default:
+            return "ERROR";
+    }
 }
 
 /* 
@@ -592,7 +611,7 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
             if (tags[i].id > 9 && estado != PICK) {
             differentialrobot_proxy->setSpeedBase(0, 0);   
             targetBox=tags[i];
-            estado = PICK;
+            estado=HAND_WATCHING_BOX;
             }
         }
     } else { //OBJETIVO SELECCIONADO, SOLO ACTUALIZO ESE

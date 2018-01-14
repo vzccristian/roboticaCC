@@ -34,7 +34,7 @@
 #include <ctime>
 
 using namespace std;
-enum state { SEARCH, WAIT, GOTO, PICKBOX, RELEASEBOX};
+enum state { SEARCH, WAIT, SENDGOTO, SENDPICKBOX, SENDRELEASEBOX};
 
 const int MAXBOXES=10;
 const int MAXDUMPS=4;
@@ -50,10 +50,10 @@ public:
     bool setParams(RoboCompCommonBehavior::ParameterList params);
     
     void search();
-    void gotoTarget();
+    void sendGoto();
     void wait();
-    void pickBox();
-    void releaseBox();
+    void sendPickBox();
+    void sendReleaseBox();
 
 public slots:
     void compute();
@@ -77,11 +77,13 @@ private:
     
     //BOX
     int movedBoxes[MAXBOXES];
-    bool boxInArm;
     float coorsBox[3];
     void searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags);
     bool boxIsMoved(int id);
     void addToMovedBoxes(int id);
+    
+    //FLAG
+    int waitingFor; /* 1 - waiting for arrive to box. 2 - waiting for picking box. 3 - waiting for arrive to dump. 4 - waiting for releasing box. */
 };
 
 #endif

@@ -41,8 +41,7 @@
 #define PI 3.14159265358979323846
 
 using namespace std;
-enum state { IDLE, GOTO, WAITING, TURN, SKIRT, END, PICK, RELEASE};
-
+enum state { IDLE, GOTO, HAND_WATCHING_BOX, TURN, SKIRT, END, PICK, RELEASE};
 class SpecificWorker : public GenericWorker
 {
     Q_OBJECT
@@ -55,7 +54,7 @@ class SpecificWorker : public GenericWorker
         void idle();
         void end();
         float gotoTarget(TBaseState bState, TLaserData laserData);
-        void wait();
+        void handWatchingBox();
         void skirt(TBaseState bState, TLaserData &laserData);
         void turn(float linealSpeed,TLaserData laserData);   
         void arm();
@@ -82,8 +81,8 @@ class SpecificWorker : public GenericWorker
         string getState();
         void stop();
         void setPick(const Pick &myPick);
-        bool releasingBox();
-        bool pickingBox();
+        void releasingBox();
+        void pickingBox();
         
         //OTHER INTERFACE CALLS
         void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);

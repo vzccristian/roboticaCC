@@ -524,6 +524,60 @@ genericworker.cpp.s:
 	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/genericworker.cpp.s
 .PHONY : genericworker.cpp.s
 
+home/crivac/robocomp/classes/qlog/qlog.o: home/crivac/robocomp/classes/qlog/qlog.cpp.o
+
+.PHONY : home/crivac/robocomp/classes/qlog/qlog.o
+
+# target to build an object file
+home/crivac/robocomp/classes/qlog/qlog.cpp.o:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.o
+.PHONY : home/crivac/robocomp/classes/qlog/qlog.cpp.o
+
+home/crivac/robocomp/classes/qlog/qlog.i: home/crivac/robocomp/classes/qlog/qlog.cpp.i
+
+.PHONY : home/crivac/robocomp/classes/qlog/qlog.i
+
+# target to preprocess a source file
+home/crivac/robocomp/classes/qlog/qlog.cpp.i:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.i
+.PHONY : home/crivac/robocomp/classes/qlog/qlog.cpp.i
+
+home/crivac/robocomp/classes/qlog/qlog.s: home/crivac/robocomp/classes/qlog/qlog.cpp.s
+
+.PHONY : home/crivac/robocomp/classes/qlog/qlog.s
+
+# target to generate assembly for a file
+home/crivac/robocomp/classes/qlog/qlog.cpp.s:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/crivac/robocomp/classes/qlog/qlog.cpp.s
+.PHONY : home/crivac/robocomp/classes/qlog/qlog.cpp.s
+
+home/crivac/robocomp/classes/rapplication/rapplication.o: home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
+
+.PHONY : home/crivac/robocomp/classes/rapplication/rapplication.o
+
+# target to build an object file
+home/crivac/robocomp/classes/rapplication/rapplication.cpp.o:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
+.PHONY : home/crivac/robocomp/classes/rapplication/rapplication.cpp.o
+
+home/crivac/robocomp/classes/rapplication/rapplication.i: home/crivac/robocomp/classes/rapplication/rapplication.cpp.i
+
+.PHONY : home/crivac/robocomp/classes/rapplication/rapplication.i
+
+# target to preprocess a source file
+home/crivac/robocomp/classes/rapplication/rapplication.cpp.i:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.i
+.PHONY : home/crivac/robocomp/classes/rapplication/rapplication.cpp.i
+
+home/crivac/robocomp/classes/rapplication/rapplication.s: home/crivac/robocomp/classes/rapplication/rapplication.cpp.s
+
+.PHONY : home/crivac/robocomp/classes/rapplication/rapplication.s
+
+# target to generate assembly for a file
+home/crivac/robocomp/classes/rapplication/rapplication.cpp.s:
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/home/crivac/robocomp/classes/rapplication/rapplication.cpp.s
+.PHONY : home/crivac/robocomp/classes/rapplication/rapplication.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -550,60 +604,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-opt/robocomp/classes/qlog/qlog.o: opt/robocomp/classes/qlog/qlog.cpp.o
-
-.PHONY : opt/robocomp/classes/qlog/qlog.o
-
-# target to build an object file
-opt/robocomp/classes/qlog/qlog.cpp.o:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/qlog/qlog.cpp.o
-.PHONY : opt/robocomp/classes/qlog/qlog.cpp.o
-
-opt/robocomp/classes/qlog/qlog.i: opt/robocomp/classes/qlog/qlog.cpp.i
-
-.PHONY : opt/robocomp/classes/qlog/qlog.i
-
-# target to preprocess a source file
-opt/robocomp/classes/qlog/qlog.cpp.i:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/qlog/qlog.cpp.i
-.PHONY : opt/robocomp/classes/qlog/qlog.cpp.i
-
-opt/robocomp/classes/qlog/qlog.s: opt/robocomp/classes/qlog/qlog.cpp.s
-
-.PHONY : opt/robocomp/classes/qlog/qlog.s
-
-# target to generate assembly for a file
-opt/robocomp/classes/qlog/qlog.cpp.s:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/qlog/qlog.cpp.s
-.PHONY : opt/robocomp/classes/qlog/qlog.cpp.s
-
-opt/robocomp/classes/rapplication/rapplication.o: opt/robocomp/classes/rapplication/rapplication.cpp.o
-
-.PHONY : opt/robocomp/classes/rapplication/rapplication.o
-
-# target to build an object file
-opt/robocomp/classes/rapplication/rapplication.cpp.o:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o
-.PHONY : opt/robocomp/classes/rapplication/rapplication.cpp.o
-
-opt/robocomp/classes/rapplication/rapplication.i: opt/robocomp/classes/rapplication/rapplication.cpp.i
-
-.PHONY : opt/robocomp/classes/rapplication/rapplication.i
-
-# target to preprocess a source file
-opt/robocomp/classes/rapplication/rapplication.cpp.i:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/rapplication/rapplication.cpp.i
-.PHONY : opt/robocomp/classes/rapplication/rapplication.cpp.i
-
-opt/robocomp/classes/rapplication/rapplication.s: opt/robocomp/classes/rapplication/rapplication.cpp.s
-
-.PHONY : opt/robocomp/classes/rapplication/rapplication.s
-
-# target to generate assembly for a file
-opt/robocomp/classes/rapplication/rapplication.cpp.s:
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca && $(MAKE) -f src/CMakeFiles/chocachoca.dir/build.make src/CMakeFiles/chocachoca.dir/opt/robocomp/classes/rapplication/rapplication.cpp.s
-.PHONY : opt/robocomp/classes/rapplication/rapplication.cpp.s
 
 rcismousepickerI.o: rcismousepickerI.cpp.o
 
@@ -738,15 +738,15 @@ help:
 	@echo "... genericworker.o"
 	@echo "... genericworker.i"
 	@echo "... genericworker.s"
+	@echo "... home/crivac/robocomp/classes/qlog/qlog.o"
+	@echo "... home/crivac/robocomp/classes/qlog/qlog.i"
+	@echo "... home/crivac/robocomp/classes/qlog/qlog.s"
+	@echo "... home/crivac/robocomp/classes/rapplication/rapplication.o"
+	@echo "... home/crivac/robocomp/classes/rapplication/rapplication.i"
+	@echo "... home/crivac/robocomp/classes/rapplication/rapplication.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... opt/robocomp/classes/qlog/qlog.o"
-	@echo "... opt/robocomp/classes/qlog/qlog.i"
-	@echo "... opt/robocomp/classes/qlog/qlog.s"
-	@echo "... opt/robocomp/classes/rapplication/rapplication.o"
-	@echo "... opt/robocomp/classes/rapplication/rapplication.i"
-	@echo "... opt/robocomp/classes/rapplication/rapplication.s"
 	@echo "... rcismousepickerI.o"
 	@echo "... rcismousepickerI.i"
 	@echo "... rcismousepickerI.s"

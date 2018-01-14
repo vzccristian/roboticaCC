@@ -40,8 +40,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     dump=-1;
     coorsDump.first=0;
     coorsDump.second=0;
-    boxInArm=false;
-    
+    waitingFor=0; 
     for (auto &x:movedBoxes)
         x=-1;
     for (auto &x:coorsBox)
@@ -69,17 +68,17 @@ void SpecificWorker::compute() {
     case SEARCH:
         search();
         break;
-    case GOTO:
-        gotoTarget();
+    case SENDGOTO:
+        sendGoto();
         break;
     case WAIT:
         wait();
         break;
-    case PICKBOX:
-        pickBox();
+    case SENDPICKBOX:
+        sendPickBox();
         break;
-    case RELEASEBOX:
-        releaseBox();
+    case SENDRELEASEBOX:
+        sendReleaseBox();
         break;
     default:
         break;
@@ -98,63 +97,74 @@ void SpecificWorker::search() {
         chocachoca_proxy->go(x,z);
         begin_time=float(clock());
     } else {
-        if (chocachoca_proxy->getState().compare("IDLE")==0)
+        if (chocachoca_proxy->getState().compare("IDLE")==0) {
             chocachoca_proxy->turn(-0.9);
+        }
 
     }
 
 }
 
 /* Go to a specific target */
-void SpecificWorker::gotoTarget() {
-    qDebug() << "GOTO " << coorsBox[1] << coorsBox[2];
-//     if (!chocachoca_proxy->getState()) {
+void SpecificWorker::sendGoto() {
+    qDebug() << "SENDGOTO " << coorsBox[1] << coorsBox[2];
     chocachoca_proxy->go(coorsBox[1],coorsBox[2]);
+    waitingFor=1;
     estado=WAIT;
-//     }
+
 }
 
 /* Wait until robot arrive to target */
 void SpecificWorker::wait() {
-//     qDebug() << "WAIT";
+    qDebug() << "WAIT" << waitingFor;
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
-//     qDebug() << "ROBOT. x-->"<<bState.x<<"  z-->"<<bState.z;
-//     qDebug() << "BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2];
-    if (boxInArm) {
-        if ((abs(bState.x - (coorsDump.first)) <= MAXDIST*1.5) && (abs(bState.z - (coorsDump.second)) <= MAXDIST*1.5)) { //ENCONTRADO
-            chocachoca_proxy->stop();
-            estado=RELEASEBOX;
-        } 
-    }  else {
-        if ((abs(bState.x - (coorsBox[1])) <= MAXDIST) && (abs(bState.z - (coorsBox[2])) <= MAXDIST)) { //ENCONTRADO
-            chocachoca_proxy->stop();
-            estado=PICKBOX;
-        } 
+    switch (waitingFor){
+        case 1: //Arrive to box
+            if (chocachoca_proxy->getState().compare("HAND_WATCHING_BOX")==0)  //ENCONTRADO
+                estado=SENDPICKBOX;
+            break;
+        case 2: //Picking box
+            if (chocachoca_proxy->getState().compare("IDLE")==0) {  //ENCONTRADO
+                qDebug() << " ------------------- >>>>>>>>>>>>>>>>>>>>>>>chocachoca dice que ya ha cogido la caja";
+                chocachoca_proxy->go(coorsDump.first,coorsDump.second);
+                waitingFor=3;
+            }
+            break;
+        case 3: //Arrive to dump
+            if ((abs(bState.x - (coorsDump.first)) <= MAXDIST*1.5) && (abs(bState.z - (coorsDump.second)) <= MAXDIST*1.5)) { //ENCONTRADO
+                chocachoca_proxy->stop();
+                estado=SENDRELEASEBOX;
+            } 
+            break;
+        case 4: //Releasing box
+            if (chocachoca_proxy->getState().compare("IDLE")==0) {  //ENCONTRADO
+                qDebug() << " ------------------- >>>>>>>>>>>>>>>>>>>>>>>chocachoca dice que ya ha soltado la caja";
+                addToMovedBoxes(coorsBox[0]);
+                for (auto &x:coorsBox)
+                    x=-2;
+                begin_time=float(clock());
+                estado=SEARCH;
+            }
+            break;
+        default:
+            break;
     }
-
 }
 
 
-void SpecificWorker::pickBox() {
+void SpecificWorker::sendPickBox() {
     qDebug() << "pickBox supervisor";
-    if (chocachoca_proxy->pickingBox()) {
-      qDebug() << " ------------------- >>>>>>>>>>>>>>>>>>>>>>>            chocachoca dice que ya ha cogido la caja";
-      boxInArm=true;
-      chocachoca_proxy->go(coorsDump.first,coorsDump.second);
-      estado=WAIT;
-    } else 
-        qDebug() << "colega, donde está mi caja??";
+    chocachoca_proxy->pickingBox();
+    waitingFor=2;
+    estado=WAIT;
 }
 
-void SpecificWorker::releaseBox() {
-    qDebug() << "releaseBox";
-    boxInArm=false;
-    addToMovedBoxes(coorsBox[0]);
-    for (auto &x:coorsBox)
-        x=-2;
-    begin_time=float(clock());
-    estado=SEARCH;
+void SpecificWorker::sendReleaseBox() {
+    qDebug() << "releaseBox supervisor";
+    
+    //MANDAR RELEASE 
+    waitingFor=4;
     
 }
 
@@ -177,12 +187,12 @@ void SpecificWorker::addToMovedBoxes(int id) {
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) {
     if (dump == -1)
         searchDump(tags);
-//     if (estado==SEARCH)
+    if (waitingFor < 3)
         searchBoxes(tags);
 }
 
 void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
-    int umbral=300,i;
+    int umbral=700,i;
     QVec targetCoors;
     
     for (i=0; i<(signed)tags.size(); i++) {
@@ -198,7 +208,7 @@ void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
             }
             coorsDump=make_pair(x,z); //Coordenadas
             dump = tags[i].id;
-            qDebug() << "Dump:"<<dump;
+            qDebug() << "Dump:"<<dump << "Coors"<<x<<z;
             return;
         }
     }
@@ -221,13 +231,13 @@ void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) 
                 coorsBox[0]=tags[i].id; 
                 coorsBox[1]=targetCoors.x();
                 coorsBox[2]=targetCoors.z();
-                qDebug() << "UPDATE -> BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2]<< ". distancia"<<currentDist;
+//                 qDebug() << "UPDATE -> BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2]<< ". distancia"<<currentDist;
             }
            
          }
     }
-    if (dist!=MAXSEARCHBOX)
-        estado=GOTO;
+    if (dist!=MAXSEARCHBOX && waitingFor < 2)
+        estado=SENDGOTO;
 }
 
 bool SpecificWorker::boxIsMoved(int id) {
