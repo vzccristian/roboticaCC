@@ -1,0 +1,183 @@
+ 1026  more  ~/.kde/share/config/kdeveloprc
+ 1027  vim  ~/.kde/share/config/kdeveloprc
+ 1029  rm  ~/.kde/share/config/kdeveloprc
+ 1046  cd src
+ 1063  rcremoteserver 
+ 1066  rcremoteserver 
+ 1070  rcis simulation.xml -f 200             
+ 1071  rcis autonomyLab.xml   
+ 1075  rcis simulation.xml -f 200             
+ 1076  rcis autonomyLab.xml   
+ 1080  rcis simulation.xml -f 200             
+ 1081  rcis autonomyLab.xml   
+ 1085  rcis simulation.xml -f 200             
+ 1086  rcis autonomyLab.xml   
+ 1090  rcis simulation.xml 
+ 1091  rcis autonomyLab.xml   
+ 1095  rcis simulation.xml -f 200             
+ 1096  rcis simulation.xml -f 200             cd /home/robocomp/robocomp/components/objectDetection2/etc
+ 1100  rcis simulation.xml -f 200             
+ 1104  rcis simulation.xml -f 200             
+ 1108  rcis simulation.xml -f 200             
+ 1112  rcis simulation.xml -f 200             
+ 1116  rcis simulation.xml -f 200             
+ 1120  rcis simulation.xml -f 200             
+ 1124  rcis simulation.xml -f 200             
+ 1125  rcis autonomyLab.xml   
+ 1133  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml 
+ 1135  killall -9 rcmanagersimple 
+ 1138  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml 
+ 1181  rcnode                
+ 1187  rcnode
+ 1213  cd src
+ 1231  vim src/CMakeListsSpecific.txt 
+ 1240  sudo ln -s /home/robocomp/robocomp/components/yoloserver/src/yololib/libyolo.so /opt/robocomp/lib/
+ 1245  cd src/yololib/
+ 1250  ln -s ~/src/yololib/data ~/data
+ 1252  ls src/yololib/
+ 1253  ln -s ~/data ~/src/yololib/data 
+ 1255  ln -s /home/robocomp/robocomp/components/yoloserver/data /home/robocomp/robocomp/components/yoloserver/src/yololib/data 
+ 1257  ln -s /home/robocomp/robocomp/components/yoloserver/src/yololib/data /home/robocomp/robocomp/components/yoloserver/data
+ 1260  ls src/yololib/
+ 1261  cd src/
+ 1264  scp robolab@pepe.local:smartpolitech/yoloserver/src/yololib/yolo.weights .
+ 1289  cd robocomp/tools/rcmonitor/
+ 1290  ./rcmonitor.py  examples/jointMotorSimple.rcm -p 20067
+ 1291  ./rcmonitor.py  examples/jointMotorSimple.rcm -p 20068
+ 1301  rcis simulation.xml -f 200             
+ 1305  rcis simulation.xml -f 200             
+ 1306  rcis autonomyLab.xml   
+ 1375  rcis autonomyLab.xml
+ 1378  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1379  cd robocomp/tools/rcmonitor
+ 1380  ./rcmonitor.py examples/jointMotorSimple.rcm -p 20068
+ 1381  rcremoteserver 
+ 1387  cd robocomp/tools/rcmonitor
+ 1388  ./rcmonitor.py examples/jointMotorSimple.rcm -p 20068
+ 1392  rcis autonomyLab.xml
+ 1395  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1428  rcremoteserver 
+ 1430  rcis autonomyLab.xml
+ 1437  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1439  rcremoteserver
+ 1440  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1443  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1445  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1447  rcmanagersimple robocomp/components/objectDetection2/etc/deployment.xml
+ 1454  rcis autonomyLab.xml               
+ 1458  rcis autonomyLab.xml               
+ 1462  rcis autonomyLab.xml               
+ 1466  rcis autonomyLab.xml               
+ 1470  rcis autonomyLab.xml               
+ 1474  rcis autonomyLab.xml               
+ 1478  rcis autonomyLab.xml               
+ 1482  rcis autonomyLab.xml               
+ 1486  rcis autonomyLab.xml               
+ 1490  rcis autonomyLab.xml               
+ 1494  rcis autonomyLab.xml               
+ 1498  rcis autonomyLab.xml               
+ 1502  rcis autonomyLab.xml               
+ 1506  rcis autonomyLab.xml               
+ 1510  rcis autonomyLab.xml               
+ 1514  rcis autonomyLab.xml               
+ 1518  rcis autonomyLab.xml               
+ 1522  rcis autonomyLab.xml               
+ 1526  rcis autonomyLab.xml               
+ 1530  rcis autonomyLab.xml               
+ 1534  rcis autonomyLab.xml               
+ 1538  rcis autonomyLab.xml               
+ 1542  rcis autonomyLab.xml               
+ 1546  rcis autonomyLab.xml               
+ 1550  rcis autonomyLab.xml               
+ 1554  rcis autonomyLab.xml               
+ 1558  rcis autonomyLab.xml               
+ 1562  rcis autonomyLab.xml               
+ 1566  rcis autonomyLab.xml               
+ 1570  rcis autonomyLab.xml               
+ 1574  rcis autonomyLab.xml               
+ 1578  rcis autonomyLab.xml               
+ 1582  rcis autonomyLab.xml               
+ 1586  rcis autonomyLab.xml               
+ 1590  rcis autonomyLab.xml               
+ 1594  rcis autonomyLab.xml               
+ 1598  rcis autonomyLab.xml               
+ 1602  rcis autonomyLab.xml               
+ 1606  rcis autonomyLab.xml               
+ 1610  rcis autonomyLab.xml               
+ 1614  rcis autonomyLab.xml               
+ 1618  rcis autonomyLab.xml               
+ 1622  rcis autonomyLab.xml               
+ 1626  rcis autonomyLab.xml               
+ 1630  rcis autonomyLab.xml               
+ 1634  rcis autonomyLab.xml               
+ 1638  rcis autonomyLab.xml               
+ 1642  rcis autonomyLab.xml               
+ 1646  rcis autonomyLab.xml               
+ 1650  rcis autonomyLab.xml               
+ 1654  rcis autonomyLab.xml               
+ 1658  rcis autonomyLab.xml               
+ 1662  rcis autonomyLab.xml               
+ 1666  rcis autonomyLab.xml               
+ 1670  rcis autonomyLab.xml               
+ 1674  rcis autonomyLab.xml               
+ 1678  rcis autonomyLab.xml               
+ 1682  rcis autonomyLab.xml               
+ 1686  rcis autonomyLab.xml               
+ 1690  rcis autonomyLab.xml               
+ 1694  rcis autonomyLab.xml               
+ 1698  rcis autonomyLab.xml               
+ 1702  rcis autonomyLab.xml               
+ 1706  rcis autonomyLab.xml               
+ 1710  rcis autonomyLab.xml               
+ 1714  rcis autonomyLab.xml               
+ 1718  rcis autonomyLab.xml               
+ 1722  rcis autonomyLab.xml               
+ 1726  rcis autonomyLab.xml               
+ 1730  rcis autonomyLab.xml               
+ 1732  rcis autonomyLab.xml               
+ 1736  rcis autonomyLab.xml               
+ 1739  rcis autonomyLab.xml               
+ 1743  rcis autonomyLab.xml               
+ 1747  rcis autonomyLab.xml               
+ 1751  rcis autonomyLab.xml               
+ 1755  rcis autonomyLab.xml               
+ 1759  rcis autonomyLab.xml               
+ 1763  rcis autonomyLab.xml               
+ 1767  rcis autonomyLab.xml               
+ 1771  rcis autonomyLab.xml               
+ 1775  rcis autonomyLab.xml               
+ 1779  rcis autonomyLab.xml               
+ 1783  rcis autonomyLab.xml               
+ 1787  rcis autonomyLab.xml               
+ 1791  rcis autonomyLab.xml               
+ 1795  rcis autonomyLab.xml               
+ 1799  rcis autonomyLab.xml               
+ 1803  rcis autonomyLab.xml               
+ 1807  rcis autonomyLab.xml               
+ 1811  rcis autonomyLab.xml               
+ 1815  rcis autonomyLab.xml               
+ 1819  rcis autonomyLab.xml               
+ 1823  rcis autonomyLab.xml               
+ 1827  rcis autonomyLab.xml               
+ 1831  rcis autonomyLab.xml               
+ 1835  rcis autonomyLab.xml               
+ 1839  rcis autonomyLab.xml               
+ 1843  rcis autonomyLab.xml               
+ 1847  rcis autonomyLab.xml               
+ 1851  rcis autonomyLab.xml               
+ 1855  rcis autonomyLab.xml               
+ 1859  rcis autonomyLab.xml               
+ 1863  rcis autonomyLab.xml               
+ 1867  rcis autonomyLab.xml               
+ 1871  rcis autonomyLab.xml               
+ 1875  rcis autonomyLab.xml               
+ 1879  rcis autonomyLab.xml               
+ 1880  rcis autonomyLab.xml
+ 1882  rcis autonomyLab.xml
+ 1889  rcremoteserver 
+ 1895  rcis autonomyLab.xml
+ 1897  rcis autonomyLab.xml
+ 1904  cd robocomp/tools/rcmonitor
+ 1905  ./rcmonitor.py examples/jointMotorSimple.rcm -p 20068
+ 2010  history | grep rc
+ 2011  history | grep rc > history_robolabCristina.txt
