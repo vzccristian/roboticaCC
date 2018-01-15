@@ -87,8 +87,6 @@ class SpecificWorker(GenericWorker):
 					traceback.print_exc()
 					print e
 					sys.exit()
-		if (self.state.find(self.listState[0]) > -1):
-			self.currentBox = None
 
 	def detectRelease(self):
 		for car in range(1, 6):
@@ -96,9 +94,13 @@ class SpecificWorker(GenericWorker):
 			print "Compruebo caja:",self.currentBox
 			try:
 				if self.innermodelmanager_proxy.collide(boxname, "ddG"):
-					self.initial_pose = None
-					if (self.innermodelmanager_proxy.getPoseFromParent(self.currentBox,self.initial_pose)):
-						print self.initial_pose
+					self.initial_pose = {}
+
+
+					#TODO
+					self.innermodelmanager_proxy.getPose("world",self.currentBox,self.initial_pose)
+					print (self.initial_pose)
+
 					self.innermodelmanager_proxy.moveNode(self.currentBox, "world")  # IF MOVING TO A MESH PETA
 					pose = Pose3D()
 					pose.x=0
@@ -108,13 +110,15 @@ class SpecificWorker(GenericWorker):
 					pose.ry=0
 					pose.rz=0
 					self.innermodelmanager_proxy.setPoseFromParent(self.currentBox, pose)
-					print "SETPOSE FUNCIONA SOCIO"
 					time.sleep(5)
 					self.state = self.listState[0]
 			except Ice.Exception, e:
 				traceback.print_exc()
 				print e
 				sys.exit()
+
+		if (self.state.find(self.listState[0]) > -1):
+			self.currentBox = None
 
 # The API of python-innermodel is not exactly the same as the C++ version
 # self.innermodel.updateTransformValues("head_rot_tilt_pose", 0, 0, 0, 1.3, 0, 0)
