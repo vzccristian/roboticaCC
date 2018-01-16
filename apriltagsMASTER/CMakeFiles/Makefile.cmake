@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/crivac/robocomp/cmake/modules/opencv2.cmake"
+  "/home/crivac/robocomp/cmake/modules/opencv3.cmake"
   "/home/crivac/robocomp/cmake/robocomp.cmake"
   "CMakeFiles/3.5.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
@@ -15,10 +15,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeLists.txt"
   "src/CMakeLists.txt"
   "src/CMakeListsSpecific.txt"
+  "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
+  "/usr/local/share/OpenCV/OpenCVConfig.cmake"
+  "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
+  "/usr/local/share/OpenCV/OpenCVModules.cmake"
   "/usr/share/OpenCV/OpenCVConfig-version.cmake"
-  "/usr/share/OpenCV/OpenCVConfig.cmake"
-  "/usr/share/OpenCV/OpenCVModules-release.cmake"
-  "/usr/share/OpenCV/OpenCVModules.cmake"
   "/usr/share/cmake-3.5/Modules/AutogenInfo.cmake.in"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCXXInformation.cmake"

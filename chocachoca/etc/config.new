@@ -10,11 +10,11 @@ RCISMousePickerTopic.Endpoints=tcp -p 0
 
 
 # Proxies for required interfaces
-InnerModelManagerProxy = innermodelmanager:tcp -h localhost -p 0
-LaserProxy = laser:tcp -h localhost -p 0
-DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 0
-JointMotorProxy = jointmotor:tcp -h localhost -p 0
 GetAprilTagsProxy = getapriltags:tcp -h localhost -p 0
+JointMotorProxy = jointmotor:tcp -h localhost -p 0
+InnerModelManagerProxy = innermodelmanager:tcp -h localhost -p 0
+DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 0
+LaserProxy = laser:tcp -h localhost -p 0
 
 
 # This property is used by the clients to connect to IceStorm.

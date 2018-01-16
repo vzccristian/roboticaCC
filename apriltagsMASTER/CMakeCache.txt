@@ -153,7 +153,7 @@ OpenCV_3RDPARTY_LIB_DIR_OPT:PATH=
 OpenCV_CONFIG_PATH:FILEPATH=/usr/share/OpenCV
 
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/usr/share/OpenCV
+OpenCV_DIR:PATH=/usr/local/share/OpenCV
 
 //Path where debug OpenCV libraries are located
 OpenCV_LIB_DIR_DBG:PATH=
@@ -222,19 +222,19 @@ QT_MOC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/moc
 QT_PHONONWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_PHONONWIDGETS_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=QT_PHONONWIDGETS_PLUGIN_RELEASE-NOTFOUND
+QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libphononwidgets.so
 
 //Path to a file.
-QT_PHONON_INCLUDE_DIR:PATH=QT_PHONON_INCLUDE_DIR-NOTFOUND
+QT_PHONON_INCLUDE_DIR:PATH=/usr/include/qt4/phonon
 
 //The Qt PHONON library
-QT_PHONON_LIBRARY:STRING=
+QT_PHONON_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libphonon.so
 
 //Path to a library.
 QT_PHONON_LIBRARY_DEBUG:FILEPATH=QT_PHONON_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_PHONON_LIBRARY_RELEASE:FILEPATH=QT_PHONON_LIBRARY_RELEASE-NOTFOUND
+QT_PHONON_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libphonon.so
 
 //The location of the Qt plugins
 QT_PLUGINS_DIR:PATH=/usr/lib/x86_64-linux-gnu/qt4/plugins

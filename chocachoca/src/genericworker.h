@@ -74,11 +74,11 @@ public:
 	QMutex *mutex;
 	
 
-	DifferentialRobotPrx differentialrobot_proxy;
 	GetAprilTagsPrx getapriltags_proxy;
-	JointMotorPrx jointmotor_proxy;
 	InnerModelManagerPrx innermodelmanager_proxy;
 	LaserPrx laser_proxy;
+	DifferentialRobotPrx differentialrobot_proxy;
+	JointMotorPrx jointmotor_proxy;
 
 	virtual void pickingBox() = 0;
 	virtual string getState() = 0;
@@ -93,8 +93,10 @@ protected:
 	QTimer timer;
 	int Period;
 
+
 public slots:
 	virtual void compute() = 0;
+
 
 signals:
 	void kill();

@@ -59,63 +59,63 @@ include src/CMakeFiles/AprilTagsComp.dir/flags.make
 
 src/CommonBehavior.cpp: /opt/robocomp/interfaces/CommonBehavior.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonBehavior.h
 
 src/GetAprilTags.cpp: /opt/robocomp/interfaces/GetAprilTags.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
 
 src/GetAprilTags.h: src/GetAprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GetAprilTags.h
 
 src/AprilTags.cpp: /opt/robocomp/interfaces/AprilTags.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating AprilTags.cpp and AprilTags.h from AprilTags.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/AprilTags.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/AprilTags.ice --output-dir .
 
 src/AprilTags.h: src/AprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/AprilTags.h
 
 src/RGBD.cpp: /opt/robocomp/interfaces/RGBD.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating RGBD.cpp and RGBD.h from RGBD.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBD.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBD.ice --output-dir .
 
 src/RGBD.h: src/RGBD.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/RGBD.h
 
 src/JointMotor.cpp: /opt/robocomp/interfaces/JointMotor.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating JointMotor.cpp and JointMotor.h from JointMotor.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
 
 src/JointMotor.h: src/JointMotor.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/JointMotor.h
 
 src/DifferentialRobot.cpp: /opt/robocomp/interfaces/DifferentialRobot.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/DifferentialRobot.h
 
 src/RGBDBus.cpp: /opt/robocomp/interfaces/RGBDBus.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating RGBDBus.cpp and RGBDBus.h from RGBDBus.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBDBus.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RGBDBus.ice --output-dir .
 
 src/RGBDBus.h: src/RGBDBus.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/RGBDBus.h
 
 src/Camera.cpp: /opt/robocomp/interfaces/Camera.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Camera.cpp and Camera.h from Camera.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Camera.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Camera.ice --output-dir .
 
 src/Camera.h: src/Camera.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Camera.h
 
 src/CommonHead.cpp: /opt/robocomp/interfaces/CommonHead.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating CommonHead.cpp and CommonHead.h from CommonHead.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonHead.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonHead.ice --output-dir .
 
 src/CommonHead.h: src/CommonHead.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonHead.h
@@ -989,28 +989,26 @@ bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtOpenGL.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtCore.so
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_ts.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.9
+bin/AprilTagsComp: /usr/local/lib/libopencv_videostab.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_superres.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_stitching.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_shape.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_photo.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_objdetect.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_calib3d.so.3.1.0
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtOpenGL.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libQtCore.so
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.9
-bin/AprilTagsComp: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.9
+bin/AprilTagsComp: /usr/local/lib/libopencv_features2d.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_ml.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_highgui.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_videoio.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_imgcodecs.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_flann.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_video.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_imgproc.so.3.1.0
+bin/AprilTagsComp: /usr/local/lib/libopencv_core.so.3.1.0
 bin/AprilTagsComp: src/CMakeFiles/AprilTagsComp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable ../bin/AprilTagsComp"
 	cd /home/crivac/robocomp/components/roboticaCC/apriltagsMASTER/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AprilTagsComp.dir/link.txt --verbose=$(VERBOSE)

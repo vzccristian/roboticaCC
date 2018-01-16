@@ -44,7 +44,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
         x=-1;
     for (auto &x:coorsBox)
         x=-2;
-    
+
     begin_time = clock();
     timer.start(Period);
     return true;
@@ -59,9 +59,9 @@ void SpecificWorker::compute() {
     } catch(const Ice::Exception &e) {
       std::cout << e <<endl;
     }
-    
+
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
-            
+
     //MAQUINA DE ESTADOS
     switch (estado) {
     case SEARCH:
@@ -132,10 +132,8 @@ void SpecificWorker::wait() {
             }
             break;
         case 3: //Arrive to dump
-            if ((abs(bState.x - (coorsDump.first)) <= MAXDIST*1.5) && (abs(bState.z - (coorsDump.second)) <= MAXDIST*1.5)) { //ENCONTRADO
-                chocachoca_proxy->stop();
+            if (chocachoca_proxy->getState().compare("IDLE")==0) //ENCONTRADO
                 estado=SENDRELEASEBOX;
-            } 
             break;
         case 4: //Releasing box
             if (chocachoca_proxy->getState().compare("IDLE")==0) {  //ENCONTRADO
@@ -154,14 +152,14 @@ void SpecificWorker::wait() {
 
 
 void SpecificWorker::sendPickBox() {
-    qDebug() << "pickBox supervisor";
+    qDebug() << "supervisor MANDA pickBox";
     chocachoca_proxy->pickingBox();
     waitingFor=2;
     estado=WAIT;
 }
 
 void SpecificWorker::sendReleaseBox() {
-    qDebug() << "releaseBox supervisor";
+    qDebug() << "supervisor MANDA releaseBox";
     chocachoca_proxy->releasingBox();
     waitingFor=4;
     estado=WAIT;
@@ -211,27 +209,27 @@ void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
         }
     }
 
-    
+
 }
 
 void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) {
     int i;
     float dist=MAXSEARCHBOX, currentDist=0.0;
     QVec targetCoors,Trobot;
-    
+
     for (i=0; i<(signed)tags.size(); i++) {
          if (tags[i].id > 9 && !boxIsMoved(tags[i].id) && (coorsBox[0]<0 || coorsBox[0]==tags[i].id) ) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"robot");
-            Trobot = innermodel->transform("robot",QVec::vec3(targetCoors.x(),0,targetCoors.z()),"world");    
-            currentDist = Trobot.norm2();     
+            Trobot = innermodel->transform("robot",QVec::vec3(targetCoors.x(),0,targetCoors.z()),"world");
+            currentDist = Trobot.norm2();
             if (currentDist < dist) { //MEJOR
                 dist=currentDist;
-                coorsBox[0]=tags[i].id; 
+                coorsBox[0]=tags[i].id;
                 coorsBox[1]=targetCoors.x();
                 coorsBox[2]=targetCoors.z();
 //                 qDebug() << "UPDATE -> BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2]<< ". distancia"<<currentDist;
             }
-           
+
          }
     }
     if (dist!=MAXSEARCHBOX && waitingFor < 2)
@@ -246,5 +244,5 @@ bool SpecificWorker::boxIsMoved(int id) {
         }
     }
     return false;
-    
+
 }

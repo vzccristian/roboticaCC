@@ -59,56 +59,56 @@ include src/CMakeFiles/chocachoca.dir/flags.make
 
 src/CommonBehavior.cpp: /opt/robocomp/interfaces/CommonBehavior.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonBehavior.h
 
 src/Laser.cpp: /opt/robocomp/interfaces/Laser.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Laser.cpp and Laser.h from Laser.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Laser.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Laser.ice --output-dir .
 
 src/Laser.h: src/Laser.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Laser.h
 
 src/DifferentialRobot.cpp: /opt/robocomp/interfaces/DifferentialRobot.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/DifferentialRobot.h
 
 src/RCISMousePicker.cpp: /opt/robocomp/interfaces/RCISMousePicker.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating RCISMousePicker.cpp and RCISMousePicker.h from RCISMousePicker.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RCISMousePicker.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RCISMousePicker.ice --output-dir .
 
 src/RCISMousePicker.h: src/RCISMousePicker.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/RCISMousePicker.h
 
 src/Chocachoca.cpp: /opt/robocomp/interfaces/Chocachoca.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Chocachoca.cpp and Chocachoca.h from Chocachoca.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Chocachoca.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Chocachoca.ice --output-dir .
 
 src/Chocachoca.h: src/Chocachoca.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Chocachoca.h
 
 src/JointMotor.cpp: /opt/robocomp/interfaces/JointMotor.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating JointMotor.cpp and JointMotor.h from JointMotor.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
 
 src/JointMotor.h: src/JointMotor.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/JointMotor.h
 
 src/GetAprilTags.cpp: /opt/robocomp/interfaces/GetAprilTags.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
 
 src/GetAprilTags.h: src/GetAprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GetAprilTags.h
 
 src/InnerModelManager.cpp: /opt/robocomp/interfaces/InnerModelManager.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/crivac/robocomp/components/roboticaCC/chocachoca/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating InnerModelManager.cpp and InnerModelManager.h from InnerModelManager.ice"
-	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/InnerModelManager.ice --output-dir .
+	cd /home/crivac/robocomp/components/roboticaCC/chocachoca/src && slice2cpp -I/home/crivac/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/InnerModelManager.ice --output-dir .
 
 src/InnerModelManager.h: src/InnerModelManager.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/InnerModelManager.h

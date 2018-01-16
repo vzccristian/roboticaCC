@@ -16,8 +16,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with RoboComp.  If not, see <http://www.gnu.org/licenses/>.
 #
-
-
+# 	Authors:
+# 		Cristian Vazquez Cordero
+# 		Cristina Mendoza Gutierrez
 #
 
 import sys
@@ -34,7 +35,6 @@ from genericworker import *
 # import librobocomp_osgviewer
 # import librobocomp_innermodel
 
-
 class SpecificWorker(GenericWorker):
 	def __init__(self, proxy_map):
 		super(SpecificWorker, self).__init__(proxy_map)
@@ -43,11 +43,6 @@ class SpecificWorker(GenericWorker):
 		self.timer.start(self.Period)
 
 	def setParams(self, params):
-		# try:
-		#	self.innermodel = InnerModel(params["InnerModelPath"])
-		# except:
-		#	traceback.print_exc()
-		#	print "Error reading config params"
 		self.listState = ["PICK", "RELEASE"]
 		self.state = self.listState[0]
 		self.listaBoxes = ["C10", "C11", "C12"]
@@ -56,7 +51,6 @@ class SpecificWorker(GenericWorker):
 
 	@QtCore.Slot()
 	def compute(self):
-		print "State:",self.state
 		# State machine
 		if (self.state.find(self.listState[0]) > -1):
 			self.detectPick()
@@ -65,11 +59,13 @@ class SpecificWorker(GenericWorker):
 		return True
 
 	def detectPick(self):
+		print "PICK"
 		for box in self.listaBoxes:
 			for car in range(1, 6):
 				boxname = box + "_" + str(car)
 				try:
 					if self.innermodelmanager_proxy.collide("finger_right_2_mesh3", boxname):
+						print "Muevo cosas "
 						self.innermodelmanager_proxy.moveNode(box, "cameraHand")  # IF MOVING TO A MESH PETA
 						pose = Pose3D()
 						pose.x=0
@@ -79,8 +75,6 @@ class SpecificWorker(GenericWorker):
 						pose.ry=0
 						pose.rz=0
 						self.innermodelmanager_proxy.setPoseFromParent(box, pose)
-						print "Detecting collision finger_right_2_mesh3 with ",boxname, "and sending to -> cameraHand"
-						time.sleep(5)
 						self.state = self.listState[1]
 						self.currentBox = box
 				except Ice.Exception, e:
@@ -88,29 +82,23 @@ class SpecificWorker(GenericWorker):
 					print e
 					sys.exit()
 
+		if (self.state.find(self.listState[1]) > -1):
+			time.sleep(5)
+
 	def detectRelease(self):
+		print "RELEASE"
 		for car in range(1, 6):
 			boxname = self.currentBox + "_" + str(car)
-			print "Compruebo caja:",self.currentBox
 			try:
 				if self.innermodelmanager_proxy.collide(boxname, "ddG"):
-					self.initial_pose = {}
-
-
-					#TODO
-					self.innermodelmanager_proxy.getPose("world",self.currentBox,self.initial_pose)
-					print (self.initial_pose)
-
+					print "Muevo cosas"
+					pose = {}
+					accept,pose=self.innermodelmanager_proxy.getPose("world",self.currentBox,pose)
 					self.innermodelmanager_proxy.moveNode(self.currentBox, "world")  # IF MOVING TO A MESH PETA
-					pose = Pose3D()
-					pose.x=0
 					pose.y=5
-					pose.z=0
 					pose.rx=0
-					pose.ry=0
 					pose.rz=0
 					self.innermodelmanager_proxy.setPoseFromParent(self.currentBox, pose)
-					time.sleep(5)
 					self.state = self.listState[0]
 			except Ice.Exception, e:
 				traceback.print_exc()
@@ -119,10 +107,4 @@ class SpecificWorker(GenericWorker):
 
 		if (self.state.find(self.listState[0]) > -1):
 			self.currentBox = None
-
-# The API of python-innermodel is not exactly the same as the C++ version
-# self.innermodel.updateTransformValues("head_rot_tilt_pose", 0, 0, 0, 1.3, 0, 0)
-# z = librobocomp_qmat.QVec(3,0)
-# r = self.innermodel.transform("rgbd", z, "laser")
-# r.printvector("d")
-# print r[0], r[1], r[2]
+			time.sleep(5)

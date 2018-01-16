@@ -67,7 +67,7 @@ void SpecificWorker::compute() {
         } catch(const Ice::Exception &e) {
                 std::cout << e <<endl;
         }
-
+        qDebug() << QString::fromStdString(getState());
         //MAQUINA DE ESTADOS
         switch (estado) {
         case IDLE:
@@ -108,15 +108,12 @@ void SpecificWorker::compute() {
 
 // IDLE - Main method
 void SpecificWorker::idle() {
-        qDebug() << "IDLE";
         if(!target.isEmpty())
-                estado=GOTO;
+            estado = GOTO;
 }
 
 // GOTO - Main method
 float SpecificWorker::gotoTarget(TBaseState bState, TLaserData laserData) {
-        qDebug() << "GOTO";
-
         float dist,linealSpeed;
         std::sort( laserData.begin()+12, laserData.end()-12, [] (RoboCompLaser::TData a, RoboCompLaser::TData b) {
                 return a.dist < b.dist;
@@ -178,7 +175,6 @@ void SpecificWorker::handWatchingBox() {
 // TURN - Main method
 
 void SpecificWorker::turn(float linealSpeed, TLaserData laserData) {
-        qDebug() << "TURN";
         std::sort( laserData.begin()+10, laserData.end()-10, [] (RoboCompLaser::TData a, RoboCompLaser::TData b) {
                 return a.dist < b.dist;
         });
@@ -200,7 +196,6 @@ void SpecificWorker::turn(float linealSpeed, TLaserData laserData) {
 // SKIRT - Main method
 
 void SpecificWorker::skirt(TBaseState bState, TLaserData &laserData) {
-        qDebug() << "SKIRT";
         TLaserData laserDataUnLado = laserData;
         float dist=0.0;
 
@@ -339,6 +334,7 @@ void SpecificWorker::pickingBox() {
                 prepareToMove();
                 estado=IDLE;
                 handCamera=false;
+                picked=false;
         }
 
         if (nearToBox) {
@@ -450,35 +446,13 @@ bool SpecificWorker::prepareToMove() {
         jointmotor_proxy->setPosition(finger_right_1);
         jointmotor_proxy->setPosition(finger_right_2);
 
-
-
-/*
-    string caja = "C"+std::to_string(targetBox.id);
-    for (int i=1; i<7; i++) {
-        try {
-            if(innermodelmanager_proxy->collide(string("finger_right_2_mesh4"),caja+"_"+std::to_string(i)))
-                qDebug() << "Collide" << i;
-            else
-                qDebug() << "NO Collide" << i;
-        }catch(const Ice::Exception &e){
-            std::cout << e << std::endl;
-        }
-    }*/
-
-
         //LEVANTAR BRAZO
         sleep(1); //Esperar a cerrar dedos
-        qDebug() << innermodel->getParentIdentifier("C10");
-        qDebug() << innermodel->getParentIdentifier("C11");
-        qDebug() << innermodel->getParentIdentifier("C12");
         //ACTUALIZAR INNERMODEL PARA DECIR QUE LA CAJA ESTÁ EN LA MANO
         InnerModelNode *box = innermodel->getNode("C"+QString::number(targetBox.id));
         InnerModelNode *dst = innermodel->getNode("cameraHand");
         innermodel->moveSubTree(box,dst);
         innermodel->update();
-        qDebug() << innermodel->getParentIdentifier("C10");
-        qDebug() << innermodel->getParentIdentifier("C11");
-        qDebug() << innermodel->getParentIdentifier("C12");
         setDefaultArmPosition(false);
         sleep(1);
 }
@@ -538,19 +512,15 @@ void SpecificWorker::setDefaultArmPosition(bool init) {
 // RELEASE - Main method
 void SpecificWorker::releasingBox()
 {
-        qDebug() << "RELEASING BOX";
-        estado=RELEASE;
-        //TRANSFORM DE LA CAJA AL SUELO
+        //TRANSFORM DE LA CAJA AL SUELO ??? //TODO
         setArmReleasingPosition();
-        handCamera=true;
-
+        estado = END;
 }
 
 // RELEASE - Auxiliary method
 
 
 void SpecificWorker::setArmReleasingPosition() {
-        qDebug() << "----------_>releasing";
         RoboCompJointMotor::MotorGoalPosition wrist_right_1, wrist_right_2, elbow_right,shoulder_right_1, shoulder_right_2, shoulder_right_3, finger_right_1, finger_right_2;
 
         wrist_right_1.name = "wrist_right_1";
@@ -598,24 +568,18 @@ void SpecificWorker::setArmReleasingPosition() {
         jointmotor_proxy->setPosition(finger_right_2);
 
         //ACTUALIZAR INNERMODEL PARA DECIR QUE LA CAJA ESTÁ EN EL SUELO
-        qDebug() << innermodel->getParentIdentifier("C10");
-        qDebug() << innermodel->getParentIdentifier("C11");
-        qDebug() << innermodel->getParentIdentifier("C12");
         InnerModelNode *box = innermodel->getNode("C"+QString::number(targetBox.id));
         InnerModelNode *dst = innermodel->getNode("world");
         innermodel->moveSubTree(box,dst);
         innermodel->update();
-        qDebug() << innermodel->getParentIdentifier("C10");
-        qDebug() << innermodel->getParentIdentifier("C11");
-        qDebug() << innermodel->getParentIdentifier("C12");
+        sleep(1);
         setDefaultArmPosition(false);
         sleep(2);
-        estado = IDLE;
+        handCamera=true;
 }
 
 // END - Main method
 void SpecificWorker::end() {
-        qDebug() << "END";
         target.setEmpty();
         estado=IDLE;
         differentialrobot_proxy->setSpeedBase(0, 0); //Parar
@@ -717,7 +681,7 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
         int i;
         if (handCamera) {
-                if (estado != PICK) { //NO OBJETIVO SELECCIONADO
+                if (estado == GOTO) { //NO OBJETIVO SELECCIONADO
                         for (i=0; i<(signed)tags.size(); i++) {
                                 if (tags[i].id > 9) {
                                         differentialrobot_proxy->setSpeedBase(0, 0);
