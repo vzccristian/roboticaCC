@@ -85,9 +85,6 @@ void SpecificWorker::compute() {
         case PICK:
                 pickingBox();
                 break;
-        case RELEASE:
-                releasingBox();
-                break;
         case HAND_WATCHING_BOX:
                 handWatchingBox();
                 break;
@@ -636,8 +633,6 @@ string SpecificWorker::getState() {
                 return "SKIRT";
         case PICK:
                 return "PICK";
-        case RELEASE:
-                return "RELEASE";
         case END:
                 return "END";
         default:

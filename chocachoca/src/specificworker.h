@@ -41,7 +41,7 @@
 #define PI 3.14159265358979323846
 
 using namespace std;
-enum state { IDLE, GOTO, HAND_WATCHING_BOX, TURN, SKIRT, END, PICK, RELEASE};
+enum state { IDLE, GOTO, HAND_WATCHING_BOX, TURN, SKIRT, END, PICK};
 class SpecificWorker : public GenericWorker
 {
     Q_OBJECT
@@ -49,24 +49,24 @@ class SpecificWorker : public GenericWorker
         SpecificWorker(MapPrx& mprx);
         ~SpecificWorker();
         bool setParams(RoboCompCommonBehavior::ParameterList params);
-    
+
         //STATE MACHINE
         void idle();
         void end();
         float gotoTarget(TBaseState bState, TLaserData laserData);
         void handWatchingBox();
         void skirt(TBaseState bState, TLaserData &laserData);
-        void turn(float linealSpeed,TLaserData laserData);   
+        void turn(float linealSpeed,TLaserData laserData);
         void arm();
-        
+
         //AUXILIARY METHODS
         float gauss(float Vrot, float Vx, float h);
         float sinusoide(float x);
-        
+
         bool onTarget(float dist);
         bool isOnLine(TBaseState bState);
         bool reachableTarget(TBaseState bState, float dist, TLaserData &laserData);
-        
+
         void fixPosition();
         void fixRotation();
         void adjustMotors();
@@ -74,8 +74,8 @@ class SpecificWorker : public GenericWorker
         bool prepareToMove();
         void setDefaultArmPosition(bool init);
         void setArmReleasingPosition();
-        
-        
+
+
         //OWN INTERFACE CALLS
         void go(const float x, const float z);
         void turn(const float speed);
@@ -84,7 +84,7 @@ class SpecificWorker : public GenericWorker
         void setPick(const Pick &myPick);
         void releasingBox();
         void pickingBox();
-        
+
         //OTHER INTERFACE CALLS
         void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);
 
@@ -96,10 +96,10 @@ class SpecificWorker : public GenericWorker
         InnerModel *innermodel;
 
         state estado;
-        
+
         float const VLIN_MAX = 400;
         float const VROT_MAX = 0.6;
-        
+
         bool side; //true = right, false = left.
         bool preState = true;
         bool pick=false; /* Flag for differences between pick and searchTags */
@@ -109,15 +109,15 @@ class SpecificWorker : public GenericWorker
         QStringList joints;
         QVec motores;
         QVec error;
-        
+
         RoboCompGetAprilTags::marca targetBox;
-        
+
         bool picked;
         bool handCamera; /* True = handCamera ON, False = handCamera OFF */
         bool nearToBox;
-        
+
         void updateJoints();
-        
+
         struct Target {
             QMutex mutex; //Para hacer las operaciones sobre el target atómicas
             float xt, zt, xr, zr;
@@ -183,9 +183,8 @@ class SpecificWorker : public GenericWorker
                 return coorsRobot;
             };
 
-        }; 
+        };
         Target target;
 };
 
 #endif
-
