@@ -153,7 +153,7 @@ OpenCV_3RDPARTY_LIB_DIR_OPT:PATH=
 OpenCV_CONFIG_PATH:FILEPATH=/usr/share/OpenCV
 
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/usr/local/share/OpenCV
+OpenCV_DIR:PATH=OpenCV_DIR-NOTFOUND
 
 //Path where debug OpenCV libraries are located
 OpenCV_LIB_DIR_DBG:PATH=
@@ -222,19 +222,19 @@ QT_MOC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/moc
 QT_PHONONWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_PHONONWIDGETS_PLUGIN_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libphononwidgets.so
+QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=QT_PHONONWIDGETS_PLUGIN_RELEASE-NOTFOUND
 
 //Path to a file.
-QT_PHONON_INCLUDE_DIR:PATH=/usr/include/qt4/phonon
+QT_PHONON_INCLUDE_DIR:PATH=QT_PHONON_INCLUDE_DIR-NOTFOUND
 
 //The Qt PHONON library
-QT_PHONON_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libphonon.so
+QT_PHONON_LIBRARY:STRING=
 
 //Path to a library.
 QT_PHONON_LIBRARY_DEBUG:FILEPATH=QT_PHONON_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-QT_PHONON_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libphonon.so
+QT_PHONON_LIBRARY_RELEASE:FILEPATH=QT_PHONON_LIBRARY_RELEASE-NOTFOUND
 
 //The location of the Qt plugins
 QT_PLUGINS_DIR:PATH=/usr/lib/x86_64-linux-gnu/qt4/plugins
@@ -320,8 +320,8 @@ QT_QKRCODECS_PLUGIN_DEBUG:FILEPATH=QT_QKRCODECS_PLUGIN_DEBUG-NOTFOUND
 //Path to a library.
 QT_QKRCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqkrcodecs.so
 
-//The qmake executable for the Qt installation to use
-QT_QMAKE_EXECUTABLE:FILEPATH=/usr/bin/qmake
+//Where can the qmake-qt4 library be found
+QT_QMAKE_EXECUTABLE:FILEPATH=/usr/bin/qmake-qt4
 
 //Path to a library.
 QT_QMNG_PLUGIN_DEBUG:FILEPATH=QT_QMNG_PLUGIN_DEBUG-NOTFOUND
@@ -907,7 +907,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenMP
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[-fopenmp][-fopenmp][v()]
 //Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake][/usr/lib/x86_64-linux-gnu/qt4/bin/moc][/usr/lib/x86_64-linux-gnu/qt4/bin/rcc][/usr/lib/x86_64-linux-gnu/qt4/bin/uic][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libQtCore.so][v4.8.7()]
+FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake-qt4][/usr/lib/x86_64-linux-gnu/qt4/bin/moc][/usr/lib/x86_64-linux-gnu/qt4/bin/rcc][/usr/lib/x86_64-linux-gnu/qt4/bin/uic][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libQtCore.so][v4.8.7()]
 //ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_DBG
 OpenCV_3RDPARTY_LIB_DIR_DBG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OpenCV_3RDPARTY_LIB_DIR_OPT
@@ -1028,7 +1028,7 @@ QT_QJPEG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
 QT_QKRCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QKRCODECS_PLUGIN_RELEASE
 QT_QKRCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-QT_QMAKE_EXECUTABLE_LAST:INTERNAL=/usr/bin/qmake
+QT_QMAKE_EXECUTABLE_LAST:INTERNAL=/usr/bin/qmake-qt4
 //ADVANCED property for variable: QT_QMNG_PLUGIN_DEBUG
 QT_QMNG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_QMNG_PLUGIN_RELEASE

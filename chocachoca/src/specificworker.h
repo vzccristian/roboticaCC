@@ -41,7 +41,7 @@
 #define PI 3.14159265358979323846
 
 using namespace std;
-enum state { IDLE, GOTO, HAND_WATCHING_BOX, TURN, SKIRT, END, PICK};
+enum states { IDLE, GOTO, HAND_WATCHING_BOX, TURN, SKIRT, END, PICK };
 class SpecificWorker : public GenericWorker
 {
     Q_OBJECT
@@ -95,7 +95,7 @@ class SpecificWorker : public GenericWorker
   private:
         InnerModel *innermodel;
 
-        state estado;
+        states state;
 
         float const VLIN_MAX = 400;
         float const VROT_MAX = 0.6;
