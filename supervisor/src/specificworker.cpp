@@ -37,12 +37,9 @@ SpecificWorker::~SpecificWorker()
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
 
-    dump=-1;
-    coorsDump.first=0;
-    coorsDump.second=0;
-    preState = true;
-    pick = false;
-    thresholdValues=make_pair(270,470);
+    dump = -1;
+    coorsDump.first = coorsDump.second = 0;
+
     for (auto &x:movedBoxes)
         x=-1;
     for (auto &x:coorsBox)
@@ -60,57 +57,51 @@ void SpecificWorker::compute() {
     try{
       newAprilTag(getapriltags_proxy->checkMarcas());
     } catch(const Ice::Exception &e) {
-      std::cout << e <<endl;
+      qDebug() << "Can not connect to aprilTagsMASTER";
     }
 
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
 
-    //MAQUINA DE ESTADOS
+    //State machine
     switch (estado) {
-    case SEARCH:
-        search();
-        break;
-    case SENDGOTO:
-        sendGoto();
-        break;
-    case WAIT:
-        wait();
-        break;
-    case SENDPICKBOX:
-        sendPickBox();
-        break;
-    case SENDRELEASEBOX:
-        sendReleaseBox();
-        break;
-    default:
-        break;
+          case SEARCH:
+              search();
+              break;
+          case SENDGOTO:
+              sendGoto();
+              break;
+          case WAIT:
+              wait();
+              break;
+          case SENDPICKBOX:
+              sendPickBox();
+              break;
+          case SENDRELEASEBOX:
+              sendReleaseBox();
+              break;
+          default:
+              break;
     }
 }
 
 /* Search next tag */
 void SpecificWorker::search() {
-    qDebug() << "SEARCH ";
-    int x,z;
-    waitingFor=0;
+    int x,z,waitingFor=0;
     if (float(clock() - begin_time) /10000.0 > 10.0 ) {
         srand( time( NULL ) );  //  using the time seed from srand explanation
         x=rand()%1000-500;
         z=rand()%1000-500;
-        qDebug() << x<<z;
         chocachoca_proxy->go(x,z);
         begin_time=float(clock());
     } else {
-        if (chocachoca_proxy->getState().compare("IDLE")==0) {
+        if (chocachoca_proxy->getState().compare("IDLE")==0)
             chocachoca_proxy->turn(-0.9);
-        }
-
     }
 
 }
 
 /* Go to a specific target */
 void SpecificWorker::sendGoto() {
-    qDebug() << "SENDGOTO " << coorsBox[1] << coorsBox[2];
     chocachoca_proxy->go(coorsBox[1],coorsBox[2]);
     waitingFor=1;
     estado=WAIT;
@@ -119,28 +110,25 @@ void SpecificWorker::sendGoto() {
 
 /* Wait until robot arrive to target */
 void SpecificWorker::wait() {
-    qDebug() << "WAIT" << waitingFor;
     RoboCompDifferentialRobot::TBaseState bState;
     differentialrobot_proxy->getBaseState(bState);
     switch (waitingFor){
         case 1: //Arrive to box
-            if (chocachoca_proxy->getState().compare("HAND_WATCHING_BOX")==0)  //ENCONTRADO
+            if (chocachoca_proxy->getState().compare("HAND_WATCHING_BOX")==0)  // Box ready to be picked
                 estado=SENDPICKBOX;
             break;
         case 2: //Picking box
-            if (chocachoca_proxy->getState().compare("IDLE")==0) {  //ENCONTRADO
-                qDebug() << " ------------------- >>>>>>>>>>>>>>>>>>>>>>>chocachoca dice que ya ha cogido la caja";
+            if (chocachoca_proxy->getState().compare("IDLE")==0) {  // Box ready to be moved to the dumpster
                 chocachoca_proxy->go(coorsDump.first,coorsDump.second);
                 waitingFor=3;
             }
             break;
         case 3: //Arrive to dump
-            if (chocachoca_proxy->getState().compare("IDLE")==0) //ENCONTRADO
+            if (chocachoca_proxy->getState().compare("IDLE")==0) // Box ready to be released
                 estado=SENDRELEASEBOX;
             break;
         case 4: //Releasing box
-            if (chocachoca_proxy->getState().compare("IDLE")==0) {  //ENCONTRADO
-                qDebug() << " ------------------- >>>>>>>>>>>>>>>>>>>>>>>chocachoca dice que ya ha soltado la caja";
+            if (chocachoca_proxy->getState().compare("IDLE")==0) {  // Robot ready to keep searching
                 addToMovedBoxes(coorsBox[0]);
                 for (auto &x:coorsBox)
                     x=-2;
@@ -155,14 +143,12 @@ void SpecificWorker::wait() {
 
 
 void SpecificWorker::sendPickBox() {
-    qDebug() << "supervisor MANDA pickBox";
     chocachoca_proxy->pickingBox();
     waitingFor=2;
     estado=WAIT;
 }
 
 void SpecificWorker::sendReleaseBox() {
-    qDebug() << "supervisor MANDA releaseBox";
     chocachoca_proxy->releasingBox();
     waitingFor=4;
     estado=WAIT;
@@ -170,13 +156,11 @@ void SpecificWorker::sendReleaseBox() {
 
 
 void SpecificWorker::addToMovedBoxes(int id) {
-    qDebug() << "addToMovedBoxes";
     int i=0;
     bool added=false;
     while (i<MAXBOXES && !added) {
         if (movedBoxes[i] == -1) {
             movedBoxes[i] = id;
-            qDebug() << "Aniadido ID: "<<id<<" posicion "<<i;
             added=true;
         }
         i++;
@@ -184,6 +168,7 @@ void SpecificWorker::addToMovedBoxes(int id) {
 }
 
 /* aprilTagsMaster */
+
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) {
     if (dump == -1)
         searchDump(tags);
@@ -192,7 +177,7 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) 
 }
 
 void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
-    int umbral=700,i;
+    int threshold=700,i;
     QVec targetCoors;
     for (i=0; i<(signed)tags.size() && dump == -1 ; i++) {
         if (tags[i].id < 10) {
@@ -200,15 +185,15 @@ void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
             float x = targetCoors.x();
             float z = targetCoors.z();
             if (abs(x)>abs(z)) {
-                if (x>0) x=x-umbral;
-                else x=x+umbral;
+                if (x>0) x=x-threshold;
+                else x=x+threshold;
             }  else {
-                if (z>0) z=z-umbral;
-                else z=z+umbral;
+                if (z>0) z=z-threshold;
+                else z=z+threshold;
             }
-            coorsDump=make_pair(x,z); //Coordenadas
+            coorsDump=make_pair(x,z); 
             dump = tags[i].id;
-            qDebug() << "Dump:"<<dump << "Coors"<<x<<z;
+
         }
     }
 

@@ -44,8 +44,10 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
         engines = QVec::zeros(joints.size());
 
         //Flags
-        picked = nearToBox = false;
-        handCamera = true;
+        picked = nearToBox = pick = false;
+        handCamera = preState = true;
+
+        thresholdValues=make_pair(270,470);
         setDefaultArmPosition(true);
 
         timer.start(Period);
@@ -263,9 +265,9 @@ bool SpecificWorker::isOnLine(TBaseState bState) {
 bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &laserData) {
         QVec laserToWorld;
         QPolygonF polygon;
-        int visionThreshold = 1000, anchoPunto=100;
+        int visionThreshold = 1000, widthThreshold=100;
 
-        polygon << QPointF(bState.x, bState.z); //Punto inicio poligono.
+        polygon << QPointF(bState.x, bState.z); // Start point of the polygon
 
         int i=30; // Near
         if (dist > visionThreshold) // Far
@@ -278,12 +280,12 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
                 i++;
         }
 
-        pair <float,float> t =  target.getPoseTarget();//Coors target
+        pair <float,float> t =  target.getPoseTarget(); // Coors target
         if (  polygon.containsPoint( QPointF(t.first, t.second),Qt::WindingFill )
-              && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second+anchoPunto),Qt::WindingFill )
-              && polygon.containsPoint( QPointF(t.first+anchoPunto, t.second-anchoPunto),Qt::WindingFill )
-              && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second+anchoPunto),Qt::WindingFill )
-              && polygon.containsPoint( QPointF(t.first-anchoPunto, t.second-anchoPunto),Qt::WindingFill )
+              && polygon.containsPoint( QPointF(t.first+widthThreshold, t.second+widthThreshold),Qt::WindingFill )
+              && polygon.containsPoint( QPointF(t.first+widthThreshold, t.second-widthThreshold),Qt::WindingFill )
+              && polygon.containsPoint( QPointF(t.first-widthThreshold, t.second+widthThreshold),Qt::WindingFill )
+              && polygon.containsPoint( QPointF(t.first-widthThreshold, t.second-widthThreshold),Qt::WindingFill )
               ) {
                 state=GOTO;
                 return true;

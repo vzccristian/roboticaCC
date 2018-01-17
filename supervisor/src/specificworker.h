@@ -34,7 +34,7 @@
 #include <ctime>
 
 using namespace std;
-enum state { SEARCH, WAIT, SENDGOTO, SENDPICKBOX, SENDRELEASEBOX};
+enum states { SEARCH, WAIT, SENDGOTO, SENDPICKBOX, SENDRELEASEBOX};
 
 const int MAXBOXES=10;
 const int MAXDUMPS=4;
@@ -48,7 +48,7 @@ public:
     SpecificWorker(MapPrx& mprx);
     ~SpecificWorker();
     bool setParams(RoboCompCommonBehavior::ParameterList params);
-    
+
     void search();
     void sendGoto();
     void wait();
@@ -62,29 +62,26 @@ private:
     InnerModel *innermodel;
 
     std::mutex mtx;
-    
+
     clock_t begin_time;
-    
-    //STATE MACHINE
-    state estado=SEARCH;
-    
-    
-    //TAGS
+
+    states state;
+
+    //TAGS 
     void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);
     int dump;
     std::pair<int,int> coorsDump;
     void searchDump(const RoboCompGetAprilTags::listaMarcas &tags);
-    
+
     //BOX
     int movedBoxes[MAXBOXES];
     float coorsBox[3];
     void searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags);
     bool boxIsMoved(int id);
     void addToMovedBoxes(int id);
-    
+
     //FLAG
     int waitingFor; /* 1 - waiting for arrive to box. 2 - waiting for picking box. 3 - waiting for arrive to dump. 4 - waiting for releasing box. */
 };
 
 #endif
-
