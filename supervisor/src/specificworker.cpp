@@ -40,6 +40,9 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     dump=-1;
     coorsDump.first=0;
     coorsDump.second=0;
+    preState = true;
+    pick = false;
+    thresholdValues=make_pair(270,470);
     for (auto &x:movedBoxes)
         x=-1;
     for (auto &x:coorsBox)

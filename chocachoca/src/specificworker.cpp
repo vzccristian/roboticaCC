@@ -41,7 +41,7 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 
         // Motors
         joints << "shoulder_right_1"<<"shoulder_right_2"<<"shoulder_right_3"<<"elbow_right"<<"wrist_right_1"<<"wrist_right_2";
-        motores = QVec::zeros(joints.size());
+        engines = QVec::zeros(joints.size());
 
         //Flags
         picked = nearToBox = false;
@@ -370,7 +370,7 @@ void SpecificWorker::fixRotation() {
 
 void SpecificWorker::adjustMotors() {
         bool jacobianWorks=true;
-        QMat jacobian = innermodel->jacobian(joints, motores, "rgbdHand");
+        QMat jacobian = innermodel->jacobian(joints, engines, "rgbdHand");
         RoboCompJointMotor::MotorGoalVelocityList vl;
 
         try {
@@ -409,7 +409,7 @@ void SpecificWorker::stopMotors() {
 
 }
 
-bool SpecificWorker::prepareToMove() {
+void SpecificWorker::prepareToMove() {
         // Close fingers
         RoboCompJointMotor::MotorGoalPosition finger_right_1, finger_right_2;
 

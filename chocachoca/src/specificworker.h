@@ -50,7 +50,7 @@ class SpecificWorker : public GenericWorker
         ~SpecificWorker();
         bool setParams(RoboCompCommonBehavior::ParameterList params);
 
-        //STATE MACHINE
+        // STATE MACHINE
         void idle();
         void end();
         float gotoTarget(TBaseState bState, TLaserData laserData);
@@ -59,7 +59,7 @@ class SpecificWorker : public GenericWorker
         void turn(float linealSpeed,TLaserData laserData);
         void arm();
 
-        //AUXILIARY METHODS
+        // AUXILIARY METHODS
         float gauss(float Vrot, float Vx, float h);
         float sinusoide(float x);
 
@@ -71,12 +71,12 @@ class SpecificWorker : public GenericWorker
         void fixRotation();
         void adjustMotors();
         void stopMotors();
-        bool prepareToMove();
+        void prepareToMove();
         void setDefaultArmPosition(bool init);
         void setArmReleasingPosition();
 
 
-        //OWN INTERFACE CALLS
+        // OWN INTERFACE CALLS
         void go(const float x, const float z);
         void turn(const float speed);
         string getState();
@@ -85,7 +85,7 @@ class SpecificWorker : public GenericWorker
         void releasingBox();
         void pickingBox();
 
-        //OTHER INTERFACE CALLS
+        // OTHER INTERFACE CALLS
         void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);
 
 
@@ -95,31 +95,33 @@ class SpecificWorker : public GenericWorker
   private:
         InnerModel *innermodel;
 
-        states state;
-
         float const VLIN_MAX = 400;
         float const VROT_MAX = 0.6;
 
-        bool side; //true = right, false = left.
-        bool preState = true;
-        bool pick=false; /* Flag for differences between pick and searchTags */
-        pair <int, int> thresholdValues=make_pair(270,470); /* Min - max thresholdValues */
+        states state; /* Current state */
+
+        bool side; /* True = right, false = left. */
+        bool preState;
+        bool pick; /* Flag for differences between pick and searchTags */
+        pair <int, int> thresholdValues; /* Min - max thresholdValues */
 
         //ARM
         QStringList joints;
-        QVec motores;
+        QVec engines;
         QVec error;
-
-        RoboCompGetAprilTags::marca targetBox;
-
-        bool picked;
-        bool handCamera; /* True = handCamera ON, False = handCamera OFF */
-        bool nearToBox;
 
         void updateJoints();
 
-        struct Target {
-            QMutex mutex; //Para hacer las operaciones sobre el target atómicas
+        //HAND
+        RoboCompGetAprilTags::marca targetBox;
+
+        bool picked; /* True = box is in hand, False = box is not in hand */
+        bool handCamera; /* True = handCamera ON, False = handCamera OFF */
+        bool nearToBox; /* True = Too close to see the QR code */
+
+
+        struct Target { /* Target struct */
+            QMutex mutex;
             float xt, zt, xr, zr;
             bool empty;
 
@@ -140,7 +142,6 @@ class SpecificWorker : public GenericWorker
                 return true;
             };
 
-            //Extrae las coord x y z del target y del robot
             std::pair <std::pair <float,float>,std::pair <float,float>> extract() {
                 QMutexLocker ml(&mutex);
                 std::pair <std::pair <float,float>,std::pair <float,float>> coors;
@@ -155,19 +156,16 @@ class SpecificWorker : public GenericWorker
                 return coors;
             };
 
-            //Devuelve si el target esta vacio
             bool isEmpty() {
                 QMutexLocker ml(&mutex);
                 return empty;
             };
 
-            //Pone a vacio el target
             void setEmpty() {
                 QMutexLocker ml(&mutex);
                 empty = true;
             };
 
-            //Devuelve las coordenadas del target
             pair <float,float> getPoseTarget() {
                 std::pair <float,float> coorsTarget;
                 coorsTarget.first=xt;
@@ -175,7 +173,6 @@ class SpecificWorker : public GenericWorker
                 return coorsTarget;
             };
 
-            //Devuelve las coordenadas del target
             pair <float,float> getPoseRobot() {
                 std::pair <float,float> coorsRobot;
                 coorsRobot.first=xr;
