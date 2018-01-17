@@ -191,10 +191,11 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) 
 void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
     int umbral=700,i;
     QVec targetCoors;
-    for (i=0; i<(signed)tags.size(); i++) {
+    for (i=0; i<(signed)tags.size() && dump == -1 ; i++) {
         if (tags[i].id < 10) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
-            float x = targetCoors.x(); float z = targetCoors.z();
+            float x = targetCoors.x();
+            float z = targetCoors.z();
             if (abs(x)>abs(z)) {
                 if (x>0) x=x-umbral;
                 else x=x+umbral;
@@ -205,7 +206,6 @@ void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
             coorsDump=make_pair(x,z); //Coordenadas
             dump = tags[i].id;
             qDebug() << "Dump:"<<dump << "Coors"<<x<<z;
-            return;
         }
     }
 

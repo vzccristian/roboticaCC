@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rcmanager>
+
+ <generalInformation>
+  <editor path="kate" dock="false" />
+  <timeouts fixed="1000.0" blink="300.0" />
+  <clicks switch="2.0" interval="400.0" />
+  <graph alpha="80.0" active="true" scale="200.0" />
+  <graphTiming idletime="1000.0" focustime="500.0" fasttime="10.0" fastperiod="2000.0" />
+  <simulation hookes="0.07" springlength="0.5" friction="0.4" step="0.5" fieldforce="20000.0" />
+ </generalInformation>
+
+ <node alias="shellyPanel" endpoint="commonbehavior:tcp -p 3333">
+  <dependence alias="IS" />
+  <dependence alias="base" />
+  <dependence alias="comJoint" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost shellyPanel /home/robocomp/robocomp/components/objectDetection2/components/shellyPanel python src/shellyPanel.py --Ice.Config=/home/robocomp/robocomp/components/objectDetection2/panel.conf" />
+  <downCommand command="pkill -9 -f shellyPanel.py" />
+  <configFile path="xxx" />
+  <xpos value="90.587508174" />
+  <ypos value="72.127387132" />
+  <radius value="10.0" />
+  <color value="#AAAAAA" />
+ </node>
+
+ <node alias="rgbd" endpoint="rgbd:tcp -p 10097">
+  <dependence alias="comJoint" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost rgbd /home/robocomp/robocomp/components/robocomp-robolab/components/openni2PCL bin/openNI2pcl --Ice.Config=/home/robocomp/robocomp/components/objectDetection2/etc/primesense.conf" />
+  <downCommand command="killall -9 openNI2pcl" />
+  <configFile path="kate /home/robocomp/robocomp/components/objectDetection2/etc/primesense.conf" />
+  <xpos value="-190.82292604" />
+  <ypos value="69.1325448886" />
+  <radius value="10.0" />
+  <color value="#3333FF" />
+ </node>
+
+ <node alias="joystick" endpoint="joystick:tcp -p 15002">
+  <dependence alias="base" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost joystick /home/robocomp/robocomp/components/robocomp-robolab/components/joystickOmniComp bin/joystickOmniComp --Ice.Config=/home/robocomp/robocomp/components/objectDetection2/etc/joystick.conf" />
+  <downCommand command="killall -9 joystickOmniComp" />
+  <configFile path="kate /home/robocomp/robocomp/components/objectDetection2/etc/joystick.conf" />
+  <xpos value="188.162132269" />
+  <ypos value="172.102297075" />
+  <radius value="10.0" />
+  <color value="#3333FF" />
+ </node>
+
+ <node alias="mission" endpoint="commonbehavior:tcp -h localhost -p 11247">
+  <dependence alias="executive" />
+  <dependence alias="objectA" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost mission /home/robocomp/AGM/tools/agmmission ./bin/agmmission /home/robocomp/robocomp/components/objectDetection2/etc/mission.conf" />
+  <downCommand command="killall -9 agmmission" />
+  <configFile path="/home/robocomp/robocomp/components/objectDetection2/etc/mission.conf" />
+  <xpos value="-15.6334861512" />
+  <ypos value="-267.361373866" />
+  <radius value="10.0" />
+  <color value="#AAAAAA" />
+ </node>
+
+ <node alias="base" endpoint="omnirobot:tcp -h localhost -p 12238">
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost simulation /home/robocomp/robocomp/components/objectDetection2/etc rcis autonomyLab.xml" />
+  <downCommand command="killall -9 rcis" />
+  <configFile path="rcremote localhost configs /home/robocomp/robocomp/components/objectDetection2/etc kate autonomyLab.xml" />
+  <xpos value="99.4909968163" />
+  <ypos value="153.467848457" />
+  <radius value="10.0" />
+  <color value="#FF3333" />
+ </node>
+
+ <node alias="yolo" endpoint="yoloserver:tcp -h localhost -p 11000">
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost yolo /home/robocomp/robocomp/components/yoloserver ./bin/yoloserver ./etc/config" />
+  <downCommand command="killall -9 yoloserver" />
+  <configFile path="/home/robocomp/robocomp/components/yoloserver/etc/config" />
+  <xpos value="207.902173132" />
+  <ypos value="-235.359477331" />
+  <radius value="10.0" />
+  <color value="#FF3333" />
+ </node>
+
+ <node alias="comJoint" endpoint="jointmotor:tcp -h localhost -p 20000">
+  <dependence alias="faulhaber" />
+  <dependence alias="dynamixel" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost cj /home/robocomp/robocomp/components/robocomp-shelly/components/ursusCommonJoint ./bin/ursuscommonjointcomp --Ice.Config=/home/robocomp/robocomp/components/objectDetection2/etc/commonjoint.conf" />
+  <downCommand command="killall -9 ursuscommonjointcomp" />
+  <configFile path="/home/robocomp/robocomp/components/objectDetection2/etc/ursus.conf" />
+  <xpos value="-84.3745771497" />
+  <ypos value="78.0410272969" />
+  <radius value="10.0" />
+  <color value="#FF3333" />
+ </node>
+
+ <node alias="faulhaber" endpoint="jointmotor:tcp -p 10067">
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost simulation /home/robocomp/robocomp/components/objectDetection2/etc rcis autonomyLab.xml " />
+  <downCommand command="killall -9 rcis" />
+  <configFile path="rcremote localhost configs /home/robocomp/robocomp/components/objectDetection2/etc kate autonomyLab.xml" />
+  <xpos value="-41.6157536816" />
+  <ypos value="161.862280971" />
+  <radius value="10.0" />
+  <color value="#FF3333" />
+ </node>
+
+ <node alias="dynamixel" endpoint="jointmotor:tcp -p 20068">
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost dyxl /home/robocomp/robocomp/components/robocomp-robolab/components/dynamixelComp/ ./bin/dynamixelComp --Ice.Config=/home/robocomp/robocomp/components/objectDetection2/etc/dynamixel.conf" />
+  <downCommand command="rcremote localhost X / killall -9 dynamixelComp" />
+  <configFile path="kate /home/robocomp/robocomp/components/objectDetection2/etc/dynamixel.conf" />
+  <xpos value="-146.473497948" />
+  <ypos value="179.064718286" />
+  <radius value="10.0" />
+  <color value="#FF3333" />
+ </node>
+
+ <node alias="IS" endpoint="IceStorm/TopicManager:default -h localhost -p 9999">
+  <workingDir path="/home/robocomp/robocomp/components/objectDetection2/etc/" />
+  <upCommand command="rcremote localhost IS /home/robocomp/robocomp/components/objectDetection2/etc/ rcnode" />
+  <downCommand command="killall -9 icebox" />
+  <configFile path="/home/robocomp/robocomp/components/objectDetection2/etc/ursus.conf" />
+  <xpos value="-13.72855612" />
+  <ypos value="29.5836249408" />
+  <radius value="10.0" />
+  <color value="#FF3333" />
+ </node>
+
+ <node alias="objectA" endpoint="agmcommonbehavior:tcp -h localhost -p 10331">
+  <dependence alias="executive" />
+  <dependence alias="objectD" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost objAgnt /home/robocomp/robocomp/components/objectDetection2/components/objectagent ./bin/objectagent /home/robocomp/robocomp/components/objectDetection2/etc/objectAgent.conf" />
+  <downCommand command="killall -9 objectagent" />
+  <configFile path="/home/robocomp/robocomp/components/objectDetection2/etc/objectAgent.conf" />
+  <xpos value="-86.5061733939" />
+  <ypos value="-100.314294513" />
+  <radius value="13.0" />
+  <color value="#33FF33" />
+ </node>
+
+ <node alias="objectD" endpoint="commonbehavior:tcp -p 18332">
+  <dependence alias="IS" />
+  <dependence alias="rgbd" />
+  <dependence alias="comJoint" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost objectD /home/robocomp/robocomp/components/objectDetection2/components/objectDetection ./bin/objectDetectionComp /home/robocomp/robocomp/components/objectDetection2/etc/objectDetection.conf" />
+  <downCommand command="killall -9 objectDetectionComp" />
+  <configFile path="kate /home/robocomp/robocomp/components/objectDetection2/etc/objectDetection.conf" />
+  <xpos value="-134.362102732" />
+  <ypos value="-39.3740100567" />
+  <radius value="10.0" />
+  <color value="#33FF33" />
+ </node>
+
+ <node alias="executive" endpoint="agmexecutive:tcp -h localhost -p 10198">
+  <dependence alias="IS" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost AGMExecutive /home/robocomp/AGM/tools/AGMExecutive_robocomp python AGMExecutive_robocomp.py /home/robocomp/robocomp/components/objectDetection2/etc/executive.conf" />
+  <downCommand command="pkill -9 -f AGMExecutive_robocomp.py" />
+  <configFile path="xxx" />
+  <xpos value="-18.0947380229" />
+  <ypos value="-167.531602183" />
+  <radius value="10.0" />
+  <color value="#33FF33" />
+ </node>
+
+ <node alias="oracleA" endpoint="agmcommonbehavior:tcp -h localhost -p 10338">
+  <dependence alias="IS" />
+  <dependence alias="executive" />
+  <dependence alias="semanticSimilarity" />
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost objectOracle /home/robocomp/robocomp/components/prp/components/objectOracle ./bin/objectoracle /home/robocomp/robocomp/components/objectDetection2/etc/objectoracle.conf" />
+  <downCommand command="killall -9 objectoracle" />
+  <configFile path="kate /home/robocomp/robocomp/componentsnt.conf" />
+  <xpos value="54.3435305446" />
+  <ypos value="-102.775102017" />
+  <radius value="13.0" />
+  <color value="#33FF33" />
+ </node>
+
+ <node alias="semanticSimilarity" endpoint="semanticsimilarity:tcp -h localhost -p 10500">
+  <workingDir path="/home/robocomp/" />
+  <upCommand command="rcremote localhost semantic /home/robocomp/robocomp/components/prp/components/semanticSimilarity/src python semanticSimilarity.py /home/robocomp/robocomp/components/objectDetection2/etc/semanticSimilarity.conf" />
+  <downCommand command="pkill -9 -f semanticSimilarity" />
+  <configFile path="kate /home/robocomp/robocomp/components/objectDetection2/etc/semanticSimilarity.conf" />
+  <xpos value="91.125470303" />
+  <ypos value="-2.66586908269" />
+  <radius value="13.0" />
+  <color value="#33FF33" />
+ </node>
+
+</rcmanager>

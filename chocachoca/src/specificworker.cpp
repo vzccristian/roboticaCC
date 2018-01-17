@@ -326,6 +326,10 @@ void SpecificWorker::pickingBox() {
                         fixRotation();
                 }
 
+                //TODO
+                if (!nearToBox && targetBox.tz==0 && targetBox.ty == 0 && targetBox.tx == 0)  //No la veo
+                  setDefaultArmPosition(true);
+
                 //error.print("MOVIMIENTO DE LOS MOTORES");
                 adjustMotors();
         } else {
@@ -574,6 +578,8 @@ void SpecificWorker::setArmReleasingPosition() {
         innermodel->update();
         sleep(1);
         setDefaultArmPosition(false);
+        sleep(2);
+        differentialrobot_proxy->setSpeedBase(-200,0);
         sleep(2);
         handCamera=true;
 }

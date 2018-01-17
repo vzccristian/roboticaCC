@@ -1,2 +1,2 @@
-/home/crivac/robocomp/components/roboticaCC/misc/beta-robotica-class/verruga/CMakeFiles/edit_cache.dir
-/home/crivac/robocomp/components/roboticaCC/misc/beta-robotica-class/verruga/CMakeFiles/rebuild_cache.dir
+/home/crivac/robocomp/components/roboticaCC/verruga/CMakeFiles/edit_cache.dir
+/home/crivac/robocomp/components/roboticaCC/verruga/CMakeFiles/rebuild_cache.dir
