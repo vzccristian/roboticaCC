@@ -37,9 +37,10 @@ SpecificWorker::~SpecificWorker()
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params) {
     innermodel = new InnerModel("/home/robocomp/robocomp/components/roboticaCC/misc/betaWorldArm3.xml");
 
-    dump = -1;
-    coorsDump.first = coorsDump.second = 0;
+    state = SEARCH;
 
+    dump = -1;
+    coorsDump.first = coorsDump.second = waitingFor = 0;
     for (auto &x:movedBoxes)
         x=-1;
     for (auto &x:coorsBox)
@@ -63,7 +64,7 @@ void SpecificWorker::compute() {
     innermodel->updateTransformValues("robot", bState.x,0, bState.z,0,bState.alpha, 0 ); //ACTUALIZAR ARBOL
 
     //State machine
-    switch (estado) {
+    switch (state) {
           case SEARCH:
               search();
               break;
@@ -86,7 +87,8 @@ void SpecificWorker::compute() {
 
 /* Search next tag */
 void SpecificWorker::search() {
-    int x,z,waitingFor=0;
+    int x,z;
+    waitingFor=0;
     if (float(clock() - begin_time) /10000.0 > 10.0 ) {
         srand( time( NULL ) );  //  using the time seed from srand explanation
         x=rand()%1000-500;
@@ -104,7 +106,7 @@ void SpecificWorker::search() {
 void SpecificWorker::sendGoto() {
     chocachoca_proxy->go(coorsBox[1],coorsBox[2]);
     waitingFor=1;
-    estado=WAIT;
+    state=WAIT;
 
 }
 
@@ -115,7 +117,7 @@ void SpecificWorker::wait() {
     switch (waitingFor){
         case 1: //Arrive to box
             if (chocachoca_proxy->getState().compare("HAND_WATCHING_BOX")==0)  // Box ready to be picked
-                estado=SENDPICKBOX;
+                state=SENDPICKBOX;
             break;
         case 2: //Picking box
             if (chocachoca_proxy->getState().compare("IDLE")==0) {  // Box ready to be moved to the dumpster
@@ -125,7 +127,7 @@ void SpecificWorker::wait() {
             break;
         case 3: //Arrive to dump
             if (chocachoca_proxy->getState().compare("IDLE")==0) // Box ready to be released
-                estado=SENDRELEASEBOX;
+                state=SENDRELEASEBOX;
             break;
         case 4: //Releasing box
             if (chocachoca_proxy->getState().compare("IDLE")==0) {  // Robot ready to keep searching
@@ -133,7 +135,7 @@ void SpecificWorker::wait() {
                 for (auto &x:coorsBox)
                     x=-2;
                 begin_time=float(clock());
-                estado=SEARCH;
+                state=SEARCH;
             }
             break;
         default:
@@ -145,13 +147,13 @@ void SpecificWorker::wait() {
 void SpecificWorker::sendPickBox() {
     chocachoca_proxy->pickingBox();
     waitingFor=2;
-    estado=WAIT;
+    state=WAIT;
 }
 
 void SpecificWorker::sendReleaseBox() {
     chocachoca_proxy->releasingBox();
     waitingFor=4;
-    estado=WAIT;
+    state=WAIT;
 }
 
 
@@ -191,7 +193,7 @@ void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
                 if (z>0) z=z-threshold;
                 else z=z+threshold;
             }
-            coorsDump=make_pair(x,z); 
+            coorsDump=make_pair(x,z);
             dump = tags[i].id;
 
         }
@@ -221,7 +223,7 @@ void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) 
          }
     }
     if (dist!=MAXSEARCHBOX && waitingFor < 2)
-        estado=SENDGOTO;
+        state=SENDGOTO;
 }
 
 bool SpecificWorker::boxIsMoved(int id) {

@@ -34,7 +34,7 @@
 #include <ctime>
 
 using namespace std;
-enum states { SEARCH, WAIT, SENDGOTO, SENDPICKBOX, SENDRELEASEBOX};
+enum states {SEARCH, WAIT, SENDGOTO, SENDPICKBOX, SENDRELEASEBOX};
 
 const int MAXBOXES=10;
 const int MAXDUMPS=4;
@@ -67,7 +67,7 @@ private:
 
     states state;
 
-    //TAGS 
+    //TAGS
     void newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags);
     int dump;
     std::pair<int,int> coorsDump;
