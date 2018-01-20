@@ -186,9 +186,7 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) 
 void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
     int threshold=600,i;
     QVec targetCoors;
-
     for (i=0; i<(signed)tags.size(); i++) {
-        qDebug() << dump << coorsDump.first << coorsDump.second << "tags:"<<tags[i].id;
         if (tags[i].id < 10 && (dump == -1 || dump == tags[i].id)) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
             float x = targetCoors.x();
@@ -224,7 +222,6 @@ void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) 
                 coorsBox[0]=tags[i].id;
                 coorsBox[1]=targetCoors.x();
                 coorsBox[2]=targetCoors.z();
-//                 qDebug() << "UPDATE -> BOX "<<coorsBox[0]<<" x-->"<<coorsBox[1]<<"  z-->"<<coorsBox[2]<< ". distancia"<<currentDist;
             }
 
          }
@@ -235,10 +232,8 @@ void SpecificWorker::searchBoxes(const RoboCompGetAprilTags::listaMarcas &tags) 
 
 bool SpecificWorker::boxIsMoved(int id) {
     for (auto x:movedBoxes) {
-        if (x == id) {
+        if (x == id)
             return true;
-            qDebug() << "Encontrado "<<id;
-        }
     }
     return false;
 
