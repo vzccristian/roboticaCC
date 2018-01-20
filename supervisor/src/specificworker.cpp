@@ -66,18 +66,23 @@ void SpecificWorker::compute() {
     //State machine
     switch (state) {
           case SEARCH:
+              qDebug() << "SEARCH";
               search();
               break;
           case SENDGOTO:
+              qDebug() << "SENDGOTO";
               sendGoto();
               break;
           case WAIT:
+              qDebug() << "WAIT";
               wait();
               break;
           case SENDPICKBOX:
+              qDebug() << "SENDPICKBOX";
               sendPickBox();
               break;
           case SENDRELEASEBOX:
+              qDebug() << "SENDRELEASEBOX";
               sendReleaseBox();
               break;
           default:
@@ -160,6 +165,7 @@ void SpecificWorker::sendReleaseBox() {
 void SpecificWorker::addToMovedBoxes(int id) {
     int i=0;
     bool added=false;
+    innermodel->updateTransformValues("C"+QString::number(coorsBox[0]), coorsBox[1], 5, coorsBox[2],0,0,0); // Update tree
     while (i<MAXBOXES && !added) {
         if (movedBoxes[i] == -1) {
             movedBoxes[i] = id;

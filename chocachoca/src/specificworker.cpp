@@ -297,7 +297,7 @@ bool SpecificWorker::reachableTarget(TBaseState bState, float dist, TLaserData &
 // HAND_WATCHING_BOX - Main method
 
 void SpecificWorker::handWatchingBox() {
-        sleep(1);
+        sleep(0.1);
 }
 
 
@@ -359,14 +359,12 @@ void SpecificWorker::fixPosition() {
 
 void SpecificWorker::fixRotation() {
         if (targetBox.tz > 150) {
-                if (( targetBox.rz > -PI/2) && (targetBox.rz < -PI/4))  //A. Counterclockwise rotation
+                if ((targetBox.rz > -PI/2 && targetBox.rz < -PI/4) ||
+                    (targetBox.rz > PI/4 && targetBox.rz < PI/2))
                         error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP);
-                else if (( targetBox.rz > PI/4) && (targetBox.rz < PI/2))  //B. Clockwise rotation
-                        error += QVec::vec6(0,0,0,0,0,targetBox.rz/ANGULAR_PROP);
-                else if (targetBox.rz > 0 && targetBox.rz < PI/4)  //C. Counterclockwise rotation
-                        error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
-                else if (( targetBox.rz > -PI/4) && (targetBox.rz < 0))  //D. Clockwise rotation
-                        error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
+                else if ((targetBox.rz > 0 && targetBox.rz < PI/4) ||
+                         (targetBox.rz > -PI/4 && targetBox.rz < 0))
+                              error += QVec::vec6(0,0,0,0,0,-targetBox.rz/ANGULAR_PROP);
         }
 }
 
@@ -492,11 +490,6 @@ void SpecificWorker::setDefaultArmPosition(bool init) {
 // RELEASE - Main method
 void SpecificWorker::releasingBox()
 {
-        //TRANSFORM DE LA CAJA AL SUELO ???
-
-        //TODO
-
-
         setArmReleasingPosition();
         state = END;
 }
@@ -559,7 +552,7 @@ void SpecificWorker::setArmReleasingPosition() {
         sleep(1); // Wait for update
         setDefaultArmPosition(false);
         sleep(2); // Wait for position
-        differentialrobot_proxy->setSpeedBase(-200,0); //Move backwards when leaving the box
+        differentialrobot_proxy->setSpeedBase(-250,0); //Move backwards when leaving the box
         sleep(2); // Wait while moving
         handCamera=true; // Activate hand camera
 }
@@ -569,6 +562,7 @@ void SpecificWorker::end() {
         target.setEmpty(); // Clear target
         state=IDLE;
         differentialrobot_proxy->setSpeedBase(0, 0); // Stop robot
+        sleep(0.1);
         pick = false; // If you have entered a pick using RCISMousePicker, you can continue to other components.
 }
 
@@ -665,7 +659,7 @@ void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags)
 {
         int i;
         if (handCamera) { // Condition to check camera
-                if (state == GOTO) { // No box selected
+                if (state == GOTO || state == END) { // No box selected
                         for (i=0; i<(signed)tags.size(); i++) {
                                 if (tags[i].id > 9) {
                                         differentialrobot_proxy->setSpeedBase(0, 0);
