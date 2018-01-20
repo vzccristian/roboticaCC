@@ -324,7 +324,7 @@ void SpecificWorker::pickingBox() {
         } else {
                 stopMotors();
                 prepareToMove();
-                state=IDLE;
+                state=END;
                 nearToBox=handCamera=picked=false;
         }
 
