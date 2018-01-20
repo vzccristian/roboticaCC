@@ -65,7 +65,6 @@ class SpecificWorker(GenericWorker):
 				boxname = box + "_" + str(car)
 				try:
 					if self.innermodelmanager_proxy.collide("finger_right_2_mesh3", boxname):
-						self.innermodelmanager_proxy.moveNode(box, "cameraHand")  # IF MOVING TO A MESH PETA
 						pose = Pose3D()
 						pose.x=0
 						pose.y=-50
@@ -73,6 +72,7 @@ class SpecificWorker(GenericWorker):
 						pose.rx=0
 						pose.ry=0
 						pose.rz=0
+						self.innermodelmanager_proxy.moveNode(box, "cameraHand")  # IF MOVING TO A MESH PETA
 						self.innermodelmanager_proxy.setPoseFromParent(box, pose)
 						self.state = self.listState[1]
 						self.currentBox = box
@@ -92,7 +92,7 @@ class SpecificWorker(GenericWorker):
 				if self.innermodelmanager_proxy.collide(boxname, "ddG"):
 					pose = {}
 					accept,pose=self.innermodelmanager_proxy.getPose("world",self.currentBox,pose)
-					self.innermodelmanager_proxy.moveNode(self.currentBox, "world")  # IF MOVING TO A MESH PETA
+					self.innermodelmanager_proxy.moveNode(self.currentBox, "world")
 					pose.y=5
 					pose.rx=0
 					pose.rz=0

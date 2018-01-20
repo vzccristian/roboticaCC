@@ -178,17 +178,18 @@ void SpecificWorker::addToMovedBoxes(int id) {
 /* aprilTagsMaster */
 
 void SpecificWorker::newAprilTag(const RoboCompGetAprilTags::listaMarcas &tags) {
-    if (dump == -1)
-        searchDump(tags);
+    searchDump(tags);
     if (waitingFor < 3)
         searchBoxes(tags);
 }
 
 void SpecificWorker::searchDump(const RoboCompGetAprilTags::listaMarcas &tags) {
-    int threshold=700,i;
+    int threshold=600,i;
     QVec targetCoors;
-    for (i=0; i<(signed)tags.size() && dump == -1 ; i++) {
-        if (tags[i].id < 10) {
+
+    for (i=0; i<(signed)tags.size(); i++) {
+        qDebug() << dump << coorsDump.first << coorsDump.second << "tags:"<<tags[i].id;
+        if (tags[i].id < 10 && (dump == -1 || dump == tags[i].id)) {
             targetCoors = innermodel->transform("world",QVec::vec3(tags[i].tx,0,tags[i].tz),"rgbd");
             float x = targetCoors.x();
             float z = targetCoors.z();
